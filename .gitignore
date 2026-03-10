@@ -1,0 +1,17 @@
+@"
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+outputs/
+data/processed/
+*.xlsx~
+*.xls~
+*.csv~
+.DS_Store
+Thumbs.db
+"@ | Set-Content .gitignore
