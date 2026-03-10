@@ -152,7 +152,7 @@ Any observed increase in firearm deaths appears to be primarily driven by \*\*fi
 
 
 
-!\[Total firearm deaths](outputs/figures/event\_time\_total\_firearm\_deaths.png)
+!\[Total firearm deaths](outputs/figures/event_time_total_firearm_deaths.png)
 
 
 
@@ -164,7 +164,7 @@ Any observed increase in firearm deaths appears to be primarily driven by \*\*fi
 
 
 
-!\[Firearm homicide](outputs/figures/event\_time\_firearm\_homicide.png)
+!\[Firearm homicide](outputs/figures/event_time_firearm_homicide.png)
 
 
 
@@ -176,7 +176,7 @@ Any observed increase in firearm deaths appears to be primarily driven by \*\*fi
 
 
 
-!\[Firearm suicide](outputs/figures/event\_time\_firearm\_suicide.png)
+!\[Firearm suicide](outputs/figures/event_time_firearm_suicide.png)
 
 
 
