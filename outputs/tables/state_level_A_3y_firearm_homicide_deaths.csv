@@ -1,0 +1,35 @@
+State,group,EffectiveYear,A
+Alaska,Adopter,2003.0,0.07784747703952277
+Arizona,Adopter,2010.0,-0.9924028910051734
+Idaho,Adopter,2016.0,0.2881268210929875
+Kansas,Adopter,2015.0,1.7496824741089743
+Kentucky,Adopter,2019.0,2.3116269259678397
+Mississippi,Adopter,2015.0,2.3204871962530076
+Missouri,Adopter,2017.0,2.791654011292543
+Oklahoma,Adopter,2019.0,0.8721697184862505
+South Dakota,Adopter,2019.0,1.3253699723242647
+West Virginia,Adopter,2016.0,1.17686219990141
+Arkansas,Control,,1.6052851347033457
+California,Control,,0.2752171853823478
+Colorado,Control,,0.9801668956904358
+Connecticut,Control,,0.37978938405278184
+District of Columbia,Control,,3.529765558701483
+Illinois,Control,,1.5335036758698717
+Louisiana,Control,,2.594282382872605
+Maryland,Control,,1.4583873397438385
+Massachusetts,Control,,0.175305846766257
+Michigan,Control,,0.6888202235283358
+Minnesota,Control,,0.4895709753820401
+Nebraska,Control,,-0.1329264309886387
+Nevada,Control,,0.6151196866372928
+New Jersey,Control,,-0.1256133399974982
+New Mexico,Control,,2.1251947158386897
+New York,Control,,0.17525855864041553
+North Carolina,Control,,1.0533994351875244
+Oregon,Control,,0.5615764543200561
+Pennsylvania,Control,,0.9923933796893467
+Rhode Island,Control,,0.11815871300057217
+South Carolina,Control,,1.836617329803016
+Virginia,Control,,1.0124604747498323
+Washington,Control,,0.5472354074810515
+Wisconsin,Control,,0.7799760206642067
