@@ -305,7 +305,7 @@ These figures compare outcomes between states with **high vs low baseline levels
 
 This figure examines whether permitless carry adoption is associated with underlying state characteristics such as firearm ownership and political orientation.
 
-![Political selection scatter](outputs/figures/mechanism/political_selection_scatter.png)
+![Political selection scatter](outputs/figures/main/political_selection_scatter.png)
 
 ---
 
