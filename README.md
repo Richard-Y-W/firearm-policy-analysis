@@ -247,13 +247,13 @@ Firearm homicide shows **no statistically significant change** across any robust
 
 ## Firearm Homicide
 
-![Firearm homicide](outputs/figures/event_time_firearm_homicide.png)
+![Firearm homicide](outputs/figures/event_time_firearm_homicide_deaths.png)
 
 ---
 
 ## Firearm Suicide
 
-![Firearm suicide](outputs/figures/event_time_firearm_suicide.png)
+![Firearm suicide](outputs/figures/event_time_firearm_suicide_deaths.png)
 
 ---
 
