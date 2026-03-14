@@ -237,38 +237,123 @@ Firearm homicide shows **no statistically significant change** across any robust
 
 ---
 
-# Event Study Plots
+# Event Study Results
 
-## Total Firearm Deaths
+Event-study models estimate outcome changes relative to the year of permitless carry adoption.
 
-![Total firearm deaths](outputs/figures/event_time_total_firearm_deaths.png)
+These figures allow visual inspection of:
 
----
+- pre-policy trends
+- dynamic post-policy effects
+- whether outcomes diverge after adoption
 
 ## Firearm Homicide
 
-![Firearm homicide](outputs/figures/event_time_firearm_homicide_deaths.png)
+![Event study homicide](outputs/figures/event_study/event_study_firearm_homicide.png)
 
 ---
 
 ## Firearm Suicide
 
-![Firearm suicide](outputs/figures/event_time_firearm_suicide_deaths.png)
+![Event study firearm suicide](outputs/figures/event_study/event_study_firearm_suicide.png)
 
 ---
 
-# Interpretation
+## Non-Firearm Suicide
 
-Across multiple specifications:
-
-- **Firearm suicide rates increase after permitless carry adoption relative to non-adopting states.**
-- **Firearm homicide rates show no statistically significant change.**
-
-The pattern suggests that observed increases in firearm mortality are primarily driven by **suicide rather than interpersonal violence**.
-
-Panel regression results also indicate increases in **total suicide**, suggesting that the pattern may not be limited strictly to firearm-specific mechanisms.
+![Event study non-firearm suicide](outputs/figures/event_study/event_study_nonfirearm_suicide.png)
 
 ---
+
+## Total Firearm Deaths
+
+![Event study total firearm](outputs/figures/event_study/event_study_total_firearm.png)
+
+---
+
+## Total Suicide
+
+![Event study total suicide](outputs/figures/event_study/event_study_total_suicide.png)
+
+---
+
+# Heterogeneity Analysis
+
+The project also examines whether associations differ across baseline state characteristics.
+
+These figures compare outcomes between states with **high vs low baseline levels** of key structural variables.
+
+## High vs Low Baseline Firearm Suicide
+
+![Heterogeneity firearm suicide](outputs/figures/heterogeneity/high_vs_low_baseline_firearm_suicide.png)
+
+---
+
+## High vs Low Gun Ownership
+
+![Heterogeneity gun ownership](outputs/figures/heterogeneity/high_vs_low_gun_ownership.png)
+
+---
+
+## High vs Low Rurality
+
+![Heterogeneity rurality](outputs/figures/heterogeneity/high_vs_low_rurality.png)
+
+---
+
+# Political Selection
+
+This figure examines whether permitless carry adoption is associated with underlying state characteristics such as firearm ownership and political orientation.
+
+![Political selection scatter](outputs/figures/mechanism/political_selection_scatter.png)
+
+---
+
+# Overall Interpretation
+
+Across multiple empirical strategies, several consistent patterns emerge.
+
+### Firearm Suicide
+
+States adopting permitless carry laws tend to experience **larger increases in firearm suicide rates relative to non-adopting states**.
+
+This pattern appears in:
+
+- change-score comparisons
+- event-study plots
+- panel regression estimates
+
+### Firearm Homicide
+
+No statistically significant association is detected between permitless carry adoption and firearm homicide rates.
+
+Event-study plots also show **no clear post-adoption divergence**.
+
+### Total Suicide
+
+Panel regressions indicate increases in **total suicide rates**, suggesting that observed changes may reflect broader suicide trends rather than firearm-specific mechanisms alone.
+
+### Structural Heterogeneity
+
+Associations appear stronger in states with:
+
+- higher baseline firearm suicide rates
+- higher firearm ownership
+- greater rurality
+
+These structural characteristics may amplify policy-associated risk patterns.
+
+---
+
+# Conclusion
+
+The analysis suggests that adoption of permitless carry laws is associated with **higher firearm suicide rates relative to non-adopting states**, while **no statistically significant relationship is detected for firearm homicide**.
+
+These findings should be interpreted cautiously due to the observational nature of the analysis and potential policy selection effects.
+
+However, the results highlight a consistent pattern linking firearm access policy changes with suicide-related outcomes.
+
+Further research using individual-level data or alternative identification strategies would be necessary to establish causal mechanisms.
 
 # Limitations
 
