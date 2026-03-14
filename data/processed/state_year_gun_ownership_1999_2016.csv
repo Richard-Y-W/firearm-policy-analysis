@@ -1,0 +1,901 @@
+State,Year,gun_ownership
+Alabama,1999,0.537
+Alabama,2000,0.538
+Alabama,2001,0.522
+Alabama,2002,0.553
+Alabama,2003,0.504
+Alabama,2004,0.516
+Alabama,2005,0.485
+Alabama,2006,0.468
+Alabama,2007,0.481
+Alabama,2008,0.503
+Alabama,2009,0.482
+Alabama,2010,0.456
+Alabama,2011,0.513
+Alabama,2012,0.543
+Alabama,2013,0.516
+Alabama,2014,0.51
+Alabama,2015,0.495
+Alabama,2016,0.528
+Alaska,1999,0.571
+Alaska,2000,0.601
+Alaska,2001,0.61
+Alaska,2002,0.614
+Alaska,2003,0.587
+Alaska,2004,0.58
+Alaska,2005,0.609
+Alaska,2006,0.551
+Alaska,2007,0.577
+Alaska,2008,0.613
+Alaska,2009,0.543
+Alaska,2010,0.611
+Alaska,2011,0.627
+Alaska,2012,0.607
+Alaska,2013,0.576
+Alaska,2014,0.618
+Alaska,2015,0.551
+Alaska,2016,0.572
+Arizona,1999,0.409
+Arizona,2000,0.427
+Arizona,2001,0.35
+Arizona,2002,0.381
+Arizona,2003,0.393
+Arizona,2004,0.368
+Arizona,2005,0.373
+Arizona,2006,0.385
+Arizona,2007,0.38
+Arizona,2008,0.382
+Arizona,2009,0.396
+Arizona,2010,0.346
+Arizona,2011,0.329
+Arizona,2012,0.415
+Arizona,2013,0.366
+Arizona,2014,0.385
+Arizona,2015,0.36
+Arizona,2016,0.36
+Arkansas,1999,0.555
+Arkansas,2000,0.542
+Arkansas,2001,0.537
+Arkansas,2002,0.56
+Arkansas,2003,0.516
+Arkansas,2004,0.544
+Arkansas,2005,0.499
+Arkansas,2006,0.481
+Arkansas,2007,0.507
+Arkansas,2008,0.508
+Arkansas,2009,0.493
+Arkansas,2010,0.493
+Arkansas,2011,0.527
+Arkansas,2012,0.544
+Arkansas,2013,0.5
+Arkansas,2014,0.493
+Arkansas,2015,0.462
+Arkansas,2016,0.518
+California,1999,0.271
+California,2000,0.274
+California,2001,0.229
+California,2002,0.228
+California,2003,0.198
+California,2004,0.203
+California,2005,0.209
+California,2006,0.202
+California,2007,0.185
+California,2008,0.175
+California,2009,0.196
+California,2010,0.174
+California,2011,0.16
+California,2012,0.214
+California,2013,0.155
+California,2014,0.183
+California,2015,0.151
+California,2016,0.163
+Colorado,1999,0.43
+Colorado,2000,0.467
+Colorado,2001,0.371
+Colorado,2002,0.363
+Colorado,2003,0.373
+Colorado,2004,0.411
+Colorado,2005,0.378
+Colorado,2006,0.399
+Colorado,2007,0.404
+Colorado,2008,0.402
+Colorado,2009,0.411
+Colorado,2010,0.384
+Colorado,2011,0.36
+Colorado,2012,0.414
+Colorado,2013,0.394
+Colorado,2014,0.385
+Colorado,2015,0.369
+Colorado,2016,0.379
+Connecticut,1999,0.198
+Connecticut,2000,0.202
+Connecticut,2001,0.189
+Connecticut,2002,0.193
+Connecticut,2003,0.179
+Connecticut,2004,0.166
+Connecticut,2005,0.202
+Connecticut,2006,0.174
+Connecticut,2007,0.116
+Connecticut,2008,0.192
+Connecticut,2009,0.185
+Connecticut,2010,0.172
+Connecticut,2011,0.163
+Connecticut,2012,0.183
+Connecticut,2013,0.141
+Connecticut,2014,0.2
+Connecticut,2015,0.192
+Connecticut,2016,0.188
+Delaware,1999,0.319
+Delaware,2000,0.352
+Delaware,2001,0.3
+Delaware,2002,0.317
+Delaware,2003,0.304
+Delaware,2004,0.331
+Delaware,2005,0.3
+Delaware,2006,0.303
+Delaware,2007,0.262
+Delaware,2008,0.263
+Delaware,2009,0.265
+Delaware,2010,0.269
+Delaware,2011,0.309
+Delaware,2012,0.308
+Delaware,2013,0.289
+Delaware,2014,0.301
+Delaware,2015,0.32
+Delaware,2016,0.387
+Florida,1999,0.33
+Florida,2000,0.32
+Florida,2001,0.268
+Florida,2002,0.277
+Florida,2003,0.266
+Florida,2004,0.234
+Florida,2005,0.295
+Florida,2006,0.282
+Florida,2007,0.261
+Florida,2008,0.303
+Florida,2009,0.281
+Florida,2010,0.27
+Florida,2011,0.325
+Florida,2012,0.309
+Florida,2013,0.279
+Florida,2014,0.284
+Florida,2015,0.277
+Florida,2016,0.288
+Georgia,1999,0.488
+Georgia,2000,0.467
+Georgia,2001,0.427
+Georgia,2002,0.442
+Georgia,2003,0.396
+Georgia,2004,0.43
+Georgia,2005,0.416
+Georgia,2006,0.395
+Georgia,2007,0.388
+Georgia,2008,0.395
+Georgia,2009,0.453
+Georgia,2010,0.364
+Georgia,2011,0.421
+Georgia,2012,0.401
+Georgia,2013,0.379
+Georgia,2014,0.382
+Georgia,2015,0.361
+Georgia,2016,0.377
+Hawaii,1999,0.075
+Hawaii,2000,0.124
+Hawaii,2001,0.103
+Hawaii,2002,0.098
+Hawaii,2003,0.063
+Hawaii,2004,0.2
+Hawaii,2005,0.072
+Hawaii,2006,0.116
+Hawaii,2007,0.064
+Hawaii,2008,0.099
+Hawaii,2009,0.062
+Hawaii,2010,0.084
+Hawaii,2011,0.081
+Hawaii,2012,0.12
+Hawaii,2013,0.073
+Hawaii,2014,0.034
+Hawaii,2015,0.096
+Hawaii,2016,0.091
+Idaho,1999,0.583
+Idaho,2000,0.609
+Idaho,2001,0.573
+Idaho,2002,0.576
+Idaho,2003,0.51
+Idaho,2004,0.557
+Idaho,2005,0.589
+Idaho,2006,0.554
+Idaho,2007,0.561
+Idaho,2008,0.543
+Idaho,2009,0.541
+Idaho,2010,0.523
+Idaho,2011,0.466
+Idaho,2012,0.552
+Idaho,2013,0.542
+Idaho,2014,0.53
+Idaho,2015,0.509
+Idaho,2016,0.578
+Illinois,1999,0.279
+Illinois,2000,0.286
+Illinois,2001,0.218
+Illinois,2002,0.232
+Illinois,2003,0.218
+Illinois,2004,0.226
+Illinois,2005,0.23
+Illinois,2006,0.245
+Illinois,2007,0.225
+Illinois,2008,0.205
+Illinois,2009,0.243
+Illinois,2010,0.243
+Illinois,2011,0.243
+Illinois,2012,0.266
+Illinois,2013,0.244
+Illinois,2014,0.238
+Illinois,2015,0.238
+Illinois,2016,0.226
+Indiana,1999,0.405
+Indiana,2000,0.444
+Indiana,2001,0.387
+Indiana,2002,0.408
+Indiana,2003,0.364
+Indiana,2004,0.391
+Indiana,2005,0.37
+Indiana,2006,0.386
+Indiana,2007,0.358
+Indiana,2008,0.374
+Indiana,2009,0.4
+Indiana,2010,0.391
+Indiana,2011,0.351
+Indiana,2012,0.432
+Indiana,2013,0.406
+Indiana,2014,0.424
+Indiana,2015,0.394
+Indiana,2016,0.424
+Iowa,1999,0.397
+Iowa,2000,0.477
+Iowa,2001,0.398
+Iowa,2002,0.417
+Iowa,2003,0.389
+Iowa,2004,0.423
+Iowa,2005,0.359
+Iowa,2006,0.375
+Iowa,2007,0.388
+Iowa,2008,0.396
+Iowa,2009,0.387
+Iowa,2010,0.411
+Iowa,2011,0.376
+Iowa,2012,0.409
+Iowa,2013,0.401
+Iowa,2014,0.331
+Iowa,2015,0.36
+Iowa,2016,0.385
+Kansas,1999,0.433
+Kansas,2000,0.469
+Kansas,2001,0.417
+Kansas,2002,0.418
+Kansas,2003,0.437
+Kansas,2004,0.428
+Kansas,2005,0.392
+Kansas,2006,0.426
+Kansas,2007,0.447
+Kansas,2008,0.421
+Kansas,2009,0.43
+Kansas,2010,0.439
+Kansas,2011,0.444
+Kansas,2012,0.455
+Kansas,2013,0.452
+Kansas,2014,0.419
+Kansas,2015,0.377
+Kansas,2016,0.423
+Kentucky,1999,0.54
+Kentucky,2000,0.553
+Kentucky,2001,0.522
+Kentucky,2002,0.52
+Kentucky,2003,0.507
+Kentucky,2004,0.52
+Kentucky,2005,0.502
+Kentucky,2006,0.476
+Kentucky,2007,0.509
+Kentucky,2008,0.499
+Kentucky,2009,0.491
+Kentucky,2010,0.464
+Kentucky,2011,0.529
+Kentucky,2012,0.514
+Kentucky,2013,0.498
+Kentucky,2014,0.467
+Kentucky,2015,0.464
+Kentucky,2016,0.525
+Louisiana,1999,0.513
+Louisiana,2000,0.505
+Louisiana,2001,0.45
+Louisiana,2002,0.485
+Louisiana,2003,0.476
+Louisiana,2004,0.491
+Louisiana,2005,0.486
+Louisiana,2006,0.483
+Louisiana,2007,0.476
+Louisiana,2008,0.492
+Louisiana,2009,0.458
+Louisiana,2010,0.454
+Louisiana,2011,0.467
+Louisiana,2012,0.551
+Louisiana,2013,0.487
+Louisiana,2014,0.481
+Louisiana,2015,0.456
+Louisiana,2016,0.523
+Maine,1999,0.441
+Maine,2000,0.466
+Maine,2001,0.403
+Maine,2002,0.41
+Maine,2003,0.421
+Maine,2004,0.411
+Maine,2005,0.425
+Maine,2006,0.431
+Maine,2007,0.457
+Maine,2008,0.462
+Maine,2009,0.441
+Maine,2010,0.46
+Maine,2011,0.47
+Maine,2012,0.46
+Maine,2013,0.496
+Maine,2014,0.423
+Maine,2015,0.413
+Maine,2016,0.477
+Maryland,1999,0.298
+Maryland,2000,0.265
+Maryland,2001,0.249
+Maryland,2002,0.252
+Maryland,2003,0.24
+Maryland,2004,0.236
+Maryland,2005,0.266
+Maryland,2006,0.237
+Maryland,2007,0.206
+Maryland,2008,0.235
+Maryland,2009,0.218
+Maryland,2010,0.196
+Maryland,2011,0.266
+Maryland,2012,0.213
+Maryland,2013,0.18
+Maryland,2014,0.219
+Maryland,2015,0.201
+Maryland,2016,0.167
+Massachusetts,1999,0.136
+Massachusetts,2000,0.126
+Massachusetts,2001,0.121
+Massachusetts,2002,0.115
+Massachusetts,2003,0.129
+Massachusetts,2004,0.104
+Massachusetts,2005,0.103
+Massachusetts,2006,0.116
+Massachusetts,2007,0.075
+Massachusetts,2008,0.096
+Massachusetts,2009,0.091
+Massachusetts,2010,0.122
+Massachusetts,2011,0.135
+Massachusetts,2012,0.111
+Massachusetts,2013,0.085
+Massachusetts,2014,0.1
+Massachusetts,2015,0.088
+Massachusetts,2016,0.09
+Michigan,1999,0.368
+Michigan,2000,0.401
+Michigan,2001,0.38
+Michigan,2002,0.388
+Michigan,2003,0.359
+Michigan,2004,0.384
+Michigan,2005,0.346
+Michigan,2006,0.372
+Michigan,2007,0.334
+Michigan,2008,0.315
+Michigan,2009,0.354
+Michigan,2010,0.342
+Michigan,2011,0.325
+Michigan,2012,0.391
+Michigan,2013,0.36
+Michigan,2014,0.347
+Michigan,2015,0.358
+Michigan,2016,0.389
+Minnesota,1999,0.411
+Minnesota,2000,0.447
+Minnesota,2001,0.405
+Minnesota,2002,0.409
+Minnesota,2003,0.405
+Minnesota,2004,0.406
+Minnesota,2005,0.387
+Minnesota,2006,0.373
+Minnesota,2007,0.403
+Minnesota,2008,0.386
+Minnesota,2009,0.396
+Minnesota,2010,0.41
+Minnesota,2011,0.411
+Minnesota,2012,0.382
+Minnesota,2013,0.424
+Minnesota,2014,0.353
+Minnesota,2015,0.341
+Minnesota,2016,0.391
+Mississippi,1999,0.57
+Mississippi,2000,0.536
+Mississippi,2001,0.545
+Mississippi,2002,0.541
+Mississippi,2003,0.541
+Mississippi,2004,0.53
+Mississippi,2005,0.5
+Mississippi,2006,0.49
+Mississippi,2007,0.522
+Mississippi,2008,0.497
+Mississippi,2009,0.478
+Mississippi,2010,0.48
+Mississippi,2011,0.498
+Mississippi,2012,0.568
+Mississippi,2013,0.502
+Mississippi,2014,0.488
+Mississippi,2015,0.474
+Mississippi,2016,0.541
+Missouri,1999,0.426
+Missouri,2000,0.461
+Missouri,2001,0.446
+Missouri,2002,0.477
+Missouri,2003,0.433
+Missouri,2004,0.451
+Missouri,2005,0.417
+Missouri,2006,0.445
+Missouri,2007,0.449
+Missouri,2008,0.487
+Missouri,2009,0.47
+Missouri,2010,0.463
+Missouri,2011,0.434
+Missouri,2012,0.511
+Missouri,2013,0.486
+Missouri,2014,0.497
+Missouri,2015,0.488
+Missouri,2016,0.528
+Montana,1999,0.581
+Montana,2000,0.646
+Montana,2001,0.623
+Montana,2002,0.626
+Montana,2003,0.632
+Montana,2004,0.62
+Montana,2005,0.694
+Montana,2006,0.614
+Montana,2007,0.639
+Montana,2008,0.69
+Montana,2009,0.625
+Montana,2010,0.621
+Montana,2011,0.603
+Montana,2012,0.658
+Montana,2013,0.633
+Montana,2014,0.64
+Montana,2015,0.608
+Montana,2016,0.65
+Nebraska,1999,0.455
+Nebraska,2000,0.486
+Nebraska,2001,0.4
+Nebraska,2002,0.419
+Nebraska,2003,0.391
+Nebraska,2004,0.466
+Nebraska,2005,0.371
+Nebraska,2006,0.351
+Nebraska,2007,0.426
+Nebraska,2008,0.34
+Nebraska,2009,0.415
+Nebraska,2010,0.425
+Nebraska,2011,0.418
+Nebraska,2012,0.416
+Nebraska,2013,0.405
+Nebraska,2014,0.365
+Nebraska,2015,0.362
+Nebraska,2016,0.392
+Nevada,1999,0.433
+Nevada,2000,0.471
+Nevada,2001,0.369
+Nevada,2002,0.386
+Nevada,2003,0.36
+Nevada,2004,0.392
+Nevada,2005,0.36
+Nevada,2006,0.351
+Nevada,2007,0.397
+Nevada,2008,0.371
+Nevada,2009,0.391
+Nevada,2010,0.372
+Nevada,2011,0.318
+Nevada,2012,0.377
+Nevada,2013,0.351
+Nevada,2014,0.344
+Nevada,2015,0.328
+Nevada,2016,0.329
+New Hampshire,1999,0.374
+New Hampshire,2000,0.391
+New Hampshire,2001,0.31
+New Hampshire,2002,0.317
+New Hampshire,2003,0.33
+New Hampshire,2004,0.315
+New Hampshire,2005,0.364
+New Hampshire,2006,0.364
+New Hampshire,2007,0.364
+New Hampshire,2008,0.368
+New Hampshire,2009,0.383
+New Hampshire,2010,0.394
+New Hampshire,2011,0.385
+New Hampshire,2012,0.394
+New Hampshire,2013,0.406
+New Hampshire,2014,0.381
+New Hampshire,2015,0.372
+New Hampshire,2016,0.463
+New Jersey,1999,0.144
+New Jersey,2000,0.108
+New Jersey,2001,0.122
+New Jersey,2002,0.117
+New Jersey,2003,0.112
+New Jersey,2004,0.108
+New Jersey,2005,0.106
+New Jersey,2006,0.118
+New Jersey,2007,0.063
+New Jersey,2008,0.088
+New Jersey,2009,0.098
+New Jersey,2010,0.085
+New Jersey,2011,0.102
+New Jersey,2012,0.07
+New Jersey,2013,0.056
+New Jersey,2014,0.097
+New Jersey,2015,0.081
+New Jersey,2016,0.089
+New Mexico,1999,0.446
+New Mexico,2000,0.438
+New Mexico,2001,0.391
+New Mexico,2002,0.431
+New Mexico,2003,0.407
+New Mexico,2004,0.391
+New Mexico,2005,0.406
+New Mexico,2006,0.392
+New Mexico,2007,0.428
+New Mexico,2008,0.357
+New Mexico,2009,0.375
+New Mexico,2010,0.375
+New Mexico,2011,0.366
+New Mexico,2012,0.403
+New Mexico,2013,0.482
+New Mexico,2014,0.356
+New Mexico,2015,0.37
+New Mexico,2016,0.359
+New York,1999,0.197
+New York,2000,0.197
+New York,2001,0.182
+New York,2002,0.177
+New York,2003,0.157
+New York,2004,0.174
+New York,2005,0.192
+New York,2006,0.164
+New York,2007,0.14
+New York,2008,0.142
+New York,2009,0.152
+New York,2010,0.143
+New York,2011,0.158
+New York,2012,0.154
+New York,2013,0.124
+New York,2014,0.126
+New York,2015,0.119
+New York,2016,0.145
+North Carolina,1999,0.417
+North Carolina,2000,0.426
+North Carolina,2001,0.382
+North Carolina,2002,0.397
+North Carolina,2003,0.374
+North Carolina,2004,0.383
+North Carolina,2005,0.375
+North Carolina,2006,0.351
+North Carolina,2007,0.36
+North Carolina,2008,0.345
+North Carolina,2009,0.341
+North Carolina,2010,0.35
+North Carolina,2011,0.406
+North Carolina,2012,0.379
+North Carolina,2013,0.355
+North Carolina,2014,0.334
+North Carolina,2015,0.316
+North Carolina,2016,0.371
+North Dakota,1999,0.56
+North Dakota,2000,0.55
+North Dakota,2001,0.503
+North Dakota,2002,0.517
+North Dakota,2003,0.51
+North Dakota,2004,0.546
+North Dakota,2005,0.546
+North Dakota,2006,0.484
+North Dakota,2007,0.538
+North Dakota,2008,0.586
+North Dakota,2009,0.537
+North Dakota,2010,0.543
+North Dakota,2011,0.541
+North Dakota,2012,0.561
+North Dakota,2013,0.567
+North Dakota,2014,0.57
+North Dakota,2015,0.504
+North Dakota,2016,0.533
+Ohio,1999,0.365
+Ohio,2000,0.351
+Ohio,2001,0.324
+Ohio,2002,0.321
+Ohio,2003,0.335
+Ohio,2004,0.328
+Ohio,2005,0.348
+Ohio,2006,0.353
+Ohio,2007,0.324
+Ohio,2008,0.365
+Ohio,2009,0.368
+Ohio,2010,0.357
+Ohio,2011,0.334
+Ohio,2012,0.362
+Ohio,2013,0.359
+Ohio,2014,0.366
+Ohio,2015,0.388
+Ohio,2016,0.419
+Oklahoma,1999,0.498
+Oklahoma,2000,0.558
+Oklahoma,2001,0.48
+Oklahoma,2002,0.483
+Oklahoma,2003,0.467
+Oklahoma,2004,0.495
+Oklahoma,2005,0.441
+Oklahoma,2006,0.468
+Oklahoma,2007,0.497
+Oklahoma,2008,0.508
+Oklahoma,2009,0.508
+Oklahoma,2010,0.488
+Oklahoma,2011,0.533
+Oklahoma,2012,0.563
+Oklahoma,2013,0.537
+Oklahoma,2014,0.493
+Oklahoma,2015,0.487
+Oklahoma,2016,0.549
+Oregon,1999,0.515
+Oregon,2000,0.516
+Oregon,2001,0.415
+Oregon,2002,0.422
+Oregon,2003,0.427
+Oregon,2004,0.407
+Oregon,2005,0.484
+Oregon,2006,0.451
+Oregon,2007,0.46
+Oregon,2008,0.436
+Oregon,2009,0.456
+Oregon,2010,0.409
+Oregon,2011,0.413
+Oregon,2012,0.476
+Oregon,2013,0.456
+Oregon,2014,0.462
+Oregon,2015,0.407
+Oregon,2016,0.414
+Pennsylvania,1999,0.389
+Pennsylvania,2000,0.391
+Pennsylvania,2001,0.363
+Pennsylvania,2002,0.381
+Pennsylvania,2003,0.397
+Pennsylvania,2004,0.356
+Pennsylvania,2005,0.414
+Pennsylvania,2006,0.382
+Pennsylvania,2007,0.346
+Pennsylvania,2008,0.384
+Pennsylvania,2009,0.371
+Pennsylvania,2010,0.355
+Pennsylvania,2011,0.362
+Pennsylvania,2012,0.38
+Pennsylvania,2013,0.368
+Pennsylvania,2014,0.361
+Pennsylvania,2015,0.368
+Pennsylvania,2016,0.402
+Rhode Island,1999,0.166
+Rhode Island,2000,0.153
+Rhode Island,2001,0.134
+Rhode Island,2002,0.136
+Rhode Island,2003,0.074
+Rhode Island,2004,0.116
+Rhode Island,2005,0.124
+Rhode Island,2006,0.129
+Rhode Island,2007,0.072
+Rhode Island,2008,0.092
+Rhode Island,2009,0.145
+Rhode Island,2010,0.091
+Rhode Island,2011,0.1
+Rhode Island,2012,0.109
+Rhode Island,2013,0.09
+Rhode Island,2014,0.1
+Rhode Island,2015,0.151
+Rhode Island,2016,0.139
+South Carolina,1999,0.468
+South Carolina,2000,0.492
+South Carolina,2001,0.442
+South Carolina,2002,0.466
+South Carolina,2003,0.456
+South Carolina,2004,0.436
+South Carolina,2005,0.394
+South Carolina,2006,0.403
+South Carolina,2007,0.415
+South Carolina,2008,0.42
+South Carolina,2009,0.409
+South Carolina,2010,0.418
+South Carolina,2011,0.466
+South Carolina,2012,0.459
+South Carolina,2013,0.445
+South Carolina,2014,0.42
+South Carolina,2015,0.393
+South Carolina,2016,0.45
+South Dakota,1999,0.494
+South Dakota,2000,0.547
+South Dakota,2001,0.518
+South Dakota,2002,0.564
+South Dakota,2003,0.537
+South Dakota,2004,0.567
+South Dakota,2005,0.504
+South Dakota,2006,0.514
+South Dakota,2007,0.511
+South Dakota,2008,0.51
+South Dakota,2009,0.519
+South Dakota,2010,0.523
+South Dakota,2011,0.479
+South Dakota,2012,0.568
+South Dakota,2013,0.523
+South Dakota,2014,0.5
+South Dakota,2015,0.492
+South Dakota,2016,0.55
+Tennessee,1999,0.503
+Tennessee,2000,0.489
+Tennessee,2001,0.444
+Tennessee,2002,0.468
+Tennessee,2003,0.436
+Tennessee,2004,0.472
+Tennessee,2005,0.467
+Tennessee,2006,0.447
+Tennessee,2007,0.461
+Tennessee,2008,0.495
+Tennessee,2009,0.421
+Tennessee,2010,0.438
+Tennessee,2011,0.491
+Tennessee,2012,0.478
+Tennessee,2013,0.469
+Tennessee,2014,0.427
+Tennessee,2015,0.416
+Tennessee,2016,0.469
+Texas,1999,0.421
+Texas,2000,0.417
+Texas,2001,0.377
+Texas,2002,0.379
+Texas,2003,0.362
+Texas,2004,0.368
+Texas,2005,0.376
+Texas,2006,0.363
+Texas,2007,0.392
+Texas,2008,0.367
+Texas,2009,0.357
+Texas,2010,0.346
+Texas,2011,0.378
+Texas,2012,0.426
+Texas,2013,0.364
+Texas,2014,0.385
+Texas,2015,0.336
+Texas,2016,0.355
+Utah,1999,0.428
+Utah,2000,0.505
+Utah,2001,0.455
+Utah,2002,0.467
+Utah,2003,0.401
+Utah,2004,0.442
+Utah,2005,0.377
+Utah,2006,0.378
+Utah,2007,0.426
+Utah,2008,0.355
+Utah,2009,0.396
+Utah,2010,0.416
+Utah,2011,0.392
+Utah,2012,0.423
+Utah,2013,0.425
+Utah,2014,0.349
+Utah,2015,0.35
+Utah,2016,0.397
+Vermont,1999,0.551
+Vermont,2000,0.47
+Vermont,2001,0.43
+Vermont,2002,0.441
+Vermont,2003,0.427
+Vermont,2004,0.442
+Vermont,2005,0.403
+Vermont,2006,0.441
+Vermont,2007,0.43
+Vermont,2008,0.4
+Vermont,2009,0.498
+Vermont,2010,0.484
+Vermont,2011,0.472
+Vermont,2012,0.482
+Vermont,2013,0.483
+Vermont,2014,0.437
+Vermont,2015,0.43
+Vermont,2016,0.503
+Virginia,1999,0.431
+Virginia,2000,0.418
+Virginia,2001,0.362
+Virginia,2002,0.386
+Virginia,2003,0.358
+Virginia,2004,0.384
+Virginia,2005,0.408
+Virginia,2006,0.373
+Virginia,2007,0.367
+Virginia,2008,0.372
+Virginia,2009,0.359
+Virginia,2010,0.363
+Virginia,2011,0.413
+Virginia,2012,0.397
+Virginia,2013,0.37
+Virginia,2014,0.362
+Virginia,2015,0.345
+Virginia,2016,0.353
+Washington,1999,0.396
+Washington,2000,0.402
+Washington,2001,0.341
+Washington,2002,0.362
+Washington,2003,0.383
+Washington,2004,0.369
+Washington,2005,0.364
+Washington,2006,0.359
+Washington,2007,0.361
+Washington,2008,0.38
+Washington,2009,0.366
+Washington,2010,0.338
+Washington,2011,0.335
+Washington,2012,0.339
+Washington,2013,0.344
+Washington,2014,0.335
+Washington,2015,0.318
+Washington,2016,0.321
+West Virginia,1999,0.573
+West Virginia,2000,0.541
+West Virginia,2001,0.549
+West Virginia,2002,0.58
+West Virginia,2003,0.561
+West Virginia,2004,0.556
+West Virginia,2005,0.631
+West Virginia,2006,0.56
+West Virginia,2007,0.599
+West Virginia,2008,0.575
+West Virginia,2009,0.551
+West Virginia,2010,0.572
+West Virginia,2011,0.622
+West Virginia,2012,0.571
+West Virginia,2013,0.602
+West Virginia,2014,0.547
+West Virginia,2015,0.537
+West Virginia,2016,0.6
+Wisconsin,1999,0.434
+Wisconsin,2000,0.466
+Wisconsin,2001,0.431
+Wisconsin,2002,0.422
+Wisconsin,2003,0.445
+Wisconsin,2004,0.416
+Wisconsin,2005,0.41
+Wisconsin,2006,0.425
+Wisconsin,2007,0.414
+Wisconsin,2008,0.421
+Wisconsin,2009,0.432
+Wisconsin,2010,0.431
+Wisconsin,2011,0.414
+Wisconsin,2012,0.44
+Wisconsin,2013,0.448
+Wisconsin,2014,0.434
+Wisconsin,2015,0.434
+Wisconsin,2016,0.471
+Wyoming,1999,0.58
+Wyoming,2000,0.586
+Wyoming,2001,0.606
+Wyoming,2002,0.644
+Wyoming,2003,0.596
+Wyoming,2004,0.607
+Wyoming,2005,0.592
+Wyoming,2006,0.583
+Wyoming,2007,0.621
+Wyoming,2008,0.64
+Wyoming,2009,0.615
+Wyoming,2010,0.572
+Wyoming,2011,0.539
+Wyoming,2012,0.597
+Wyoming,2013,0.613
+Wyoming,2014,0.608
+Wyoming,2015,0.549
+Wyoming,2016,0.607

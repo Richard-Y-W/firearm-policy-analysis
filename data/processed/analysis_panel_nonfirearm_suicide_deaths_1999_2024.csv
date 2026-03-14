@@ -1,0 +1,1318 @@
+State,State Code,Year,Deaths,Population,rate_per_100k,source,permitless_year
+Alabama,1,1999,122,4430141,2.7538626874404226,derived_total_minus_firearm,2023.0
+Alabama,1,2000,162,4447100,3.642823413010724,derived_total_minus_firearm,2023.0
+Alabama,1,2001,125,4467634,2.7979015290867597,derived_total_minus_firearm,2023.0
+Alabama,1,2002,135,4480089,3.013332994054359,derived_total_minus_firearm,2023.0
+Alabama,1,2003,122,4503491,2.7090095217243686,derived_total_minus_firearm,2023.0
+Alabama,1,2004,169,4530729,3.730084054905955,derived_total_minus_firearm,2023.0
+Alabama,1,2005,167,4569805,3.6544228911299257,derived_total_minus_firearm,2023.0
+Alabama,1,2006,180,4628981,3.888544800680755,derived_total_minus_firearm,2023.0
+Alabama,1,2007,196,4672840,4.194451340084401,derived_total_minus_firearm,2023.0
+Alabama,1,2008,180,4718206,3.815009348892353,derived_total_minus_firearm,2023.0
+Alabama,1,2009,196,4757938,4.119431568885513,derived_total_minus_firearm,2023.0
+Alabama,1,2010,226,4779736,4.728294617108562,derived_total_minus_firearm,2023.0
+Alabama,1,2011,204,4802740,4.247575342408709,derived_total_minus_firearm,2023.0
+Alabama,1,2012,227,4822023,4.707567757349976,derived_total_minus_firearm,2023.0
+Alabama,1,2013,218,4833722,4.509982162813666,derived_total_minus_firearm,2023.0
+Alabama,1,2014,236,4849377,4.86660451435308,derived_total_minus_firearm,2023.0
+Alabama,1,2015,224,4858979,4.61002198198428,derived_total_minus_firearm,2023.0
+Alabama,1,2016,239,4863300,4.914358563115577,derived_total_minus_firearm,2023.0
+Alabama,1,2017,266,4874747,5.456693444808517,derived_total_minus_firearm,2023.0
+Alabama,1,2018,271,4887871,5.544336174174811,derived_total_minus_firearm,2023.0
+Alabama,1,2019,262,4903185,5.343465522920308,derived_total_minus_firearm,2023.0
+Alabama,1,2020,254,4921532,5.160994584613082,derived_total_minus_firearm,2023.0
+Alabama,1,2021,206,5039877,4.087401339358086,derived_total_minus_firearm,2023.0
+Alabama,1,2022,227,5074296,4.473526968075962,derived_total_minus_firearm,2023.0
+Alabama,1,2023,254,5108468,4.972136460480909,derived_total_minus_firearm,2023.0
+Alabama,1,2024,223,5157699,4.323633465233241,derived_total_minus_firearm,2023.0
+Alaska,2,1999,41,624779,6.562320436506349,derived_total_minus_firearm,2003.0
+Alaska,2,2000,41,626932,6.53978421902216,derived_total_minus_firearm,2003.0
+Alaska,2,2001,37,633714,5.838595959691597,derived_total_minus_firearm,2003.0
+Alaska,2,2002,40,642337,6.22726076810148,derived_total_minus_firearm,2003.0
+Alaska,2,2003,45,648414,6.940010548816032,derived_total_minus_firearm,2003.0
+Alaska,2,2004,62,659286,9.404112934295586,derived_total_minus_firearm,2003.0
+Alaska,2,2005,44,666946,6.597235758217302,derived_total_minus_firearm,2003.0
+Alaska,2,2006,57,675302,8.440668027045676,derived_total_minus_firearm,2003.0
+Alaska,2,2007,56,680300,8.231662501837425,derived_total_minus_firearm,2003.0
+Alaska,2,2008,53,687455,7.709595537162432,derived_total_minus_firearm,2003.0
+Alaska,2,2009,64,698895,9.157312614913543,derived_total_minus_firearm,2003.0
+Alaska,2,2010,59,710231,8.307156404043191,derived_total_minus_firearm,2003.0
+Alaska,2,2011,44,722718,6.088128426301823,derived_total_minus_firearm,2003.0
+Alaska,2,2012,70,731449,9.570045211627878,derived_total_minus_firearm,2003.0
+Alaska,2,2013,51,735132,6.93752958652324,derived_total_minus_firearm,2003.0
+Alaska,2,2014,52,736732,7.05819755352014,derived_total_minus_firearm,2003.0
+Alaska,2,2015,78,738432,10.562922516900677,derived_total_minus_firearm,2003.0
+Alaska,2,2016,80,741894,10.783211617832198,derived_total_minus_firearm,2003.0
+Alaska,2,2017,81,739795,10.948979109077516,derived_total_minus_firearm,2003.0
+Alaska,2,2018,78,737438,10.57716038500864,derived_total_minus_firearm,2003.0
+Alaska,2,2019,93,731545,12.712820127264896,derived_total_minus_firearm,2003.0
+Alaska,2,2020,72,731158,9.847392765995856,derived_total_minus_firearm,2003.0
+Alaska,2,2021,78,732673,10.645949830278994,derived_total_minus_firearm,2003.0
+Alaska,2,2022,86,733583,11.723281482804264,derived_total_minus_firearm,2003.0
+Alaska,2,2023,86,733406,11.726110776295805,derived_total_minus_firearm,2003.0
+Alaska,2,2024,83,740133,11.214200690956897,derived_total_minus_firearm,2003.0
+Arizona,4,1999,300,5023823,5.971547962577503,derived_total_minus_firearm,2010.0
+Arizona,4,2000,301,5130632,5.866723631708529,derived_total_minus_firearm,2010.0
+Arizona,4,2001,305,5273477,5.783660381945348,derived_total_minus_firearm,2010.0
+Arizona,4,2002,334,5396255,6.189477702591892,derived_total_minus_firearm,2010.0
+Arizona,4,2003,357,5510364,6.478700862592746,derived_total_minus_firearm,2010.0
+Arizona,4,2004,376,5652404,6.652036903236215,derived_total_minus_firearm,2010.0
+Arizona,4,2005,437,5839077,7.484059552562844,derived_total_minus_firearm,2010.0
+Arizona,4,2006,423,6029141,7.015924822458125,derived_total_minus_firearm,2010.0
+Arizona,4,2007,472,6167681,7.652795272647856,derived_total_minus_firearm,2010.0
+Arizona,4,2008,438,6280362,6.974120281601602,derived_total_minus_firearm,2010.0
+Arizona,4,2009,463,6343154,7.299207933466537,derived_total_minus_firearm,2010.0
+Arizona,4,2010,479,6392017,7.493722247609792,derived_total_minus_firearm,2010.0
+Arizona,4,2011,493,6482505,7.605084762757606,derived_total_minus_firearm,2010.0
+Arizona,4,2012,507,6553255,7.736613331848066,derived_total_minus_firearm,2010.0
+Arizona,4,2013,516,6626624,7.786770458079408,derived_total_minus_firearm,2010.0
+Arizona,4,2014,569,6731484,8.452816644888411,derived_total_minus_firearm,2010.0
+Arizona,4,2015,572,6828065,8.377190316729559,derived_total_minus_firearm,2010.0
+Arizona,4,2016,526,6931071,7.5890147424546655,derived_total_minus_firearm,2010.0
+Arizona,4,2017,539,7016270,7.682144501280595,derived_total_minus_firearm,2010.0
+Arizona,4,2018,648,7171646,9.035582626359416,derived_total_minus_firearm,2010.0
+Arizona,4,2019,617,7278717,8.476768639308272,derived_total_minus_firearm,2010.0
+Arizona,4,2020,538,7421401,7.2493050840400635,derived_total_minus_firearm,2010.0
+Arizona,4,2021,609,7276316,8.369620011005567,derived_total_minus_firearm,2010.0
+Arizona,4,2022,633,7359197,8.601481927987525,derived_total_minus_firearm,2010.0
+Arizona,4,2023,571,7431344,7.683670679220343,derived_total_minus_firearm,2010.0
+Arizona,4,2024,606,7582384,7.992209310422684,derived_total_minus_firearm,2010.0
+Arkansas,5,1999,104,2651860,3.921775659348535,derived_total_minus_firearm,
+Arkansas,5,2000,108,2673400,4.039799506246723,derived_total_minus_firearm,
+Arkansas,5,2001,111,2691571,4.1239855831408505,derived_total_minus_firearm,
+Arkansas,5,2002,121,2705927,4.47166534795654,derived_total_minus_firearm,
+Arkansas,5,2003,118,2724816,4.330567641998577,derived_total_minus_firearm,
+Arkansas,5,2004,132,2749686,4.8005481353143615,derived_total_minus_firearm,
+Arkansas,5,2005,141,2781097,5.069941825114334,derived_total_minus_firearm,
+Arkansas,5,2006,131,2821761,4.642490983467416,derived_total_minus_firearm,
+Arkansas,5,2007,161,2848650,5.651799975426956,derived_total_minus_firearm,
+Arkansas,5,2008,174,2874554,6.0531129350848865,derived_total_minus_firearm,
+Arkansas,5,2009,138,2896843,4.7638066681556435,derived_total_minus_firearm,
+Arkansas,5,2010,185,2915918,6.344485681696126,derived_total_minus_firearm,
+Arkansas,5,2011,167,2937979,5.684179498900432,derived_total_minus_firearm,
+Arkansas,5,2012,182,2949131,6.171309446748891,derived_total_minus_firearm,
+Arkansas,5,2013,197,2959373,6.6568154808467845,derived_total_minus_firearm,
+Arkansas,5,2014,196,2966369,6.607404540702792,derived_total_minus_firearm,
+Arkansas,5,2015,236,2978204,7.924238903715123,derived_total_minus_firearm,
+Arkansas,5,2016,227,2988248,7.596424393156125,derived_total_minus_firearm,
+Arkansas,5,2017,240,3004279,7.988605585566454,derived_total_minus_firearm,
+Arkansas,5,2018,210,3013825,6.967889641900246,derived_total_minus_firearm,
+Arkansas,5,2019,208,3017804,6.89242906431299,derived_total_minus_firearm,
+Arkansas,5,2020,221,3030522,7.292473045897708,derived_total_minus_firearm,
+Arkansas,5,2021,230,3025891,7.60106692541139,derived_total_minus_firearm,
+Arkansas,5,2022,210,3045637,6.895109298974239,derived_total_minus_firearm,
+Arkansas,5,2023,235,3067732,7.660382328052124,derived_total_minus_firearm,
+Arkansas,5,2024,192,3088354,6.216903891199001,derived_total_minus_firearm,
+California,6,1999,1575,33499204,4.701604253044342,derived_total_minus_firearm,
+California,6,2000,1509,33871648,4.455053382699301,derived_total_minus_firearm,
+California,6,2001,1414,34479458,4.100992538803829,derived_total_minus_firearm,
+California,6,2002,1790,34871843,5.133081150887264,derived_total_minus_firearm,
+California,6,2003,1942,35253159,5.508726182524522,derived_total_minus_firearm,
+California,6,2004,2048,35574576,5.756920335466541,derived_total_minus_firearm,
+California,6,2005,1919,35827943,5.356154552328052,derived_total_minus_firearm,
+California,6,2006,2088,36021202,5.796586132800343,derived_total_minus_firearm,
+California,6,2007,2236,36250311,6.168222942970061,derived_total_minus_firearm,
+California,6,2008,2372,36604337,6.480106442031718,derived_total_minus_firearm,
+California,6,2009,2358,36961229,6.379657992433099,derived_total_minus_firearm,
+California,6,2010,2481,37253956,6.6596954159713935,derived_total_minus_firearm,
+California,6,2011,2475,37691912,6.566395464363813,derived_total_minus_firearm,
+California,6,2012,2398,38041430,6.303653674428118,derived_total_minus_firearm,
+California,6,2013,2508,38332521,6.542747345002433,derived_total_minus_firearm,
+California,6,2014,2681,38802500,6.9093486244443,derived_total_minus_firearm,
+California,6,2015,2640,39144818,6.744187698100934,derived_total_minus_firearm,
+California,6,2016,2743,39250017,6.988532004967029,derived_total_minus_firearm,
+California,6,2017,2748,39536653,6.950512477624243,derived_total_minus_firearm,
+California,6,2018,2900,39557045,7.331184622107137,derived_total_minus_firearm,
+California,6,2019,2901,39512223,7.34203185682567,derived_total_minus_firearm,
+California,6,2020,2643,39368078,6.713561175122647,derived_total_minus_firearm,
+California,6,2021,2622,39237836,6.682325702161555,derived_total_minus_firearm,
+California,6,2022,2691,39029342,6.894812625844423,derived_total_minus_firearm,
+California,6,2023,2603,38965193,6.680321075273514,derived_total_minus_firearm,
+California,6,2024,2538,39431263,6.43651713616173,derived_total_minus_firearm,
+Colorado,8,1999,269,4226018,6.3653301997293905,derived_total_minus_firearm,
+Colorado,8,2000,265,4301261,6.160983953310435,derived_total_minus_firearm,
+Colorado,8,2001,332,4425687,7.501660194225211,derived_total_minus_firearm,
+Colorado,8,2002,347,4490406,7.727586325156345,derived_total_minus_firearm,
+Colorado,8,2003,367,4528732,8.103813606104314,derived_total_minus_firearm,
+Colorado,8,2004,398,4575013,8.699428832224083,derived_total_minus_firearm,
+Colorado,8,2005,410,4631888,8.85168207866857,derived_total_minus_firearm,
+Colorado,8,2006,364,4720423,7.711173341880592,derived_total_minus_firearm,
+Colorado,8,2007,421,4803868,8.763771194379197,derived_total_minus_firearm,
+Colorado,8,2008,420,4889730,8.589431318293649,derived_total_minus_firearm,
+Colorado,8,2009,492,4972195,9.89502624092579,derived_total_minus_firearm,
+Colorado,8,2010,443,5029196,8.808565027093792,derived_total_minus_firearm,
+Colorado,8,2011,474,5116796,9.263609493128122,derived_total_minus_firearm,
+Colorado,8,2012,521,5187582,10.043214738581483,derived_total_minus_firearm,
+Colorado,8,2013,520,5268367,9.870231136137631,derived_total_minus_firearm,
+Colorado,8,2014,554,5355866,10.343798743284466,derived_total_minus_firearm,
+Colorado,8,2015,558,5456574,10.226196877381303,derived_total_minus_firearm,
+Colorado,8,2016,563,5540545,10.161455235901881,derived_total_minus_firearm,
+Colorado,8,2017,598,5607154,10.664946958831523,derived_total_minus_firearm,
+Colorado,8,2018,629,5695564,11.04368241670184,derived_total_minus_firearm,
+Colorado,8,2019,671,5758736,11.651862492046863,derived_total_minus_firearm,
+Colorado,8,2020,655,5807719,11.278093860946095,derived_total_minus_firearm,
+Colorado,8,2021,647,5812069,11.13200824009488,derived_total_minus_firearm,
+Colorado,8,2022,614,5839926,10.513831853348828,derived_total_minus_firearm,
+Colorado,8,2023,585,5877610,9.953025124157607,derived_total_minus_firearm,
+Colorado,8,2024,612,5957493,10.272777492143092,derived_total_minus_firearm,
+Connecticut,9,1999,163,3386401,4.813369710202661,derived_total_minus_firearm,
+Connecticut,9,2000,192,3405565,5.637831020697007,derived_total_minus_firearm,
+Connecticut,9,2001,170,3432835,4.952175097259262,derived_total_minus_firearm,
+Connecticut,9,2002,175,3458749,5.059632832564606,derived_total_minus_firearm,
+Connecticut,9,2003,187,3484336,5.366876214004619,derived_total_minus_firearm,
+Connecticut,9,2004,191,3496094,5.463239832796258,derived_total_minus_firearm,
+Connecticut,9,2005,185,3506956,5.275230142608006,derived_total_minus_firearm,
+Connecticut,9,2006,214,3517460,6.083935567142199,derived_total_minus_firearm,
+Connecticut,9,2007,194,3527270,5.500004252580608,derived_total_minus_firearm,
+Connecticut,9,2008,207,3545579,5.838256600684966,derived_total_minus_firearm,
+Connecticut,9,2009,226,3561807,6.345093936869685,derived_total_minus_firearm,
+Connecticut,9,2010,246,3574097,6.882857404261831,derived_total_minus_firearm,
+Connecticut,9,2011,260,3580709,7.261131803785229,derived_total_minus_firearm,
+Connecticut,9,2012,260,3590347,7.241639874920168,derived_total_minus_firearm,
+Connecticut,9,2013,239,3596080,6.64612578140642,derived_total_minus_firearm,
+Connecticut,9,2014,255,3596677,7.089877684318052,derived_total_minus_firearm,
+Connecticut,9,2015,284,3590886,7.9089116167987505,derived_total_minus_firearm,
+Connecticut,9,2016,288,3576452,8.052673431657967,derived_total_minus_firearm,
+Connecticut,9,2017,299,3588184,8.332906004820265,derived_total_minus_firearm,
+Connecticut,9,2018,294,3572665,8.229151067900293,derived_total_minus_firearm,
+Connecticut,9,2019,317,3565287,8.891289817621974,derived_total_minus_firearm,
+Connecticut,9,2020,257,3557006,7.225177579121317,derived_total_minus_firearm,
+Connecticut,9,2021,282,3605597,7.821173580963153,derived_total_minus_firearm,
+Connecticut,9,2022,269,3626205,7.41822373528248,derived_total_minus_firearm,
+Connecticut,9,2023,247,3617176,6.828531428937934,derived_total_minus_firearm,
+Connecticut,9,2024,249,3675069,6.775382992809114,derived_total_minus_firearm,
+Delaware,10,1999,42,774990,5.419424766771183,derived_total_minus_firearm,
+Delaware,10,2000,42,783600,5.359877488514549,derived_total_minus_firearm,
+Delaware,10,2001,56,795699,7.037837172096485,derived_total_minus_firearm,
+Delaware,10,2002,36,806169,4.465564912567959,derived_total_minus_firearm,
+Delaware,10,2003,52,818003,6.35694490118007,derived_total_minus_firearm,
+Delaware,10,2004,48,830803,5.777542931356772,derived_total_minus_firearm,
+Delaware,10,2005,41,845150,4.85120984440632,derived_total_minus_firearm,
+Delaware,10,2006,50,859268,5.81890632491842,derived_total_minus_firearm,
+Delaware,10,2007,49,871749,5.620883992984219,derived_total_minus_firearm,
+Delaware,10,2008,68,883874,7.693404263503621,derived_total_minus_firearm,
+Delaware,10,2009,69,891730,7.73776815852332,derived_total_minus_firearm,
+Delaware,10,2010,63,897934,7.016105860787095,derived_total_minus_firearm,
+Delaware,10,2011,59,907135,6.5039933416746125,derived_total_minus_firearm,
+Delaware,10,2012,79,917092,8.61418483641772,derived_total_minus_firearm,
+Delaware,10,2013,62,925749,6.6972797162081745,derived_total_minus_firearm,
+Delaware,10,2014,67,935614,7.161072835592457,derived_total_minus_firearm,
+Delaware,10,2015,67,945934,7.082946590354084,derived_total_minus_firearm,
+Delaware,10,2016,55,952065,5.776916492046236,derived_total_minus_firearm,
+Delaware,10,2017,62,961939,6.44531513952548,derived_total_minus_firearm,
+Delaware,10,2018,56,967171,5.790082622411135,derived_total_minus_firearm,
+Delaware,10,2019,66,973764,6.7778229632642,derived_total_minus_firearm,
+Delaware,10,2020,67,986809,6.789561100476385,derived_total_minus_firearm,
+Delaware,10,2021,62,1003384,6.1790899595767925,derived_total_minus_firearm,
+Delaware,10,2022,58,1018396,5.695230539004472,derived_total_minus_firearm,
+Delaware,10,2023,69,1031890,6.686759247594218,derived_total_minus_firearm,
+Delaware,10,2024,55,1051917,5.228549400760706,derived_total_minus_firearm,
+District of Columbia,11,1999,18,570213,3.1567151222437935,derived_total_minus_firearm,
+District of Columbia,11,2001,19,574504,3.307200646122568,derived_total_minus_firearm,
+District of Columbia,11,2002,19,573158,3.3149672516129933,derived_total_minus_firearm,
+District of Columbia,11,2003,30,568502,5.277026290144978,derived_total_minus_firearm,
+District of Columbia,11,2005,26,567136,4.584438300513458,derived_total_minus_firearm,
+District of Columbia,11,2006,20,570681,3.5045848731603124,derived_total_minus_firearm,
+District of Columbia,11,2007,27,574404,4.700524369607454,derived_total_minus_firearm,
+District of Columbia,11,2008,33,580236,5.6873410129671385,derived_total_minus_firearm,
+District of Columbia,11,2010,35,601723,5.8166299111052755,derived_total_minus_firearm,
+District of Columbia,11,2012,31,632323,4.902557711802354,derived_total_minus_firearm,
+District of Columbia,11,2014,41,658893,6.222558139181931,derived_total_minus_firearm,
+District of Columbia,11,2015,24,672228,3.5702172477195235,derived_total_minus_firearm,
+District of Columbia,11,2019,33,705749,4.675883352296638,derived_total_minus_firearm,
+District of Columbia,11,2021,41,670050,6.118946347287515,derived_total_minus_firearm,
+District of Columbia,11,2022,34,671803,5.061007467963078,derived_total_minus_firearm,
+District of Columbia,11,2023,42,678972,6.185822095756526,derived_total_minus_firearm,
+District of Columbia,11,2024,37,702250,5.2687789248843,derived_total_minus_firearm,
+Florida,12,1999,903,15759421,5.72990594007229,derived_total_minus_firearm,2023.0
+Florida,12,2000,921,15982378,5.762596780028605,derived_total_minus_firearm,2023.0
+Florida,12,2001,1132,16356966,6.920598844553446,derived_total_minus_firearm,2023.0
+Florida,12,2002,1147,16689370,6.872638092390546,derived_total_minus_firearm,2023.0
+Florida,12,2003,1067,17004085,6.274962751597631,derived_total_minus_firearm,2023.0
+Florida,12,2004,1210,17415318,6.947906435013131,derived_total_minus_firearm,2023.0
+Florida,12,2005,1199,17842038,6.72008433117338,derived_total_minus_firearm,2023.0
+Florida,12,2006,1230,18166990,6.7705216989715975,derived_total_minus_firearm,2023.0
+Florida,12,2007,1328,18367842,7.230027348885078,derived_total_minus_firearm,2023.0
+Florida,12,2008,1365,18527305,7.3675043402156986,derived_total_minus_firearm,2023.0
+Florida,12,2009,1405,18652644,7.53244419397057,derived_total_minus_firearm,2023.0
+Florida,12,2010,1357,18801310,7.217582179114115,derived_total_minus_firearm,2023.0
+Florida,12,2011,1417,19057542,7.435376503433653,derived_total_minus_firearm,2023.0
+Florida,12,2012,1475,19317568,7.63553673008942,derived_total_minus_firearm,2023.0
+Florida,12,2013,1392,19552860,7.119163130099638,derived_total_minus_firearm,2023.0
+Florida,12,2014,1516,19893297,7.62065735006118,derived_total_minus_firearm,2023.0
+Florida,12,2015,1603,20271272,7.907742543240502,derived_total_minus_firearm,2023.0
+Florida,12,2016,1496,20612439,7.257753437135703,derived_total_minus_firearm,2023.0
+Florida,12,2017,1526,20984400,7.27206877489945,derived_total_minus_firearm,2023.0
+Florida,12,2018,1719,21299325,8.070678296143189,derived_total_minus_firearm,2023.0
+Florida,12,2019,1680,21477737,7.822053133437661,derived_total_minus_firearm,2023.0
+Florida,12,2020,1419,21733312,6.529147513273633,derived_total_minus_firearm,2023.0
+Florida,12,2021,1439,21781128,6.6066367178045144,derived_total_minus_firearm,2023.0
+Florida,12,2022,1487,22244823,6.684701424686546,derived_total_minus_firearm,2023.0
+Florida,12,2023,1554,22610726,6.872844330606634,derived_total_minus_firearm,2023.0
+Florida,12,2024,1442,23372215,6.169719044600608,derived_total_minus_firearm,2023.0
+Georgia,13,1999,252,8045965,3.132004675635553,derived_total_minus_firearm,2022.0
+Georgia,13,2000,265,8186453,3.23705516907017,derived_total_minus_firearm,2022.0
+Georgia,13,2001,326,8377038,3.8915903210657508,derived_total_minus_firearm,2022.0
+Georgia,13,2002,312,8508256,3.6670264740506164,derived_total_minus_firearm,2022.0
+Georgia,13,2003,350,8622793,4.0590096503534285,derived_total_minus_firearm,2022.0
+Georgia,13,2004,384,8769252,4.378936766784669,derived_total_minus_firearm,2022.0
+Georgia,13,2005,349,8925922,3.90996022595761,derived_total_minus_firearm,2022.0
+Georgia,13,2006,334,9155813,3.6479556758094533,derived_total_minus_firearm,2022.0
+Georgia,13,2007,362,9349988,3.8716627229895906,derived_total_minus_firearm,2022.0
+Georgia,13,2008,373,9504843,3.9243152148857163,derived_total_minus_firearm,2022.0
+Georgia,13,2009,403,9620846,4.188820816797193,derived_total_minus_firearm,2022.0
+Georgia,13,2010,425,9687653,4.387027487462648,derived_total_minus_firearm,2022.0
+Georgia,13,2011,422,9815210,4.299449527824673,derived_total_minus_firearm,2022.0
+Georgia,13,2012,422,9919945,4.254055844059621,derived_total_minus_firearm,2022.0
+Georgia,13,2013,482,9992167,4.823778465672162,derived_total_minus_firearm,2022.0
+Georgia,13,2014,463,10097343,4.585364684551175,derived_total_minus_firearm,2022.0
+Georgia,13,2015,502,10214860,4.914409008052976,derived_total_minus_firearm,2022.0
+Georgia,13,2016,544,10310371,5.276240787067701,derived_total_minus_firearm,2022.0
+Georgia,13,2017,545,10429379,5.225622733625848,derived_total_minus_firearm,2022.0
+Georgia,13,2018,585,10519475,5.561114028979585,derived_total_minus_firearm,2022.0
+Georgia,13,2019,633,10617423,5.961898664110869,derived_total_minus_firearm,2022.0
+Georgia,13,2020,560,10710017,5.228749870331672,derived_total_minus_firearm,2022.0
+Georgia,13,2021,566,10799566,5.2409513493412625,derived_total_minus_firearm,2022.0
+Georgia,13,2022,584,10912876,5.351476549353258,derived_total_minus_firearm,2022.0
+Georgia,13,2023,565,11029227,5.122752483016262,derived_total_minus_firearm,2022.0
+Georgia,13,2024,541,11180878,4.838618219427849,derived_total_minus_firearm,2022.0
+Hawaii,15,1999,113,1210300,9.336528133520615,derived_total_minus_firearm,
+Hawaii,15,2000,100,1211537,8.253978211148318,derived_total_minus_firearm,
+Hawaii,15,2001,105,1225948,8.564800464620033,derived_total_minus_firearm,
+Hawaii,15,2002,99,1239613,7.9863634860234605,derived_total_minus_firearm,
+Hawaii,15,2003,107,1251154,8.55210469694378,derived_total_minus_firearm,
+Hawaii,15,2004,85,1273569,6.674157426884607,derived_total_minus_firearm,
+Hawaii,15,2005,86,1292729,6.652593080220218,derived_total_minus_firearm,
+Hawaii,15,2006,100,1309731,7.635155615924186,derived_total_minus_firearm,
+Hawaii,15,2007,108,1315675,8.208714158131755,derived_total_minus_firearm,
+Hawaii,15,2008,106,1332213,7.956685605079668,derived_total_minus_firearm,
+Hawaii,15,2009,139,1346717,10.321396403253244,derived_total_minus_firearm,
+Hawaii,15,2010,170,1360301,12.497234068048176,derived_total_minus_firearm,
+Hawaii,15,2011,141,1374810,10.255962642110546,derived_total_minus_firearm,
+Hawaii,15,2012,148,1392313,10.629793731725552,derived_total_minus_firearm,
+Hawaii,15,2013,143,1404054,10.18479346235971,derived_total_minus_firearm,
+Hawaii,15,2014,174,1419561,12.257310534735737,derived_total_minus_firearm,
+Hawaii,15,2015,157,1431603,10.966727507556216,derived_total_minus_firearm,
+Hawaii,15,2016,138,1428557,9.660097566985428,derived_total_minus_firearm,
+Hawaii,15,2017,199,1427538,13.94008425695148,derived_total_minus_firearm,
+Hawaii,15,2018,146,1420491,10.278136221912002,derived_total_minus_firearm,
+Hawaii,15,2019,183,1415872,12.9248971658455,derived_total_minus_firearm,
+Hawaii,15,2020,154,1407006,10.945226957098974,derived_total_minus_firearm,
+Hawaii,15,2021,160,1441553,11.099140995856551,derived_total_minus_firearm,
+Hawaii,15,2022,203,1440196,14.095303694774879,derived_total_minus_firearm,
+Hawaii,15,2023,174,1435138,12.12426958243737,derived_total_minus_firearm,
+Hawaii,15,2024,169,1446146,11.68623361679941,derived_total_minus_firearm,
+Idaho,16,1999,57,1275674,4.468226208263239,derived_total_minus_firearm,2016.0
+Idaho,16,2000,61,1293953,4.714236143043834,derived_total_minus_firearm,2016.0
+Idaho,16,2001,75,1319962,5.681981754020191,derived_total_minus_firearm,2016.0
+Idaho,16,2002,66,1340372,4.924006171421068,derived_total_minus_firearm,2016.0
+Idaho,16,2003,80,1363380,5.867769807390454,derived_total_minus_firearm,2016.0
+Idaho,16,2004,85,1391802,6.107190534285767,derived_total_minus_firearm,2016.0
+Idaho,16,2005,69,1428241,4.831117437463284,derived_total_minus_firearm,2016.0
+Idaho,16,2006,77,1468669,5.2428423286662955,derived_total_minus_firearm,2016.0
+Idaho,16,2007,76,1505105,5.049481597629402,derived_total_minus_firearm,2016.0
+Idaho,16,2008,104,1534320,6.778247041034465,derived_total_minus_firearm,2016.0
+Idaho,16,2009,128,1554439,8.234482022131456,derived_total_minus_firearm,2016.0
+Idaho,16,2010,109,1567582,6.953384256772532,derived_total_minus_firearm,2016.0
+Idaho,16,2011,114,1584985,7.19249708987782,derived_total_minus_firearm,2016.0
+Idaho,16,2012,123,1595728,7.708080575135613,derived_total_minus_firearm,2016.0
+Idaho,16,2013,108,1612136,6.699186669114766,derived_total_minus_firearm,2016.0
+Idaho,16,2014,138,1634464,8.443134874796877,derived_total_minus_firearm,2016.0
+Idaho,16,2015,144,1654930,8.70127437414271,derived_total_minus_firearm,2016.0
+Idaho,16,2016,136,1683140,8.080135936404579,derived_total_minus_firearm,2016.0
+Idaho,16,2017,149,1716943,8.678214710680555,derived_total_minus_firearm,2016.0
+Idaho,16,2018,169,1754208,9.633977270654336,derived_total_minus_firearm,2016.0
+Idaho,16,2019,142,1787065,7.945989653426148,derived_total_minus_firearm,2016.0
+Idaho,16,2020,142,1826913,7.772674451383294,derived_total_minus_firearm,2016.0
+Idaho,16,2021,126,1900923,6.628358960357682,derived_total_minus_firearm,2016.0
+Idaho,16,2022,160,1939033,8.251535688149712,derived_total_minus_firearm,2016.0
+Idaho,16,2023,156,1964726,7.940038458288839,derived_total_minus_firearm,2016.0
+Idaho,16,2024,152,2001619,7.593852776177686,derived_total_minus_firearm,2016.0
+Illinois,17,1999,549,12359020,4.442099778137749,derived_total_minus_firearm,
+Illinois,17,2000,579,12419293,4.662101135708772,derived_total_minus_firearm,
+Illinois,17,2001,646,12488445,5.172781719421433,derived_total_minus_firearm,
+Illinois,17,2002,699,12525556,5.5805905941420875,derived_total_minus_firearm,
+Illinois,17,2003,620,12556006,4.9378759455833325,derived_total_minus_firearm,
+Illinois,17,2004,652,12589773,5.178806639325428,derived_total_minus_firearm,
+Illinois,17,2005,675,12609903,5.352935704580757,derived_total_minus_firearm,
+Illinois,17,2006,644,12643955,5.093343024393871,derived_total_minus_firearm,
+Illinois,17,2007,696,12695866,5.482099448749697,derived_total_minus_firearm,
+Illinois,17,2008,771,12747038,6.048463964726549,derived_total_minus_firearm,
+Illinois,17,2009,791,12796778,6.181243434870872,derived_total_minus_firearm,
+Illinois,17,2010,748,12830632,5.829798563313171,derived_total_minus_firearm,
+Illinois,17,2011,776,12869257,6.02987414114117,derived_total_minus_firearm,
+Illinois,17,2012,816,12875255,6.337738553527679,derived_total_minus_firearm,
+Illinois,17,2013,836,12882135,6.489607506830196,derived_total_minus_firearm,
+Illinois,17,2014,880,12880580,6.831990484900525,derived_total_minus_firearm,
+Illinois,17,2015,886,12859995,6.889582771999523,derived_total_minus_firearm,
+Illinois,17,2016,926,12801539,7.233505284013117,derived_total_minus_firearm,
+Illinois,17,2017,913,12802023,7.131685359415461,derived_total_minus_firearm,
+Illinois,17,2018,925,12741080,7.259981100503254,derived_total_minus_firearm,
+Illinois,17,2019,909,12671821,7.173396783303678,derived_total_minus_firearm,
+Illinois,17,2020,824,12587530,6.546161161085616,derived_total_minus_firearm,
+Illinois,17,2021,807,12671469,6.3686380797680195,derived_total_minus_firearm,
+Illinois,17,2022,884,12582032,7.025892161138995,derived_total_minus_firearm,
+Illinois,17,2023,909,12549689,7.243207381473757,derived_total_minus_firearm,
+Illinois,17,2024,805,12710158,6.33351686108072,derived_total_minus_firearm,
+Indiana,18,1999,261,6044969,4.317640007748593,derived_total_minus_firearm,2022.0
+Indiana,18,2000,273,6080485,4.489773430902304,derived_total_minus_firearm,2022.0
+Indiana,18,2001,306,6127760,4.993668159327388,derived_total_minus_firearm,2022.0
+Indiana,18,2002,296,6155967,4.8083428647359545,derived_total_minus_firearm,2022.0
+Indiana,18,2003,320,6196638,5.16409059235024,derived_total_minus_firearm,2022.0
+Indiana,18,2004,320,6233007,5.133958617405692,derived_total_minus_firearm,2022.0
+Indiana,18,2005,331,6278616,5.271862461408693,derived_total_minus_firearm,2022.0
+Indiana,18,2006,388,6332669,6.126958475170579,derived_total_minus_firearm,2022.0
+Indiana,18,2007,402,6379599,6.301336494660557,derived_total_minus_firearm,2022.0
+Indiana,18,2008,363,6424806,5.649976045969327,derived_total_minus_firearm,2022.0
+Indiana,18,2009,372,6459325,5.759115697073611,derived_total_minus_firearm,2022.0
+Indiana,18,2010,410,6483802,6.323450345954428,derived_total_minus_firearm,2022.0
+Indiana,18,2011,473,6516922,7.258027639428552,derived_total_minus_firearm,2022.0
+Indiana,18,2012,431,6537334,6.59290163237797,derived_total_minus_firearm,2022.0
+Indiana,18,2013,423,6570902,6.437472359198174,derived_total_minus_firearm,2022.0
+Indiana,18,2014,421,6596855,6.381828916961188,derived_total_minus_firearm,2022.0
+Indiana,18,2015,445,6619680,6.722379329514417,derived_total_minus_firearm,2022.0
+Indiana,18,2016,445,6633053,6.708826237329928,derived_total_minus_firearm,2022.0
+Indiana,18,2017,489,6666818,7.334833499279565,derived_total_minus_firearm,2022.0
+Indiana,18,2018,492,6691878,7.352196199631855,derived_total_minus_firearm,2022.0
+Indiana,18,2019,404,6732219,6.000993134655898,derived_total_minus_firearm,2022.0
+Indiana,18,2020,418,6754953,6.188051937593054,derived_total_minus_firearm,2022.0
+Indiana,18,2021,438,6805985,6.43551227338879,derived_total_minus_firearm,2022.0
+Indiana,18,2022,463,6833037,6.775903598941435,derived_total_minus_firearm,2022.0
+Indiana,18,2023,438,6862199,6.382793620528933,derived_total_minus_firearm,2022.0
+Indiana,18,2024,418,6924275,6.036733087579568,derived_total_minus_firearm,2022.0
+Iowa,19,1999,146,2917634,5.004054655244627,derived_total_minus_firearm,2021.0
+Iowa,19,2000,133,2926324,4.544951276755412,derived_total_minus_firearm,2021.0
+Iowa,19,2001,147,2931997,5.013647694728202,derived_total_minus_firearm,2021.0
+Iowa,19,2002,159,2934234,5.418790730391645,derived_total_minus_firearm,2021.0
+Iowa,19,2003,174,2941999,5.914345993999318,derived_total_minus_firearm,2021.0
+Iowa,19,2004,188,2953635,6.3650383341204995,derived_total_minus_firearm,2021.0
+Iowa,19,2005,164,2964454,5.532216050577947,derived_total_minus_firearm,2021.0
+Iowa,19,2006,185,2982644,6.202550488760979,derived_total_minus_firearm,2021.0
+Iowa,19,2007,190,2999212,6.334997325964287,derived_total_minus_firearm,2021.0
+Iowa,19,2008,200,3016734,6.629686276615704,derived_total_minus_firearm,2021.0
+Iowa,19,2009,201,3032870,6.6273859413690674,derived_total_minus_firearm,2021.0
+Iowa,19,2010,196,3046355,6.433918568256163,derived_total_minus_firearm,2021.0
+Iowa,19,2011,239,3062309,7.804568382877103,derived_total_minus_firearm,2021.0
+Iowa,19,2012,211,3074186,6.863605520290574,derived_total_minus_firearm,2021.0
+Iowa,19,2013,229,3090416,7.410005643253207,derived_total_minus_firearm,2021.0
+Iowa,19,2014,214,3107126,6.887393687928973,derived_total_minus_firearm,2021.0
+Iowa,19,2015,241,3123899,7.714718049463187,derived_total_minus_firearm,2021.0
+Iowa,19,2016,225,3134693,7.1777363843923485,derived_total_minus_firearm,2021.0
+Iowa,19,2017,258,3145711,8.201643444041746,derived_total_minus_firearm,2021.0
+Iowa,19,2018,259,3156145,8.206213592848238,derived_total_minus_firearm,2021.0
+Iowa,19,2019,297,3155070,9.413420304462338,derived_total_minus_firearm,2021.0
+Iowa,19,2020,292,3163561,9.230104935545736,derived_total_minus_firearm,2021.0
+Iowa,19,2021,256,3193079,8.017340003175619,derived_total_minus_firearm,2021.0
+Iowa,19,2022,303,3200517,9.46722045219569,derived_total_minus_firearm,2021.0
+Iowa,19,2023,240,3207004,7.483620226229839,derived_total_minus_firearm,2021.0
+Iowa,19,2024,234,3241488,7.218906872399341,derived_total_minus_firearm,2021.0
+Kansas,20,1999,133,2678338,4.9657660832949375,derived_total_minus_firearm,2015.0
+Kansas,20,2000,140,2688418,5.207523532426878,derived_total_minus_firearm,2015.0
+Kansas,20,2001,134,2702162,4.958992095958717,derived_total_minus_firearm,2015.0
+Kansas,20,2002,162,2713535,5.970072248929901,derived_total_minus_firearm,2015.0
+Kansas,20,2003,137,2723004,5.031208180377261,derived_total_minus_firearm,2015.0
+Kansas,20,2004,167,2734373,6.107433038579593,derived_total_minus_firearm,2015.0
+Kansas,20,2005,174,2745299,6.338107433835077,derived_total_minus_firearm,2015.0
+Kansas,20,2006,170,2762931,6.152886192235708,derived_total_minus_firearm,2015.0
+Kansas,20,2007,171,2783785,6.1427157628911715,derived_total_minus_firearm,2015.0
+Kansas,20,2008,153,2808076,5.448570480286147,derived_total_minus_firearm,2015.0
+Kansas,20,2009,183,2832704,6.460258466821805,derived_total_minus_firearm,2015.0
+Kansas,20,2010,193,2853118,6.764529192273155,derived_total_minus_firearm,2015.0
+Kansas,20,2011,162,2871238,5.6421655049146064,derived_total_minus_firearm,2015.0
+Kansas,20,2012,206,2885905,7.138142107934945,derived_total_minus_firearm,2015.0
+Kansas,20,2013,185,2893957,6.392631265772092,derived_total_minus_firearm,2015.0
+Kansas,20,2014,219,2904021,7.541267780088367,derived_total_minus_firearm,2015.0
+Kansas,20,2015,257,2911641,8.826637624624741,derived_total_minus_firearm,2015.0
+Kansas,20,2016,257,2907289,8.839850458623136,derived_total_minus_firearm,2015.0
+Kansas,20,2017,239,2913123,8.204253648060861,derived_total_minus_firearm,2015.0
+Kansas,20,2018,270,2911505,9.273554398841839,derived_total_minus_firearm,2015.0
+Kansas,20,2019,235,2913314,8.066415086049771,derived_total_minus_firearm,2015.0
+Kansas,20,2020,218,2913805,7.481626258449003,derived_total_minus_firearm,2015.0
+Kansas,20,2021,216,2934582,7.360503131280707,derived_total_minus_firearm,2015.0
+Kansas,20,2022,250,2937150,8.511652452207073,derived_total_minus_firearm,2015.0
+Kansas,20,2023,253,2940546,8.60384432006845,derived_total_minus_firearm,2015.0
+Kansas,20,2024,214,2970606,7.203917315187541,derived_total_minus_firearm,2015.0
+Kentucky,21,1999,136,4018053,3.384723894881425,derived_total_minus_firearm,2019.0
+Kentucky,21,2000,149,4041769,3.686504597368133,derived_total_minus_firearm,2019.0
+Kentucky,21,2001,166,4068132,4.080496896364227,derived_total_minus_firearm,2019.0
+Kentucky,21,2002,177,4089875,4.327760628381064,derived_total_minus_firearm,2019.0
+Kentucky,21,2003,170,4117170,4.129049808484956,derived_total_minus_firearm,2019.0
+Kentucky,21,2004,183,4146101,4.413785385353611,derived_total_minus_firearm,2019.0
+Kentucky,21,2005,193,4182742,4.614198054768858,derived_total_minus_firearm,2019.0
+Kentucky,21,2006,241,4219239,5.71193051637985,derived_total_minus_firearm,2019.0
+Kentucky,21,2007,227,4256672,5.332804594763232,derived_total_minus_firearm,2019.0
+Kentucky,21,2008,218,4289878,5.081729596972224,derived_total_minus_firearm,2019.0
+Kentucky,21,2009,194,4317074,4.493784447521632,derived_total_minus_firearm,2019.0
+Kentucky,21,2010,227,4339367,5.231177727074018,derived_total_minus_firearm,2019.0
+Kentucky,21,2011,224,4369356,5.126613624524987,derived_total_minus_firearm,2019.0
+Kentucky,21,2012,258,4380415,5.889852902065215,derived_total_minus_firearm,2019.0
+Kentucky,21,2013,251,4395295,5.710651958514729,derived_total_minus_firearm,2019.0
+Kentucky,21,2014,259,4413457,5.868415620680114,derived_total_minus_firearm,2019.0
+Kentucky,21,2015,278,4425092,6.282355259506469,derived_total_minus_firearm,2019.0
+Kentucky,21,2016,265,4436974,5.9725389420807975,derived_total_minus_firearm,2019.0
+Kentucky,21,2017,304,4454189,6.825035938079862,derived_total_minus_firearm,2019.0
+Kentucky,21,2018,292,4468402,6.534774624127371,derived_total_minus_firearm,2019.0
+Kentucky,21,2019,312,4467673,6.983501254456179,derived_total_minus_firearm,2019.0
+Kentucky,21,2020,283,4477251,6.320842856475995,derived_total_minus_firearm,2019.0
+Kentucky,21,2021,284,4509394,6.29796376187133,derived_total_minus_firearm,2019.0
+Kentucky,21,2022,300,4512310,6.648479381957358,derived_total_minus_firearm,2019.0
+Kentucky,21,2023,273,4526154,6.031610943860947,derived_total_minus_firearm,2019.0
+Kentucky,21,2024,277,4588372,6.036999615549917,derived_total_minus_firearm,2019.0
+Louisiana,22,1999,131,4460811,2.9366857282229617,derived_total_minus_firearm,
+Louisiana,22,2000,148,4468976,3.3117206268281585,derived_total_minus_firearm,
+Louisiana,22,2001,147,4477875,3.282807135080814,derived_total_minus_firearm,
+Louisiana,22,2002,157,4497267,3.491009095079301,derived_total_minus_firearm,
+Louisiana,22,2003,150,4521042,3.31781921070408,derived_total_minus_firearm,
+Louisiana,22,2004,169,4552238,3.7124596736813853,derived_total_minus_firearm,
+Louisiana,22,2005,163,4576628,3.5615741545959168,derived_total_minus_firearm,
+Louisiana,22,2006,163,4302665,3.7883497785674685,derived_total_minus_firearm,
+Louisiana,22,2007,193,4375581,4.410842811503204,derived_total_minus_firearm,
+Louisiana,22,2008,185,4435586,4.170813056042653,derived_total_minus_firearm,
+Louisiana,22,2009,165,4491648,3.6734846541848354,derived_total_minus_firearm,
+Louisiana,22,2010,176,4533372,3.8823198272720596,derived_total_minus_firearm,
+Louisiana,22,2011,203,4574836,4.437317534442762,derived_total_minus_firearm,
+Louisiana,22,2012,200,4601893,4.3460375980058625,derived_total_minus_firearm,
+Louisiana,22,2013,181,4625470,3.913115856334601,derived_total_minus_firearm,
+Louisiana,22,2014,238,4649676,5.118636223255125,derived_total_minus_firearm,
+Louisiana,22,2015,265,4670724,5.673638605064223,derived_total_minus_firearm,
+Louisiana,22,2016,248,4681666,5.297259565291501,derived_total_minus_firearm,
+Louisiana,22,2017,283,4684333,6.0414150744620425,derived_total_minus_firearm,
+Louisiana,22,2018,260,4659978,5.579425482266226,derived_total_minus_firearm,
+Louisiana,22,2019,267,4648794,5.743425068953366,derived_total_minus_firearm,
+Louisiana,22,2020,240,4645318,5.16649236930604,derived_total_minus_firearm,
+Louisiana,22,2021,235,4624047,5.0821282742152025,derived_total_minus_firearm,
+Louisiana,22,2022,253,4590241,5.511693176894198,derived_total_minus_firearm,
+Louisiana,22,2023,242,4573749,5.291064288836139,derived_total_minus_firearm,
+Louisiana,22,2024,232,4597740,5.045957361660294,derived_total_minus_firearm,
+Maine,23,1999,84,1266808,6.630839085323111,derived_total_minus_firearm,2015.0
+Maine,23,2000,56,1274923,4.392422130591417,derived_total_minus_firearm,2015.0
+Maine,23,2001,75,1285692,5.833434446197066,derived_total_minus_firearm,2015.0
+Maine,23,2002,87,1295960,6.713170159572826,derived_total_minus_firearm,2015.0
+Maine,23,2003,67,1306513,5.128154101796156,derived_total_minus_firearm,2015.0
+Maine,23,2004,74,1313688,5.632996571484249,derived_total_minus_firearm,2015.0
+Maine,23,2005,75,1318787,5.687044230796937,derived_total_minus_firearm,2015.0
+Maine,23,2006,71,1323619,5.364081355737564,derived_total_minus_firearm,2015.0
+Maine,23,2007,101,1327040,7.610923559199422,derived_total_minus_firearm,2015.0
+Maine,23,2008,78,1330509,5.862418067070573,derived_total_minus_firearm,2015.0
+Maine,23,2009,91,1329590,6.844215133988671,derived_total_minus_firearm,2015.0
+Maine,23,2010,91,1328361,6.850547403906017,derived_total_minus_firearm,2015.0
+Maine,23,2011,122,1328188,9.185446638578274,derived_total_minus_firearm,2015.0
+Maine,23,2012,98,1329192,7.372900228108504,derived_total_minus_firearm,2015.0
+Maine,23,2013,108,1328302,8.130681125226042,derived_total_minus_firearm,2015.0
+Maine,23,2014,104,1330089,7.819025644148626,derived_total_minus_firearm,2015.0
+Maine,23,2015,108,1329328,8.124405714767157,derived_total_minus_firearm,2015.0
+Maine,23,2016,116,1331479,8.712116375849714,derived_total_minus_firearm,2015.0
+Maine,23,2017,123,1335907,9.207227748638191,derived_total_minus_firearm,2015.0
+Maine,23,2018,123,1338404,9.190050238941309,derived_total_minus_firearm,2015.0
+Maine,23,2019,132,1344212,9.819879602324631,derived_total_minus_firearm,2015.0
+Maine,23,2020,102,1350141,7.554766502165327,derived_total_minus_firearm,2015.0
+Maine,23,2021,119,1372247,8.671908191455328,derived_total_minus_firearm,2015.0
+Maine,23,2022,113,1385340,8.15684236360749,derived_total_minus_firearm,2015.0
+Maine,23,2023,116,1395722,8.311110665304406,derived_total_minus_firearm,2015.0
+Maine,23,2024,128,1405012,9.110242474797367,derived_total_minus_firearm,2015.0
+Maryland,24,1999,198,5254509,3.7681922326139308,derived_total_minus_firearm,
+Maryland,24,2000,238,5296486,4.493545343082187,derived_total_minus_firearm,
+Maryland,24,2001,244,5374691,4.5397958691950855,derived_total_minus_firearm,
+Maryland,24,2002,248,5440389,4.558497563317624,derived_total_minus_firearm,
+Maryland,24,2003,267,5496269,4.857840837120601,derived_total_minus_firearm,
+Maryland,24,2004,254,5546935,4.579105397845838,derived_total_minus_firearm,
+Maryland,24,2005,265,5592379,4.73859157256688,derived_total_minus_firearm,
+Maryland,24,2006,274,5627367,4.869062209733256,derived_total_minus_firearm,
+Maryland,24,2007,291,5653408,5.147337676672195,derived_total_minus_firearm,
+Maryland,24,2008,253,5684965,4.450335226338246,derived_total_minus_firearm,
+Maryland,24,2009,316,5730388,5.514460800909117,derived_total_minus_firearm,
+Maryland,24,2010,288,5773552,4.98826372396057,derived_total_minus_firearm,
+Maryland,24,2011,327,5828289,5.610565982572244,derived_total_minus_firearm,
+Maryland,24,2012,326,5884563,5.539918597183852,derived_total_minus_firearm,
+Maryland,24,2013,326,5928814,5.498570203079402,derived_total_minus_firearm,
+Maryland,24,2014,344,5976407,5.755966753937609,derived_total_minus_firearm,
+Maryland,24,2015,319,6006401,5.311000714071538,derived_total_minus_firearm,
+Maryland,24,2016,343,6016447,5.701039168133618,derived_total_minus_firearm,
+Maryland,24,2017,369,6052177,6.096979648810668,derived_total_minus_firearm,
+Maryland,24,2018,393,6042718,6.503695853422251,derived_total_minus_firearm,
+Maryland,24,2019,398,6045680,6.583213137314579,derived_total_minus_firearm,
+Maryland,24,2020,326,6055802,5.3832671543752575,derived_total_minus_firearm,
+Maryland,24,2021,316,6165129,5.125602400209305,derived_total_minus_firearm,
+Maryland,24,2022,357,6164660,5.7910736358533965,derived_total_minus_firearm,
+Maryland,24,2023,350,6180253,5.663198577792852,derived_total_minus_firearm,
+Maryland,24,2024,344,6263220,5.492382512509539,derived_total_minus_firearm,
+Massachusetts,25,1999,313,6317345,4.9546130534267165,derived_total_minus_firearm,
+Massachusetts,25,2000,284,6349097,4.47307703756928,derived_total_minus_firearm,
+Massachusetts,25,2001,319,6397634,4.986218342593528,derived_total_minus_firearm,
+Massachusetts,25,2002,339,6417206,5.282672864171729,derived_total_minus_firearm,
+Massachusetts,25,2003,313,6422565,4.873442308485784,derived_total_minus_firearm,
+Massachusetts,25,2004,333,6412281,5.193159813177245,derived_total_minus_firearm,
+Massachusetts,25,2005,369,6403290,5.762662631241128,derived_total_minus_firearm,
+Massachusetts,25,2006,352,6410084,5.491347695287613,derived_total_minus_firearm,
+Massachusetts,25,2007,405,6431559,6.2970735400235,derived_total_minus_firearm,
+Massachusetts,25,2008,394,6468967,6.090616940850062,derived_total_minus_firearm,
+Massachusetts,25,2009,446,6517613,6.842996047786206,derived_total_minus_firearm,
+Massachusetts,25,2010,463,6547629,7.07126197895452,derived_total_minus_firearm,
+Massachusetts,25,2011,472,6587536,7.165046232764421,derived_total_minus_firearm,
+Massachusetts,25,2012,458,6646144,6.8912139129095005,derived_total_minus_firearm,
+Massachusetts,25,2013,463,6692824,6.917857095898534,derived_total_minus_firearm,
+Massachusetts,25,2014,469,6745408,6.9528781654126774,derived_total_minus_firearm,
+Massachusetts,25,2015,530,6794422,7.800516364747437,derived_total_minus_firearm,
+Massachusetts,25,2016,497,6811779,7.296185034775791,derived_total_minus_firearm,
+Massachusetts,25,2017,531,6859819,7.740729019235055,derived_total_minus_firearm,
+Massachusetts,25,2018,595,6902149,8.620503556211261,derived_total_minus_firearm,
+Massachusetts,25,2019,506,6892503,7.341309826053031,derived_total_minus_firearm,
+Massachusetts,25,2020,495,6893574,7.180600367820814,derived_total_minus_firearm,
+Massachusetts,25,2021,474,6984723,6.7862390534313235,derived_total_minus_firearm,
+Massachusetts,25,2022,484,6981974,6.932136957255927,derived_total_minus_firearm,
+Massachusetts,25,2023,524,7001399,7.484218511186121,derived_total_minus_firearm,
+Massachusetts,25,2024,472,7136171,6.614191279889453,derived_total_minus_firearm,
+Michigan,26,1999,437,9897116,4.415427686206771,derived_total_minus_firearm,
+Michigan,26,2000,450,9938444,4.527871767451725,derived_total_minus_firearm,
+Michigan,26,2001,521,9991120,5.214630591965666,derived_total_minus_firearm,
+Michigan,26,2002,535,10015710,5.341608333308374,derived_total_minus_firearm,
+Michigan,26,2003,513,10041152,5.108975543841982,derived_total_minus_firearm,
+Michigan,26,2004,573,10055315,5.698478864162883,derived_total_minus_firearm,
+Michigan,26,2005,562,10051137,5.591407220894511,derived_total_minus_firearm,
+Michigan,26,2006,551,10036081,5.490190842421459,derived_total_minus_firearm,
+Michigan,26,2007,584,10001284,5.83925024026915,derived_total_minus_firearm,
+Michigan,26,2008,622,9946889,6.25321143123242,derived_total_minus_firearm,
+Michigan,26,2009,604,9901591,6.100029783092434,derived_total_minus_firearm,
+Michigan,26,2010,673,9883640,6.809232226183875,derived_total_minus_firearm,
+Michigan,26,2011,609,9876187,6.166347397026808,derived_total_minus_firearm,
+Michigan,26,2012,651,9883360,6.586828770782405,derived_total_minus_firearm,
+Michigan,26,2013,630,9895622,6.366451750076954,derived_total_minus_firearm,
+Michigan,26,2014,689,9909877,6.952659452786348,derived_total_minus_firearm,
+Michigan,26,2015,734,9922576,7.39727264371671,derived_total_minus_firearm,
+Michigan,26,2016,658,9928300,6.627519313477634,derived_total_minus_firearm,
+Michigan,26,2017,780,9962311,7.8295086350948075,derived_total_minus_firearm,
+Michigan,26,2018,747,9995915,7.473052742045125,derived_total_minus_firearm,
+Michigan,26,2019,735,9986857,7.359672817984678,derived_total_minus_firearm,
+Michigan,26,2020,690,9966555,6.92315449019245,derived_total_minus_firearm,
+Michigan,26,2021,685,10050811,6.815370421352068,derived_total_minus_firearm,
+Michigan,26,2022,689,10034113,6.866576049123623,derived_total_minus_firearm,
+Michigan,26,2023,708,10037261,7.0537171445477025,derived_total_minus_firearm,
+Michigan,26,2024,663,10140459,6.538165580078773,derived_total_minus_firearm,
+Minnesota,27,1999,211,4873481,4.329554172879714,derived_total_minus_firearm,
+Minnesota,27,2000,219,4919479,4.451690920928821,derived_total_minus_firearm,
+Minnesota,27,2001,243,4982796,4.876780024709019,derived_total_minus_firearm,
+Minnesota,27,2002,262,5018935,5.220230985258825,derived_total_minus_firearm,
+Minnesota,27,2003,254,5053572,5.026147841566323,derived_total_minus_firearm,
+Minnesota,27,2004,259,5087713,5.090695957102926,derived_total_minus_firearm,
+Minnesota,27,2005,292,5119598,5.703572819584662,derived_total_minus_firearm,
+Minnesota,27,2006,315,5163555,6.100448237696703,derived_total_minus_firearm,
+Minnesota,27,2007,310,5207203,5.953292007244581,derived_total_minus_firearm,
+Minnesota,27,2008,309,5247018,5.88905927138043,derived_total_minus_firearm,
+Minnesota,27,2009,310,5281203,5.869874723618842,derived_total_minus_firearm,
+Minnesota,27,2010,330,5303925,6.221807435059885,derived_total_minus_firearm,
+Minnesota,27,2011,365,5344861,6.82898956586523,derived_total_minus_firearm,
+Minnesota,27,2012,349,5379139,6.488027173121941,derived_total_minus_firearm,
+Minnesota,27,2013,342,5420380,6.309520734708638,derived_total_minus_firearm,
+Minnesota,27,2014,382,5457173,6.999961335292101,derived_total_minus_firearm,
+Minnesota,27,2015,431,5489594,7.851218141086572,derived_total_minus_firearm,
+Minnesota,27,2016,420,5519952,7.6087618153201335,derived_total_minus_firearm,
+Minnesota,27,2017,420,5576606,7.531462685368125,derived_total_minus_firearm,
+Minnesota,27,2018,386,5611179,6.879124690194342,derived_total_minus_firearm,
+Minnesota,27,2019,483,5639632,8.564388598405001,derived_total_minus_firearm,
+Minnesota,27,2020,409,5657342,7.22954348526216,derived_total_minus_firearm,
+Minnesota,27,2021,420,5707390,7.358880328836823,derived_total_minus_firearm,
+Minnesota,27,2022,465,5717184,8.133374752325622,derived_total_minus_firearm,
+Minnesota,27,2023,444,5737915,7.738002392855245,derived_total_minus_firearm,
+Minnesota,27,2024,413,5793151,7.129108148570613,derived_total_minus_firearm,
+Mississippi,28,1999,64,2828408,2.2627569996973556,derived_total_minus_firearm,2015.0
+Mississippi,28,2000,76,2844658,2.671674415694259,derived_total_minus_firearm,2015.0
+Mississippi,28,2001,90,2852994,3.154580766731371,derived_total_minus_firearm,2015.0
+Mississippi,28,2002,92,2858681,3.2182674457205955,derived_total_minus_firearm,2015.0
+Mississippi,28,2003,93,2868312,3.2423251027084934,derived_total_minus_firearm,2015.0
+Mississippi,28,2004,108,2889010,3.738304817221122,derived_total_minus_firearm,2015.0
+Mississippi,28,2005,113,2905943,3.8885828111563114,derived_total_minus_firearm,2015.0
+Mississippi,28,2006,109,2904978,3.7521798788149168,derived_total_minus_firearm,2015.0
+Mississippi,28,2007,120,2928350,4.097870814622571,derived_total_minus_firearm,2015.0
+Mississippi,28,2008,125,2947806,4.2404418743974315,derived_total_minus_firearm,2015.0
+Mississippi,28,2009,114,2958774,3.852947200428286,derived_total_minus_firearm,2015.0
+Mississippi,28,2010,134,2967297,4.515894431868464,derived_total_minus_firearm,2015.0
+Mississippi,28,2011,123,2978512,4.129578796392293,derived_total_minus_firearm,2015.0
+Mississippi,28,2012,118,2984926,3.9531968296701514,derived_total_minus_firearm,2015.0
+Mississippi,28,2013,112,2991207,3.7443078997876125,derived_total_minus_firearm,2015.0
+Mississippi,28,2014,133,2994079,4.442100559136881,derived_total_minus_firearm,2015.0
+Mississippi,28,2015,143,2992333,4.7788798907073495,derived_total_minus_firearm,2015.0
+Mississippi,28,2016,116,2988726,3.8812524132356057,derived_total_minus_firearm,2015.0
+Mississippi,28,2017,151,2984100,5.060152139673605,derived_total_minus_firearm,2015.0
+Mississippi,28,2018,110,2986530,3.6832042537660765,derived_total_minus_firearm,2015.0
+Mississippi,28,2019,131,2976149,4.401661341552456,derived_total_minus_firearm,2015.0
+Mississippi,28,2020,133,2966786,4.4829657413780435,derived_total_minus_firearm,2015.0
+Mississippi,28,2021,147,2949965,4.983109969101328,derived_total_minus_firearm,2015.0
+Mississippi,28,2022,121,2940057,4.115566466908636,derived_total_minus_firearm,2015.0
+Mississippi,28,2023,136,2939690,4.626338151301669,derived_total_minus_firearm,2015.0
+Mississippi,28,2024,149,2943045,5.062783613570298,derived_total_minus_firearm,2015.0
+Missouri,29,1999,282,5561948,5.070166064119981,derived_total_minus_firearm,2017.0
+Missouri,29,2000,270,5595211,4.825555282901755,derived_total_minus_firearm,2017.0
+Missouri,29,2001,307,5641142,5.442160470344478,derived_total_minus_firearm,2017.0
+Missouri,29,2002,275,5674825,4.845964412999519,derived_total_minus_firearm,2017.0
+Missouri,29,2003,274,5709403,4.799100711580526,derived_total_minus_firearm,2017.0
+Missouri,29,2004,335,5747741,5.828376748360791,derived_total_minus_firearm,2017.0
+Missouri,29,2005,308,5790300,5.319240799267741,derived_total_minus_firearm,2017.0
+Missouri,29,2006,363,5842704,6.212876777601603,derived_total_minus_firearm,2017.0
+Missouri,29,2007,362,5887612,6.148502992384689,derived_total_minus_firearm,2017.0
+Missouri,29,2008,371,5923916,6.26274916794904,derived_total_minus_firearm,2017.0
+Missouri,29,2009,396,5961088,6.643082605054648,derived_total_minus_firearm,2017.0
+Missouri,29,2010,374,5988927,6.244858219176825,derived_total_minus_firearm,2017.0
+Missouri,29,2011,422,6010688,7.02082690034818,derived_total_minus_firearm,2017.0
+Missouri,29,2012,374,6021988,6.210573651093293,derived_total_minus_firearm,2017.0
+Missouri,29,2013,411,6044171,6.7999399752257155,derived_total_minus_firearm,2017.0
+Missouri,29,2014,436,6063589,7.190460962970944,derived_total_minus_firearm,2017.0
+Missouri,29,2015,456,6083672,7.4954731287288325,derived_total_minus_firearm,2017.0
+Missouri,29,2016,487,6093000,7.992778598391599,derived_total_minus_firearm,2017.0
+Missouri,29,2017,457,6113532,7.47522054354177,derived_total_minus_firearm,2017.0
+Missouri,29,2018,511,6126452,8.340879843668079,derived_total_minus_firearm,2017.0
+Missouri,29,2019,461,6137428,7.511289745476443,derived_total_minus_firearm,2017.0
+Missouri,29,2020,425,6151548,6.908830102601813,derived_total_minus_firearm,2017.0
+Missouri,29,2021,437,6168187,7.084739810903917,derived_total_minus_firearm,2017.0
+Missouri,29,2022,425,6177957,6.879296829032638,derived_total_minus_firearm,2017.0
+Missouri,29,2023,407,6196156,6.568588653997736,derived_total_minus_firearm,2017.0
+Missouri,29,2024,439,6245466,7.02909918971619,derived_total_minus_firearm,2017.0
+Montana,30,1999,66,897507,7.353703090895108,derived_total_minus_firearm,2021.0
+Montana,30,2000,51,902195,5.652879920637998,derived_total_minus_firearm,2021.0
+Montana,30,2001,44,906961,4.851366266024668,derived_total_minus_firearm,2021.0
+Montana,30,2002,69,911667,7.5685529913883,derived_total_minus_firearm,2021.0
+Montana,30,2003,60,919630,6.524363059056357,derived_total_minus_firearm,2021.0
+Montana,30,2004,70,930009,7.52680888034417,derived_total_minus_firearm,2021.0
+Montana,30,2005,72,940102,7.658743412948805,derived_total_minus_firearm,2021.0
+Montana,30,2006,87,952692,9.132017483090022,derived_total_minus_firearm,2021.0
+Montana,30,2007,76,964706,7.878047819750266,derived_total_minus_firearm,2021.0
+Montana,30,2008,71,976415,7.271498287101284,derived_total_minus_firearm,2021.0
+Montana,30,2009,83,983982,8.435113650452953,derived_total_minus_firearm,2021.0
+Montana,30,2010,89,989415,8.995214343829435,derived_total_minus_firearm,2021.0
+Montana,30,2011,81,998199,8.114614420571447,derived_total_minus_firearm,2021.0
+Montana,30,2012,80,1005141,7.959082357599579,derived_total_minus_firearm,2021.0
+Montana,30,2013,96,1015165,9.456590800510261,derived_total_minus_firearm,2021.0
+Montana,30,2014,102,1023579,9.965034452641177,derived_total_minus_firearm,2021.0
+Montana,30,2015,99,1032949,9.584209869025475,derived_total_minus_firearm,2021.0
+Montana,30,2016,106,1042520,10.167670644208263,derived_total_minus_firearm,2021.0
+Montana,30,2017,98,1050493,9.328953167703162,derived_total_minus_firearm,2021.0
+Montana,30,2018,105,1062305,9.88416697652746,derived_total_minus_firearm,2021.0
+Montana,30,2019,119,1068778,11.134211220665097,derived_total_minus_firearm,2021.0
+Montana,30,2020,111,1080577,10.272289711885406,derived_total_minus_firearm,2021.0
+Montana,30,2021,113,1104271,10.232995342628755,derived_total_minus_firearm,2021.0
+Montana,30,2022,109,1122867,9.707293918157713,derived_total_minus_firearm,2021.0
+Montana,30,2023,107,1132812,9.445521410437035,derived_total_minus_firearm,2021.0
+Montana,30,2024,108,1137233,9.496734618147737,derived_total_minus_firearm,2021.0
+Nebraska,31,1999,70,1704764,4.106140204743882,derived_total_minus_firearm,
+Nebraska,31,2000,78,1711263,4.558036958667369,derived_total_minus_firearm,
+Nebraska,31,2001,80,1719836,4.651606315951056,derived_total_minus_firearm,
+Nebraska,31,2002,96,1728292,5.554616928157973,derived_total_minus_firearm,
+Nebraska,31,2003,86,1738643,4.946386348433807,derived_total_minus_firearm,
+Nebraska,31,2004,79,1749370,4.51591144240498,derived_total_minus_firearm,
+Nebraska,31,2005,89,1761497,5.052520668499578,derived_total_minus_firearm,
+Nebraska,31,2006,97,1772693,5.471900661874335,derived_total_minus_firearm,
+Nebraska,31,2007,92,1783440,5.158569954694299,derived_total_minus_firearm,
+Nebraska,31,2008,93,1796378,5.177084110359846,derived_total_minus_firearm,
+Nebraska,31,2009,77,1812683,4.247846976001871,derived_total_minus_firearm,
+Nebraska,31,2010,87,1826341,4.763623003590238,derived_total_minus_firearm,
+Nebraska,31,2011,84,1842641,4.558674207292684,derived_total_minus_firearm,
+Nebraska,31,2012,118,1855525,6.359386157556486,derived_total_minus_firearm,
+Nebraska,31,2013,110,1868516,5.8870247833039695,derived_total_minus_firearm,
+Nebraska,31,2014,119,1881503,6.324730813610182,derived_total_minus_firearm,
+Nebraska,31,2015,110,1896190,5.801106429208044,derived_total_minus_firearm,
+Nebraska,31,2016,130,1907116,6.816575394469973,derived_total_minus_firearm,
+Nebraska,31,2017,149,1920076,7.760109495665796,derived_total_minus_firearm,
+Nebraska,31,2018,126,1929268,6.530974442120017,derived_total_minus_firearm,
+Nebraska,31,2019,155,1934408,8.01278737474204,derived_total_minus_firearm,
+Nebraska,31,2020,144,1937552,7.432058597653121,derived_total_minus_firearm,
+Nebraska,31,2021,144,1963692,7.333125561442425,derived_total_minus_firearm,
+Nebraska,31,2022,123,1967923,6.25024454716978,derived_total_minus_firearm,
+Nebraska,31,2023,120,1978379,6.06557186464272,derived_total_minus_firearm,
+Nebraska,31,2024,127,2005465,6.332695908430214,derived_total_minus_firearm,
+Nevada,32,1999,149,1934718,7.7013807697039045,derived_total_minus_firearm,
+Nevada,32,2000,163,1998257,8.15710892042415,derived_total_minus_firearm,
+Nevada,32,2001,169,2098399,8.053759080136809,derived_total_minus_firearm,
+Nevada,32,2002,179,2173791,8.234462282712553,derived_total_minus_firearm,
+Nevada,32,2003,187,2248850,8.315361184605464,derived_total_minus_firearm,
+Nevada,32,2004,191,2346222,8.140747124526156,derived_total_minus_firearm,
+Nevada,32,2005,220,2432143,9.045520760909207,derived_total_minus_firearm,
+Nevada,32,2006,234,2522658,9.275930387710105,derived_total_minus_firearm,
+Nevada,32,2007,204,2601072,7.842920149845909,derived_total_minus_firearm,
+Nevada,32,2008,238,2653630,8.968846448073018,derived_total_minus_firearm,
+Nevada,32,2009,215,2684665,8.008447981405498,derived_total_minus_firearm,
+Nevada,32,2010,261,2700551,9.664694353115346,derived_total_minus_firearm,
+Nevada,32,2011,247,2723322,9.069805186459776,derived_total_minus_firearm,
+Nevada,32,2012,251,2758931,9.097726619476889,derived_total_minus_firearm,
+Nevada,32,2013,250,2790136,8.96013671018187,derived_total_minus_firearm,
+Nevada,32,2014,265,2839099,9.33394714309011,derived_total_minus_firearm,
+Nevada,32,2015,268,2890845,9.270645780040091,derived_total_minus_firearm,
+Nevada,32,2016,316,2940058,10.748087282631836,derived_total_minus_firearm,
+Nevada,32,2017,303,2998039,10.106606351685219,derived_total_minus_firearm,
+Nevada,32,2018,292,3034392,9.623015088360367,derived_total_minus_firearm,
+Nevada,32,2019,291,3080156,9.447573434592274,derived_total_minus_firearm,
+Nevada,32,2020,236,3138259,7.52009314718766,derived_total_minus_firearm,
+Nevada,32,2021,278,3143991,8.842264497576489,derived_total_minus_firearm,
+Nevada,32,2022,283,3177772,8.905610597613672,derived_total_minus_firearm,
+Nevada,32,2023,279,3194176,8.734647057644914,derived_total_minus_firearm,
+Nevada,32,2024,279,3267467,8.538724339067544,derived_total_minus_firearm,
+New Hampshire,33,1999,74,1222014,6.05557710468129,derived_total_minus_firearm,2017.0
+New Hampshire,33,2000,64,1235786,5.17889019619902,derived_total_minus_firearm,2017.0
+New Hampshire,33,2001,88,1255517,7.009064791635637,derived_total_minus_firearm,2017.0
+New Hampshire,33,2002,67,1269089,5.27937756926425,derived_total_minus_firearm,2017.0
+New Hampshire,33,2003,83,1279840,6.485185648206025,derived_total_minus_firearm,2017.0
+New Hampshire,33,2004,76,1290121,5.890920309025276,derived_total_minus_firearm,2017.0
+New Hampshire,33,2005,84,1298492,6.469042550897501,derived_total_minus_firearm,2017.0
+New Hampshire,33,2006,83,1308389,6.3436791351807456,derived_total_minus_firearm,2017.0
+New Hampshire,33,2007,88,1312540,6.704557575388177,derived_total_minus_firearm,2017.0
+New Hampshire,33,2008,96,1315906,7.295353923456537,derived_total_minus_firearm,2017.0
+New Hampshire,33,2009,84,1316102,6.382484032392626,derived_total_minus_firearm,2017.0
+New Hampshire,33,2010,95,1316470,7.2162677463216,derived_total_minus_firearm,2017.0
+New Hampshire,33,2011,124,1318194,9.40680961982834,derived_total_minus_firearm,2017.0
+New Hampshire,33,2012,104,1320718,7.874504625514303,derived_total_minus_firearm,2017.0
+New Hampshire,33,2013,104,1323459,7.858195833796136,derived_total_minus_firearm,2017.0
+New Hampshire,33,2014,137,1326813,10.325494248247495,derived_total_minus_firearm,2017.0
+New Hampshire,33,2015,121,1330608,9.093587292425719,derived_total_minus_firearm,2017.0
+New Hampshire,33,2016,122,1334795,9.139980296599852,derived_total_minus_firearm,2017.0
+New Hampshire,33,2017,135,1342795,10.05365673837034,derived_total_minus_firearm,2017.0
+New Hampshire,33,2018,144,1356458,10.615883425804556,derived_total_minus_firearm,2017.0
+New Hampshire,33,2019,123,1359711,9.046039930544062,derived_total_minus_firearm,2017.0
+New Hampshire,33,2020,117,1366275,8.56342976340781,derived_total_minus_firearm,2017.0
+New Hampshire,33,2021,113,1388992,8.135396028198866,derived_total_minus_firearm,2017.0
+New Hampshire,33,2022,113,1395231,8.099017295343925,derived_total_minus_firearm,2017.0
+New Hampshire,33,2023,102,1402054,7.275040761625444,derived_total_minus_firearm,2017.0
+New Hampshire,33,2024,115,1409032,8.161631531434345,derived_total_minus_firearm,2017.0
+New Jersey,34,1999,370,8359592,4.426053328918444,derived_total_minus_firearm,
+New Jersey,34,2000,409,8414350,4.860743848306761,derived_total_minus_firearm,
+New Jersey,34,2001,427,8492671,5.027864614089018,derived_total_minus_firearm,
+New Jersey,34,2002,378,8552643,4.419686405711078,derived_total_minus_firearm,
+New Jersey,34,2003,410,8601402,4.766664783252776,derived_total_minus_firearm,
+New Jersey,34,2004,419,8634561,4.852591810979156,derived_total_minus_firearm,
+New Jersey,34,2005,404,8651974,4.66945462388121,derived_total_minus_firearm,
+New Jersey,34,2006,416,8661679,4.802763990676635,derived_total_minus_firearm,
+New Jersey,34,2007,433,8677885,4.989695069708806,derived_total_minus_firearm,
+New Jersey,34,2008,451,8711090,5.1773084654159245,derived_total_minus_firearm,
+New Jersey,34,2009,389,8755602,4.442869833507737,derived_total_minus_firearm,
+New Jersey,34,2010,537,8791894,6.107898935087253,derived_total_minus_firearm,
+New Jersey,34,2011,514,8821155,5.826901352487289,derived_total_minus_firearm,
+New Jersey,34,2012,529,8864590,5.967563079623536,derived_total_minus_firearm,
+New Jersey,34,2013,566,8899339,6.360022918556086,derived_total_minus_firearm,
+New Jersey,34,2014,602,8938175,6.735155666565043,derived_total_minus_firearm,
+New Jersey,34,2015,605,8958013,6.753729872908199,derived_total_minus_firearm,
+New Jersey,34,2016,516,8944469,5.768928261700052,derived_total_minus_firearm,
+New Jersey,34,2017,595,9005644,6.606967808187842,derived_total_minus_firearm,
+New Jersey,34,2018,590,8908520,6.622873384131147,derived_total_minus_firearm,
+New Jersey,34,2019,592,8882190,6.665022927904041,derived_total_minus_firearm,
+New Jersey,34,2020,500,8882371,5.629127628197471,derived_total_minus_firearm,
+New Jersey,34,2021,497,9267130,5.363041200457963,derived_total_minus_firearm,
+New Jersey,34,2022,548,9261699,5.916840959741837,derived_total_minus_firearm,
+New Jersey,34,2023,501,9290841,5.392407425764793,derived_total_minus_firearm,
+New Jersey,34,2024,467,9500851,4.915349161880341,derived_total_minus_firearm,
+New Mexico,35,1999,140,1808082,7.74301165544483,derived_total_minus_firearm,
+New Mexico,35,2000,152,1819046,8.356028379711123,derived_total_minus_firearm,
+New Mexico,35,2001,176,1831690,9.608612811119787,derived_total_minus_firearm,
+New Mexico,35,2002,139,1855309,7.492013459752528,derived_total_minus_firearm,
+New Mexico,35,2003,137,1877574,7.296649825785828,derived_total_minus_firearm,
+New Mexico,35,2004,164,1903808,8.614314048475473,derived_total_minus_firearm,
+New Mexico,35,2005,165,1932274,8.539161630286385,derived_total_minus_firearm,
+New Mexico,35,2006,164,1962137,8.358233905175837,derived_total_minus_firearm,
+New Mexico,35,2007,215,1990070,10.803640072962256,derived_total_minus_firearm,
+New Mexico,35,2008,225,2010662,11.190344274671727,derived_total_minus_firearm,
+New Mexico,35,2009,189,2036802,9.279252475203773,derived_total_minus_firearm,
+New Mexico,35,2010,212,2059179,10.295365288787426,derived_total_minus_firearm,
+New Mexico,35,2011,202,2082224,9.701165676699528,derived_total_minus_firearm,
+New Mexico,35,2012,217,2085538,10.404989024414805,derived_total_minus_firearm,
+New Mexico,35,2013,211,2085287,10.118511264876252,derived_total_minus_firearm,
+New Mexico,35,2014,207,2085572,9.925334632417385,derived_total_minus_firearm,
+New Mexico,35,2015,231,2085109,11.078557523851273,derived_total_minus_firearm,
+New Mexico,35,2016,229,2081015,11.004245524419574,derived_total_minus_firearm,
+New Mexico,35,2017,232,2088070,11.110738624662966,derived_total_minus_firearm,
+New Mexico,35,2018,262,2095428,12.503412190731437,derived_total_minus_firearm,
+New Mexico,35,2019,233,2096829,11.112017241272413,derived_total_minus_firearm,
+New Mexico,35,2020,216,2106319,10.25485693287674,derived_total_minus_firearm,
+New Mexico,35,2021,230,2115877,10.870197086125517,derived_total_minus_firearm,
+New Mexico,35,2022,224,2113344,10.599315587050667,derived_total_minus_firearm,
+New Mexico,35,2023,205,2114371,9.69555484822673,derived_total_minus_firearm,
+New Mexico,35,2024,220,2130256,10.327397270562786,derived_total_minus_firearm,
+New York,36,1999,768,18882725,4.067209579125894,derived_total_minus_firearm,
+New York,36,2000,694,18976457,3.6571631891032137,derived_total_minus_firearm,
+New York,36,2001,821,19082838,4.302295077912415,derived_total_minus_firearm,
+New York,36,2002,828,19137800,4.326516109479669,derived_total_minus_firearm,
+New York,36,2003,778,19175939,4.057167682896781,derived_total_minus_firearm,
+New York,36,2004,798,19171567,4.162414058277031,derived_total_minus_firearm,
+New York,36,2005,756,19132610,3.9513688932142554,derived_total_minus_firearm,
+New York,36,2006,948,19104631,4.962147659381644,derived_total_minus_firearm,
+New York,36,2007,969,19132335,5.064724195975033,derived_total_minus_firearm,
+New York,36,2008,1011,19212436,5.262216618444429,derived_total_minus_firearm,
+New York,36,2009,1012,19307066,5.24160429140295,derived_total_minus_firearm,
+New York,36,2010,1113,19378102,5.743596560695161,derived_total_minus_firearm,
+New York,36,2011,1181,19465197,6.067238877674859,derived_total_minus_firearm,
+New York,36,2012,1215,19570261,6.208399571165657,derived_total_minus_firearm,
+New York,36,2013,1241,19651127,6.315159430805165,derived_total_minus_firearm,
+New York,36,2014,1247,19746227,6.315130480369742,derived_total_minus_firearm,
+New York,36,2015,1248,19795791,6.30437045935674,derived_total_minus_firearm,
+New York,36,2016,1210,19745289,6.128044010903057,derived_total_minus_firearm,
+New York,36,2017,1287,19849399,6.483823515261092,derived_total_minus_firearm,
+New York,36,2018,1298,19542209,6.642033149885973,derived_total_minus_firearm,
+New York,36,2019,1266,19453561,6.507805948741209,derived_total_minus_firearm,
+New York,36,2020,1203,19336776,6.221305971584922,derived_total_minus_firearm,
+New York,36,2021,1247,19835913,6.286577280309707,derived_total_minus_firearm,
+New York,36,2022,1295,19677151,6.581237293955816,derived_total_minus_firearm,
+New York,36,2023,1262,19571216,6.448245218896974,derived_total_minus_firearm,
+New York,36,2024,1230,19867248,6.191094005571381,derived_total_minus_firearm,
+North Carolina,37,1999,322,7949361,4.050640045155831,derived_total_minus_firearm,
+North Carolina,37,2000,354,8049313,4.397890851057723,derived_total_minus_firearm,
+North Carolina,37,2001,367,8210122,4.470091918244331,derived_total_minus_firearm,
+North Carolina,37,2002,359,8326201,4.311690289484963,derived_total_minus_firearm,
+North Carolina,37,2003,342,8422501,4.060551610501442,derived_total_minus_firearm,
+North Carolina,37,2004,426,8553152,4.980620010026712,derived_total_minus_firearm,
+North Carolina,37,2005,378,8705407,4.34212897800183,derived_total_minus_firearm,
+North Carolina,37,2006,450,8917270,5.04638751546157,derived_total_minus_firearm,
+North Carolina,37,2007,476,9118037,5.220421895633897,derived_total_minus_firearm,
+North Carolina,37,2008,497,9309449,5.338661826279944,derived_total_minus_firearm,
+North Carolina,37,2009,505,9449566,5.344160779447436,derived_total_minus_firearm,
+North Carolina,37,2010,473,9535483,4.960419938874622,derived_total_minus_firearm,
+North Carolina,37,2011,487,9656401,5.0432868311910415,derived_total_minus_firearm,
+North Carolina,37,2012,581,9752073,5.9577076586690865,derived_total_minus_firearm,
+North Carolina,37,2013,519,9848060,5.270073496708996,derived_total_minus_firearm,
+North Carolina,37,2014,603,9943964,6.063980118994799,derived_total_minus_firearm,
+North Carolina,37,2015,626,10042802,6.233320143123403,derived_total_minus_firearm,
+North Carolina,37,2016,594,10146788,5.8540692877391365,derived_total_minus_firearm,
+North Carolina,37,2017,687,10273419,6.687160330947272,derived_total_minus_firearm,
+North Carolina,37,2018,632,10383620,6.086509329116435,derived_total_minus_firearm,
+North Carolina,37,2019,587,10488084,5.596827790471549,derived_total_minus_firearm,
+North Carolina,37,2020,568,10600823,5.358074557041466,derived_total_minus_firearm,
+North Carolina,37,2021,547,10551162,5.184263117180837,derived_total_minus_firearm,
+North Carolina,37,2022,636,10698973,5.9444957941290255,derived_total_minus_firearm,
+North Carolina,37,2023,609,10835491,5.62041904700027,derived_total_minus_firearm,
+North Carolina,37,2024,570,11046024,5.160227788750051,derived_total_minus_firearm,
+North Dakota,38,1999,34,644259,5.277380680751064,derived_total_minus_firearm,2017.0
+North Dakota,38,2000,33,642200,5.138586110246029,derived_total_minus_firearm,2017.0
+North Dakota,38,2001,38,639062,5.946214921243947,derived_total_minus_firearm,2017.0
+North Dakota,38,2002,39,638168,6.11124343433077,derived_total_minus_firearm,2017.0
+North Dakota,38,2003,40,638817,6.261574128428018,derived_total_minus_firearm,2017.0
+North Dakota,38,2004,33,644705,5.118620144096913,derived_total_minus_firearm,2017.0
+North Dakota,38,2005,36,646089,5.571987760200221,derived_total_minus_firearm,2017.0
+North Dakota,38,2006,49,649422,7.545170936617484,derived_total_minus_firearm,2017.0
+North Dakota,38,2007,46,652822,7.046331159182749,derived_total_minus_firearm,2017.0
+North Dakota,38,2008,31,657569,4.714334161129859,derived_total_minus_firearm,2017.0
+North Dakota,38,2009,40,664968,6.01532705333189,derived_total_minus_firearm,2017.0
+North Dakota,38,2010,50,672591,7.433938307232777,derived_total_minus_firearm,2017.0
+North Dakota,38,2011,55,683932,8.041735143259856,derived_total_minus_firearm,2017.0
+North Dakota,38,2012,42,699628,6.003190266827513,derived_total_minus_firearm,2017.0
+North Dakota,38,2013,52,723393,7.188347136342209,derived_total_minus_firearm,2017.0
+North Dakota,38,2014,52,739482,7.031949391601151,derived_total_minus_firearm,2017.0
+North Dakota,38,2015,49,756927,6.473543683869115,derived_total_minus_firearm,2017.0
+North Dakota,38,2016,65,757952,8.575740944017562,derived_total_minus_firearm,2017.0
+North Dakota,38,2017,61,755393,8.075266781661997,derived_total_minus_firearm,2017.0
+North Dakota,38,2018,72,760077,9.472724473967768,derived_total_minus_firearm,2017.0
+North Dakota,38,2019,58,762062,7.610929294466855,derived_total_minus_firearm,2017.0
+North Dakota,38,2020,58,765309,7.578638170987146,derived_total_minus_firearm,2017.0
+North Dakota,38,2021,54,774948,6.968209479861873,derived_total_minus_firearm,2017.0
+North Dakota,38,2022,65,779261,8.341236119862279,derived_total_minus_firearm,2017.0
+North Dakota,38,2023,58,783926,7.398657526348147,derived_total_minus_firearm,2017.0
+North Dakota,38,2024,64,796568,8.034467867150074,derived_total_minus_firearm,2017.0
+Ohio,39,1999,478,11335454,4.216858010274666,derived_total_minus_firearm,2022.0
+Ohio,39,2000,512,11353140,4.509765580271186,derived_total_minus_firearm,2022.0
+Ohio,39,2001,561,11387404,4.926495977485298,derived_total_minus_firearm,2022.0
+Ohio,39,2002,616,11407889,5.399772034948798,derived_total_minus_firearm,2022.0
+Ohio,39,2003,508,11434788,4.442583456728711,derived_total_minus_firearm,2022.0
+Ohio,39,2004,677,11452251,5.91150159038603,derived_total_minus_firearm,2022.0
+Ohio,39,2005,687,11463320,5.993028197764697,derived_total_minus_firearm,2022.0
+Ohio,39,2006,716,11481213,6.2362748605047225,derived_total_minus_firearm,2022.0
+Ohio,39,2007,650,11500468,5.651943903500276,derived_total_minus_firearm,2022.0
+Ohio,39,2008,733,11515391,6.365393932346717,derived_total_minus_firearm,2022.0
+Ohio,39,2009,594,11528896,5.152271301605983,derived_total_minus_firearm,2022.0
+Ohio,39,2010,729,11536504,6.319072051637133,derived_total_minus_firearm,2022.0
+Ohio,39,2011,758,11544951,6.565640685698884,derived_total_minus_firearm,2022.0
+Ohio,39,2012,774,11544225,6.704651026812107,derived_total_minus_firearm,2022.0
+Ohio,39,2013,747,11570808,6.455901783177112,derived_total_minus_firearm,2022.0
+Ohio,39,2014,757,11594163,6.529147468428728,derived_total_minus_firearm,2022.0
+Ohio,39,2015,803,11613423,6.914412744631793,derived_total_minus_firearm,2022.0
+Ohio,39,2016,796,11614373,6.853577029082845,derived_total_minus_firearm,2022.0
+Ohio,39,2017,838,11658609,7.187821463092209,derived_total_minus_firearm,2022.0
+Ohio,39,2018,894,11689442,7.647927078127426,derived_total_minus_firearm,2022.0
+Ohio,39,2019,836,11689100,7.151962084334976,derived_total_minus_firearm,2022.0
+Ohio,39,2020,755,11693217,6.456734703546508,derived_total_minus_firearm,2022.0
+Ohio,39,2021,793,11780017,6.731739011921629,derived_total_minus_firearm,2022.0
+Ohio,39,2022,773,11756058,6.575333330271084,derived_total_minus_firearm,2022.0
+Ohio,39,2023,779,11785935,6.609573190417223,derived_total_minus_firearm,2022.0
+Ohio,39,2024,762,11883304,6.412358044530375,derived_total_minus_firearm,2022.0
+Oklahoma,40,1999,176,3437147,5.120525831452653,derived_total_minus_firearm,2019.0
+Oklahoma,40,2000,199,3450654,5.767022715114294,derived_total_minus_firearm,2019.0
+Oklahoma,40,2001,186,3467100,5.364714026131345,derived_total_minus_firearm,2019.0
+Oklahoma,40,2002,189,3489080,5.416900730278469,derived_total_minus_firearm,2019.0
+Oklahoma,40,2003,198,3504892,5.649246824153211,derived_total_minus_firearm,2019.0
+Oklahoma,40,2004,194,3525233,5.5031823428408835,derived_total_minus_firearm,2019.0
+Oklahoma,40,2005,225,3548597,6.340534019501229,derived_total_minus_firearm,2019.0
+Oklahoma,40,2006,229,3594090,6.371571107011789,derived_total_minus_firearm,2019.0
+Oklahoma,40,2007,220,3634349,6.053353709288789,derived_total_minus_firearm,2019.0
+Oklahoma,40,2008,231,3668976,6.296034642908539,derived_total_minus_firearm,2019.0
+Oklahoma,40,2009,211,3717572,5.675747504016062,derived_total_minus_firearm,2019.0
+Oklahoma,40,2010,248,3751351,6.610951627826882,derived_total_minus_firearm,2019.0
+Oklahoma,40,2011,256,3791508,6.7519308939873,derived_total_minus_firearm,2019.0
+Oklahoma,40,2012,262,3814820,6.867951829968385,derived_total_minus_firearm,2019.0
+Oklahoma,40,2013,236,3850568,6.128965908406238,derived_total_minus_firearm,2019.0
+Oklahoma,40,2014,304,3878051,7.838989224226294,derived_total_minus_firearm,2019.0
+Oklahoma,40,2015,329,3911338,8.411443858853417,derived_total_minus_firearm,2019.0
+Oklahoma,40,2016,312,3923561,7.951959966978974,derived_total_minus_firearm,2019.0
+Oklahoma,40,2017,330,3930864,8.395100924376933,derived_total_minus_firearm,2019.0
+Oklahoma,40,2018,335,3943079,8.495898763377552,derived_total_minus_firearm,2019.0
+Oklahoma,40,2019,348,3956971,8.794605772951076,derived_total_minus_firearm,2019.0
+Oklahoma,40,2020,334,3980783,8.390309142698811,derived_total_minus_firearm,2019.0
+Oklahoma,40,2021,332,3986639,8.3278169907032,derived_total_minus_firearm,2019.0
+Oklahoma,40,2022,329,4019800,8.184486790387583,derived_total_minus_firearm,2019.0
+Oklahoma,40,2023,334,4053824,8.23913421006931,derived_total_minus_firearm,2019.0
+Oklahoma,40,2024,318,4095393,7.76482257014162,derived_total_minus_firearm,2019.0
+Oregon,41,1999,169,3393941,4.979461929361767,derived_total_minus_firearm,
+Oregon,41,2000,197,3421399,5.757878575401465,derived_total_minus_firearm,
+Oregon,41,2001,226,3467937,6.516842722344727,derived_total_minus_firearm,
+Oregon,41,2002,229,3513424,6.51785836266844,derived_total_minus_firearm,
+Oregon,41,2003,267,3547376,7.526690150691666,derived_total_minus_firearm,
+Oregon,41,2004,259,3569463,7.255993408532321,derived_total_minus_firearm,
+Oregon,41,2005,243,3613202,6.725336695817171,derived_total_minus_firearm,
+Oregon,41,2006,273,3670883,7.43690278333578,derived_total_minus_firearm,
+Oregon,41,2007,270,3722417,7.25335178729304,derived_total_minus_firearm,
+Oregon,41,2008,256,3768748,6.792706755665277,derived_total_minus_firearm,
+Oregon,41,2009,304,3808600,7.981935619387702,derived_total_minus_firearm,
+Oregon,41,2010,310,3831074,8.091725714512433,derived_total_minus_firearm,
+Oregon,41,2011,315,3871859,8.135626839717045,derived_total_minus_firearm,
+Oregon,41,2012,358,3899353,9.1810102855525,derived_total_minus_firearm,
+Oregon,41,2013,310,3930065,7.887910250848266,derived_total_minus_firearm,
+Oregon,41,2014,362,3970239,9.117839001631895,derived_total_minus_firearm,
+Oregon,41,2015,391,4028977,9.704696750564722,derived_total_minus_firearm,
+Oregon,41,2016,360,4093465,8.794505388466735,derived_total_minus_firearm,
+Oregon,41,2017,390,4142776,9.41397748755907,derived_total_minus_firearm,
+Oregon,41,2018,419,4190713,9.998298618874642,derived_total_minus_firearm,
+Oregon,41,2019,444,4217737,10.52697216540529,derived_total_minus_firearm,
+Oregon,41,2020,382,4241507,9.006232926174588,derived_total_minus_firearm,
+Oregon,41,2021,388,4246155,9.137678676355431,derived_total_minus_firearm,
+Oregon,41,2022,408,4240137,9.622330599223561,derived_total_minus_firearm,
+Oregon,41,2023,404,4233358,9.543251480266965,derived_total_minus_firearm,
+Oregon,41,2024,421,4272371,9.854013146330223,derived_total_minus_firearm,
+Pennsylvania,42,1999,582,12263805,4.745672326003226,derived_total_minus_firearm,
+Pennsylvania,42,2000,605,12281054,4.92628727143452,derived_total_minus_firearm,
+Pennsylvania,42,2001,602,12298970,4.8947188260480345,derived_total_minus_firearm,
+Pennsylvania,42,2002,628,12331031,5.092842601725679,derived_total_minus_firearm,
+Pennsylvania,42,2003,626,12374658,5.058725663367828,derived_total_minus_firearm,
+Pennsylvania,42,2004,695,12410722,5.5999965191388545,derived_total_minus_firearm,
+Pennsylvania,42,2005,671,12449990,5.389562561897639,derived_total_minus_firearm,
+Pennsylvania,42,2006,671,12510809,5.363362193444085,derived_total_minus_firearm,
+Pennsylvania,42,2007,733,12563937,5.834158512574522,derived_total_minus_firearm,
+Pennsylvania,42,2008,783,12612285,6.208232687415484,derived_total_minus_firearm,
+Pennsylvania,42,2009,815,12666858,6.434113337340641,derived_total_minus_firearm,
+Pennsylvania,42,2010,830,12702379,6.53420906430205,derived_total_minus_firearm,
+Pennsylvania,42,2011,868,12742886,6.8116437673538,derived_total_minus_firearm,
+Pennsylvania,42,2012,837,12763536,6.557743872857805,derived_total_minus_firearm,
+Pennsylvania,42,2013,881,12773801,6.896929112955492,derived_total_minus_firearm,
+Pennsylvania,42,2014,932,12787209,7.288533408658606,derived_total_minus_firearm,
+Pennsylvania,42,2015,978,12802503,7.639131191767735,derived_total_minus_firearm,
+Pennsylvania,42,2016,1005,12784227,7.861249647710418,derived_total_minus_firearm,
+Pennsylvania,42,2017,1048,12805537,8.183959798015499,derived_total_minus_firearm,
+Pennsylvania,42,2018,995,12807060,7.7691523269196825,derived_total_minus_firearm,
+Pennsylvania,42,2019,943,12801989,7.3660428859921705,derived_total_minus_firearm,
+Pennsylvania,42,2020,789,12783254,6.172137391621885,derived_total_minus_firearm,
+Pennsylvania,42,2021,899,12964056,6.934558135200895,derived_total_minus_firearm,
+Pennsylvania,42,2022,914,12972008,7.0459407672274015,derived_total_minus_firearm,
+Pennsylvania,42,2023,919,12961683,7.090128650731545,derived_total_minus_firearm,
+Pennsylvania,42,2024,788,13078751,6.025040158651233,derived_total_minus_firearm,
+Rhode Island,44,1999,61,1040402,5.86311829465918,derived_total_minus_firearm,
+Rhode Island,44,2000,50,1048319,4.769540569235128,derived_total_minus_firearm,
+Rhode Island,44,2001,64,1057142,6.05405896275051,derived_total_minus_firearm,
+Rhode Island,44,2002,57,1065995,5.347117012743961,derived_total_minus_firearm,
+Rhode Island,44,2003,74,1071342,6.907224770428119,derived_total_minus_firearm,
+Rhode Island,44,2004,63,1074579,5.862761137152318,derived_total_minus_firearm,
+Rhode Island,44,2005,52,1067916,4.869296836080741,derived_total_minus_firearm,
+Rhode Island,44,2006,63,1063096,5.926087578167918,derived_total_minus_firearm,
+Rhode Island,44,2007,73,1057315,6.904281127194828,derived_total_minus_firearm,
+Rhode Island,44,2008,87,1055003,8.246422048088963,derived_total_minus_firearm,
+Rhode Island,44,2009,78,1053646,7.402865858172479,derived_total_minus_firearm,
+Rhode Island,44,2010,99,1052567,9.405577032150921,derived_total_minus_firearm,
+Rhode Island,44,2011,81,1051302,7.7047318467956885,derived_total_minus_firearm,
+Rhode Island,44,2012,79,1050292,7.521717769915414,derived_total_minus_firearm,
+Rhode Island,44,2013,99,1051511,9.415022762481799,derived_total_minus_firearm,
+Rhode Island,44,2014,94,1055173,8.908491782864042,derived_total_minus_firearm,
+Rhode Island,44,2015,87,1056298,8.236312101319893,derived_total_minus_firearm,
+Rhode Island,44,2016,93,1056426,8.803266863935571,derived_total_minus_firearm,
+Rhode Island,44,2017,96,1059639,9.05968919603752,derived_total_minus_firearm,
+Rhode Island,44,2018,83,1057315,7.850073062426997,derived_total_minus_firearm,
+Rhode Island,44,2019,91,1059361,8.590084022349322,derived_total_minus_firearm,
+Rhode Island,44,2020,64,1057125,6.0541563202081115,derived_total_minus_firearm,
+Rhode Island,44,2021,82,1095610,7.4844150747072415,derived_total_minus_firearm,
+Rhode Island,44,2022,103,1093734,9.417280618505048,derived_total_minus_firearm,
+Rhode Island,44,2023,77,1095962,7.025791040200298,derived_total_minus_firearm,
+Rhode Island,44,2024,64,1112308,5.753802004480773,derived_total_minus_firearm,
+South Carolina,45,1999,133,3974682,3.3461796440570604,derived_total_minus_firearm,
+South Carolina,45,2000,149,4012012,3.7138473165085264,derived_total_minus_firearm,
+South Carolina,45,2001,158,4064995,3.886843649254182,derived_total_minus_firearm,
+South Carolina,45,2002,137,4107795,3.3351226144440016,derived_total_minus_firearm,
+South Carolina,45,2003,148,4150297,3.5660098542345287,derived_total_minus_firearm,
+South Carolina,45,2004,156,4210921,3.7046527351142418,derived_total_minus_firearm,
+South Carolina,45,2005,202,4270150,4.7305129796377186,derived_total_minus_firearm,
+South Carolina,45,2006,212,4357847,4.864787588917188,derived_total_minus_firearm,
+South Carolina,45,2007,229,4444110,5.152887754803549,derived_total_minus_firearm,
+South Carolina,45,2008,223,4528996,4.923828592473918,derived_total_minus_firearm,
+South Carolina,45,2009,244,4589872,5.316052386646078,derived_total_minus_firearm,
+South Carolina,45,2010,248,4625364,5.361740178718907,derived_total_minus_firearm,
+South Carolina,45,2011,236,4679230,5.04356486003039,derived_total_minus_firearm,
+South Carolina,45,2012,245,4723723,5.186586935770791,derived_total_minus_firearm,
+South Carolina,45,2013,229,4774839,4.795973225484671,derived_total_minus_firearm,
+South Carolina,45,2014,278,4832482,5.75273741319678,derived_total_minus_firearm,
+South Carolina,45,2015,278,4896146,5.6779352576495885,derived_total_minus_firearm,
+South Carolina,45,2016,294,4961119,5.926082401974229,derived_total_minus_firearm,
+South Carolina,45,2017,308,5024369,6.130123006490965,derived_total_minus_firearm,
+South Carolina,45,2018,320,5084127,6.2940992622725584,derived_total_minus_firearm,
+South Carolina,45,2019,322,5148714,6.2539888601308995,derived_total_minus_firearm,
+South Carolina,45,2020,304,5218040,5.8259423078397266,derived_total_minus_firearm,
+South Carolina,45,2021,261,5190705,5.028218710175208,derived_total_minus_firearm,
+South Carolina,45,2022,288,5282634,5.451825736933509,derived_total_minus_firearm,
+South Carolina,45,2023,295,5373555,5.489847968430581,derived_total_minus_firearm,
+South Carolina,45,2024,299,5478831,5.457368551795083,derived_total_minus_firearm,
+South Dakota,46,1999,48,750412,6.396486196915827,derived_total_minus_firearm,2019.0
+South Dakota,46,2000,44,754844,5.829018976106322,derived_total_minus_firearm,2019.0
+South Dakota,46,2001,62,757972,8.179721678373344,derived_total_minus_firearm,2019.0
+South Dakota,46,2002,46,760020,6.052472303360438,derived_total_minus_firearm,2019.0
+South Dakota,46,2003,42,763729,5.499332878547233,derived_total_minus_firearm,2019.0
+South Dakota,46,2004,51,770396,6.619972066313948,derived_total_minus_firearm,2019.0
+South Dakota,46,2005,51,775493,6.576461683084178,derived_total_minus_firearm,2019.0
+South Dakota,46,2006,54,783033,6.8962610771193535,derived_total_minus_firearm,2019.0
+South Dakota,46,2007,58,791623,7.326719915919573,derived_total_minus_firearm,2019.0
+South Dakota,46,2008,56,799124,7.0076734023756035,derived_total_minus_firearm,2019.0
+South Dakota,46,2009,71,807067,8.797286966261783,derived_total_minus_firearm,2019.0
+South Dakota,46,2010,75,814180,9.211722223586925,derived_total_minus_firearm,2019.0
+South Dakota,46,2011,70,824082,8.494300324482273,derived_total_minus_firearm,2019.0
+South Dakota,46,2012,66,833354,7.919803588870998,derived_total_minus_firearm,2019.0
+South Dakota,46,2013,76,844877,8.995392228691276,derived_total_minus_firearm,2019.0
+South Dakota,46,2014,66,853175,7.735810355437046,derived_total_minus_firearm,2019.0
+South Dakota,46,2015,100,858469,11.648644272536343,derived_total_minus_firearm,2019.0
+South Dakota,46,2016,79,865454,9.128157013544335,derived_total_minus_firearm,2019.0
+South Dakota,46,2017,109,869666,12.53354736186076,derived_total_minus_firearm,2019.0
+South Dakota,46,2018,77,882235,8.727833287049366,derived_total_minus_firearm,2019.0
+South Dakota,46,2019,85,884659,9.60822192505813,derived_total_minus_firearm,2019.0
+South Dakota,46,2020,99,892717,11.089740645691748,derived_total_minus_firearm,2019.0
+South Dakota,46,2021,105,895376,11.726916960025733,derived_total_minus_firearm,2019.0
+South Dakota,46,2022,94,909824,10.331668542487336,derived_total_minus_firearm,2019.0
+South Dakota,46,2023,93,919318,10.116194831385878,derived_total_minus_firearm,2019.0
+South Dakota,46,2024,81,924669,8.759891377346923,derived_total_minus_firearm,2019.0
+Tennessee,47,1999,231,5638706,4.09668459394762,derived_total_minus_firearm,2021.0
+Tennessee,47,2000,230,5689283,4.042688683266416,derived_total_minus_firearm,2021.0
+Tennessee,47,2001,234,5750789,4.069006878882185,derived_total_minus_firearm,2021.0
+Tennessee,47,2002,259,5795918,4.468662255056056,derived_total_minus_firearm,2021.0
+Tennessee,47,2003,270,5847812,4.617111494008357,derived_total_minus_firearm,2021.0
+Tennessee,47,2004,270,5910809,4.5679026339710855,derived_total_minus_firearm,2021.0
+Tennessee,47,2005,315,5991057,5.257836805758984,derived_total_minus_firearm,2021.0
+Tennessee,47,2006,309,6088766,5.074919942727309,derived_total_minus_firearm,2021.0
+Tennessee,47,2007,305,6175727,4.938689809313139,derived_total_minus_firearm,2021.0
+Tennessee,47,2008,371,6247411,5.938459947648713,derived_total_minus_firearm,2021.0
+Tennessee,47,2009,377,6306019,5.9784152251999245,derived_total_minus_firearm,2021.0
+Tennessee,47,2010,365,6346105,5.7515594210937255,derived_total_minus_firearm,2021.0
+Tennessee,47,2011,370,6403353,5.778222752985817,derived_total_minus_firearm,2021.0
+Tennessee,47,2012,359,6456243,5.560509417009241,derived_total_minus_firearm,2021.0
+Tennessee,47,2013,357,6495978,5.495708267484895,derived_total_minus_firearm,2021.0
+Tennessee,47,2014,355,6549352,5.420383573825319,derived_total_minus_firearm,2021.0
+Tennessee,47,2015,434,6600299,6.575459687508097,derived_total_minus_firearm,2021.0
+Tennessee,47,2016,442,6651194,6.645423363083379,derived_total_minus_firearm,2021.0
+Tennessee,47,2017,459,6715984,6.834441535298476,derived_total_minus_firearm,2021.0
+Tennessee,47,2018,478,6770010,7.060550870678185,derived_total_minus_firearm,2021.0
+Tennessee,47,2019,474,6829174,6.940810118471134,derived_total_minus_firearm,2021.0
+Tennessee,47,2020,455,6886834,6.606809457001573,derived_total_minus_firearm,2021.0
+Tennessee,47,2021,415,6975218,5.94963483578578,derived_total_minus_firearm,2021.0
+Tennessee,47,2022,422,7051339,5.9846789382839205,derived_total_minus_firearm,2021.0
+Tennessee,47,2023,410,7126489,5.753183650462379,derived_total_minus_firearm,2021.0
+Tennessee,47,2024,427,7227750,5.90778596382,derived_total_minus_firearm,2021.0
+Texas,48,1999,790,20558220,3.8427451403866675,derived_total_minus_firearm,2021.0
+Texas,48,2000,799,20851820,3.8317998141169456,derived_total_minus_firearm,2021.0
+Texas,48,2001,868,21319622,4.0713667437443295,derived_total_minus_firearm,2021.0
+Texas,48,2002,1012,21690325,4.6656746729244505,derived_total_minus_firearm,2021.0
+Texas,48,2003,1028,22030931,4.666166854228719,derived_total_minus_firearm,2021.0
+Texas,48,2004,998,22394023,4.4565462846939115,derived_total_minus_firearm,2021.0
+Texas,48,2005,1058,22778123,4.6448076516225685,derived_total_minus_firearm,2021.0
+Texas,48,2006,1055,23359580,4.516348324755838,derived_total_minus_firearm,2021.0
+Texas,48,2007,1038,23831983,4.355491525820575,derived_total_minus_firearm,2021.0
+Texas,48,2008,1058,24309039,4.352290520410946,derived_total_minus_firearm,2021.0
+Texas,48,2009,1246,24801761,5.023836815458386,derived_total_minus_firearm,2021.0
+Texas,48,2010,1210,25145561,4.811982520493379,derived_total_minus_firearm,2021.0
+Texas,48,2011,1231,25674681,4.794606795698845,derived_total_minus_firearm,2021.0
+Texas,48,2012,1316,26059203,5.050039327756878,derived_total_minus_firearm,2021.0
+Texas,48,2013,1306,26448193,4.937955496619372,derived_total_minus_firearm,2021.0
+Texas,48,2014,1489,26956958,5.523620283861406,derived_total_minus_firearm,2021.0
+Texas,48,2015,1424,27469114,5.1840041145848375,derived_total_minus_firearm,2021.0
+Texas,48,2016,1500,27862596,5.38356153173954,derived_total_minus_firearm,2021.0
+Texas,48,2017,1651,28304596,5.83297496986002,derived_total_minus_firearm,2021.0
+Texas,48,2018,1696,28701845,5.909027799432406,derived_total_minus_firearm,2021.0
+Texas,48,2019,1670,28995881,5.7594387285559625,derived_total_minus_firearm,2021.0
+Texas,48,2020,1664,29360759,5.667428420362023,derived_total_minus_firearm,2021.0
+Texas,48,2021,1698,29527941,5.750485616318457,derived_total_minus_firearm,2021.0
+Texas,48,2022,1760,30029572,5.860889392629371,derived_total_minus_firearm,2021.0
+Texas,48,2023,1721,30503301,5.642012318601189,derived_total_minus_firearm,2021.0
+Texas,48,2024,1746,31290831,5.579909335102029,derived_total_minus_firearm,2021.0
+Utah,49,1999,130,2203482,5.899753208785006,derived_total_minus_firearm,2021.0
+Utah,49,2000,125,2233169,5.59742679573288,derived_total_minus_firearm,2021.0
+Utah,49,2001,139,2283715,6.086573850064479,derived_total_minus_firearm,2021.0
+Utah,49,2002,168,2324815,7.226381454008168,derived_total_minus_firearm,2021.0
+Utah,49,2003,158,2360137,6.694526631293014,derived_total_minus_firearm,2021.0
+Utah,49,2004,194,2401580,8.078015306589828,derived_total_minus_firearm,2021.0
+Utah,49,2005,158,2457719,6.428725171592033,derived_total_minus_firearm,2021.0
+Utah,49,2006,175,2525507,6.9293017204070315,derived_total_minus_firearm,2021.0
+Utah,49,2007,182,2597746,7.006073726992554,derived_total_minus_firearm,2021.0
+Utah,49,2008,195,2663029,7.322488790020687,derived_total_minus_firearm,2021.0
+Utah,49,2009,233,2723421,8.555416147558532,derived_total_minus_firearm,2021.0
+Utah,49,2010,203,2763885,7.344733952389483,derived_total_minus_firearm,2021.0
+Utah,49,2011,237,2817222,8.412542568530274,derived_total_minus_firearm,2021.0
+Utah,49,2012,267,2855287,9.351073990110274,derived_total_minus_firearm,2021.0
+Utah,49,2013,286,2900872,9.859104434804431,derived_total_minus_firearm,2021.0
+Utah,49,2014,282,2942902,9.58237821035155,derived_total_minus_firearm,2021.0
+Utah,49,2015,318,2995919,10.614439175424968,derived_total_minus_firearm,2021.0
+Utah,49,2016,311,3051217,10.192654275326861,derived_total_minus_firearm,2021.0
+Utah,49,2017,321,3101833,10.348719611919789,derived_total_minus_firearm,2021.0
+Utah,49,2018,327,3161105,10.344483970004163,derived_total_minus_firearm,2021.0
+Utah,49,2019,327,3205958,10.199759323110282,derived_total_minus_firearm,2021.0
+Utah,49,2020,314,3249879,9.661898181439986,derived_total_minus_firearm,2021.0
+Utah,49,2021,279,3337975,8.358360982332101,derived_total_minus_firearm,2021.0
+Utah,49,2022,337,3380800,9.968054898248935,derived_total_minus_firearm,2021.0
+Utah,49,2023,293,3417734,8.572931655886618,derived_total_minus_firearm,2021.0
+Utah,49,2024,288,3503613,8.220085951273727,derived_total_minus_firearm,2021.0
+Vermont,50,1999,17,604683,2.8113904310192286,derived_total_minus_firearm,
+Vermont,50,2000,31,608827,5.09175841413078,derived_total_minus_firearm,
+Vermont,50,2001,31,612223,5.063514438366413,derived_total_minus_firearm,
+Vermont,50,2002,38,615442,6.174424234940092,derived_total_minus_firearm,
+Vermont,50,2003,46,617858,7.445076376772656,derived_total_minus_firearm,
+Vermont,50,2004,37,619920,5.968512066073043,derived_total_minus_firearm,
+Vermont,50,2005,43,621215,6.921919142325926,derived_total_minus_firearm,
+Vermont,50,2006,38,622892,6.100576022809732,derived_total_minus_firearm,
+Vermont,50,2007,46,623481,7.377931324290557,derived_total_minus_firearm,
+Vermont,50,2008,51,624151,8.171099621726153,derived_total_minus_firearm,
+Vermont,50,2009,28,624817,4.481312128191137,derived_total_minus_firearm,
+Vermont,50,2010,40,625741,6.392421145489907,derived_total_minus_firearm,
+Vermont,50,2011,50,626431,7.981725042343054,derived_total_minus_firearm,
+Vermont,50,2012,37,626011,5.910439273431299,derived_total_minus_firearm,
+Vermont,50,2013,54,626630,8.61752549351292,derived_total_minus_firearm,
+Vermont,50,2014,65,626562,10.374073116467326,derived_total_minus_firearm,
+Vermont,50,2015,45,626042,7.1880161394922375,derived_total_minus_firearm,
+Vermont,50,2016,50,624594,8.00520017803565,derived_total_minus_firearm,
+Vermont,50,2017,50,623657,8.017227418276393,derived_total_minus_firearm,
+Vermont,50,2018,56,626299,8.9414161606517,derived_total_minus_firearm,
+Vermont,50,2019,51,623989,8.17322100229331,derived_total_minus_firearm,
+Vermont,50,2020,48,623347,7.7003659278058585,derived_total_minus_firearm,
+Vermont,50,2021,70,645570,10.843130876589681,derived_total_minus_firearm,
+Vermont,50,2022,60,647064,9.272653091502542,derived_total_minus_firearm,
+Vermont,50,2023,57,647464,8.803578268444266,derived_total_minus_firearm,
+Vermont,50,2024,45,648493,6.939165110494638,derived_total_minus_firearm,
+Virginia,51,1999,291,7000174,4.157039525017521,derived_total_minus_firearm,
+Virginia,51,2000,288,7078515,4.068649992265327,derived_total_minus_firearm,
+Virginia,51,2001,332,7198362,4.6121603775970135,derived_total_minus_firearm,
+Virginia,51,2002,316,7286873,4.336565218029738,derived_total_minus_firearm,
+Virginia,51,2003,360,7366977,4.886671968705753,derived_total_minus_firearm,
+Virginia,51,2004,338,7475575,4.521391331101622,derived_total_minus_firearm,
+Virginia,51,2005,358,7577105,4.724759654247896,derived_total_minus_firearm,
+Virginia,51,2006,381,7673725,4.964994184701693,derived_total_minus_firearm,
+Virginia,51,2007,397,7751000,5.121919752290028,derived_total_minus_firearm,
+Virginia,51,2008,427,7833496,5.450950635578292,derived_total_minus_firearm,
+Virginia,51,2009,441,7925937,5.56401091757353,derived_total_minus_firearm,
+Virginia,51,2010,392,8001024,4.899372880271324,derived_total_minus_firearm,
+Virginia,51,2011,452,8096604,5.582587465065602,derived_total_minus_firearm,
+Virginia,51,2012,478,8185867,5.839332596046332,derived_total_minus_firearm,
+Virginia,51,2013,474,8260405,5.738217436070022,derived_total_minus_firearm,
+Virginia,51,2014,502,8326289,6.029096515866793,derived_total_minus_firearm,
+Virginia,51,2015,493,8382993,5.880954451470973,derived_total_minus_firearm,
+Virginia,51,2016,499,8411808,5.932137300328301,derived_total_minus_firearm,
+Virginia,51,2017,509,8470020,6.009430910434684,derived_total_minus_firearm,
+Virginia,51,2018,571,8517685,6.703699420675922,derived_total_minus_firearm,
+Virginia,51,2019,485,8535519,5.682138367918811,derived_total_minus_firearm,
+Virginia,51,2020,510,8590563,5.936747102605496,derived_total_minus_firearm,
+Virginia,51,2021,486,8642274,5.623519920798623,derived_total_minus_firearm,
+Virginia,51,2022,498,8683619,5.734936090586196,derived_total_minus_firearm,
+Virginia,51,2023,523,8715698,6.000666842747419,derived_total_minus_firearm,
+Virginia,51,2024,474,8811195,5.379520031051408,derived_total_minus_firearm,
+Washington,53,1999,370,5842564,6.332836063070939,derived_total_minus_firearm,
+Washington,53,2000,340,5894121,5.7684597923931324,derived_total_minus_firearm,
+Washington,53,2001,324,5985722,5.412880852134463,derived_total_minus_firearm,
+Washington,53,2002,380,6052349,6.278553996142655,derived_total_minus_firearm,
+Washington,53,2003,373,6104115,6.110631926167838,derived_total_minus_firearm,
+Washington,53,2004,413,6178645,6.684313470024577,derived_total_minus_firearm,
+Washington,53,2005,430,6257305,6.871968043750465,derived_total_minus_firearm,
+Washington,53,2006,420,6370753,6.592627276555849,derived_total_minus_firearm,
+Washington,53,2007,456,6461587,7.057089844956046,derived_total_minus_firearm,
+Washington,53,2008,456,6562231,6.948856265498731,derived_total_minus_firearm,
+Washington,53,2009,454,6667426,6.809224429337498,derived_total_minus_firearm,
+Washington,53,2010,500,6724540,7.435452833948493,derived_total_minus_firearm,
+Washington,53,2011,532,6830038,7.789122110301581,derived_total_minus_firearm,
+Washington,53,2012,512,6897012,7.423504555305979,derived_total_minus_firearm,
+Washington,53,2013,547,6971406,7.8463368795333395,derived_total_minus_firearm,
+Washington,53,2014,577,7061530,8.171033756140666,derived_total_minus_firearm,
+Washington,53,2015,608,7170351,8.479361749515471,derived_total_minus_firearm,
+Washington,53,2016,635,7288000,8.712952799121844,derived_total_minus_firearm,
+Washington,53,2017,664,7405743,8.966014618654738,derived_total_minus_firearm,
+Washington,53,2018,660,7535591,8.758437128554352,derived_total_minus_firearm,
+Washington,53,2019,631,7614893,8.28639351859573,derived_total_minus_firearm,
+Washington,53,2020,606,7693612,7.876664432778778,derived_total_minus_firearm,
+Washington,53,2021,622,7738692,8.03753399153242,derived_total_minus_firearm,
+Washington,53,2022,591,7785786,7.590755769552359,derived_total_minus_firearm,
+Washington,53,2023,600,7812880,7.679626462968841,derived_total_minus_firearm,
+Washington,53,2024,585,7958180,7.3509269707395415,derived_total_minus_firearm,
+West Virginia,54,1999,60,1811799,3.3116256273460802,derived_total_minus_firearm,2016.0
+West Virginia,54,2000,73,1808344,4.036842547656866,derived_total_minus_firearm,2016.0
+West Virginia,54,2001,93,1801481,5.162419142916299,derived_total_minus_firearm,2016.0
+West Virginia,54,2002,88,1805414,4.874228293344352,derived_total_minus_firearm,2016.0
+West Virginia,54,2003,77,1812295,4.248756411069943,derived_total_minus_firearm,2016.0
+West Virginia,54,2004,93,1816438,5.119910506166466,derived_total_minus_firearm,2016.0
+West Virginia,54,2005,68,1820492,3.735253986285027,derived_total_minus_firearm,2016.0
+West Virginia,54,2006,95,1827912,5.197186735466477,derived_total_minus_firearm,2016.0
+West Virginia,54,2007,97,1834052,5.28883586724913,derived_total_minus_firearm,2016.0
+West Virginia,54,2008,90,1840310,4.890480408192099,derived_total_minus_firearm,2016.0
+West Virginia,54,2009,77,1847775,4.167174033635048,derived_total_minus_firearm,2016.0
+West Virginia,54,2010,69,1852994,3.7237033687103143,derived_total_minus_firearm,2016.0
+West Virginia,54,2011,108,1855364,5.820960199723611,derived_total_minus_firearm,2016.0
+West Virginia,54,2012,131,1855413,7.060422666004818,derived_total_minus_firearm,2016.0
+West Virginia,54,2013,102,1854304,5.500716171674117,derived_total_minus_firearm,2016.0
+West Virginia,54,2014,148,1850326,7.998590518643741,derived_total_minus_firearm,2016.0
+West Virginia,54,2015,126,1844128,6.832497527286609,derived_total_minus_firearm,2016.0
+West Virginia,54,2016,127,1831102,6.9357141218785205,derived_total_minus_firearm,2016.0
+West Virginia,54,2017,127,1815857,6.993942804967574,derived_total_minus_firearm,2016.0
+West Virginia,54,2018,138,1805832,7.641906888348421,derived_total_minus_firearm,2016.0
+West Virginia,54,2019,134,1792147,7.477065218422375,derived_total_minus_firearm,2016.0
+West Virginia,54,2020,134,1784787,7.507898701637787,derived_total_minus_firearm,2016.0
+West Virginia,54,2021,149,1782959,8.356894353712004,derived_total_minus_firearm,2016.0
+West Virginia,54,2022,133,1775156,7.4922992683459935,derived_total_minus_firearm,2016.0
+West Virginia,54,2023,106,1770071,5.988460349895568,derived_total_minus_firearm,2016.0
+West Virginia,54,2024,102,1769979,5.762780236375686,derived_total_minus_firearm,2016.0
+Wisconsin,55,1999,299,5332666,5.606951569815173,derived_total_minus_firearm,
+Wisconsin,55,2000,289,5363675,5.388096780658782,derived_total_minus_firearm,
+Wisconsin,55,2001,327,5406835,6.047900481520149,derived_total_minus_firearm,
+Wisconsin,55,2002,329,5445162,6.042060823902024,derived_total_minus_firearm,
+Wisconsin,55,2003,341,5479203,6.223532875128006,derived_total_minus_firearm,
+Wisconsin,55,2004,354,5514026,6.419991490790939,derived_total_minus_firearm,
+Wisconsin,55,2005,346,5546166,6.2385438877956405,derived_total_minus_firearm,
+Wisconsin,55,2006,376,5577655,6.741184243198978,derived_total_minus_firearm,
+Wisconsin,55,2007,396,5610775,7.057848514688257,derived_total_minus_firearm,
+Wisconsin,55,2008,402,5640996,7.126401082362052,derived_total_minus_firearm,
+Wisconsin,55,2009,382,5669264,6.738088048113474,derived_total_minus_firearm,
+Wisconsin,55,2010,416,5686986,7.314946792554088,derived_total_minus_firearm,
+Wisconsin,55,2011,396,5711767,6.933055917722133,derived_total_minus_firearm,
+Wisconsin,55,2012,379,5726398,6.618471157610771,derived_total_minus_firearm,
+Wisconsin,55,2013,416,5742713,7.243962914392554,derived_total_minus_firearm,
+Wisconsin,55,2014,418,5757564,7.260014825714487,derived_total_minus_firearm,
+Wisconsin,55,2015,463,5771337,8.022404513893402,derived_total_minus_firearm,
+Wisconsin,55,2016,415,5778708,7.181536080383367,derived_total_minus_firearm,
+Wisconsin,55,2017,494,5795483,8.523879718049386,derived_total_minus_firearm,
+Wisconsin,55,2018,473,5813568,8.13613945859066,derived_total_minus_firearm,
+Wisconsin,55,2019,425,5822434,7.299352813617122,derived_total_minus_firearm,
+Wisconsin,55,2020,431,5832655,7.389430713800149,derived_total_minus_firearm,
+Wisconsin,55,2021,426,5895908,7.22535019203149,derived_total_minus_firearm,
+Wisconsin,55,2022,401,5892539,6.805215884018757,derived_total_minus_firearm,
+Wisconsin,55,2023,427,5910955,7.223874991435395,derived_total_minus_firearm,
+Wisconsin,55,2024,424,5960975,7.112930351158997,derived_total_minus_firearm,
+Wyoming,56,1999,35,491780,7.117003538167475,derived_total_minus_firearm,2011.0
+Wyoming,56,2000,33,493782,6.683111170516545,derived_total_minus_firearm,2011.0
+Wyoming,56,2001,23,494657,4.649686550478412,derived_total_minus_firearm,2011.0
+Wyoming,56,2002,23,500017,4.599843605317421,derived_total_minus_firearm,2011.0
+Wyoming,56,2003,34,503453,6.753361286952305,derived_total_minus_firearm,2011.0
+Wyoming,56,2004,40,509106,7.856909955883449,derived_total_minus_firearm,2011.0
+Wyoming,56,2005,34,514157,6.612766139525474,derived_total_minus_firearm,2011.0
+Wyoming,56,2006,44,522667,8.418361978085471,derived_total_minus_firearm,2011.0
+Wyoming,56,2007,34,534876,6.356613495464369,derived_total_minus_firearm,2011.0
+Wyoming,56,2008,37,546043,6.776023133709252,derived_total_minus_firearm,2011.0
+Wyoming,56,2009,30,559851,5.358568619150452,derived_total_minus_firearm,2011.0
+Wyoming,56,2010,48,563626,8.51628562202595,derived_total_minus_firearm,2011.0
+Wyoming,56,2011,48,568158,8.448354155006177,derived_total_minus_firearm,2011.0
+Wyoming,56,2012,69,576412,11.970604359381827,derived_total_minus_firearm,2011.0
+Wyoming,56,2013,41,582658,7.036717937452156,derived_total_minus_firearm,2011.0
+Wyoming,56,2014,42,584153,7.189897167351704,derived_total_minus_firearm,2011.0
+Wyoming,56,2015,62,586107,10.578273250447442,derived_total_minus_firearm,2011.0
+Wyoming,56,2016,57,585501,9.735252373608244,derived_total_minus_firearm,2011.0
+Wyoming,56,2017,58,579315,10.011824309745126,derived_total_minus_firearm,2011.0
+Wyoming,56,2018,40,577737,6.923565567031364,derived_total_minus_firearm,2011.0
+Wyoming,56,2019,56,578759,9.67587545074893,derived_total_minus_firearm,2011.0
+Wyoming,56,2020,54,582328,9.273124424722834,derived_total_minus_firearm,2011.0
+Wyoming,56,2021,53,578803,9.156828834681235,derived_total_minus_firearm,2011.0
+Wyoming,56,2022,52,581381,8.944220743367946,derived_total_minus_firearm,2011.0
+Wyoming,56,2023,41,584057,7.019862787364929,derived_total_minus_firearm,2011.0
+Wyoming,56,2024,46,587618,7.8282149287462275,derived_total_minus_firearm,2011.0
