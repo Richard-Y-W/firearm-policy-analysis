@@ -60,6 +60,11 @@ VERIFIED_POLICY_AUDIT_REQUIRED_FIELDS = [
     "coding_notes",
 ]
 
+VERIFIED_POLICY_AUDIT_STATUSES = {
+    "source_verified",
+    "not_adopted_verified",
+}
+
 
 class RegressionResult:
     def __init__(self, params, bse, pvalues, nobs, rsquared):
@@ -83,26 +88,33 @@ def validate_policy_audit_schema(table: pd.DataFrame) -> pd.DataFrame:
 
 def validate_policy_audit_verified_rows(table: pd.DataFrame) -> pd.DataFrame:
     audit = validate_policy_audit_schema(table)
-    verified = audit["audit_status"].astype(str).str.strip().eq("source_verified")
+    statuses = audit["audit_status"].astype(str).str.strip()
+    verified = statuses.isin(VERIFIED_POLICY_AUDIT_STATUSES)
     if not verified.any():
         return audit
 
-    missing_rows = []
+    missing_by_status = {}
     for row_number, row in audit.loc[verified].iterrows():
+        status = str(row["audit_status"]).strip()
         missing_fields = [
             field
             for field in VERIFIED_POLICY_AUDIT_REQUIRED_FIELDS
             if str(row[field]).strip() == ""
         ]
         if missing_fields:
-            missing_rows.append(
+            missing_by_status.setdefault(status, []).append(
                 f"{row.get('State', row_number)}: {', '.join(missing_fields)}"
             )
 
-    if missing_rows:
-        details = "; ".join(missing_rows)
+    if missing_by_status:
+        statuses = sorted(missing_by_status)
+        details = "; ".join(
+            f"{status}: {'; '.join(missing_by_status[status])}"
+            for status in statuses
+        )
+        status_label = statuses[0] if len(statuses) == 1 else "verified legal audit"
         raise ValueError(
-            "source_verified rows missing required legal audit fields: "
+            f"{status_label} rows missing required legal audit fields: "
             f"{details}"
         )
     return audit

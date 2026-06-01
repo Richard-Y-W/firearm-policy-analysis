@@ -52,6 +52,7 @@ def build_policy_audit_status_sentence(audit_status: pd.DataFrame) -> str:
     partial = _audit_count(audit_status, "partial")
     baseline = _audit_count(audit_status, "baseline_permitless_verified")
     ambiguous = _audit_count(audit_status, "ambiguous_reviewed")
+    non_adopter_verified = _audit_count(audit_status, "not_adopted_verified")
     needs_source = _audit_count(audit_status, "needs_source")
     not_reviewed = _audit_count(audit_status, "not_adopted_needs_review")
 
@@ -66,10 +67,19 @@ def build_policy_audit_status_sentence(audit_status: pd.DataFrame) -> str:
         if ambiguous == 1
         else f"{ambiguous} ambiguous reviewed rows"
     )
+    non_adopter_text = (
+        "1 verified non-adopter row"
+        if non_adopter_verified == 1
+        else f"{non_adopter_verified} verified non-adopter rows"
+    )
+    non_clean_categories = "Partial, ambiguous, and baseline rows"
+    if not_reviewed:
+        non_clean_categories = "Partial, ambiguous, baseline, and not-yet-reviewed rows"
     return (
         f"The policy audit table contains {total_audit} states. "
-        f"Phase 2B records {verified} source-verified current-adopter rows, "
-        f"{partial_text}, {baseline_text}, and {ambiguous_text}; "
+        f"The current audit records {verified} source-verified current-adopter rows, "
+        f"{partial_text}, {baseline_text}, {ambiguous_text}, and "
+        f"{non_adopter_text}; "
         f"{not_reviewed} rows remain marked "
         "`not_adopted_needs_review`."
         + (
@@ -77,7 +87,7 @@ def build_policy_audit_status_sentence(audit_status: pd.DataFrame) -> str:
             if needs_source
             else ""
         )
-        + " Partial, ambiguous, baseline, and not-yet-reviewed rows should not be treated as clean within-panel adoption events."
+        + f" {non_clean_categories} should not be treated as clean within-panel adoption events."
     )
 
 
@@ -180,6 +190,7 @@ def build_report() -> str:
         "- Added an auditable permitless-carry policy table with one row per state.",
         "- Added Phase 2B legal edge-case handling for recent adopters, Vermont, and Arkansas.",
         "- Added Phase 2C Arkansas sensitivity checks that recode Arkansas as 2021 and 2023 while keeping the primary model excluded.",
+        "- Verified non-adopter rows through the 1999-2024 panel window and documented the treatment rule in a legal-coding appendix.",
         "- Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.",
         "- Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.",
         "- Corrected the stale README change-score p-values against committed output tables.",
@@ -263,7 +274,7 @@ def build_report() -> str:
         [
         "## Interpretation Boundary",
         "",
-        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. It still does not establish causal proof. Remaining non-adopter coding, detailed statutory screening fields, and external confounder expansion remain Phase 2 work.",
+        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window. It still does not establish causal proof. Detailed statutory screening fields and external confounder expansion remain Phase 2 work.",
         "",
         ]
     )

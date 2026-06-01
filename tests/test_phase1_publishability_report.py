@@ -14,9 +14,10 @@ def test_build_policy_audit_status_sentence_reports_verified_and_partial_counts(
                 "partial",
                 "baseline_permitless_verified",
                 "ambiguous_reviewed",
+                "not_adopted_verified",
                 "not_adopted_needs_review",
             ],
-            "state_count": [26, 1, 1, 1, 21],
+            "state_count": [26, 1, 1, 1, 21, 0],
         }
     )
 
@@ -26,7 +27,8 @@ def test_build_policy_audit_status_sentence_reports_verified_and_partial_counts(
     assert "1 partial row" in sentence
     assert "1 baseline-permitless row" in sentence
     assert "1 ambiguous reviewed row" in sentence
-    assert "21 rows remain marked `not_adopted_needs_review`" in sentence
+    assert "21 verified non-adopter rows" in sentence
+    assert "0 rows remain marked `not_adopted_needs_review`" in sentence
 
 
 def test_build_arkansas_sensitivity_sentence_reports_retained_signs():

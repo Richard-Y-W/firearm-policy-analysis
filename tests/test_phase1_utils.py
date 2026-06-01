@@ -40,6 +40,15 @@ def test_validate_policy_audit_verified_rows_requires_legal_source_fields():
         validate_policy_audit_verified_rows(table)
 
 
+def test_validate_policy_audit_verified_rows_requires_non_adopter_source_fields():
+    table = pd.DataFrame([{col: "" for col in POLICY_AUDIT_COLUMNS}])
+    table.loc[0, "State"] = "A"
+    table.loc[0, "audit_status"] = "not_adopted_verified"
+
+    with pytest.raises(ValueError, match="not_adopted_verified rows missing required legal audit fields"):
+        validate_policy_audit_verified_rows(table)
+
+
 def test_build_robustness_sample_excludes_covid_years():
     panel = pd.DataFrame(
         {

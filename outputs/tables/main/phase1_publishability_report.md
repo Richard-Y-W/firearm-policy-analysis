@@ -5,18 +5,19 @@
 - Added an auditable permitless-carry policy table with one row per state.
 - Added Phase 2B legal edge-case handling for recent adopters, Vermont, and Arkansas.
 - Added Phase 2C Arkansas sensitivity checks that recode Arkansas as 2021 and 2023 while keeping the primary model excluded.
+- Verified non-adopter rows through the 1999-2024 panel window and documented the treatment rule in a legal-coding appendix.
 - Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.
 - Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.
 - Corrected the stale README change-score p-values against committed output tables.
 
 ## Policy Audit Status
 
-The policy audit table contains 50 states. Phase 2B records 26 source-verified current-adopter rows, 1 partial row, 1 baseline-permitless row, and 1 ambiguous reviewed row; 21 rows remain marked `not_adopted_needs_review`. Partial, ambiguous, baseline, and not-yet-reviewed rows should not be treated as clean within-panel adoption events.
+The policy audit table contains 50 states. The current audit records 26 source-verified current-adopter rows, 1 partial row, 1 baseline-permitless row, 1 ambiguous reviewed row, and 21 verified non-adopter rows; 0 rows remain marked `not_adopted_needs_review`. Partial, ambiguous, and baseline rows should not be treated as clean within-panel adoption events.
 
 | audit_status | state_count |
 | --- | --- |
 | source_verified | 26 |
-| not_adopted_needs_review | 21 |
+| not_adopted_verified | 21 |
 | ambiguous_reviewed | 1 |
 | partial | 1 |
 | baseline_permitless_verified | 1 |
@@ -89,4 +90,4 @@ The Arkansas sensitivity check keeps Arkansas excluded in the primary model and 
 
 ## Interpretation Boundary
 
-Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. It still does not establish causal proof. Remaining non-adopter coding, detailed statutory screening fields, and external confounder expansion remain Phase 2 work.
+Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window. It still does not establish causal proof. Detailed statutory screening fields and external confounder expansion remain Phase 2 work.

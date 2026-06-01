@@ -3,49 +3,49 @@ Alabama,2023.0,2023,source_verified,False
 Alaska,2003.0,2003,source_verified,False
 Arizona,2010.0,2010,source_verified,False
 Arkansas,,,ambiguous_reviewed,False
-California,,,not_adopted_needs_review,False
-Colorado,,,not_adopted_needs_review,False
-Connecticut,,,not_adopted_needs_review,False
-Delaware,,,not_adopted_needs_review,False
+California,,,not_adopted_verified,False
+Colorado,,,not_adopted_verified,False
+Connecticut,,,not_adopted_verified,False
+Delaware,,,not_adopted_verified,False
 Florida,2023.0,2023,source_verified,False
 Georgia,2022.0,2022,source_verified,False
-Hawaii,,,not_adopted_needs_review,False
+Hawaii,,,not_adopted_verified,False
 Idaho,2016.0,2016,source_verified,False
-Illinois,,,not_adopted_needs_review,False
+Illinois,,,not_adopted_verified,False
 Indiana,2022.0,2022,source_verified,False
 Iowa,2021.0,2021,source_verified,False
 Kansas,2015.0,2015,source_verified,False
 Kentucky,2019.0,2019,source_verified,False
 Louisiana,2024.0,2024,source_verified,False
 Maine,2015.0,2015,source_verified,False
-Maryland,,,not_adopted_needs_review,False
-Massachusetts,,,not_adopted_needs_review,False
-Michigan,,,not_adopted_needs_review,False
-Minnesota,,,not_adopted_needs_review,False
+Maryland,,,not_adopted_verified,False
+Massachusetts,,,not_adopted_verified,False
+Michigan,,,not_adopted_verified,False
+Minnesota,,,not_adopted_verified,False
 Mississippi,2015.0,2015,partial,False
 Missouri,2017.0,2017,source_verified,False
 Montana,2021.0,2021,source_verified,False
 Nebraska,2023.0,2023,source_verified,False
-Nevada,,,not_adopted_needs_review,False
+Nevada,,,not_adopted_verified,False
 New Hampshire,2017.0,2017,source_verified,False
-New Jersey,,,not_adopted_needs_review,False
-New Mexico,,,not_adopted_needs_review,False
-New York,,,not_adopted_needs_review,False
-North Carolina,,,not_adopted_needs_review,False
+New Jersey,,,not_adopted_verified,False
+New Mexico,,,not_adopted_verified,False
+New York,,,not_adopted_verified,False
+North Carolina,,,not_adopted_verified,False
 North Dakota,2017.0,2017,source_verified,False
 Ohio,2022.0,2022,source_verified,False
 Oklahoma,2019.0,2019,source_verified,False
-Oregon,,,not_adopted_needs_review,False
-Pennsylvania,,,not_adopted_needs_review,False
-Rhode Island,,,not_adopted_needs_review,False
+Oregon,,,not_adopted_verified,False
+Pennsylvania,,,not_adopted_verified,False
+Rhode Island,,,not_adopted_verified,False
 South Carolina,2024.0,2024,source_verified,False
 South Dakota,2019.0,2019,source_verified,False
 Tennessee,2021.0,2021,source_verified,False
 Texas,2021.0,2021,source_verified,False
 Utah,2021.0,2021,source_verified,False
 Vermont,,,baseline_permitless_verified,False
-Virginia,,,not_adopted_needs_review,False
-Washington,,,not_adopted_needs_review,False
+Virginia,,,not_adopted_verified,False
+Washington,,,not_adopted_verified,False
 West Virginia,2016.0,2016,source_verified,False
-Wisconsin,,,not_adopted_needs_review,False
+Wisconsin,,,not_adopted_verified,False
 Wyoming,2011.0,2011,source_verified,False
