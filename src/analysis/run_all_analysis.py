@@ -524,7 +524,7 @@ def build_conclusion_table():
             "welch_diff_5y": welch_subset.loc[welch_subset["window"] == 5, "difference"].iloc[0] if 5 in welch_subset["window"].values else np.nan,
             "welch_p_5y": welch_subset.loc[welch_subset["window"] == 5, "p_value"].iloc[0] if 5 in welch_subset["window"].values else np.nan,
             "strongest_heterogeneity_signal": best_het,
-            "machine_summary": conclusion,
+            "model_summary": conclusion,
         })
 
     summary = pd.DataFrame(summary_rows)

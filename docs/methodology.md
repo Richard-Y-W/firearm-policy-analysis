@@ -1,56 +1,34 @@
-@"
+# Methodology
 
-\# Methodology
-
-
-
-\## Main question
+## Main Question
 
 Do states adopting permitless concealed carry experience different changes in firearm death rates than states that do not?
 
-
-
-\## Policy definition
+## Policy Definition
 
 RAND State Firearm Law Database v6.0:
 
-\- Law Class: carrying a concealed weapon (ccw)
+- Law class: carrying a concealed weapon (CCW)
+- Law class subtype: shall issue, permit not required
 
-\- Law Class Subtype: shall issue (permit not required)
-
-
-
-\## Outcomes
+## Outcomes
 
 CDC WONDER state-year crude death rates per 100,000:
 
-\- Total firearm deaths
+- Total firearm deaths
+- Firearm homicide
+- Firearm suicide
 
-\- Firearm homicide
-
-\- Firearm suicide
-
-
-
-\## Baseline design
+## Baseline Design
 
 For each state:
 
-A = average(post-period rate) - average(pre-period rate)
+`A = average(post-period rate) - average(pre-period rate)`
 
+Adopter and non-adopter `A` values are compared using Welch's t-test.
 
+## Extensions
 
-Compare adopter and non-adopter A values using Welch's t-test.
-
-
-
-\## Extensions
-
-\- Alternative windows
-
-\- Event-study / difference-in-differences
-
-\- Separate homicide and suicide outcomes
-
-"@ | Set-Content docs\\methodology.md
-
+- Alternative pre/post windows
+- Event-study and difference-in-differences models
+- Separate homicide and suicide outcomes

@@ -6,17 +6,17 @@ The strongest and most policy-relevant finding is that **permitless carry adopti
 
 The mechanism layer indicates that the increase is **not confined only to firearm suicide** in the TWFE specification: non-firearm suicide and total suicide also rise. That means the evidence is **not a clean method-substitution-only story** in the current model set, even though firearm suicide remains a central part of the pattern.
 
-The original Welch change-score design strongly reinforces the suicide result: **firearm suicide is positive and statistically significant across all three windows (2y, 3y, 5y)**, whereas **firearm homicide is not statistically significant in any of the three windows**.
+The original Welch change-score design reinforces the suicide result: **firearm suicide is positive and statistically significant across all three windows (2y, 3y, 5y)**, whereas **firearm homicide is not statistically significant in any of the three windows**.
 
 Total firearm deaths also show a positive post-adoption association, suggesting the suicide finding is large enough to matter for overall firearm mortality.
 
-## Recommended one-sentence takeaway
+## Recommended One-Sentence Takeaway
 
 "States adopting permitless carry laws experienced larger post-adoption increases in firearm suicide rates, while firearm homicide showed no comparably robust evidence of change; broader suicide outcomes also increased, suggesting the pattern may extend beyond a narrow method-substitution story."
 
 ## Firearm Suicide
 
-- **TWFE DiD estimate:** 1.277 (SE 0.230, p = 0.0000) *** → **positive association**.
+- **TWFE DiD estimate:** 1.277 (SE 0.230, p = 0.0000) *** -> **positive association**.
 
 - **Welch pre-post change-score results:**
   - 2-year window: difference = 0.720, p = 0.0006 ***
@@ -27,7 +27,7 @@ Total firearm deaths also show a positive post-adoption association, suggesting 
 
 ## Non-Firearm Suicide
 
-- **TWFE DiD estimate:** 0.313 (SE 0.145, p = 0.0306) ** → **positive association**.
+- **TWFE DiD estimate:** 0.313 (SE 0.145, p = 0.0306) ** -> **positive association**.
 
 - **Welch pre-post change-score results:**
   - 2-year window: difference = 0.223, p = 0.2833 
@@ -38,7 +38,7 @@ Total firearm deaths also show a positive post-adoption association, suggesting 
 
 ## Total Suicide
 
-- **TWFE DiD estimate:** 1.589 (SE 0.319, p = 0.0000) *** → **positive association**.
+- **TWFE DiD estimate:** 1.589 (SE 0.319, p = 0.0000) *** -> **positive association**.
 
 - **Welch pre-post change-score results:**
   - 2-year window: difference = 0.943, p = 0.0011 ***
@@ -49,7 +49,7 @@ Total firearm deaths also show a positive post-adoption association, suggesting 
 
 ## Firearm Homicide
 
-- **TWFE DiD estimate:** -0.054 (SE 0.375, p = 0.8860)  → **no clear evidence**.
+- **TWFE DiD estimate:** -0.054 (SE 0.375, p = 0.8860)  -> **no clear evidence**.
 
 - **Welch pre-post change-score results:**
   - 2-year window: difference = 0.150, p = 0.3889 
@@ -60,7 +60,7 @@ Total firearm deaths also show a positive post-adoption association, suggesting 
 
 ## Total Firearm Deaths
 
-- **TWFE DiD estimate:** 1.376 (SE 0.472, p = 0.0036) *** → **positive association**.
+- **TWFE DiD estimate:** 1.376 (SE 0.472, p = 0.0036) *** -> **positive association**.
 
 - **Welch pre-post change-score results:**
   - 2-year window: difference = 0.777, p = 0.0091 ***
@@ -100,7 +100,7 @@ Across the main state-year panel models, permitless carry adoption was associate
 ## Limitations
 
 - This is still an **observational, state-level quasi-experimental design**, not a randomized experiment.
-- The TWFE event-study / DiD results should be treated as a strong first-pass design, but a **modern staggered-adoption estimator** would be a worthwhile next upgrade.
+- The TWFE event-study / DiD results should be treated as a first-pass design; a modern staggered-adoption estimator would be a worthwhile next upgrade.
 - The political-selection logit showed **perfect-separation / convergence problems**, so those coefficients should not be overinterpreted.
 - Some homicide observations are missing due to suppression / incomplete availability, so homicide results are based on a smaller effective sample.
 - State-level analysis cannot identify which individuals changed behavior; avoid ecological fallacy language.
