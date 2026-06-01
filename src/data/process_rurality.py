@@ -32,12 +32,8 @@ def main():
     print("Columns found:")
     print(df.columns.tolist())
 
-    # Standard USDA RUCC 2013 file usually has columns like:
-    # State, County_Name, FIPS, RUCC_2013
-    # but column names can vary a bit, so normalize
     df.columns = [str(c).strip() for c in df.columns]
 
-    # Try common column patterns
     state_col = None
     rucc_col = None
 
@@ -60,10 +56,8 @@ def main():
     df["rucc_2013"] = pd.to_numeric(df["rucc_2013"], errors="coerce")
     df = df.dropna(subset=["state_raw", "rucc_2013"]).copy()
 
-    # Convert abbreviations to full state names if needed
     df["State"] = df["state_raw"].map(STATE_ABBR_TO_NAME).fillna(df["state_raw"])
 
-    # Keep only 50 states
     df = df[df["State"].isin(STATE_ABBR_TO_NAME.values())].copy()
 
     state_rurality = (

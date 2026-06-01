@@ -28,7 +28,6 @@ def main():
     print("Columns found:")
     print(df.columns.tolist())
 
-    # Expected Kaggle/BLS-style column names
     state_col = "State/Area"
     year_col = "Year"
     month_col = "Month"
@@ -38,10 +37,8 @@ def main():
     if missing:
         raise ValueError(f"Missing expected columns: {missing}")
 
-    # Keep only 50 states
     df = df[df[state_col].isin(VALID_STATES)].copy()
 
-    # Clean numeric fields
     df[rate_col] = (
         df[rate_col]
         .astype(str)
@@ -52,7 +49,6 @@ def main():
     df[year_col] = pd.to_numeric(df[year_col], errors="coerce")
     df[month_col] = pd.to_numeric(df[month_col], errors="coerce")
 
-    # Monthly -> annual average
     annual = (
         df.groupby([state_col, year_col], as_index=False)[rate_col]
         .mean()

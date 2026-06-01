@@ -15,26 +15,21 @@ def read_wonder_export(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path, sep="\t", engine="python", dtype=str)
     df.columns = [c.strip().strip('"') for c in df.columns]
 
-    # Keep real state rows only
     df = df[df["State"].notna() & (df["State"] != "---")].copy()
 
     for c in ["Notes", "State", "State Code", "Year", "Year Code", "Deaths", "Population"]:
         if c in df.columns:
             df[c] = df[c].astype(str).str.strip().str.strip('"')
 
-    # Remove total rows if present
     if "Notes" in df.columns:
         df = df[~df["Notes"].fillna("").str.strip().eq("Total")].copy()
 
-    # Numeric conversion
     for c in ["State Code", "Year", "Year Code", "Deaths", "Population"]:
         if c in df.columns:
             df[c] = pd.to_numeric(df[c], errors="coerce")
 
-    # Drop bad rows
     df = df.dropna(subset=["State", "State Code", "Year", "Deaths", "Population"]).copy()
 
-    # Recompute rate for consistency
     df["rate_per_100k"] = df["Deaths"] / df["Population"] * 100000
 
     return df[["State", "State Code", "Year", "Deaths", "Population", "rate_per_100k"]].copy()
@@ -61,7 +56,6 @@ def main():
         .reset_index(drop=True)
     )
 
-    # Bring in permitless year from existing firearm suicide panel
     firearm = pd.read_csv(FIREARM_SUICIDE_PANEL)
     permitless_map = firearm[["State", "permitless_year"]].drop_duplicates()
 
@@ -70,7 +64,6 @@ def main():
     total_out = PROCESSED_DIR / "analysis_panel_total_suicide_deaths_1999_2024.csv"
     total_panel.to_csv(total_out, index=False)
 
-    # Build non-firearm suicide panel
     firearm_subset = firearm[
         ["State", "State Code", "Year", "Deaths", "Population", "rate_per_100k", "source", "permitless_year"]
     ].copy()

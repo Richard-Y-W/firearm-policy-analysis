@@ -32,18 +32,14 @@ def main():
     print("Columns found:")
     print(df.columns.tolist())
 
-    # Keep presidential election years relevant to your study
     df = df[(df["year"] >= 2000) & (df["year"] <= 2020)].copy()
 
-    # Use postal abbreviation column, not the raw state field
     df["state_po"] = df["state_po"].astype(str).str.strip().str.upper()
     df = df[df["state_po"].isin(STATE_PO_TO_NAME.keys())].copy()
 
-    # Keep only Democrat / Republican
     df["party_simplified"] = df["party_simplified"].astype(str).str.strip().str.upper()
     df = df[df["party_simplified"].isin(["DEMOCRAT", "REPUBLICAN"])].copy()
 
-    # Sum votes within state-year-party
     grouped = (
         df.groupby(["state_po", "year", "party_simplified"], as_index=False)["candidatevotes"]
         .sum()

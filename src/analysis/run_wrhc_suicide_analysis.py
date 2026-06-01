@@ -157,7 +157,6 @@ def main():
     results = []
     state_scores = None
 
-    # latest treatment year chosen so full post window exists in 1999–2024 data
     settings = [
         (2, 2, 2021, "2y_pre_vs_2y_post"),
         (3, 3, 2020, "3y_pre_vs_3y_post"),

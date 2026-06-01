@@ -15,7 +15,6 @@ def main():
     rurality = pd.read_csv(PROCESSED_DIR / "state_rurality_baseline_2013.csv")
     politics = pd.read_csv(PROCESSED_DIR / "state_year_presidential_vote_share_2000_2020.csv")
 
-    # Base panel from firearm suicide
     panel = firearm[[
         "State", "State Code", "Year", "Deaths", "Population", "rate_per_100k", "permitless_year"
     ]].copy().rename(columns={
@@ -24,7 +23,6 @@ def main():
         "rate_per_100k": "firearm_suicide_rate_per_100k"
     })
 
-    # Merge total suicide
     total_suicide = total_suicide[[
         "State", "Year", "Deaths", "rate_per_100k"
     ]].copy().rename(columns={
@@ -33,7 +31,6 @@ def main():
     })
     panel = panel.merge(total_suicide, on=["State", "Year"], how="left")
 
-    # Merge non-firearm suicide
     nonfirearm = nonfirearm[[
         "State", "Year", "Deaths", "rate_per_100k"
     ]].copy().rename(columns={
@@ -42,31 +39,24 @@ def main():
     })
     panel = panel.merge(nonfirearm, on=["State", "Year"], how="left")
 
-    # Merge unemployment
     unemployment = unemployment.rename(columns={"unemployment_rate": "unemployment_rate"})
     panel = panel.merge(unemployment, on=["State", "Year"], how="left")
 
-    # Merge income
     panel = panel.merge(income, on=["State", "Year"], how="left")
 
-    # Merge gun ownership
     panel = panel.merge(gun, on=["State", "Year"], how="left")
     panel = panel.sort_values(["State","Year"])
     panel["gun_ownership"] = panel.groupby("State")["gun_ownership"].ffill()
 
-    # Merge rurality
     panel = panel.merge(rurality, on="State", how="left")
 
-    # Merge politics only on election years first
     panel = panel.merge(politics, on=["State", "Year"], how="left")
 
-    # Forward-fill presidential vote share within state
     panel = panel.sort_values(["State", "Year"]).reset_index(drop=True)
     panel["rep_vote_share_2party"] = panel.groupby("State")["rep_vote_share_2party"].ffill()
     panel["rep_vote_share_2party"] = panel.groupby("State")["rep_vote_share_2party"].ffill()
     panel["rep_vote_share_2party"] = panel.groupby("State")["rep_vote_share_2party"].bfill()
 
-    # Create treatment indicators
     panel["ever_adopter"] = panel["permitless_year"].notna().astype(int)
     panel["post_permitless"] = (
         panel["permitless_year"].notna() & (panel["Year"] >= panel["permitless_year"])
@@ -74,7 +64,6 @@ def main():
 
     panel["years_since_permitless"] = panel["Year"] - panel["permitless_year"]
 
-    # Keep nice order
     cols = [
         "State", "State Code", "Year",
         "population",

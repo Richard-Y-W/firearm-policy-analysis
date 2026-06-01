@@ -52,7 +52,6 @@ def load_panel():
     df = pd.read_csv(DATA_FILE)
     df = df.sort_values(["State", "Year"]).reset_index(drop=True)
 
-    # If duplicate columns were created earlier, coalesce them
     for base_col in [
         "gun_ownership_baseline",
         "mean_rucc_2013",
@@ -71,7 +70,6 @@ def load_panel():
         elif ycol in df.columns:
             df = df.rename(columns={ycol: base_col})
 
-    # state-level baseline metrics for heterogeneity / selection
     state_base = (
         df.groupby("State", as_index=False)
         .agg(
@@ -83,7 +81,6 @@ def load_panel():
         )
     )
 
-    # baseline firearm suicide rate: pre-policy mean if adopter, else full-sample pre-2015 mean
     baseline_rows = []
     for state, g in df.groupby("State"):
         permitless_year = g["permitless_year"].iloc[0]
@@ -109,12 +106,10 @@ def load_panel():
     baseline_df = pd.DataFrame(baseline_rows)
     state_base = state_base.merge(baseline_df, on="State", how="left")
 
-    # median splits
     for col in ["gun_ownership_baseline", "share_nonmetro_counties_2013", "baseline_firearm_suicide_rate"]:
         med = state_base[col].median()
         state_base[f"high_{col}"] = (state_base[col] >= med).astype(int)
 
-    # Merge only columns that are NOT already in df
     merge_cols = [
         "State",
         "gun_ownership_baseline",
@@ -149,10 +144,8 @@ def make_descriptive_tables(df, state_base):
         )
     )
 
-    # Save the raw state-level table
     state_level.to_csv(OUT_TABLES / "main" / "state_level_characteristics.csv", index=False)
 
-    # Only summarize numeric columns
     numeric_cols = [
         "permitless_year",
         "gun_ownership",
@@ -274,7 +267,7 @@ def event_study_design(df, outcome, min_k=-5, max_k=5):
 
     for k in range(min_k, max_k + 1):
         if k == -1:
-            continue  # omitted reference year
+            continue
 
         if k < 0:
             col = f"event_m{abs(k)}"
@@ -428,13 +421,11 @@ def run_political_selection(df):
         )
     )
 
-    # Save full state-level file
     state_level.to_csv(
         OUT_TABLES / "political_selection" / "state_level_political_selection_inputs.csv",
         index=False
     )
 
-    # Only summarize numeric columns
     numeric_cols = [
         "permitless_year",
         "rep_vote_share_baseline",
@@ -453,7 +444,6 @@ def run_political_selection(df):
         OUT_TABLES / "political_selection" / "adopter_vs_nonadopter_state_characteristics.csv"
     )
 
-    # Simple logit: who adopts?
     logit_df = state_level.dropna().copy()
     model = smf.logit(
         "ever_adopter ~ rep_vote_share_baseline + gun_ownership_baseline + rurality + baseline_firearm_suicide",
@@ -476,7 +466,6 @@ def run_political_selection(df):
         index=False
     )
 
-    # Scatter plot
     plt.figure(figsize=(8, 5))
     plt.scatter(
         state_level["baseline_firearm_suicide"],
