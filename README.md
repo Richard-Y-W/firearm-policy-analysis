@@ -50,7 +50,7 @@ Coverage: 1999-2024.
 - USDA Economic Research Service: Rural-Urban Continuum Codes, mean rurality, and share of non-metro counties.
 - MIT Election Lab U.S. Presidential Elections: Republican two-party vote share and baseline political environment.
 
-Permitless carry adoption years were coded manually based on legislative enactment.
+Permitless carry adoption years were coded manually based on the current panel definition. Phase 1 adds `data/policy/permitless_carry_legal_audit.csv` so the legal coding can be audited state by state. The table is currently a scaffold marked `needs_source`; it does not yet constitute a completed legal-source appendix.
 
 ## Panel Dataset
 
@@ -129,23 +129,44 @@ The analysis tests whether policy associations differ across:
 
 The project examines whether policy adoption is systematically associated with political ideology, firearm prevalence, and structural suicide risk.
 
+### Phase 1 Publishability Upgrade
+
+The Phase 1 upgrade adds:
+
+- Policy-audit scaffolding for permitless carry coding.
+- Cohort-based staggered-adoption sensitivity estimates.
+- Never-treated-control event-time sensitivity estimates.
+- Robustness checks excluding COVID-era years, restricting to pre-2020 years, population weighting, state-specific linear trends, leave-one-adopter-out influence, and placebo timing among never-treated states.
+
+These checks strengthen transparency but do not convert the project into causal proof. The state-trend specification attenuates several suicide estimates, and several event-study specifications show pre-adoption signals, so the responsible interpretation remains associational.
+
 ## Results
 
 ### Change-Score Results
 
-| Outcome | Window | p-value |
-| --- | --- | --- |
-| Total firearm deaths | 2y | 0.019 |
-| Total firearm deaths | 3y | 0.192 |
-| Total firearm deaths | 5y | 0.201 |
-| Firearm homicide | 2y | 0.800 |
-| Firearm homicide | 3y | 0.598 |
-| Firearm homicide | 5y | 0.634 |
-| Firearm suicide | 2y | 0.000036 |
-| Firearm suicide | 3y | 0.035 |
-| Firearm suicide | 5y | 0.000697 |
+| Outcome | Window | Difference | p-value |
+| --- | --- | ---: | ---: |
+| Firearm homicide | 2y | 0.150 | 0.389 |
+| Firearm homicide | 3y | 0.243 | 0.216 |
+| Firearm homicide | 5y | 0.221 | 0.370 |
+| Firearm suicide | 2y | 0.720 | 0.000553 |
+| Firearm suicide | 3y | 0.653 | 0.000445 |
+| Firearm suicide | 5y | 0.731 | 0.000001 |
+| Non-firearm suicide | 2y | 0.223 | 0.283 |
+| Non-firearm suicide | 3y | 0.149 | 0.380 |
+| Non-firearm suicide | 5y | 0.029 | 0.873 |
+| Total firearm deaths | 2y | 0.777 | 0.009 |
+| Total firearm deaths | 3y | 0.869 | 0.003 |
+| Total firearm deaths | 5y | 0.962 | 0.003 |
+| Total suicide | 2y | 0.943 | 0.001 |
+| Total suicide | 3y | 0.802 | 0.000222 |
+| Total suicide | 5y | 0.760 | 0.002 |
 
-The strongest and most consistent statistical signal appears in firearm suicide. Firearm homicide shows no statistically significant change across any robustness window.
+The strongest change-score signals appear in firearm suicide, total suicide, and total firearm deaths. Firearm homicide shows no statistically significant change across any robustness window.
+
+### Phase 1 Sensitivity Summary
+
+The main TWFE estimates remain positive for firearm suicide, total suicide, non-firearm suicide, and total firearm deaths, while firearm homicide remains statistically weak. Cohort ATT estimates are positive for suicide-related outcomes and total firearm deaths. Robustness checks show stable positive signs for firearm suicide and total suicide across leave-one-adopter-out checks, but state-specific linear trends attenuate several suicide estimates. The Phase 1 report is available at `outputs/tables/main/phase1_publishability_report.md`.
 
 ## Figures
 
@@ -202,7 +223,10 @@ These findings should be interpreted cautiously due to the observational design 
 - The study uses quasi-experimental comparisons and cannot establish causal effects.
 - States adopting permitless carry differ structurally and politically from non-adopting states.
 - State-level analysis cannot identify individual-level behavioral mechanisms.
-- Two-way fixed effects models may have limitations under staggered policy timing.
+- Two-way fixed effects models may have limitations under staggered policy timing; Phase 1 adds sensitivity checks but does not eliminate all identification concerns.
+- The legal audit table is currently a scaffold. All states remain marked `needs_source` until bill text, effective dates, concealed/open-carry scope, age thresholds, and permit-screening changes are verified.
+- Gun ownership data are available through 2016 in the current processed panel and are carried forward afterward.
+- Some event-study outputs contain statistically significant pre-adoption coefficients, so the results should be framed as associations.
 
 ## Repository Structure
 
@@ -220,10 +244,15 @@ src/
     analysis/
         run_all_analysis.py
         interpret_results.py
+        policy_audit.py
+        modern_did.py
+        robustness_checks.py
+        phase1_publishability_report.py
 
 data/
     raw/
     processed/
+    policy/
 
 outputs/
     figures/
@@ -235,26 +264,35 @@ outputs/
 Build the panel dataset:
 
 ```bash
-python src/data/build_master_analysis_panel.py
-python src/data/extend_master_outcomes.py
+python3 src/data/build_master_analysis_panel.py
+python3 src/data/extend_master_outcomes.py
 ```
 
 Run the full empirical analysis:
 
 ```bash
-python src/analysis/run_all_analysis.py
+python3 src/analysis/run_all_analysis.py
 ```
 
 Generate the interpretation report:
 
 ```bash
-python src/analysis/interpret_results.py
+python3 src/analysis/interpret_results.py
 ```
 
 Generate the publication figures:
 
 ```bash
-python src/analysis/make_publication_figures.py
+python3 src/analysis/make_publication_figures.py
+```
+
+Run the Phase 1 publishability upgrade:
+
+```bash
+python3 src/analysis/policy_audit.py
+python3 src/analysis/modern_did.py
+python3 src/analysis/robustness_checks.py
+python3 src/analysis/phase1_publishability_report.py
 ```
 
 Outputs are written to `outputs/tables` and `outputs/figures`.
