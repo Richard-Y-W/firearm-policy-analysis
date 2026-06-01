@@ -6,6 +6,9 @@ import pandas as pd
 from pathlib import Path
 from scipy import stats
 import statsmodels.formula.api as smf
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[2]

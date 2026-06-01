@@ -1,6 +1,9 @@
 from pathlib import Path
 import textwrap
 
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import numpy as np

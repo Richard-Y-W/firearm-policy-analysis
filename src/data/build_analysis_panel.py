@@ -1,37 +1,15 @@
 import pandas as pd
 from pathlib import Path
 
+try:
+    from src.data.permitless_policy import PERMITLESS_ADOPTION
+except ModuleNotFoundError:
+    from permitless_policy import PERMITLESS_ADOPTION
+
 ROOT = Path(__file__).resolve().parents[2]
 CDC_DIR = ROOT / "data" / "raw" / "cdc_wonder"
 OUT_DIR = ROOT / "data" / "processed"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
-
-PERMITLESS_ADOPTION = {
-    "Alaska": 2003,
-    "Arizona": 2010,
-    "Wyoming": 2011,
-    "Kansas": 2015,
-    "Mississippi": 2015,
-    "Maine": 2015,
-    "West Virginia": 2016,
-    "Idaho": 2016,
-    "Missouri": 2017,
-    "New Hampshire": 2017,
-    "North Dakota": 2017,
-    "South Dakota": 2019,
-    "Kentucky": 2019,
-    "Oklahoma": 2019,
-    "Montana": 2021,
-    "Iowa": 2021,
-    "Tennessee": 2021,
-    "Texas": 2021,
-    "Utah": 2021,
-    "Georgia": 2022,
-    "Indiana": 2022,
-    "Ohio": 2022,
-    "Alabama": 2023,
-    "Florida": 2023,
-}
 
 def read_wonder_export(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path, sep="\t", engine="python", dtype=str)

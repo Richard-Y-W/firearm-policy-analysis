@@ -40,13 +40,13 @@ python3 -m pytest
 
 Phase 1 strengthens the project by making the treatment definition auditable and by adding sensitivity checks that are more appropriate for staggered policy timing than a single TWFE coefficient alone. The strongest positive pattern remains in firearm suicide, total suicide, and total firearm deaths. Firearm homicide remains statistically weak.
 
-The result should still be described as associational. Several event-time checks show pre-adoption signals, and state-specific linear trends attenuate several suicide estimates. Phase 2A source-checks current-adopter legal timing and core carry-scope fields, but non-adopter rows remain unreviewed and several detailed statutory screening fields are still marked `needs_statute_review`.
+The result should still be described as associational. Several event-time checks show pre-adoption signals, and state-specific linear trends attenuate several suicide estimates. Phase 2B source-checks current-adopter legal timing and adds Nebraska, Louisiana, and South Carolina to the within-panel treatment map. Vermont is recorded as baseline permitless, Arkansas is reviewed but left out of the clean annual treatment map, and several detailed statutory screening fields are still marked `needs_statute_review`.
 
 ## Phase 2 Work
 
 The remaining Phase 2 work requires separate source vetting and harmonization:
 
-- Complete legal-source review for non-adopter, baseline-permitless, and recent-adopter rows not currently coded as treated in the panel.
+- Complete legal-source review for remaining non-adopter rows and resolve Arkansas's clean annual treatment date.
 - Other firearm-law controls, including waiting periods, permit-to-purchase, ERPO, safe storage, and stand-your-ground laws.
 - Suicide-relevant confounders, including opioid mortality, mental-health access, demographics, and economic shocks.
 - A manuscript-level methods appendix that describes legal coding decisions and estimator assumptions.

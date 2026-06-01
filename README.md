@@ -38,7 +38,7 @@ The analytic file is a 50-state annual panel for 1999-2024. Mortality rates are 
 
 The primary processed panel is stored at `data/processed/analysis_panel_full_outcomes.csv`.
 
-Permitless carry adoption years were coded manually based on the current panel definition. Phase 1 added `data/policy/permitless_carry_legal_audit.csv` so the legal coding can be audited state by state. Phase 2A now source-checks the current-adopter rows: 23 are marked `source_verified`, Mississippi is marked `partial` because the 2015 and 2016 expansions differ in scope, and 26 rows remain `not_adopted_needs_review`.
+Permitless carry adoption years were coded manually based on the current panel definition. Phase 1 added `data/policy/permitless_carry_legal_audit.csv` so the legal coding can be audited state by state. Phase 2B records 26 `source_verified` current-adopter rows, one `partial` row for Mississippi, one `baseline_permitless_verified` row for Vermont, one `ambiguous_reviewed` row for Arkansas, and 21 rows still marked `not_adopted_needs_review`.
 
 ## Empirical Design
 
@@ -56,7 +56,7 @@ The project uses multiple estimators because no single observational specificati
 
 ## Phase 1 Publishability Upgrade
 
-The Phase 1 upgrade adds a policy-audit table, cohort-based staggered-adoption sensitivity estimates, never-treated-control event-time estimates, and robustness checks excluding COVID-era years, restricting to pre-2020 years, population weighting, state-specific linear trends, leave-one-adopter-out influence, and placebo timing among never-treated states. Phase 2A fills the current-adopter legal audit fields for bill/statute citation, enactment date, effective date, concealed/open-carry scope, age threshold, training, and permit-screening indicators.
+The Phase 1 upgrade adds a policy-audit table, cohort-based staggered-adoption sensitivity estimates, never-treated-control event-time estimates, and robustness checks excluding COVID-era years, restricting to pre-2020 years, population weighting, state-specific linear trends, leave-one-adopter-out influence, and placebo timing among never-treated states. Phase 2A filled current-adopter legal audit fields; Phase 2B adds Nebraska, Louisiana, and South Carolina to the within-panel treatment map, records Vermont as baseline permitless, and keeps Arkansas out of the clean annual treatment map pending a narrower legal timing decision.
 
 These checks strengthen transparency but do not convert the project into causal proof. The state-trend specification attenuates several suicide estimates, and several event-study specifications show pre-adoption signals, so the responsible interpretation remains associational. The generated Phase 1 report is available at `outputs/tables/main/phase1_publishability_report.md`.
 
@@ -66,11 +66,11 @@ The main fixed-effects estimates indicate positive post-adoption associations fo
 
 | Outcome | Main TWFE estimate | Interpretation |
 | --- | ---: | --- |
-| Firearm suicide | +1.28 | Higher post-adoption rate in adopting states |
-| Total suicide | +1.59 | Higher post-adoption rate in adopting states |
-| Total firearm deaths | +1.38 | Higher post-adoption rate in adopting states |
+| Firearm suicide | +1.26 | Higher post-adoption rate in adopting states |
+| Total suicide | +1.58 | Higher post-adoption rate in adopting states |
+| Total firearm deaths | +1.34 | Higher post-adoption rate in adopting states |
 | Non-firearm suicide | +0.31 | Smaller positive association |
-| Firearm homicide | -0.05 | No detectable post-adoption association |
+| Firearm homicide | -0.07 | No detectable post-adoption association |
 
 Change-score robustness checks show the same broad pattern: firearm suicide is the most stable outcome across windows, while firearm homicide remains statistically weak across the 2-, 3-, and 5-year comparisons.
 
@@ -117,7 +117,7 @@ The descriptive selection analysis shows that adopting states differ from never-
 - Two-way fixed effects models can be sensitive to staggered adoption timing and heterogeneous treatment effects; Phase 1 adds sensitivity checks but does not eliminate all identification concerns.
 - Mortality data are population-level rates and do not capture nonfatal injury, defensive gun use, enforcement changes, or local policy implementation.
 - Permitless carry laws may coincide with other firearm policy changes or broader social trends.
-- The legal audit table now source-checks current-adopter timing and core carry-scope fields, but non-adopter rows remain unreviewed and several detailed statutory screening fields are still marked `needs_statute_review`.
+- The legal audit table now source-checks current-adopter timing and core carry-scope fields, but Arkansas remains ambiguous for a clean annual treatment date, Vermont is baseline permitless rather than a within-panel adoption, and several detailed statutory screening fields are still marked `needs_statute_review`.
 - Gun ownership data are available through 2016 in the current processed panel and are carried forward afterward.
 - Some event-study outputs contain statistically significant pre-adoption coefficients, so the results should be framed as associations.
 

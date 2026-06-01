@@ -2,7 +2,7 @@ State,permitless_year,permitless_year_current,audit_status,year_mismatch
 Alabama,2023.0,2023,source_verified,False
 Alaska,2003.0,2003,source_verified,False
 Arizona,2010.0,2010,source_verified,False
-Arkansas,,,not_adopted_needs_review,False
+Arkansas,,,ambiguous_reviewed,False
 California,,,not_adopted_needs_review,False
 Colorado,,,not_adopted_needs_review,False
 Connecticut,,,not_adopted_needs_review,False
@@ -16,7 +16,7 @@ Indiana,2022.0,2022,source_verified,False
 Iowa,2021.0,2021,source_verified,False
 Kansas,2015.0,2015,source_verified,False
 Kentucky,2019.0,2019,source_verified,False
-Louisiana,,,not_adopted_needs_review,False
+Louisiana,2024.0,2024,source_verified,False
 Maine,2015.0,2015,source_verified,False
 Maryland,,,not_adopted_needs_review,False
 Massachusetts,,,not_adopted_needs_review,False
@@ -25,7 +25,7 @@ Minnesota,,,not_adopted_needs_review,False
 Mississippi,2015.0,2015,partial,False
 Missouri,2017.0,2017,source_verified,False
 Montana,2021.0,2021,source_verified,False
-Nebraska,,,not_adopted_needs_review,False
+Nebraska,2023.0,2023,source_verified,False
 Nevada,,,not_adopted_needs_review,False
 New Hampshire,2017.0,2017,source_verified,False
 New Jersey,,,not_adopted_needs_review,False
@@ -38,12 +38,12 @@ Oklahoma,2019.0,2019,source_verified,False
 Oregon,,,not_adopted_needs_review,False
 Pennsylvania,,,not_adopted_needs_review,False
 Rhode Island,,,not_adopted_needs_review,False
-South Carolina,,,not_adopted_needs_review,False
+South Carolina,2024.0,2024,source_verified,False
 South Dakota,2019.0,2019,source_verified,False
 Tennessee,2021.0,2021,source_verified,False
 Texas,2021.0,2021,source_verified,False
 Utah,2021.0,2021,source_verified,False
-Vermont,,,not_adopted_needs_review,False
+Vermont,,,baseline_permitless_verified,False
 Virginia,,,not_adopted_needs_review,False
 Washington,,,not_adopted_needs_review,False
 West Virginia,2016.0,2016,source_verified,False

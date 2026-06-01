@@ -1,4 +1,6 @@
 audit_status,state_count
-not_adopted_needs_review,26
-source_verified,23
+source_verified,26
+not_adopted_needs_review,21
+ambiguous_reviewed,1
 partial,1
+baseline_permitless_verified,1

@@ -1,121 +1,136 @@
 outcome,outcome_label,specification,coef_post_permitless,se_post_permitless,p_post_permitless,nobs,r2,interpretation_flag,excluded_state
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.3007815926925694,0.2320510285104792,2.0755361991334505e-08,1274.0,0.9402269669157337,positive_p05,Alabama
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2835122671573573,0.2417505783855013,1.100822325033944e-07,1274.0,0.9407739778882857,positive_p05,Alaska
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.353539320151823,0.2292690506823542,3.554041710405471e-09,1274.0,0.9404282457659552,positive_p05,Arizona
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.284678904125035,0.23393932189916614,3.985235390751195e-08,1274.0,0.9406488169043367,positive_p05,Florida
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2967650985000918,0.23394138452443794,2.9712958233653753e-08,1274.0,0.9405245130301767,positive_p05,Georgia
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2559026948535172,0.2390166963042954,1.4846269659657725e-07,1274.0,0.9395900533497896,positive_p05,Idaho
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2762307847365746,0.2333272605698352,4.5079069121421215e-08,1274.0,0.9404401847336586,positive_p05,Indiana
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2780142158282555,0.23480554053849237,5.2431187907531645e-08,1274.0,0.940242473977816,positive_p05,Iowa
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.291831453519347,0.24136771431593854,8.692477542839329e-08,1274.0,0.9411376090629306,positive_p05,Kansas
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.3297575844269174,0.23259946110091734,1.0845823568201655e-08,1274.0,0.9405665517953546,positive_p05,Kentucky
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2773296709384458,0.24248079884783705,1.3810153539077284e-07,1274.0,0.9410390694143689,positive_p05,Maine
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.3728518846487643,0.2213604860434136,5.579147103225837e-10,1274.0,0.9416370726239588,positive_p05,Mississippi
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2488110881450867,0.23686695126158808,1.3479450582502045e-07,1274.0,0.9404050578083419,positive_p05,Missouri
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2271071679744348,0.23229672308259722,1.2743364941785694e-07,1274.0,0.9399938164981527,positive_p05,Montana
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2750182087460393,0.2432118565177784,1.5848585126310323e-07,1274.0,0.9411627465966287,positive_p05,New Hampshire
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2416868313236815,0.2458437718769941,4.401593302415623e-07,1274.0,0.9424135409885104,positive_p05,North Dakota
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.293629105676021,0.23314507813310428,2.8796386441750045e-08,1274.0,0.9402982412634642,positive_p05,Ohio
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2650140626412152,0.23674005857544764,9.118251950521312e-08,1274.0,0.9402733187464773,positive_p05,Oklahoma
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.28452141441888,0.24078050023683584,9.563766253489022e-08,1274.0,0.9416197854165183,positive_p05,South Dakota
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2998786032756269,0.2351250253303786,3.230594987899645e-08,1274.0,0.940225693769347,positive_p05,Tennessee
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.299118982104246,0.23459466862765097,3.064391662109525e-08,1274.0,0.9403014720458864,positive_p05,Texas
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.3085633180600027,0.23350159049764269,2.0935507130506593e-08,1274.0,0.940782801683744,positive_p05,Utah
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.3000001228066391,0.24050643259041493,6.471396528956497e-08,1274.0,0.9404378529637689,positive_p05,West Virginia
-firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.1450037074881927,0.20958036287921233,4.6732216097168206e-08,1274.0,0.9443326199384455,positive_p05,Wyoming
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3051950427068739,0.1476455349960091,0.038726673609274335,1274.0,0.8538685689196769,positive_p05,Alabama
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.32711687421500196,0.15072051781361612,0.02998004098357181,1274.0,0.8638341879642986,positive_p05,Alaska
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3600210175081659,0.14320960553542073,0.011938917962679393,1274.0,0.8592839982323766,positive_p05,Arizona
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3071855571425315,0.14709150241534555,0.03676197368529228,1274.0,0.8618215370917709,positive_p05,Florida
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3121770241829159,0.1477410527078064,0.03460066371097973,1274.0,0.8552419230267403,positive_p05,Georgia
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3083959625292886,0.14907286792304264,0.03856862865267242,1274.0,0.860176014030711,positive_p05,Idaho
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.314440010124432,0.1469630064839787,0.03238822860266202,1274.0,0.859085430249321,positive_p05,Indiana
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3151515017281182,0.14673925109121624,0.03173780547988107,1274.0,0.8596110618621423,positive_p05,Iowa
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.2795485840209967,0.1457793042495169,0.0551598436819751,1274.0,0.859243543518424,not_p05,Kansas
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3092381829143998,0.147641598853946,0.03621374284643748,1274.0,0.8571070139692144,positive_p05,Kentucky
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.29162449336069873,0.1490787237026017,0.05044420990059674,1274.0,0.860347270428918,not_p05,Maine
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.37114661756768413,0.13691187036022692,0.006711234770207128,1274.0,0.8548846932691856,positive_p05,Mississippi
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.33505520897265806,0.14733373731529903,0.022958523532771988,1274.0,0.8589163895216098,positive_p05,Missouri
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3116051892541626,0.1479259236469317,0.03516139415299132,1274.0,0.85785356409166,positive_p05,Montana
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3153611484201689,0.1495403321442742,0.0349557880808617,1274.0,0.8600351722882259,positive_p05,New Hampshire
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.32219700641161836,0.14773996868062592,0.02919536647345044,1274.0,0.8614464215015246,positive_p05,North Dakota
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3187728958018256,0.14685328163983022,0.02995464149675337,1274.0,0.8589286680074977,positive_p05,Ohio
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.29398925426712985,0.14562431877278328,0.04350595506933902,1274.0,0.8586340591371568,positive_p05,Oklahoma
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.2691649987805261,0.14254103827938805,0.058981210509206336,1274.0,0.8617917112198966,not_p05,South Dakota
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3317664052368634,0.1461355374448399,0.02319150542357719,1274.0,0.8581111905311086,positive_p05,Tennessee
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.31110957186513566,0.14701567541477709,0.03433069290600329,1274.0,0.8571993155565824,positive_p05,Texas
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3452522414243073,0.14253672920461707,0.015426924282659515,1274.0,0.8583452002838905,positive_p05,Utah
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.29080984282808164,0.14661170154764325,0.04730739607596592,1274.0,0.860351220091079,positive_p05,West Virginia
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.28581564166346174,0.151916798314733,0.05991808403007178,1274.0,0.8659452823819604,not_p05,Wyoming
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6059766353994434,0.3236217158876152,6.958728027349527e-07,1274.0,0.9330049023042524,positive_p05,Alabama
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6106291413723592,0.33129306166679756,1.164144642552317e-06,1274.0,0.9326064509957944,positive_p05,Alaska
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.7135603376599888,0.311658315285896,3.836835079262731e-08,1274.0,0.9330670472293134,positive_p05,Arizona
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5918644612675668,0.3237994397571677,8.82379476711957e-07,1274.0,0.9342016901463894,positive_p05,Florida
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6089421226830076,0.32517038160642503,7.498100512378494e-07,1274.0,0.932851967922586,positive_p05,Georgia
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5642986573828053,0.32975906627252244,2.097849007942787e-06,1274.0,0.9327389811679393,positive_p05,Idaho
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5906707948610075,0.3239180853388658,9.074290596256499e-07,1274.0,0.9328008106458239,positive_p05,Indiana
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5931657175563738,0.32449097802163424,9.11981093891385e-07,1274.0,0.9331937091551762,positive_p05,Iowa
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5713800375403453,0.33288259328466546,2.3523865968084233e-06,1274.0,0.9331985348040184,positive_p05,Kansas
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6389957673413176,0.32528475860809886,4.688290364788518e-07,1274.0,0.9331400316808083,positive_p05,Kentucky
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5689541642991451,0.33370509187481057,2.581069063046622e-06,1274.0,0.9337554810564531,positive_p05,Maine
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.7439985022164497,0.29445821883412027,3.1662756552759273e-09,1274.0,0.9348572912284147,positive_p05,Mississippi
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5838662971177444,0.3304234613121776,1.6394238791906288e-06,1274.0,0.9327739641083513,positive_p05,Missouri
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5387123572285974,0.32396219433227746,2.0375245855788857e-06,1274.0,0.9299423988501754,positive_p05,Montana
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5903793571662088,0.3336877645096316,1.8785370100133474e-06,1274.0,0.9343470325681786,positive_p05,New Hampshire
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5638838377353004,0.336125359016977,3.2764802503155664e-06,1274.0,0.9337265590839854,positive_p05,North Dakota
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6124020014778462,0.3233887224557941,6.16561165172206e-07,1274.0,0.9328497824043227,positive_p05,Ohio
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5590033169083464,0.3249129604675889,1.6008324214092687e-06,1274.0,0.932648952576516,positive_p05,Oklahoma
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5536864131994068,0.33040438845772724,2.5714854436156427e-06,1274.0,0.9334274787027995,positive_p05,South Dakota
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6316450085124903,0.3233914235109073,4.525302166515939e-07,1274.0,0.9331949765922649,positive_p05,Tennessee
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6102285539693824,0.32474514908905344,7.106235958606483e-07,1274.0,0.9326321680962862,positive_p05,Texas
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6538155594843094,0.3173512262256322,1.8751200802696005e-07,1274.0,0.9335505644980264,positive_p05,Utah
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5908099656347208,0.3332416176383031,1.8083277954420263e-06,1274.0,0.9333943240954349,positive_p05,West Virginia
-total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.4308193491516548,0.301615180229784,2.096866741446942e-06,1274.0,0.9343849157733864,positive_p05,Wyoming
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.02871259858878672,0.3799937453676035,0.9397685930224509,1173.0,0.8830292003675387,not_p05,Alabama
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.09445932054457531,0.39233295342560576,0.8097386860091564,1173.0,0.8938711376514009,not_p05,Alaska
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,0.14462056151164338,0.34937777105875506,0.6789198787913666,1173.0,0.8939690600360679,not_p05,Arizona
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.05045199855177679,0.38068009259319624,0.8945641278117606,1173.0,0.889680223939985,not_p05,Florida
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.06410239341933416,0.3821572680676244,0.8667891991293712,1173.0,0.8871416000010558,not_p05,Georgia
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,0.04979466577048497,0.3855146748040875,0.8972277822171442,1173.0,0.8887771460784858,not_p05,Idaho
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.047441328221160234,0.3821823512609279,0.9012102053158473,1173.0,0.888488697275205,not_p05,Indiana
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.026413193711895322,0.38440215243485815,0.9452185493084144,1173.0,0.886586665867753,not_p05,Iowa
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.05778038516633932,0.4023745247284588,0.8858175115143713,1173.0,0.8892031495454493,not_p05,Kansas
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.06715692663901907,0.39155538107751936,0.8638202315418624,1173.0,0.8885917301650006,not_p05,Kentucky
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,0.033334520241870655,0.38502508241111033,0.9310073280705918,1179.0,0.8883304584285135,not_p05,Maine
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.24823604580092765,0.3368835230387693,0.46120739546146877,1173.0,0.8947157634388201,not_p05,Mississippi
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.18375795007611812,0.3695445646104217,0.6190091117006511,1173.0,0.8900931916718898,not_p05,Missouri
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.045227521052023434,0.38542579552100537,0.9065872193738689,1174.0,0.887502816305729,not_p05,Montana
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.05100003322201464,0.38305848554961136,0.8940834325020084,1189.0,0.887495525651736,not_p05,New Hampshire
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.05317426778788652,0.3844544896953586,0.8899946675484227,1188.0,0.8881152747963039,not_p05,North Dakota
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.031626685921517905,0.38177906397729505,0.9339785375331642,1173.0,0.8889609490452789,not_p05,Ohio
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.03661480111092913,0.39100970073259644,0.9253938076651627,1173.0,0.8900140642398389,not_p05,Oklahoma
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.06015940318906054,0.3858414857675216,0.8760981259150533,1187.0,0.8883653594629892,not_p05,South Dakota
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.09588458176100062,0.3820662605228296,0.8018425399031897,1173.0,0.8877460804265058,not_p05,Tennessee
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.062374967711879656,0.3848780448541293,0.8712552664636011,1173.0,0.8886110927093318,not_p05,Texas
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.03429645714336474,0.3846037949757411,0.9289440447517884,1173.0,0.8869071490350763,not_p05,Utah
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.021299326195233573,0.39743156375328015,0.9572598819470998,1173.0,0.8907930665125251,not_p05,West Virginia
-firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.06721546069074913,0.3814484701124448,0.8601280879716066,1187.0,0.888905964625737,not_p05,Wyoming
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4200718233864358,0.47622574316794164,0.002864374972161601,1274.0,0.9314206864410928,positive_p05,Alabama
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3581565070198136,0.49864402862138724,0.0064555207606763025,1274.0,0.9334631167716079,positive_p05,Alaska
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.634708003794268,0.4185646543377027,9.402727792229104e-05,1274.0,0.9357888680887521,positive_p05,Arizona
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.388683826067133,0.4796018368823155,0.003785633103793525,1274.0,0.934176561596643,positive_p05,Florida
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.387564793616509,0.48000906339219906,0.0038437825156911174,1274.0,0.9331484187294349,positive_p05,Georgia
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4426880398082866,0.4886688457708025,0.0031543512565468126,1274.0,0.933888816776374,positive_p05,Idaho
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3796526889686356,0.4791560248376641,0.003985095571384118,1274.0,0.933493080719656,positive_p05,Indiana
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4065001379315305,0.4808500121989818,0.0034442433702425537,1274.0,0.9325631354701729,positive_p05,Iowa
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3987169658129657,0.49537208321725873,0.004749228933779526,1274.0,0.9336542708571489,positive_p05,Kansas
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4164557264526358,0.4849507688072418,0.0034910725668906096,1274.0,0.9331173247621731,positive_p05,Kentucky
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.467832522695179,0.48640188168529097,0.0025467056464662293,1274.0,0.9342847253807184,positive_p05,Maine
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.270258999346239,0.4724627379865454,0.0071754305084614995,1274.0,0.9329405115759978,positive_p05,Mississippi
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.23448971670566,0.4625321192749652,0.007608161758754187,1274.0,0.9341454598944552,positive_p05,Missouri
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3379356263049798,0.48147580387381034,0.005455638709219066,1274.0,0.933859271043201,positive_p05,Montana
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4049146665964436,0.49409909942589464,0.004463691652550403,1274.0,0.9334587033919625,positive_p05,New Hampshire
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3441779221941617,0.4995207152356126,0.007125201338120085,1274.0,0.935343945100756,positive_p05,North Dakota
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4150703841746715,0.477574684897658,0.0030462218314033966,1274.0,0.9335886597150587,positive_p05,Ohio
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3879643627001204,0.48616111056499356,0.004304396723373128,1274.0,0.933295955679833,positive_p05,Oklahoma
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3633056271659847,0.4907400402837426,0.005468439914432879,1274.0,0.9346395255936588,positive_p05,South Dakota
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3739273517084238,0.48204925998354775,0.004369443879502705,1274.0,0.9323324146212406,positive_p05,Tennessee
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3921492055123006,0.4817867706773643,0.003857879381711758,1274.0,0.9334492169625854,positive_p05,Texas
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4308740008618306,0.47934322074319863,0.0028351163227286307,1274.0,0.9338244719198094,positive_p05,Utah
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4327618388730003,0.4902784167256438,0.0034740840214897268,1274.0,0.934314917516491,positive_p05,West Virginia
-total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.1602408990444912,0.4531820698820447,0.010460917438797103,1274.0,0.9370736334545925,positive_p05,Wyoming
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2855660868842174,0.22915488513389662,2.0228998020080228e-08,1274.0,0.9401368179674431,positive_p05,Alabama
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2725291707604207,0.23889889168438497,1.00044380033387e-07,1274.0,0.9407179433328486,positive_p05,Alaska
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.3380855881466551,0.22618831842827727,3.3025982089841186e-09,1274.0,0.940338442784507,positive_p05,Arizona
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2693381631616014,0.2308315740276333,3.819948838309139e-08,1274.0,0.9405592654069687,positive_p05,Florida
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.281494828180394,0.23084170150933261,2.833893600119018e-08,1274.0,0.9404343747782042,positive_p05,Georgia
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.242558835177762,0.23588261066866234,1.3814359864899206e-07,1274.0,0.9395193589481331,positive_p05,Idaho
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2627962872712348,0.23019677463321517,4.117761958786129e-08,1274.0,0.9403718430160196,positive_p05,Indiana
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2643169445649658,0.23154721149396418,4.7533409263021426e-08,1274.0,0.9401713353267035,positive_p05,Iowa
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.277403558424554,0.2380967940845306,8.092236692374863e-08,1274.0,0.941057779819177,positive_p05,Kansas
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.3147798239890163,0.2293004185114777,9.816197271059367e-09,1274.0,0.9404791759955111,positive_p05,Kentucky
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.282050416586063,0.22974601816836,2.4011183712364765e-08,1274.0,0.9406847930699127,positive_p05,Louisiana
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2636157745755852,0.23918163936644465,1.2702977161523644e-07,1274.0,0.9409667052082901,positive_p05,Maine
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.3561538531084778,0.2184933652580599,5.405981026056865e-10,1274.0,0.9415298486098008,positive_p05,Mississippi
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2351382244118687,0.23372253323704284,1.2595579781990923e-07,1274.0,0.940332262001756,positive_p05,Missouri
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2141119892576484,0.22921458890281177,1.1782670096979192e-07,1274.0,0.9399233620137373,positive_p05,Montana
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2745274566226923,0.2299986584856276,2.9996687422195125e-08,1274.0,0.9407272429447373,positive_p05,Nebraska
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2602780154883815,0.23987117126781005,1.488481331759712e-07,1274.0,0.9410814061751228,positive_p05,New Hampshire
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2259938486317075,0.24170480305616004,3.930824862358521e-07,1274.0,0.9423209646504573,positive_p05,North Dakota
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2790846989838363,0.2300351118891321,2.69174051767129e-08,1274.0,0.9402166693101734,positive_p05,Ohio
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2515795286271023,0.2334682048630293,8.284796803897587e-08,1274.0,0.9402042324936695,positive_p05,Oklahoma
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.276767288989615,0.2291493170765271,2.521641940256323e-08,1274.0,0.9404765999529494,positive_p05,South Carolina
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2712472401640498,0.23740978609483931,8.572032802662954e-08,1274.0,0.9415542095685594,positive_p05,South Dakota
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2845064564211186,0.2320306807574134,3.0957473070788826e-08,1274.0,0.9401343338194295,positive_p05,Tennessee
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2839524759290966,0.23143981451529905,2.8949619008443458e-08,1274.0,0.940214018274694,positive_p05,Texas
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.2932389447219896,0.23060407492913193,2.0462013818003344e-08,1274.0,0.94069342938283,positive_p05,Utah
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.283375258672007,0.23715560428235283,6.248765245056575e-08,1274.0,0.9403324082295439,positive_p05,West Virginia
+firearm_suicide_rate_per_100k,Firearm Suicide,leave_one_adopter_out,1.1351701107467655,0.2080965482563564,4.8968289736428154e-08,1274.0,0.9442966289742947,positive_p05,Wyoming
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.30439106906715024,0.1486601679704552,0.04060283159656918,1274.0,0.8538786776766176,positive_p05,Alabama
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3296306527625219,0.15165622506404455,0.029739807055421997,1274.0,0.8638796700476628,positive_p05,Alaska
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.35889661018025903,0.14461787704520346,0.013076130579532367,1274.0,0.8592948710401709,positive_p05,Arizona
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3053397641930993,0.14808716683338077,0.03921800675512899,1274.0,0.8618212240067095,positive_p05,Florida
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.31122805580873086,0.14879084482166874,0.03646400955700969,1274.0,0.8552510194907268,positive_p05,Georgia
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.30842936824602285,0.15009361950303876,0.03988738393454591,1274.0,0.8601937142777388,positive_p05,Idaho
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3133547097351502,0.14800858775284315,0.03424807768233877,1274.0,0.8590932608087356,positive_p05,Indiana
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3143123075719242,0.1477582858422172,0.03340297342697098,1274.0,0.8596215604182302,positive_p05,Iowa
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.2798525493686327,0.14695133941962227,0.056859509711150724,1274.0,0.8592605645976992,not_p05,Kansas
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3088779490103384,0.1486402486079906,0.0377071827532905,1274.0,0.8571214086755923,positive_p05,Kentucky
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.31560523419224495,0.14820521762471045,0.033211675097949936,1274.0,0.8542851661313293,positive_p05,Louisiana
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.29264901709317553,0.1502935585915465,0.05151283509038373,1274.0,0.8603724736523387,not_p05,Maine
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.37048992541854353,0.13813966243605058,0.007318448793516722,1274.0,0.8549027216601154,positive_p05,Mississippi
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.33431141943899845,0.1484172951814442,0.02429007090732039,1274.0,0.8589289304927055,positive_p05,Missouri
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.31122908055381815,0.14891156137655306,0.03661543670667202,1274.0,0.8578687370165683,positive_p05,Montana
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3253629594318616,0.14729852362240883,0.02718384048620571,1274.0,0.8596818583727879,positive_p05,Nebraska
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.31440575113958036,0.15055099574422937,0.036764730035932655,1274.0,0.8600442532006121,positive_p05,New Hampshire
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.322356399701262,0.1487373132863694,0.030213000595619398,1274.0,0.8614674840685557,positive_p05,North Dakota
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3178811426202342,0.1479158019861965,0.031628996093685094,1274.0,0.8589388128631166,positive_p05,Ohio
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.29434631434284747,0.14667682459975848,0.04477440332568783,1274.0,0.8586539591765495,positive_p05,Oklahoma
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3065880488531644,0.14810585475189053,0.038446698798187046,1274.0,0.856441226882831,positive_p05,South Carolina
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.26885260815545536,0.1435332933260322,0.061054196053695206,1274.0,0.8618030577963478,not_p05,South Dakota
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3307574008935108,0.14726294787769403,0.02470191151976753,1274.0,0.8581212337365918,positive_p05,Tennessee
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.3107363541916749,0.148021719345496,0.035793821004112616,1274.0,0.8572143581331609,positive_p05,Texas
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.34346489736488306,0.14400239488735816,0.0170729370123425,1274.0,0.858348052838143,positive_p05,Utah
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.2902361317491631,0.14751497917930925,0.04912527564244903,1274.0,0.8603618063020733,positive_p05,West Virginia
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,leave_one_adopter_out,0.2848965300111274,0.1529655045359053,0.06253423095166465,1274.0,0.8659518057432454,not_p05,Wyoming
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5899571559513677,0.3210016022282809,7.303559487493792e-07,1274.0,0.9329450467407081,positive_p05,Alabama
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.602159823522942,0.32874127475282855,1.0957204413519088e-06,1274.0,0.9326022195652462,positive_p05,Alaska
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6969821983269144,0.3093638752108565,4.1255299929660046e-08,1274.0,0.9330052545245099,positive_p05,Arizona
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5746779273547014,0.32107426321027055,9.371139923042523e-07,1274.0,0.9341325693103731,positive_p05,Florida
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5927228839891248,0.32243052160173,7.822688254142545e-07,1274.0,0.9327899865687722,positive_p05,Georgia
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5509882034237843,0.3270315791218205,2.1096638080766657e-06,1274.0,0.9327000892895287,positive_p05,Idaho
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5761509970063856,0.32109884569828506,9.172127591895237e-07,1274.0,0.9327546676431194,positive_p05,Indiana
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.578629252136889,0.3216769478944055,9.224519574543898e-07,1274.0,0.9331476853063733,positive_p05,Iowa
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5572561077931875,0.3299425273746742,2.360999716233189e-06,1274.0,0.9331543807347983,positive_p05,Kansas
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6236577729993544,0.32232452699615793,4.7204937041066205e-07,1274.0,0.9330864362949747,positive_p05,Kentucky
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5976556507783075,0.3194359880769569,5.688914863617237e-07,1274.0,0.9329731556944081,positive_p05,Louisiana
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5562647916687598,0.33085455159621235,2.5539687840519696e-06,1274.0,0.9337230295131166,positive_p05,Maine
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.726643778527022,0.2922204310011744,3.4481142500918556e-09,1274.0,0.9347866242070471,positive_p05,Mississippi
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5694496438508667,0.3275315431717522,1.6533190271002313e-06,1274.0,0.9327268438267814,positive_p05,Missouri
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5253410698114664,0.32121064054297843,2.0470284095900974e-06,1274.0,0.9299011290885998,positive_p05,Montana
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.599890416054553,0.3191288024465451,5.350264202253546e-07,1274.0,0.9333770580203683,positive_p05,Nebraska
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5746837666279627,0.33078469211198097,1.9316242486996464e-06,1274.0,0.9342916059860095,positive_p05,New Hampshire
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5483502483329703,0.33275578317589216,3.2696100711858363e-06,1274.0,0.9336715597516826,positive_p05,North Dakota
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.59696584160407,0.3206627908538649,6.351756151446325e-07,1274.0,0.9327953464806578,positive_p05,Ohio
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.54592584296995,0.3220672212679805,1.5865780585913143e-06,1274.0,0.9326143200565039,positive_p05,Oklahoma
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5833553378427792,0.31990544074057686,7.442426534855907e-07,1274.0,0.9328094666757341,positive_p05,South Carolina
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5400998483195047,0.3274465008403474,2.5591048453796176e-06,1274.0,0.9333886209936256,positive_p05,South Dakota
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6152638573146305,0.3208240391112767,4.785115845737099e-07,1274.0,0.9331324615858755,positive_p05,Tennessee
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5946888301207733,0.3219402514321894,7.293950523303873e-07,1274.0,0.9325776182745935,positive_p05,Texas
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.6367038420868731,0.31538443516971193,2.10800933978398e-07,1274.0,0.9334820263058832,positive_p05,Utah
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.5736113904211688,0.33000958138173275,1.85712393960668e-06,1274.0,0.933324796374572,positive_p05,West Virginia
+total_suicide_rate_per_100k,Total Suicide,leave_one_adopter_out,1.4200666407578915,0.30008947255611756,2.2216055363566337e-06,1274.0,0.9343636420575894,positive_p05,Wyoming
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.04570703726894504,0.3716907358092222,0.9021303695106512,1173.0,0.8830398486207984,not_p05,Alabama
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.11317755717724261,0.3854140482733031,0.7690239333490605,1173.0,0.8939008082209134,not_p05,Alaska
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,0.11994826826829681,0.34337603386739296,0.7268487526682548,1173.0,0.8939229822766415,not_p05,Arizona
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.06924252306155168,0.3728210866229377,0.8526597349110874,1173.0,0.8896979147177274,not_p05,Florida
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.08244528288730504,0.3741588122053134,0.8255998550595778,1173.0,0.8871632290945812,not_p05,Georgia
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,0.028496273273575373,0.37774332341057515,0.9398660731243986,1173.0,0.8887646048739009,not_p05,Idaho
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.06600087905381133,0.37419466675629987,0.8599945264624961,1173.0,0.8885053052567138,not_p05,Indiana
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.04573416103485797,0.37627159251953274,0.9032588892346008,1173.0,0.8865977571580537,not_p05,Iowa
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.07731146482600448,0.3939570948260922,0.8444196897698264,1173.0,0.889223206334397,not_p05,Kansas
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.08530530914509249,0.3832073281816294,0.8238400160036523,1173.0,0.88861350953261,not_p05,Kentucky
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,0.015521883019286059,0.36127042703720363,0.9657296566196096,1173.0,0.8728968518155513,not_p05,Louisiana
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,0.013329827667419483,0.3770281711234455,0.9717966740840007,1179.0,0.8883233658623368,not_p05,Maine
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.2579117129873238,0.3317450307668324,0.4368994762387728,1173.0,0.8947672638410352,not_p05,Mississippi
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.20056385466060742,0.3613700143258918,0.5788880419445869,1173.0,0.8901472999316319,not_p05,Missouri
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.0634207553587641,0.3773784195194345,0.8665391244561225,1174.0,0.8875184148187334,not_p05,Montana
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.08989580493171848,0.3720940537974499,0.8090945340716867,1173.0,0.889440420869435,not_p05,Nebraska
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.06952598082368447,0.37539253816084445,0.8530653103448672,1189.0,0.8875131322765022,not_p05,New Hampshire
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.07199792274156014,0.3769738052054306,0.8485340602480582,1188.0,0.8881337851875049,not_p05,North Dakota
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.05045540423867459,0.3737764156063102,0.8926212067352481,1173.0,0.8889730776592863,not_p05,Ohio
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.05657259105614593,0.3828164432171974,0.8825164409621926,1173.0,0.8900284686643529,not_p05,Oklahoma
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.04539094538082751,0.37033662336048395,0.9024502089424857,1173.0,0.8867276990389608,not_p05,South Carolina
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.07709949114697505,0.3780557031423826,0.8384028440541907,1187.0,0.8883835804262352,not_p05,South Dakota
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.11213442447966554,0.37424597032613455,0.7644612238670833,1173.0,0.8877737274777167,not_p05,Tennessee
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.08067852286716845,0.37680535564789674,0.8304597707933085,1173.0,0.8886316713069511,not_p05,Texas
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.052474760165078266,0.3765279965364432,0.8891618628278445,1173.0,0.8869196381841122,not_p05,Utah
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.04286049400295769,0.3892828868932602,0.9123291551565691,1173.0,0.8908035630404814,not_p05,West Virginia
+firearm_homicide_rate_per_100k,Firearm Homicide,leave_one_adopter_out,-0.08464792795646568,0.37422755236573296,0.8210507427932155,1187.0,0.8889269032667535,not_p05,Wyoming
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3831697810070638,0.4744105011337806,0.003550568258309889,1274.0,0.9312353323129083,positive_p05,Alabama
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3240164335611933,0.4977861056664964,0.007818475627847321,1274.0,0.9332971625601958,positive_p05,Alaska
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.591757334400776,0.41993335839691526,0.0001503444200382465,1274.0,0.9355581759360481,positive_p05,Arizona
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3502029807659603,0.4775246450463584,0.004691238737170537,1274.0,0.9339939298126146,positive_p05,Florida
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3497647050290076,0.477879233314202,0.004735605298477217,1274.0,0.9329680417248948,positive_p05,Georgia
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4046903064593925,0.486534945497541,0.003887718625662113,1274.0,0.9337057518171338,positive_p05,Idaho
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3436744905481495,0.47695111259054007,0.004844187660577015,1274.0,0.9333252901337494,positive_p05,Indiana
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3692184976418613,0.4783636884847656,0.004205838427187497,1274.0,0.9323837316248218,positive_p05,Iowa
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3604211942197595,0.49309211134903197,0.005798571027892972,1274.0,0.933474944501386,positive_p05,Kansas
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3789536996605105,0.4824900178747117,0.004263281088033281,1274.0,0.932936851972397,positive_p05,Kentucky
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.4322369136453124,0.4671349366012596,0.002169414540568974,1274.0,0.9309402523130029,positive_p05,Louisiana
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.430042208674198,0.48425470568891565,0.0031462184193379824,1274.0,0.9341011910942246,positive_p05,Maine
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.238066204314022,0.47130462614185303,0.008616875751591918,1274.0,0.9327961974868482,positive_p05,Mississippi
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.1993547622760337,0.46088094907229504,0.009259830795224602,1274.0,0.9339941038086217,positive_p05,Missouri
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.302276107480224,0.4794011183678728,0.0065983275967261374,1274.0,0.9336931155738742,positive_p05,Montana
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.338893054449545,0.47774949223446134,0.005070818270161555,1274.0,0.9334479344934273,positive_p05,Nebraska
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3669407382664005,0.4917577894018386,0.00544085886749062,1274.0,0.9332796828249652,positive_p05,New Hampshire
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.303922207324329,0.4967850284240179,0.008671993743227576,1274.0,0.9351587374530854,positive_p05,North Dakota
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.377556713547506,0.47551877216022315,0.003768032213225731,1274.0,0.9334080926107153,positive_p05,Ohio
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3505990812265256,0.4836348792557175,0.005228619737378388,1274.0,0.9331188109576876,positive_p05,Oklahoma
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3775896200121918,0.47570652346535375,0.0037809539951698386,1274.0,0.932751608098243,positive_p05,South Carolina
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3294079045245093,0.4882959520860305,0.006478112920727873,1274.0,0.9344878929565098,positive_p05,South Dakota
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3372718079894648,0.47981919864034983,0.005319310722295939,1274.0,0.9321585827869532,positive_p05,Tennessee
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3543573486375076,0.4794186780841248,0.004728074436727509,1274.0,0.93327101278814,positive_p05,Texas
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.392865188286927,0.4772116382660229,0.0035142916126473123,1274.0,0.933641472872109,positive_p05,Utah
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.3907434365116793,0.4882171818788556,0.004390979746740675,1274.0,0.9341083908976902,positive_p05,West Virginia
+total_firearm_rate_per_100k,Total Firearm Deaths,leave_one_adopter_out,1.1287423684001405,0.4539348354329895,0.012897989476446043,1274.0,0.9369506105386414,positive_p05,Wyoming
