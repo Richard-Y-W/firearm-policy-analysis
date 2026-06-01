@@ -55,6 +55,24 @@ def validate_policy_audit_schema(table: pd.DataFrame) -> pd.DataFrame:
     return table[POLICY_AUDIT_COLUMNS].copy()
 
 
+def validate_policy_year_consistency(panel_states: pd.DataFrame, audit: pd.DataFrame) -> pd.DataFrame:
+    panel_years = panel_states[["State", "permitless_year"]].drop_duplicates("State").copy()
+    audit_years = audit[["State", "permitless_year_current"]].copy()
+    if "audit_status" in audit.columns:
+        audit_years["audit_status"] = audit["audit_status"]
+    else:
+        audit_years["audit_status"] = "missing"
+
+    merged = panel_years.merge(audit_years, on="State", how="outer")
+    panel = pd.to_numeric(merged["permitless_year"], errors="coerce")
+    audit_year = pd.to_numeric(merged["permitless_year_current"], errors="coerce")
+    merged["year_mismatch"] = ~(
+        (panel.isna() & audit_year.isna())
+        | (panel.fillna(-1).astype(float) == audit_year.fillna(-1).astype(float))
+    )
+    return merged
+
+
 def build_robustness_sample(panel: pd.DataFrame, specification: str) -> pd.DataFrame:
     if specification == "baseline":
         return panel.copy()

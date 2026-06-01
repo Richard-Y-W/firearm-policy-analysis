@@ -6,6 +6,7 @@ from src.analysis.phase1_utils import (
     add_event_time_columns,
     build_robustness_sample,
     validate_policy_audit_schema,
+    validate_policy_year_consistency,
 )
 
 
@@ -68,3 +69,22 @@ def test_add_event_time_columns_marks_never_treated_as_missing():
 
     assert out.loc[out["State"] == "A", "event_time"].tolist() == [-1, 0]
     assert out.loc[out["State"] == "B", "event_time"].isna().all()
+
+
+def test_validate_policy_year_consistency_counts_mismatches():
+    panel_states = pd.DataFrame(
+        {
+            "State": ["A", "B"],
+            "permitless_year": [2020.0, pd.NA],
+        }
+    )
+    audit = pd.DataFrame(
+        {
+            "State": ["A", "B"],
+            "permitless_year_current": [2021.0, pd.NA],
+        }
+    )
+
+    summary = validate_policy_year_consistency(panel_states, audit)
+
+    assert summary["year_mismatch"].sum() == 1
