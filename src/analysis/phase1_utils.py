@@ -45,6 +45,21 @@ POLICY_AUDIT_COLUMNS = [
     "audit_status",
 ]
 
+VERIFIED_POLICY_AUDIT_REQUIRED_FIELDS = [
+    "bill_or_statute",
+    "enactment_date",
+    "effective_date",
+    "permitless_concealed",
+    "permitless_open",
+    "constitutional_carry_label",
+    "minimum_age",
+    "training_requirement_removed",
+    "background_check_permit_requirement_removed",
+    "violent_misdemeanor_permit_screen_removed",
+    "source_url",
+    "coding_notes",
+]
+
 
 class RegressionResult:
     def __init__(self, params, bse, pvalues, nobs, rsquared):
@@ -64,6 +79,33 @@ def validate_policy_audit_schema(table: pd.DataFrame) -> pd.DataFrame:
     if missing:
         raise ValueError(f"Policy audit table missing required columns: {missing}")
     return table[POLICY_AUDIT_COLUMNS].copy()
+
+
+def validate_policy_audit_verified_rows(table: pd.DataFrame) -> pd.DataFrame:
+    audit = validate_policy_audit_schema(table)
+    verified = audit["audit_status"].astype(str).str.strip().eq("source_verified")
+    if not verified.any():
+        return audit
+
+    missing_rows = []
+    for row_number, row in audit.loc[verified].iterrows():
+        missing_fields = [
+            field
+            for field in VERIFIED_POLICY_AUDIT_REQUIRED_FIELDS
+            if str(row[field]).strip() == ""
+        ]
+        if missing_fields:
+            missing_rows.append(
+                f"{row.get('State', row_number)}: {', '.join(missing_fields)}"
+            )
+
+    if missing_rows:
+        details = "; ".join(missing_rows)
+        raise ValueError(
+            "source_verified rows missing required legal audit fields: "
+            f"{details}"
+        )
+    return audit
 
 
 def validate_policy_year_consistency(panel_states: pd.DataFrame, audit: pd.DataFrame) -> pd.DataFrame:

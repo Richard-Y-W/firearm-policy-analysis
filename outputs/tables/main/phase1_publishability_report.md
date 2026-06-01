@@ -3,17 +3,20 @@
 ## What Changed
 
 - Added an auditable permitless-carry policy table with one row per state.
+- Added Phase 2A source checks for current-adopter legal timing and carry-scope fields.
 - Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.
 - Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.
 - Corrected the stale README change-score p-values against committed output tables.
 
 ## Policy Audit Status
 
-The policy audit table currently contains 50 states. 50 states remain marked `needs_source`, so the legal coding appendix is a scaffold, not a completed legal audit.
+The policy audit table contains 50 states. Phase 2A adds 23 source-verified current-adopter rows and 1 partial row; 26 rows remain marked `not_adopted_needs_review`. Partial and not-yet-reviewed rows should not be treated as final legal coding.
 
 | audit_status | state_count |
 | --- | --- |
-| needs_source | 50 |
+| not_adopted_needs_review | 26 |
+| source_verified | 23 |
+| partial | 1 |
 
 ## Main TWFE Results
 
@@ -71,4 +74,4 @@ The state-trend specification attenuates several suicide estimates, so the stron
 
 ## Interpretation Boundary
 
-Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. It does not establish causal proof. Legal source verification and external confounder expansion remain Phase 2 work.
+Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2A source-checks current-adopter legal timing and core carry-scope fields, but it does not change the analytic treatment years or establish causal proof. Non-adopter coding, detailed statutory screening fields, and external confounder expansion remain Phase 2 work.

@@ -8,6 +8,7 @@ try:
         POLICY_AUDIT_FILE,
         ROOT,
         load_panel,
+        validate_policy_audit_verified_rows,
         validate_policy_audit_schema,
         validate_policy_year_consistency,
     )
@@ -17,6 +18,7 @@ except ModuleNotFoundError:
         POLICY_AUDIT_FILE,
         ROOT,
         load_panel,
+        validate_policy_audit_verified_rows,
         validate_policy_audit_schema,
         validate_policy_year_consistency,
     )
@@ -59,6 +61,7 @@ def load_or_create_policy_audit(panel: pd.DataFrame) -> pd.DataFrame:
         audit = build_policy_audit_scaffold(panel)
         audit.to_csv(POLICY_AUDIT_FILE, index=False)
     audit = validate_policy_audit_schema(audit)
+    audit = validate_policy_audit_verified_rows(audit)
     audit.to_csv(POLICY_AUDIT_FILE, index=False)
     return audit
 

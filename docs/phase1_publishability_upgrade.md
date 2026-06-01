@@ -6,7 +6,7 @@ Phase 1 addresses credibility and novelty gaps in the original permitless-carry 
 
 ## New Files
 
-- `data/policy/permitless_carry_legal_audit.csv`: one-row-per-state legal audit scaffold.
+- `data/policy/permitless_carry_legal_audit.csv`: one-row-per-state legal audit table.
 - `src/analysis/policy_audit.py`: validates the policy audit table against the panel treatment years.
 - `src/analysis/modern_did.py`: writes cohort ATT and never-treated-control event-time sensitivity outputs.
 - `src/analysis/robustness_checks.py`: writes COVID, weighting, state-trend, leave-one-out, and placebo robustness outputs.
@@ -40,13 +40,13 @@ python3 -m pytest
 
 Phase 1 strengthens the project by making the treatment definition auditable and by adding sensitivity checks that are more appropriate for staggered policy timing than a single TWFE coefficient alone. The strongest positive pattern remains in firearm suicide, total suicide, and total firearm deaths. Firearm homicide remains statistically weak.
 
-The result should still be described as associational. Several event-time checks show pre-adoption signals, and state-specific linear trends attenuate several suicide estimates. The policy audit table is currently a scaffold: all states are marked `needs_source` until the legal source fields are verified.
+The result should still be described as associational. Several event-time checks show pre-adoption signals, and state-specific linear trends attenuate several suicide estimates. Phase 2A source-checks current-adopter legal timing and core carry-scope fields, but non-adopter rows remain unreviewed and several detailed statutory screening fields are still marked `needs_statute_review`.
 
 ## Phase 2 Work
 
-Phase 2 should add data that require separate source vetting and harmonization:
+The remaining Phase 2 work requires separate source vetting and harmonization:
 
-- Verified legal sources for state policy coding, including bill/statute, enactment date, effective date, concealed/open-carry scope, age threshold, training requirement, and permit-screening changes.
+- Complete legal-source review for non-adopter, baseline-permitless, and recent-adopter rows not currently coded as treated in the panel.
 - Other firearm-law controls, including waiting periods, permit-to-purchase, ERPO, safe storage, and stand-your-ground laws.
 - Suicide-relevant confounders, including opioid mortality, mental-health access, demographics, and economic shocks.
 - A manuscript-level methods appendix that describes legal coding decisions and estimator assumptions.

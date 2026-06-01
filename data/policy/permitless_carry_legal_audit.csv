@@ -1,51 +1,51 @@
 State,permitless_year_current,bill_or_statute,enactment_date,effective_date,permitless_concealed,permitless_open,constitutional_carry_label,minimum_age,training_requirement_removed,background_check_permit_requirement_removed,violent_misdemeanor_permit_screen_removed,source_url,coding_notes,audit_status
-Alabama,2023,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Alaska,2003,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Arizona,2010,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Arkansas,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-California,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Colorado,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Connecticut,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Delaware,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Florida,2023,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Georgia,2022,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Hawaii,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Idaho,2016,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Illinois,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Indiana,2022,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Iowa,2021,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Kansas,2015,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Kentucky,2019,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Louisiana,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Maine,2015,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Maryland,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Massachusetts,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Michigan,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Minnesota,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Mississippi,2015,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Missouri,2017,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Montana,2021,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Nebraska,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Nevada,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-New Hampshire,2017,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-New Jersey,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-New Mexico,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-New York,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-North Carolina,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-North Dakota,2017,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Ohio,2022,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Oklahoma,2019,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Oregon,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Pennsylvania,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Rhode Island,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-South Carolina,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-South Dakota,2019,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Tennessee,2021,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Texas,2021,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Utah,2021,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Vermont,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Virginia,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Washington,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-West Virginia,2016,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
-Wisconsin,,,,,,,,,,,,,No permitless adoption year in current panel; legal source audit pending.,needs_source
-Wyoming,2011,,,,,,,,,,,,Scaffold generated from current panel permitless_year; legal source audit pending.,needs_source
+Alabama,2023,2022 AL HB272 / Act 2022-133 / Ala. Code sec. 13A-11-85,2022-03-10,2023-01-01,yes,yes,yes,19,no_prior_training_requirement,yes,needs_statute_review,https://legiscan.com/AL/text/HB272/id/2544995; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,HB272 removed the concealed pistol permit requirement for otherwise eligible adults. Open carry was already broadly available with location limits.,source_verified
+Alaska,2003,2003 AK HB102 / ch. 62 SLA 2003 / Alaska Stat. sec. 11.61.220,2003-06-11,2003-09-09,yes,yes,yes,21,yes,yes,needs_statute_review,https://dps.alaska.gov/Statewide/R-I/PermitsLicensing/Firearm-FAQ; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Alaska DPS confirms permitless concealed carry for adults 21 and older. Optional permits remain for reciprocity and federal school-zone purposes.,source_verified
+Arizona,2010,2010 AZ SB1108 / Ariz. Rev. Stat. sec. 13-3102,2010-04-16,2010-07-29,yes,yes,yes,21,yes,yes,needs_statute_review,https://www.azleg.gov/legtext/49leg/2r/bills/sb1108s.pdf; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,SB1108 removed the permit requirement for adults 21 and older to carry discreetly. Permits remain relevant for alcohol-serving establishments and reciprocity.,source_verified
+Arkansas,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+California,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Colorado,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Connecticut,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Delaware,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Florida,2023,2023 FL HB543 / ch. 2023-18 / Fla. Stat. sec. 790.01,2023-04-03,2023-07-01,yes,no,yes,21,yes,yes,needs_statute_review,https://www.flgov.com/eog/news/press/2023/governor-ron-desantis-signs-hb-543-constitutional-carry; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Florida HB543 removed the concealed-carry license requirement. Open carry remained generally prohibited.,source_verified
+Georgia,2022,2022 GA SB319 / Georgia Constitutional Carry Act / Ga. Code Ann. sec. 16-11-125.1,2022-04-12,2022-04-12,yes,yes,yes,21_or_18_military,no_prior_training_requirement,yes,needs_statute_review,https://gov.georgia.gov/press-releases/2022-04-13/gov-kemp-signs-georgia-constitutional-carry-act-law; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,SB319 made lawful weapons carriers eligible to carry without a weapons carry license. The governor signed it on April 12 and the state described the effective date as April 12.,source_verified
+Hawaii,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Idaho,2016,2016 ID S1389 / Idaho Code sec. 18-3302,2016-03-25,2016-07-01,yes,yes,yes,21_at_2016_adoption_18_after_expansion,yes,yes,needs_statute_review,https://giffords.org/lawcenter/gun-laws/policy-areas/guns-in-public/concealed-carry/; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,The 2016 law created permitless concealed carry for Idaho residents 21 and older. Later 2019 and 2020 changes expanded age and nonresident scope.,source_verified
+Illinois,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Indiana,2022,2022 IN HB1296 / HEA 1296 / Ind. Code sec. 35-47-2-3,2022-03-21,2022-07-01,yes,yes,yes,18,no_prior_training_requirement,yes,needs_statute_review,https://events.in.gov/event/gov_holcomb_issues_statement_on_signing_of_hb_1296; https://www.in.gov/isp/files/Permitless-Carry-Website-Messaging.pdf,Indiana State Police guidance states that the July 1 2022 law ended the permit requirement to legally carry conceal or transport a handgun for proper persons.,source_verified
+Iowa,2021,2021 IA HF756 / Iowa Code sec. 724.5,2021-04-02,2021-07-01,yes,yes,yes,18_by_secondary_summary,yes,yes,needs_statute_review,https://www.legis.iowa.gov/legislation/billTracking/billHistory?billName=HF+756&ga=89; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,HF756 made carry permits optional and also changed handgun purchase-permit rules. Age coding should be rechecked against Iowa Code before manuscript use.,source_verified
+Kansas,2015,2015 KS SB45 / Kan. Stat. Ann. sec. 21-6302,2015-04-02,2015-07-01,yes,yes,yes,21_or_18_military,yes,yes,needs_statute_review,https://www.kslegislature.gov/li_2016/b2015_16/measures/sb45/; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Kansas bill history records approval by the governor and a July 1 2015 effective date.,source_verified
+Kentucky,2019,2019 KY SB150 / Ky. Rev. Stat. secs. 237.109 and 527.020,2019-03-11,2019-06-28,yes,yes,yes,21,yes,yes,needs_statute_review,https://www.kentuckystatepolice.ky.gov/ccdw-home/; https://giffords.org/lawcenter/gun-laws/policy-areas/guns-in-public/concealed-carry/,Kentucky State Police reports permitless concealed carry as of June 28 2019 for adults 21 and older who may lawfully possess firearms.,source_verified
+Louisiana,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Maine,2015,2015 ME LD652 / Public Law 2015 ch. 327 / Me. Rev. Stat. tit. 25 sec. 2001-A,2015-07-08,2015-10-15,yes,yes,yes,21_or_18_military,yes,yes,needs_statute_review,https://www.maine.gov/dps/msp/licenses-permits/concealed-carry-maine; https://legislature.maine.gov/legis/bills/display_ps.asp?PID=undefined&paper=SP0245&sec0=&snum=127,Maine State Police identifies LD652 and the October 15 2015 effective date for permitless concealed handgun carry.,source_verified
+Maryland,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Massachusetts,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Michigan,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Minnesota,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Mississippi,2015,2015 MS SB2394 / Miss. Code secs. 97-37-1 and 45-9-101 with 2016 HB786 expansion,2015-06-24,2015-07-01,partial_bag_or_case_2015_broader_holster_2016,yes,partial,18,partial,partial,needs_statute_review,https://billstatus.ls.state.ms.us/documents/2016/html/HB/0700-0799/HB0786PS.htm; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Current panel year 2015 matches the purse bag briefcase or enclosed-case expansion. Giffords cites 2016 HB786 for the broader holster expansion so this row remains partial.,partial
+Missouri,2017,2016 MO SB656 / Mo. Rev. Stat. sec. 571.030,2016-09-14,2017-01-01,yes,partial,yes,19_or_18_military,yes,yes,needs_statute_review,https://www.senate.mo.gov/BillTracking/Bills/BillInformation?billPrefix=SB&billSuffix=656&handler=legislation&session=R&year=2016; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Missouri veto override occurred in September 2016 and the concealed-carry provision had a January 1 2017 delayed effective date. Local open-carry restrictions can apply to people without permits.,source_verified
+Montana,2021,2021 MT HB102 / Mont. Code Ann. sec. 45-8-316,2021-02-18,2021-02-18,yes,yes,yes,18,yes,yes,needs_statute_review,https://legiscan.com/MT/bill/HB102/2021; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,HB102 expanded statewide permitless concealed carry beyond prior rural and outdoor-activity exceptions.,source_verified
+Nebraska,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Nevada,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+New Hampshire,2017,2017 NH SB12 / RSA 159:6,2017-02-22,2017-02-22,yes,yes,yes,18,no_prior_training_requirement,yes,needs_statute_review,https://legiscan.com/NH/votes/SB12/2017; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,SB12 repealed the licensing requirement for carrying a concealed pistol or revolver and was effective immediately.,source_verified
+New Jersey,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+New Mexico,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+New York,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+North Carolina,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+North Dakota,2017,2017 ND HB1169 / N.D. Cent. Code secs. 62.1-03-01 and 62.1-04-02,2017-03-23,2017-08-01,yes,partial,yes,18_resident_at_adoption,yes,yes,needs_statute_review,https://www.nd.gov/ndhp/node/116; https://legiscan.com/ND/bill/HB1169/2017,North Dakota 2017 law applied to residents within North Dakota. Later law expanded nonresident scope in 2023. Open carry remained restricted or partial.,source_verified
+Ohio,2022,2022 OH SB215 / Ohio Rev. Code sec. 2923.111,2022-03-14,2022-06-13,yes,yes,yes,21,yes,yes,needs_statute_review,https://www.legislature.ohio.gov//download?key=18965; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Ohio Legislative Service Commission final analysis identifies June 13 2022 as the effective date and defines qualifying adults as 21 and older.,source_verified
+Oklahoma,2019,2019 OK HB2597 / Okla. Stat. tit. 21 secs. 1277 and 1290.1-1290.26,2019-02-27,2019-11-01,yes,yes,yes,21_or_18_military,yes,yes,needs_statute_review,https://www.oklegislature.gov/cf_pdf/2019-20%20SUPPORT%20DOCUMENTS/BILLSUM/House/HB2597%20FA4%20BILLSUM.PDF; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Oklahoma summary materials describe HB2597 as effective November 1 2019 and allowing concealed or unconcealed carry without a license for eligible adults.,source_verified
+Oregon,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Pennsylvania,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Rhode Island,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+South Carolina,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+South Dakota,2019,2019 SD SB47 / S.D. Codified Laws secs. 23-7-7 to 23-7-8.6,2019-01-31,2019-07-01,yes,yes,yes,18,no_prior_training_requirement,yes,needs_statute_review,https://sdlegislature.gov/Session/Bill/9374; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,South Dakota bill history records the governor signing SB47 on January 31 2019. The concealed-carry change took effect July 1 2019.,source_verified
+Tennessee,2021,2021 TN SB765 / HB786 / Tenn. Code Ann. sec. 39-17-1307,2021-04-08,2021-07-01,yes,yes,yes,21_at_adoption_or_18_military,yes,yes,needs_statute_review,https://www.wvlt.tv/2021/04/08/governor-lee-signs-permitless-carry-into-law/; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Tennessee law permitted open or concealed handgun carry without a permit for eligible adults as of July 1 2021. The general age rule changed after later litigation.,source_verified
+Texas,2021,2021 TX HB1927 / Firearm Carry Act of 2021 / Tex. Penal Code sec. 46.02,2021-06-16,2021-09-01,yes,yes_holstered,yes,21_at_adoption,yes,yes,needs_statute_review,https://www.lrl.texas.gov/legis/billsearch/billdetails.cfm?billFileID=330877&from=advancedsearch; https://sll.texas.gov/faqs/permitless-carry-guns/,Texas Legislative Reference Library records HB1927 as effective September 1 2021. Texas State Law Library summarizes the license-to-carry change.,source_verified
+Utah,2021,2021 UT HB60 / Utah Code Ann. sec. 53-5a-102.2,2021-02-12,2021-05-05,yes,partial,yes,21,yes,yes,needs_statute_review,https://bci.utah.gov/concealed-firearm/; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Utah BCI identifies HB60 and the May 5 2021 effective date. Permitless open-carry scope should be checked against Utah Code before using the field analytically.,source_verified
+Vermont,,,,,,,,,,,,,No current panel adoption year; Vermont historically had permitless carry and needs separate baseline-state coding review.,not_adopted_needs_review
+Virginia,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Washington,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+West Virginia,2016,2016 WV HB4145 / W. Va. Code sec. 61-7-3,2016-03-05,2016-05-24,yes,yes,yes,21_or_18_military,yes,yes,needs_statute_review,https://wvpress.org/breaking-news/wvs-no-permit-concealed-carry-begins-today/; https://giffords.org/lawcenter/gun-laws/policy-areas/guns-in-public/concealed-carry/,The legislature overrode the governor veto on March 5 2016 and contemporary state press reported the law effective May 24 2016.,source_verified
+Wisconsin,,,,,,,,,,,,,No current panel adoption year; Phase 2A did not verify non-adopter coding.,not_adopted_needs_review
+Wyoming,2011,2011 WY SF0047 / Wyo. Stat. Ann. sec. 6-8-104,2011-03-02,2011-07-01,yes,yes,yes,21_resident_at_adoption,yes,yes,needs_statute_review,https://legiscan.com/WY/bill/SF0047/2011; https://www.handgunlaw.us/documents/Permitless_Carry_States.pdf,Wyoming 2011 law applied to residents at adoption and was expanded to nonresidents in 2021. Open carry was already lawful without a permit.,source_verified

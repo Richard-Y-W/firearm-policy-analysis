@@ -1,51 +1,51 @@
 State,permitless_year,permitless_year_current,audit_status,year_mismatch
-Alabama,2023.0,2023,needs_source,False
-Alaska,2003.0,2003,needs_source,False
-Arizona,2010.0,2010,needs_source,False
-Arkansas,,,needs_source,False
-California,,,needs_source,False
-Colorado,,,needs_source,False
-Connecticut,,,needs_source,False
-Delaware,,,needs_source,False
-Florida,2023.0,2023,needs_source,False
-Georgia,2022.0,2022,needs_source,False
-Hawaii,,,needs_source,False
-Idaho,2016.0,2016,needs_source,False
-Illinois,,,needs_source,False
-Indiana,2022.0,2022,needs_source,False
-Iowa,2021.0,2021,needs_source,False
-Kansas,2015.0,2015,needs_source,False
-Kentucky,2019.0,2019,needs_source,False
-Louisiana,,,needs_source,False
-Maine,2015.0,2015,needs_source,False
-Maryland,,,needs_source,False
-Massachusetts,,,needs_source,False
-Michigan,,,needs_source,False
-Minnesota,,,needs_source,False
-Mississippi,2015.0,2015,needs_source,False
-Missouri,2017.0,2017,needs_source,False
-Montana,2021.0,2021,needs_source,False
-Nebraska,,,needs_source,False
-Nevada,,,needs_source,False
-New Hampshire,2017.0,2017,needs_source,False
-New Jersey,,,needs_source,False
-New Mexico,,,needs_source,False
-New York,,,needs_source,False
-North Carolina,,,needs_source,False
-North Dakota,2017.0,2017,needs_source,False
-Ohio,2022.0,2022,needs_source,False
-Oklahoma,2019.0,2019,needs_source,False
-Oregon,,,needs_source,False
-Pennsylvania,,,needs_source,False
-Rhode Island,,,needs_source,False
-South Carolina,,,needs_source,False
-South Dakota,2019.0,2019,needs_source,False
-Tennessee,2021.0,2021,needs_source,False
-Texas,2021.0,2021,needs_source,False
-Utah,2021.0,2021,needs_source,False
-Vermont,,,needs_source,False
-Virginia,,,needs_source,False
-Washington,,,needs_source,False
-West Virginia,2016.0,2016,needs_source,False
-Wisconsin,,,needs_source,False
-Wyoming,2011.0,2011,needs_source,False
+Alabama,2023.0,2023,source_verified,False
+Alaska,2003.0,2003,source_verified,False
+Arizona,2010.0,2010,source_verified,False
+Arkansas,,,not_adopted_needs_review,False
+California,,,not_adopted_needs_review,False
+Colorado,,,not_adopted_needs_review,False
+Connecticut,,,not_adopted_needs_review,False
+Delaware,,,not_adopted_needs_review,False
+Florida,2023.0,2023,source_verified,False
+Georgia,2022.0,2022,source_verified,False
+Hawaii,,,not_adopted_needs_review,False
+Idaho,2016.0,2016,source_verified,False
+Illinois,,,not_adopted_needs_review,False
+Indiana,2022.0,2022,source_verified,False
+Iowa,2021.0,2021,source_verified,False
+Kansas,2015.0,2015,source_verified,False
+Kentucky,2019.0,2019,source_verified,False
+Louisiana,,,not_adopted_needs_review,False
+Maine,2015.0,2015,source_verified,False
+Maryland,,,not_adopted_needs_review,False
+Massachusetts,,,not_adopted_needs_review,False
+Michigan,,,not_adopted_needs_review,False
+Minnesota,,,not_adopted_needs_review,False
+Mississippi,2015.0,2015,partial,False
+Missouri,2017.0,2017,source_verified,False
+Montana,2021.0,2021,source_verified,False
+Nebraska,,,not_adopted_needs_review,False
+Nevada,,,not_adopted_needs_review,False
+New Hampshire,2017.0,2017,source_verified,False
+New Jersey,,,not_adopted_needs_review,False
+New Mexico,,,not_adopted_needs_review,False
+New York,,,not_adopted_needs_review,False
+North Carolina,,,not_adopted_needs_review,False
+North Dakota,2017.0,2017,source_verified,False
+Ohio,2022.0,2022,source_verified,False
+Oklahoma,2019.0,2019,source_verified,False
+Oregon,,,not_adopted_needs_review,False
+Pennsylvania,,,not_adopted_needs_review,False
+Rhode Island,,,not_adopted_needs_review,False
+South Carolina,,,not_adopted_needs_review,False
+South Dakota,2019.0,2019,source_verified,False
+Tennessee,2021.0,2021,source_verified,False
+Texas,2021.0,2021,source_verified,False
+Utah,2021.0,2021,source_verified,False
+Vermont,,,not_adopted_needs_review,False
+Virginia,,,not_adopted_needs_review,False
+Washington,,,not_adopted_needs_review,False
+West Virginia,2016.0,2016,source_verified,False
+Wisconsin,,,not_adopted_needs_review,False
+Wyoming,2011.0,2011,source_verified,False

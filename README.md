@@ -38,7 +38,7 @@ The analytic file is a 50-state annual panel for 1999-2024. Mortality rates are 
 
 The primary processed panel is stored at `data/processed/analysis_panel_full_outcomes.csv`.
 
-Permitless carry adoption years were coded manually based on the current panel definition. Phase 1 adds `data/policy/permitless_carry_legal_audit.csv` so the legal coding can be audited state by state. The table is currently a scaffold marked `needs_source`; it does not yet constitute a completed legal-source appendix.
+Permitless carry adoption years were coded manually based on the current panel definition. Phase 1 added `data/policy/permitless_carry_legal_audit.csv` so the legal coding can be audited state by state. Phase 2A now source-checks the current-adopter rows: 23 are marked `source_verified`, Mississippi is marked `partial` because the 2015 and 2016 expansions differ in scope, and 26 rows remain `not_adopted_needs_review`.
 
 ## Empirical Design
 
@@ -56,7 +56,7 @@ The project uses multiple estimators because no single observational specificati
 
 ## Phase 1 Publishability Upgrade
 
-The Phase 1 upgrade adds policy-audit scaffolding, cohort-based staggered-adoption sensitivity estimates, never-treated-control event-time estimates, and robustness checks excluding COVID-era years, restricting to pre-2020 years, population weighting, state-specific linear trends, leave-one-adopter-out influence, and placebo timing among never-treated states.
+The Phase 1 upgrade adds a policy-audit table, cohort-based staggered-adoption sensitivity estimates, never-treated-control event-time estimates, and robustness checks excluding COVID-era years, restricting to pre-2020 years, population weighting, state-specific linear trends, leave-one-adopter-out influence, and placebo timing among never-treated states. Phase 2A fills the current-adopter legal audit fields for bill/statute citation, enactment date, effective date, concealed/open-carry scope, age threshold, training, and permit-screening indicators.
 
 These checks strengthen transparency but do not convert the project into causal proof. The state-trend specification attenuates several suicide estimates, and several event-study specifications show pre-adoption signals, so the responsible interpretation remains associational. The generated Phase 1 report is available at `outputs/tables/main/phase1_publishability_report.md`.
 
@@ -117,7 +117,7 @@ The descriptive selection analysis shows that adopting states differ from never-
 - Two-way fixed effects models can be sensitive to staggered adoption timing and heterogeneous treatment effects; Phase 1 adds sensitivity checks but does not eliminate all identification concerns.
 - Mortality data are population-level rates and do not capture nonfatal injury, defensive gun use, enforcement changes, or local policy implementation.
 - Permitless carry laws may coincide with other firearm policy changes or broader social trends.
-- The legal audit table is currently a scaffold. All states remain marked `needs_source` until bill text, effective dates, concealed/open-carry scope, age thresholds, and permit-screening changes are verified.
+- The legal audit table now source-checks current-adopter timing and core carry-scope fields, but non-adopter rows remain unreviewed and several detailed statutory screening fields are still marked `needs_statute_review`.
 - Gun ownership data are available through 2016 in the current processed panel and are carried forward afterward.
 - Some event-study outputs contain statistically significant pre-adoption coefficients, so the results should be framed as associations.
 
@@ -127,7 +127,7 @@ The descriptive selection analysis shows that adopting states differ from never-
 data/
   raw/                         Public source files
   processed/                   Cleaned state-year analysis panels
-  policy/                      Permitless-carry legal audit scaffold
+  policy/                      Permitless-carry legal audit table
 
 outputs/
   figures/

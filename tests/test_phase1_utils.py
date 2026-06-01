@@ -6,6 +6,7 @@ from src.analysis.phase1_utils import (
     add_event_time_columns,
     build_cohort_att_table,
     build_robustness_sample,
+    validate_policy_audit_verified_rows,
     validate_policy_audit_schema,
     validate_policy_year_consistency,
 )
@@ -27,6 +28,16 @@ def test_validate_policy_audit_schema_accepts_required_columns():
     validated = validate_policy_audit_schema(table)
 
     assert list(validated.columns) == POLICY_AUDIT_COLUMNS
+
+
+def test_validate_policy_audit_verified_rows_requires_legal_source_fields():
+    table = pd.DataFrame([{col: "" for col in POLICY_AUDIT_COLUMNS}])
+    table.loc[0, "State"] = "A"
+    table.loc[0, "permitless_year_current"] = 2020
+    table.loc[0, "audit_status"] = "source_verified"
+
+    with pytest.raises(ValueError, match="source_verified rows missing required legal audit fields"):
+        validate_policy_audit_verified_rows(table)
 
 
 def test_build_robustness_sample_excludes_covid_years():

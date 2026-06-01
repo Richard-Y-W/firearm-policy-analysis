@@ -37,6 +37,34 @@ def markdown_table(df: pd.DataFrame, columns: list[str]) -> str:
     return "\n".join(lines)
 
 
+def _audit_count(audit_status: pd.DataFrame, status: str) -> int:
+    return int(
+        audit_status.loc[audit_status["audit_status"] == status, "state_count"].sum()
+    )
+
+
+def build_policy_audit_status_sentence(audit_status: pd.DataFrame) -> str:
+    total_audit = int(audit_status["state_count"].sum())
+    verified = _audit_count(audit_status, "source_verified")
+    partial = _audit_count(audit_status, "partial")
+    needs_source = _audit_count(audit_status, "needs_source")
+    not_reviewed = _audit_count(audit_status, "not_adopted_needs_review")
+
+    partial_text = "1 partial row" if partial == 1 else f"{partial} partial rows"
+    return (
+        f"The policy audit table contains {total_audit} states. "
+        f"Phase 2A adds {verified} source-verified current-adopter rows and "
+        f"{partial_text}; {not_reviewed} rows remain marked "
+        "`not_adopted_needs_review`."
+        + (
+            f" {needs_source} rows still need initial source coding."
+            if needs_source
+            else ""
+        )
+        + " Partial and not-yet-reviewed rows should not be treated as final legal coding."
+    )
+
+
 def build_report() -> str:
     did = pd.read_csv(TABLES / "did" / "twfe_did_main_results.csv")
     welch = pd.read_csv(TABLES / "main" / "welch_change_score_results.csv")
@@ -85,24 +113,20 @@ def build_report() -> str:
         ]
     ]
 
-    needs_source = int(
-        audit_status.loc[audit_status["audit_status"] == "needs_source", "state_count"].sum()
-    )
-    total_audit = int(audit_status["state_count"].sum())
-
     lines = [
         "# Phase 1 Publishability Report",
         "",
         "## What Changed",
         "",
         "- Added an auditable permitless-carry policy table with one row per state.",
+        "- Added Phase 2A source checks for current-adopter legal timing and carry-scope fields.",
         "- Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.",
         "- Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.",
         "- Corrected the stale README change-score p-values against committed output tables.",
         "",
         "## Policy Audit Status",
         "",
-        f"The policy audit table currently contains {total_audit} states. {needs_source} states remain marked `needs_source`, so the legal coding appendix is a scaffold, not a completed legal audit.",
+        build_policy_audit_status_sentence(audit_status),
         "",
         markdown_table(audit_status, ["audit_status", "state_count"]),
         "",
@@ -151,7 +175,7 @@ def build_report() -> str:
         "",
         "## Interpretation Boundary",
         "",
-        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. It does not establish causal proof. Legal source verification and external confounder expansion remain Phase 2 work.",
+        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2A source-checks current-adopter legal timing and core carry-scope fields, but it does not change the analytic treatment years or establish causal proof. Non-adopter coding, detailed statutory screening fields, and external confounder expansion remain Phase 2 work.",
         "",
     ]
     return "\n".join(lines)
