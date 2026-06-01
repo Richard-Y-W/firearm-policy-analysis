@@ -1,6 +1,9 @@
 import pandas as pd
 
-from src.analysis.phase1_publishability_report import build_policy_audit_status_sentence
+from src.analysis.phase1_publishability_report import (
+    build_arkansas_sensitivity_sentence,
+    build_policy_audit_status_sentence,
+)
 
 
 def test_build_policy_audit_status_sentence_reports_verified_and_partial_counts():
@@ -24,3 +27,18 @@ def test_build_policy_audit_status_sentence_reports_verified_and_partial_counts(
     assert "1 baseline-permitless row" in sentence
     assert "1 ambiguous reviewed row" in sentence
     assert "21 rows remain marked `not_adopted_needs_review`" in sentence
+
+
+def test_build_arkansas_sensitivity_sentence_reports_retained_signs():
+    summary = pd.DataFrame(
+        {
+            "outcome_label": ["Firearm Suicide", "Firearm Homicide"],
+            "sign_retained": [True, False],
+            "p05_retained": [True, False],
+        }
+    )
+
+    sentence = build_arkansas_sensitivity_sentence(summary)
+
+    assert "1 of 2 outcomes retain the same sign" in sentence
+    assert "1 retain p < 0.05" in sentence

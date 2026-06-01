@@ -4,6 +4,7 @@
 
 - Added an auditable permitless-carry policy table with one row per state.
 - Added Phase 2B legal edge-case handling for recent adopters, Vermont, and Arkansas.
+- Added Phase 2C Arkansas sensitivity checks that recode Arkansas as 2021 and 2023 while keeping the primary model excluded.
 - Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.
 - Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.
 - Corrected the stale README change-score p-values against committed output tables.
@@ -74,6 +75,18 @@ The state-trend specification attenuates several suicide estimates, so the stron
 | Firearm Homicide | -0.072 | 0.846 | 0 | -0.258 | 0.120 | False | sensitivity_required |
 | Total Firearm Deaths | 1.341 | 0.004 | 3 | 1.129 | 1.592 | True | stable_positive |
 
+## Arkansas Treatment-Year Sensitivity
+
+The Arkansas sensitivity check keeps Arkansas excluded in the primary model and recodes it as 2021 and 2023 in alternate runs. 5 of 5 outcomes retain the same sign across both Arkansas codings, and 4 retain p < 0.05 across both codings.
+
+| outcome_label | primary_coef | arkansas_2021_coef | arkansas_2021_delta | arkansas_2023_coef | arkansas_2023_delta | sign_retained | p05_retained |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Firearm Suicide | 1.263 | 1.261 | -0.002 | 1.277 | 0.013 | True | True |
+| Non-Firearm Suicide | 0.312 | 0.333 | 0.021 | 0.324 | 0.012 | True | True |
+| Total Suicide | 1.576 | 1.595 | 0.019 | 1.601 | 0.025 | True | True |
+| Firearm Homicide | -0.072 | -0.031 | 0.041 | -0.066 | 0.006 | True | False |
+| Total Firearm Deaths | 1.341 | 1.369 | 0.028 | 1.353 | 0.012 | True | True |
+
 ## Interpretation Boundary
 
-Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. It still does not establish causal proof. Remaining non-adopter coding, detailed statutory screening fields, and external confounder expansion remain Phase 2 work.
+Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. It still does not establish causal proof. Remaining non-adopter coding, detailed statutory screening fields, and external confounder expansion remain Phase 2 work.

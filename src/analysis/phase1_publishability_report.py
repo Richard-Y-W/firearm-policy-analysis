@@ -10,6 +10,9 @@ except ModuleNotFoundError:
 
 TABLES = ROOT / "outputs" / "tables"
 OUT_FILE = TABLES / "main" / "phase1_publishability_report.md"
+ARKANSAS_SENSITIVITY_FILE = (
+    TABLES / "robustness" / "arkansas_treatment_sensitivity_summary.csv"
+)
 
 
 def fmt_p(value) -> str:
@@ -78,12 +81,30 @@ def build_policy_audit_status_sentence(audit_status: pd.DataFrame) -> str:
     )
 
 
+def build_arkansas_sensitivity_sentence(summary: pd.DataFrame) -> str:
+    total = int(len(summary))
+    sign_retained = int(summary["sign_retained"].fillna(False).sum())
+    p05_retained = int(summary["p05_retained"].fillna(False).sum())
+    return (
+        "The Arkansas sensitivity check keeps Arkansas excluded in the primary "
+        "model and recodes it as 2021 and 2023 in alternate runs. "
+        f"{sign_retained} of {total} outcomes retain the same sign across both "
+        f"Arkansas codings, and {p05_retained} retain p < 0.05 across both "
+        "codings."
+    )
+
+
 def build_report() -> str:
     did = pd.read_csv(TABLES / "did" / "twfe_did_main_results.csv")
     welch = pd.read_csv(TABLES / "main" / "welch_change_score_results.csv")
     audit_status = pd.read_csv(TABLES / "policy_audit" / "policy_audit_status_counts.csv")
     modern = pd.read_csv(TABLES / "modern_did" / "modern_did_summary.csv")
     robust = pd.read_csv(TABLES / "robustness" / "robustness_summary.csv")
+    arkansas = (
+        pd.read_csv(ARKANSAS_SENSITIVITY_FILE)
+        if ARKANSAS_SENSITIVITY_FILE.exists()
+        else pd.DataFrame()
+    )
 
     did_view = did.copy()
     did_view["coef"] = did_view["coef_post_permitless"].map(fmt_num)
@@ -126,6 +147,31 @@ def build_report() -> str:
         ]
     ]
 
+    if not arkansas.empty:
+        arkansas_view = arkansas.copy()
+        for col in [
+            "primary_coef",
+            "arkansas_2021_coef",
+            "arkansas_2021_delta",
+            "arkansas_2023_coef",
+            "arkansas_2023_delta",
+        ]:
+            arkansas_view[col] = arkansas_view[col].map(fmt_num)
+        arkansas_view = arkansas_view[
+            [
+                "outcome_label",
+                "primary_coef",
+                "arkansas_2021_coef",
+                "arkansas_2021_delta",
+                "arkansas_2023_coef",
+                "arkansas_2023_delta",
+                "sign_retained",
+                "p05_retained",
+            ]
+        ]
+    else:
+        arkansas_view = pd.DataFrame()
+
     lines = [
         "# Phase 1 Publishability Report",
         "",
@@ -133,6 +179,7 @@ def build_report() -> str:
         "",
         "- Added an auditable permitless-carry policy table with one row per state.",
         "- Added Phase 2B legal edge-case handling for recent adopters, Vermont, and Arkansas.",
+        "- Added Phase 2C Arkansas sensitivity checks that recode Arkansas as 2021 and 2023 while keeping the primary model excluded.",
         "- Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.",
         "- Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.",
         "- Corrected the stale README change-score p-values against committed output tables.",
@@ -186,11 +233,40 @@ def build_report() -> str:
             ],
         ),
         "",
+    ]
+
+    if not arkansas_view.empty:
+        lines.extend(
+            [
+                "## Arkansas Treatment-Year Sensitivity",
+                "",
+                build_arkansas_sensitivity_sentence(arkansas),
+                "",
+                markdown_table(
+                    arkansas_view,
+                    [
+                        "outcome_label",
+                        "primary_coef",
+                        "arkansas_2021_coef",
+                        "arkansas_2021_delta",
+                        "arkansas_2023_coef",
+                        "arkansas_2023_delta",
+                        "sign_retained",
+                        "p05_retained",
+                    ],
+                ),
+                "",
+            ]
+        )
+
+    lines.extend(
+        [
         "## Interpretation Boundary",
         "",
-        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. It still does not establish causal proof. Remaining non-adopter coding, detailed statutory screening fields, and external confounder expansion remain Phase 2 work.",
+        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. It still does not establish causal proof. Remaining non-adopter coding, detailed statutory screening fields, and external confounder expansion remain Phase 2 work.",
         "",
-    ]
+        ]
+    )
     return "\n".join(lines)
 
 
