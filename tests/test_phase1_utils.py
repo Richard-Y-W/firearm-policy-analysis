@@ -4,6 +4,7 @@ import pytest
 from src.analysis.phase1_utils import (
     POLICY_AUDIT_COLUMNS,
     add_event_time_columns,
+    build_cohort_att_table,
     build_robustness_sample,
     validate_policy_audit_schema,
     validate_policy_year_consistency,
@@ -88,3 +89,21 @@ def test_validate_policy_year_consistency_counts_mismatches():
     summary = validate_policy_year_consistency(panel_states, audit)
 
     assert summary["year_mismatch"].sum() == 1
+
+
+def test_build_cohort_att_table_returns_cohort_window_rows():
+    panel = pd.DataFrame(
+        {
+            "State": ["A", "A", "B", "B", "C", "C"],
+            "Year": [2019, 2020, 2019, 2020, 2019, 2020],
+            "permitless_year": [2020, 2020, pd.NA, pd.NA, pd.NA, pd.NA],
+            "ever_adopter": [1, 1, 0, 0, 0, 0],
+            "outcome": [2.0, 5.0, 1.0, 2.0, 1.0, 3.0],
+        }
+    )
+
+    out = build_cohort_att_table(panel, "outcome", windows=(1,))
+
+    assert out.loc[0, "cohort"] == 2020
+    assert out.loc[0, "window"] == 1
+    assert out.loc[0, "att"] == 1.5

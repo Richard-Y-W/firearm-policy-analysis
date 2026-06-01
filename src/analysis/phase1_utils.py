@@ -1,5 +1,7 @@
 from pathlib import Path
 from typing import Optional
+import math
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -42,6 +44,15 @@ POLICY_AUDIT_COLUMNS = [
     "coding_notes",
     "audit_status",
 ]
+
+
+class RegressionResult:
+    def __init__(self, params, bse, pvalues, nobs, rsquared):
+        self.params = params
+        self.bse = bse
+        self.pvalues = pvalues
+        self.nobs = nobs
+        self.rsquared = rsquared
 
 
 def load_panel() -> pd.DataFrame:
@@ -91,6 +102,134 @@ def add_event_time_columns(panel: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def build_cohort_att_table(panel: pd.DataFrame, outcome: str, windows=(2, 3, 5)) -> pd.DataFrame:
+    rows = []
+    cohorts = sorted(panel["permitless_year"].dropna().astype(int).unique())
+    for cohort in cohorts:
+        treated_states = panel.loc[panel["permitless_year"] == cohort, "State"].drop_duplicates()
+        controls = panel.loc[panel["permitless_year"].isna(), "State"].drop_duplicates()
+        for window in windows:
+            pre_years = list(range(cohort - window, cohort))
+            post_years = list(range(cohort, cohort + window))
+            treated = panel.loc[panel["State"].isin(treated_states)]
+            control = panel.loc[panel["State"].isin(controls)]
+            t_pre = treated.loc[treated["Year"].isin(pre_years), outcome].mean()
+            t_post = treated.loc[treated["Year"].isin(post_years), outcome].mean()
+            c_pre = control.loc[control["Year"].isin(pre_years), outcome].mean()
+            c_post = control.loc[control["Year"].isin(post_years), outcome].mean()
+            if pd.notna(t_pre) and pd.notna(t_post) and pd.notna(c_pre) and pd.notna(c_post):
+                rows.append(
+                    {
+                        "outcome": outcome,
+                        "outcome_label": OUTCOME_LABELS.get(outcome, outcome),
+                        "cohort": cohort,
+                        "window": window,
+                        "n_treated_states": int(len(treated_states)),
+                        "n_control_states": int(len(controls)),
+                        "treated_change": t_post - t_pre,
+                        "control_change": c_post - c_pre,
+                        "att": (t_post - t_pre) - (c_post - c_pre),
+                    }
+                )
+    return pd.DataFrame(rows)
+
+
+def _normal_pvalues(t_values: np.ndarray) -> np.ndarray:
+    return np.array([math.erfc(abs(float(t)) / math.sqrt(2)) if np.isfinite(t) else np.nan for t in t_values])
+
+
+def fit_fixed_effect_regression(
+    data: pd.DataFrame,
+    outcome: str,
+    treatment_terms,
+    *,
+    weights: Optional[str] = None,
+    state_trends: bool = False,
+    controls=("unemployment_rate", "income_pc"),
+):
+    use_cols = [outcome, "State", "Year"] + list(treatment_terms) + list(controls)
+    if weights:
+        use_cols.append(weights)
+    d = data[use_cols].dropna().copy()
+
+    columns = ["intercept"] + list(treatment_terms) + list(controls)
+    x_parts = [pd.Series(1.0, index=d.index, name="intercept")]
+    for col in list(treatment_terms) + list(controls):
+        x_parts.append(pd.to_numeric(d[col], errors="coerce").astype(float).rename(col))
+
+    state_dummies = pd.get_dummies(d["State"], prefix="state", drop_first=True, dtype=float)
+    year_dummies = pd.get_dummies(d["Year"].astype(int), prefix="year", drop_first=True, dtype=float)
+    x_parts.extend([state_dummies, year_dummies])
+    columns.extend(state_dummies.columns.tolist())
+    columns.extend(year_dummies.columns.tolist())
+
+    if state_trends:
+        centered_year = d["Year"] - d["Year"].min()
+        trend_dummies = pd.get_dummies(d["State"], prefix="state_trend", drop_first=True, dtype=float)
+        trend_dummies = trend_dummies.multiply(centered_year.to_numpy(), axis=0)
+        x_parts.append(trend_dummies)
+        columns.extend(trend_dummies.columns.tolist())
+
+    x_df = pd.concat(x_parts, axis=1).astype(float)
+    x_df = x_df.loc[:, columns]
+    y = pd.to_numeric(d[outcome], errors="coerce").astype(float).to_numpy()
+    x = x_df.to_numpy()
+
+    if weights:
+        w = pd.to_numeric(d[weights], errors="coerce").astype(float).to_numpy()
+        sqrt_w = np.sqrt(w / np.nanmean(w))
+        x_fit = x * sqrt_w[:, None]
+        y_fit = y * sqrt_w
+    else:
+        sqrt_w = np.ones_like(y)
+        x_fit = x
+        y_fit = y
+
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)
+        xtx_inv = np.linalg.pinv(x_fit.T @ x_fit)
+        beta = xtx_inv @ x_fit.T @ y_fit
+        residual = y - x @ beta
+
+    meat = np.zeros((x.shape[1], x.shape[1]))
+    clusters = d["State"].to_numpy()
+    for cluster in np.unique(clusters):
+        idx = clusters == cluster
+        xg = x[idx] * sqrt_w[idx, None]
+        ug = residual[idx] * sqrt_w[idx]
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", RuntimeWarning)
+            score = xg.T @ ug
+        meat += np.outer(score, score)
+
+    nobs = int(len(y))
+    k = x.shape[1]
+    g = len(np.unique(clusters))
+    correction = 1.0
+    if g > 1 and nobs > k:
+        correction = (g / (g - 1)) * ((nobs - 1) / (nobs - k))
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", RuntimeWarning)
+        cov = correction * xtx_inv @ meat @ xtx_inv
+    se = np.sqrt(np.clip(np.diag(cov), 0, None))
+    with np.errstate(divide="ignore", invalid="ignore"):
+        t_values = beta / se
+    pvalues = _normal_pvalues(t_values)
+
+    y_mean = np.average(y, weights=sqrt_w**2)
+    ss_res = float(np.sum((sqrt_w * residual) ** 2))
+    ss_tot = float(np.sum((sqrt_w * (y - y_mean)) ** 2))
+    r2 = np.nan if ss_tot == 0 else 1 - ss_res / ss_tot
+
+    return RegressionResult(
+        params=pd.Series(beta, index=x_df.columns),
+        bse=pd.Series(se, index=x_df.columns),
+        pvalues=pd.Series(pvalues, index=x_df.columns),
+        nobs=float(nobs),
+        rsquared=r2,
+    )
+
+
 def fit_twfe(
     data: pd.DataFrame,
     outcome: str,
@@ -98,25 +237,10 @@ def fit_twfe(
     weights: Optional[str] = None,
     state_trends: bool = False,
 ):
-    import statsmodels.formula.api as smf
-
-    terms = ["post_permitless", "unemployment_rate", "income_pc", "C(State)", "C(Year)"]
-    use_cols = [outcome, "post_permitless", "unemployment_rate", "income_pc", "State", "Year"]
-    if weights:
-        use_cols.append(weights)
-    d = data[use_cols].dropna().copy()
-
-    if state_trends:
-        d["centered_year"] = d["Year"] - d["Year"].min()
-        terms.append("C(State):centered_year")
-
-    formula = f"{outcome} ~ {' + '.join(terms)}"
-    if weights:
-        return smf.wls(formula, data=d, weights=d[weights]).fit(
-            cov_type="cluster",
-            cov_kwds={"groups": d["State"]},
-        )
-    return smf.ols(formula, data=d).fit(
-        cov_type="cluster",
-        cov_kwds={"groups": d["State"]},
+    return fit_fixed_effect_regression(
+        data,
+        outcome,
+        ["post_permitless"],
+        weights=weights,
+        state_trends=state_trends,
     )
