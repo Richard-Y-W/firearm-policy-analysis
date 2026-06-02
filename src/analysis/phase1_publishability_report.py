@@ -14,6 +14,9 @@ ARKANSAS_SENSITIVITY_FILE = (
     TABLES / "robustness" / "arkansas_treatment_sensitivity_summary.csv"
 )
 POLICY_MECHANISM_FILE = TABLES / "policy_audit" / "policy_mechanism_summary.csv"
+FIREARM_LAW_CONTROL_FILE = (
+    TABLES / "did" / "twfe_did_firearm_law_control_summary.csv"
+)
 
 
 def fmt_p(value) -> str:
@@ -143,11 +146,30 @@ def build_mechanism_summary_sentence(summary: pd.DataFrame) -> str:
     )
 
 
+def build_firearm_law_control_sentence(summary: pd.DataFrame) -> str:
+    total = int(len(summary))
+    sign_retained = int(summary["sign_retained"].fillna(False).sum())
+    p05_retained = int(summary["p05_retained"].fillna(False).sum())
+    return (
+        "The external firearm-law control check adds controls for "
+        "permit-to-purchase laws, waiting periods, universal background checks, "
+        "ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and "
+        "dealer licensing. "
+        f"{sign_retained} of {total} outcomes retain the same coefficient sign, "
+        f"and {p05_retained} retain p < 0.05 after those controls are added."
+    )
+
+
 def build_report() -> str:
     did = pd.read_csv(TABLES / "did" / "twfe_did_main_results.csv")
     welch = pd.read_csv(TABLES / "main" / "welch_change_score_results.csv")
     audit_status = pd.read_csv(TABLES / "policy_audit" / "policy_audit_status_counts.csv")
     mechanisms = pd.read_csv(POLICY_MECHANISM_FILE)
+    firearm_law_controls = (
+        pd.read_csv(FIREARM_LAW_CONTROL_FILE)
+        if FIREARM_LAW_CONTROL_FILE.exists()
+        else pd.DataFrame()
+    )
     modern = pd.read_csv(TABLES / "modern_did" / "modern_did_summary.csv")
     robust = pd.read_csv(TABLES / "robustness" / "robustness_summary.csv")
     arkansas = (
@@ -160,6 +182,34 @@ def build_report() -> str:
     did_view["coef"] = did_view["coef_post_permitless"].map(fmt_num)
     did_view["p"] = did_view["p_post_permitless"].map(fmt_p)
     did_view = did_view[["outcome_label", "coef", "p"]]
+
+    if not firearm_law_controls.empty:
+        firearm_law_view = firearm_law_controls.copy()
+        for col in [
+            "baseline_coef",
+            "baseline_p",
+            "controlled_coef",
+            "controlled_p",
+            "controlled_delta",
+        ]:
+            firearm_law_view[col] = firearm_law_view[col].map(
+                fmt_p if col.endswith("_p") else fmt_num
+            )
+        firearm_law_view = firearm_law_view[
+            [
+                "outcome_label",
+                "baseline_coef",
+                "baseline_p",
+                "controlled_coef",
+                "controlled_p",
+                "controlled_delta",
+                "sign_retained",
+                "p05_retained",
+                "interpretation_flag",
+            ]
+        ]
+    else:
+        firearm_law_view = pd.DataFrame()
 
     welch_view = welch.copy()
     welch_view["difference"] = welch_view["difference"].map(fmt_num)
@@ -232,6 +282,7 @@ def build_report() -> str:
         "- Added Phase 2C Arkansas sensitivity checks that recode Arkansas as 2021 and 2023 while keeping the primary model excluded.",
         "- Verified non-adopter rows through the 1999-2024 panel window and documented the treatment rule in a legal-coding appendix.",
         "- Resolved clean-adopter mechanism fields for training, carry-permit background checks, and misdemeanor-violence permit screening.",
+        "- Added Phase 3A external firearm-law controls from the Tufts State Firearm Law Database.",
         "- Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.",
         "- Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.",
         "- Corrected the stale README change-score p-values against committed output tables.",
@@ -255,46 +306,76 @@ def build_report() -> str:
         "",
         markdown_table(did_view, ["outcome_label", "coef", "p"]),
         "",
-        "## Change-Score Results",
-        "",
-        markdown_table(welch_view, ["outcome_label", "window", "difference", "p"]),
-        "",
-        "## Modern Staggered-Adoption Sensitivity",
-        "",
-        "The cohort ATT columns compare cohort-specific treated changes with never-treated state changes. The event-time column is a never-treated-control fixed-effect sensitivity check; `pretrend_flag_p05` marks outcomes with at least one statistically significant pre-adoption coefficient.",
-        "",
-        markdown_table(
-            modern_view,
-            [
-                "outcome_label",
-                "cohort_att_w2",
-                "cohort_att_w3",
-                "cohort_att_w5",
-                "event_post_mean_coef",
-                "pretrend_flag_p05",
-                "interpretation_flag",
-            ],
-        ),
-        "",
-        "## Robustness Summary",
-        "",
-        "The state-trend specification attenuates several suicide estimates, so the strongest responsible claim remains associational. Firearm homicide remains unstable and statistically weak across the Phase 1 checks.",
-        "",
-        markdown_table(
-            robust_view,
-            [
-                "outcome_label",
-                "baseline_coef",
-                "baseline_p",
-                "twfe_specs_p05",
-                "leave_one_min_coef",
-                "leave_one_max_coef",
-                "observed_exceeds_placebo_p95",
-                "interpretation_flag",
-            ],
-        ),
-        "",
     ]
+
+    if not firearm_law_view.empty:
+        lines.extend(
+            [
+                "## External Firearm-Law Controls",
+                "",
+                build_firearm_law_control_sentence(firearm_law_controls),
+                "",
+                markdown_table(
+                    firearm_law_view,
+                    [
+                        "outcome_label",
+                        "baseline_coef",
+                        "baseline_p",
+                        "controlled_coef",
+                        "controlled_p",
+                        "controlled_delta",
+                        "sign_retained",
+                        "p05_retained",
+                        "interpretation_flag",
+                    ],
+                ),
+                "",
+            ]
+        )
+
+    lines.extend(
+        [
+            "## Change-Score Results",
+            "",
+            markdown_table(welch_view, ["outcome_label", "window", "difference", "p"]),
+            "",
+            "## Modern Staggered-Adoption Sensitivity",
+            "",
+            "The cohort ATT columns compare cohort-specific treated changes with never-treated state changes. The event-time column is a never-treated-control fixed-effect sensitivity check; `pretrend_flag_p05` marks outcomes with at least one statistically significant pre-adoption coefficient.",
+            "",
+            markdown_table(
+                modern_view,
+                [
+                    "outcome_label",
+                    "cohort_att_w2",
+                    "cohort_att_w3",
+                    "cohort_att_w5",
+                    "event_post_mean_coef",
+                    "pretrend_flag_p05",
+                    "interpretation_flag",
+                ],
+            ),
+            "",
+            "## Robustness Summary",
+            "",
+            "The state-trend specification attenuates several suicide estimates, so the strongest responsible claim remains associational. Firearm homicide remains unstable and statistically weak across the Phase 1 checks.",
+            "",
+            markdown_table(
+                robust_view,
+                [
+                    "outcome_label",
+                    "baseline_coef",
+                    "baseline_p",
+                    "twfe_specs_p05",
+                    "leave_one_min_coef",
+                    "leave_one_max_coef",
+                    "observed_exceeds_placebo_p95",
+                    "interpretation_flag",
+                ],
+            ),
+            "",
+        ]
+    )
 
     if not arkansas_view.empty:
         lines.extend(
@@ -324,7 +405,7 @@ def build_report() -> str:
         [
         "## Interpretation Boundary",
         "",
-        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. It still does not establish causal proof. External confounder expansion remains Phase 2 work.",
+        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. It still does not establish causal proof. Non-firearm confounder expansion remains Phase 3 work.",
         "",
         ]
     )

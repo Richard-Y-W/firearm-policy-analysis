@@ -27,6 +27,21 @@ OUTCOME_LABELS = {
     "total_firearm_rate_per_100k": "Total Firearm Deaths",
 }
 
+BASELINE_CONTROL_COLUMNS = [
+    "unemployment_rate",
+    "income_pc",
+]
+
+FIREARM_LAW_CONTROL_COLUMNS = [
+    "permit_to_purchase",
+    "waiting_period",
+    "universal_background_check",
+    "erpo_red_flag",
+    "safe_storage",
+    "stand_your_ground",
+    "dealer_license",
+]
+
 POLICY_AUDIT_COLUMNS = [
     "State",
     "permitless_year_current",
@@ -318,6 +333,7 @@ def fit_twfe(
     data: pd.DataFrame,
     outcome: str,
     *,
+    controls=BASELINE_CONTROL_COLUMNS,
     weights: Optional[str] = None,
     state_trends: bool = False,
 ):
@@ -325,6 +341,7 @@ def fit_twfe(
         data,
         outcome,
         ["post_permitless"],
+        controls=controls,
         weights=weights,
         state_trends=state_trends,
     )

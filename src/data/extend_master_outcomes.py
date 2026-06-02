@@ -7,6 +7,7 @@ PROCESSED_DIR = ROOT / "data" / "processed"
 MASTER_FILE = PROCESSED_DIR / "analysis_panel_master.csv"
 HOMICIDE_FILE = PROCESSED_DIR / "analysis_panel_firearm_homicide_deaths_1999_2024.csv"
 TOTAL_FIREARM_FILE = PROCESSED_DIR / "analysis_panel_total_firearm_deaths_1999_2024.csv"
+FIREARM_LAW_CONTROLS_FILE = PROCESSED_DIR / "state_year_firearm_law_controls_1999_2024.csv"
 
 OUT_FILE = PROCESSED_DIR / "analysis_panel_full_outcomes.csv"
 
@@ -15,6 +16,7 @@ def main():
     master = pd.read_csv(MASTER_FILE)
     homicide = pd.read_csv(HOMICIDE_FILE)
     total_firearm = pd.read_csv(TOTAL_FIREARM_FILE)
+    firearm_laws = pd.read_csv(FIREARM_LAW_CONTROLS_FILE)
 
     homicide = homicide.rename(columns={
         "Deaths": "firearm_homicide_deaths",
@@ -28,6 +30,7 @@ def main():
 
     full = master.merge(homicide, on=["State", "State Code", "Year"], how="left")
     full = full.merge(total_firearm, on=["State", "State Code", "Year"], how="left")
+    full = full.merge(firearm_laws, on=["State", "Year"], how="left")
 
     full.to_csv(OUT_FILE, index=False)
 
@@ -42,7 +45,14 @@ def main():
         "nonfirearm_suicide_rate_per_100k",
         "total_suicide_rate_per_100k",
         "firearm_homicide_rate_per_100k",
-        "total_firearm_rate_per_100k"
+        "total_firearm_rate_per_100k",
+        "permit_to_purchase",
+        "waiting_period",
+        "universal_background_check",
+        "erpo_red_flag",
+        "safe_storage",
+        "stand_your_ground",
+        "dealer_license",
     ]
     print("\nMissing values:")
     print(full[key_vars].isna().sum())

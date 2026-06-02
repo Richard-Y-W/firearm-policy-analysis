@@ -11,6 +11,17 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+try:
+    from src.analysis.firearm_law_control_sensitivity import (
+        build_firearm_law_control_summary,
+        run_firearm_law_control_models,
+    )
+except ModuleNotFoundError:
+    from firearm_law_control_sensitivity import (
+        build_firearm_law_control_summary,
+        run_firearm_law_control_models,
+    )
+
 ROOT = Path(__file__).resolve().parents[2]
 DATA_FILE = ROOT / "data" / "processed" / "analysis_panel_full_outcomes.csv"
 
@@ -254,6 +265,20 @@ def run_twfe_did(df):
     out = pd.DataFrame(rows)
     out.to_csv(OUT_TABLES / "did" / "twfe_did_main_results.csv", index=False)
     print("Saved TWFE DiD results.")
+
+
+def run_firearm_law_control_did(df):
+    detail = run_firearm_law_control_models(df)
+    summary = build_firearm_law_control_summary(detail)
+    detail.to_csv(
+        OUT_TABLES / "did" / "twfe_did_firearm_law_control_results.csv",
+        index=False,
+    )
+    summary.to_csv(
+        OUT_TABLES / "did" / "twfe_did_firearm_law_control_summary.csv",
+        index=False,
+    )
+    print("Saved firearm-law controlled TWFE DiD results.")
 
 
 def event_study_design(df, outcome, min_k=-5, max_k=5):
@@ -531,6 +556,7 @@ def main():
     make_descriptive_tables(df, state_base)
     run_welch_change_score_tests(df)
     run_twfe_did(df)
+    run_firearm_law_control_did(df)
     save_event_study_outputs(df)
     run_heterogeneity_did(df)
     make_heterogeneity_plots(df)

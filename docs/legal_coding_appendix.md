@@ -29,3 +29,9 @@ The audit table stores row-level source URLs in `data/policy/permitless_carry_le
 The current source pass is enough to distinguish clean treated states, verified untreated states, baseline permitless states, partial cases, and ambiguous cases. For the 26 clean `source_verified` adopter rows, Phase 2D also resolves the three mechanism fields used in the audit table: training removal, carry-permit background-check screening, and misdemeanor-violence permit screening. These mechanism fields describe the carry-permit screen, not every underlying firearm-possession prohibition. Values such as `eligibility_standard_retained_no_precarry_check` indicate that substantive carry eligibility appears to remain in the law even though the person no longer has to apply before carrying.
 
 The generated mechanism summary is stored at `outputs/tables/policy_audit/policy_mechanism_summary.csv`. Arkansas, Mississippi, and Vermont remain outside the clean-adopter mechanism summary because they are ambiguous, partial, or baseline permitless rather than clean within-panel adoption events.
+
+## External Firearm-Law Controls
+
+Phase 3A uses the Tufts State Firearm Law Database for external firearm-law controls. The processed control file is `data/processed/state_year_firearm_law_controls_1999_2024.csv`. It combines all-firearm and handgun-specific Tufts provisions into domain indicators for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing.
+
+These controls are not used to define the permitless-carry treatment. They are included as sensitivity covariates to test whether the permitless-carry association survives adjustment for other state firearm laws.
