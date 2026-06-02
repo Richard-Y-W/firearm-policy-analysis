@@ -20,7 +20,7 @@ def test_validate_policy_audit_schema_rejects_missing_columns():
 
 
 def test_validate_policy_audit_schema_accepts_required_columns():
-    table = pd.DataFrame([{col: "" for col in POLICY_AUDIT_COLUMNS}])
+    table = pd.DataFrame([{col: "" for col in POLICY_AUDIT_COLUMNS}], dtype=object)
     table.loc[0, "State"] = "A"
     table.loc[0, "permitless_year_current"] = 2020
     table.loc[0, "audit_status"] = "needs_source"
@@ -31,7 +31,7 @@ def test_validate_policy_audit_schema_accepts_required_columns():
 
 
 def test_validate_policy_audit_verified_rows_requires_legal_source_fields():
-    table = pd.DataFrame([{col: "" for col in POLICY_AUDIT_COLUMNS}])
+    table = pd.DataFrame([{col: "" for col in POLICY_AUDIT_COLUMNS}], dtype=object)
     table.loc[0, "State"] = "A"
     table.loc[0, "permitless_year_current"] = 2020
     table.loc[0, "audit_status"] = "source_verified"
@@ -41,7 +41,7 @@ def test_validate_policy_audit_verified_rows_requires_legal_source_fields():
 
 
 def test_validate_policy_audit_verified_rows_requires_non_adopter_source_fields():
-    table = pd.DataFrame([{col: "" for col in POLICY_AUDIT_COLUMNS}])
+    table = pd.DataFrame([{col: "" for col in POLICY_AUDIT_COLUMNS}], dtype=object)
     table.loc[0, "State"] = "A"
     table.loc[0, "audit_status"] = "not_adopted_verified"
 

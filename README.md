@@ -146,6 +146,7 @@ src/
     robustness_checks.py
     arkansas_sensitivity.py
     phase1_publishability_report.py
+    wrhc_change_score.py
   data/
     build_master_analysis_panel.py
     extend_master_outcomes.py
@@ -193,6 +194,12 @@ python3 src/analysis/modern_did.py
 python3 src/analysis/robustness_checks.py
 python3 src/analysis/arkansas_sensitivity.py
 python3 src/analysis/phase1_publishability_report.py
+```
+
+Run tests:
+
+```bash
+python3 -m pytest
 ```
 
 Outputs are written to `outputs/tables` and `outputs/figures`.
