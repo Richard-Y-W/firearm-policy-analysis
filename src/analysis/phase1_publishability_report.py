@@ -13,6 +13,7 @@ OUT_FILE = TABLES / "main" / "phase1_publishability_report.md"
 ARKANSAS_SENSITIVITY_FILE = (
     TABLES / "robustness" / "arkansas_treatment_sensitivity_summary.csv"
 )
+POLICY_MECHANISM_FILE = TABLES / "policy_audit" / "policy_mechanism_summary.csv"
 
 
 def fmt_p(value) -> str:
@@ -104,10 +105,49 @@ def build_arkansas_sensitivity_sentence(summary: pd.DataFrame) -> str:
     )
 
 
+def _mechanism_count(summary: pd.DataFrame, field: str, value: str) -> int:
+    return int(
+        summary.loc[
+            (summary["mechanism_field"] == field)
+            & (summary["mechanism_value"] == value),
+            "state_count",
+        ].sum()
+    )
+
+
+def build_mechanism_summary_sentence(summary: pd.DataFrame) -> str:
+    training_removed = _mechanism_count(
+        summary, "training_requirement_removed", "yes"
+    )
+    background_removed = _mechanism_count(
+        summary, "background_check_permit_requirement_removed", "yes"
+    )
+    misdemeanor_removed = _mechanism_count(
+        summary,
+        "violent_misdemeanor_permit_screen_removed",
+        "permit_specific_misdemeanor_screen_removed",
+    )
+    retained_eligibility = _mechanism_count(
+        summary,
+        "violent_misdemeanor_permit_screen_removed",
+        "eligibility_standard_retained_no_precarry_check",
+    )
+    return (
+        f"Among the 26 clean source-verified adopter rows, {training_removed} "
+        "had a training requirement removed, "
+        f"{background_removed} removed the carry-permit background-check screen, "
+        f"and {misdemeanor_removed} removed a permit-specific "
+        "misdemeanor-violence screen. "
+        f"{retained_eligibility} rows retain permit-style eligibility standards "
+        "but no longer require an application before carry."
+    )
+
+
 def build_report() -> str:
     did = pd.read_csv(TABLES / "did" / "twfe_did_main_results.csv")
     welch = pd.read_csv(TABLES / "main" / "welch_change_score_results.csv")
     audit_status = pd.read_csv(TABLES / "policy_audit" / "policy_audit_status_counts.csv")
+    mechanisms = pd.read_csv(POLICY_MECHANISM_FILE)
     modern = pd.read_csv(TABLES / "modern_did" / "modern_did_summary.csv")
     robust = pd.read_csv(TABLES / "robustness" / "robustness_summary.csv")
     arkansas = (
@@ -191,6 +231,7 @@ def build_report() -> str:
         "- Added Phase 2B legal edge-case handling for recent adopters, Vermont, and Arkansas.",
         "- Added Phase 2C Arkansas sensitivity checks that recode Arkansas as 2021 and 2023 while keeping the primary model excluded.",
         "- Verified non-adopter rows through the 1999-2024 panel window and documented the treatment rule in a legal-coding appendix.",
+        "- Resolved clean-adopter mechanism fields for training, carry-permit background checks, and misdemeanor-violence permit screening.",
         "- Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.",
         "- Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.",
         "- Corrected the stale README change-score p-values against committed output tables.",
@@ -200,6 +241,15 @@ def build_report() -> str:
         build_policy_audit_status_sentence(audit_status),
         "",
         markdown_table(audit_status, ["audit_status", "state_count"]),
+        "",
+        "## Policy Mechanism Summary",
+        "",
+        build_mechanism_summary_sentence(mechanisms),
+        "",
+        markdown_table(
+            mechanisms,
+            ["mechanism_field", "mechanism_value", "state_count"],
+        ),
         "",
         "## Main TWFE Results",
         "",
@@ -274,7 +324,7 @@ def build_report() -> str:
         [
         "## Interpretation Boundary",
         "",
-        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window. It still does not establish causal proof. Detailed statutory screening fields and external confounder expansion remain Phase 2 work.",
+        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. It still does not establish causal proof. External confounder expansion remains Phase 2 work.",
         "",
         ]
     )

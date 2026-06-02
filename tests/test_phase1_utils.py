@@ -6,6 +6,7 @@ from src.analysis.phase1_utils import (
     add_event_time_columns,
     build_cohort_att_table,
     build_robustness_sample,
+    validate_policy_audit_mechanism_rows,
     validate_policy_audit_verified_rows,
     validate_policy_audit_schema,
     validate_policy_year_consistency,
@@ -47,6 +48,16 @@ def test_validate_policy_audit_verified_rows_requires_non_adopter_source_fields(
 
     with pytest.raises(ValueError, match="not_adopted_verified rows missing required legal audit fields"):
         validate_policy_audit_verified_rows(table)
+
+
+def test_validate_policy_audit_mechanism_rows_rejects_unresolved_source_verified_fields():
+    table = pd.DataFrame([{col: "filled" for col in POLICY_AUDIT_COLUMNS}])
+    table.loc[0, "State"] = "A"
+    table.loc[0, "audit_status"] = "source_verified"
+    table.loc[0, "violent_misdemeanor_permit_screen_removed"] = "needs_statute_review"
+
+    with pytest.raises(ValueError, match="source_verified mechanism fields still unresolved"):
+        validate_policy_audit_mechanism_rows(table)
 
 
 def test_build_robustness_sample_excludes_covid_years():
