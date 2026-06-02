@@ -17,6 +17,34 @@ OUT_FIGS = ROOT / "outputs" / "figures"
 OUT_TABLES.mkdir(parents=True, exist_ok=True)
 OUT_FIGS.mkdir(parents=True, exist_ok=True)
 
+BLUE = "#1F5A85"
+GRAY = "#6F7378"
+LIGHT_GRAY = "#E9ECEF"
+DARK = "#202124"
+OUTCOME_LABEL = "Firearm homicide deaths"
+EVENT_FIGURE = "event_time_firearm_homicide_deaths.png"
+
+
+def configure_plot_style():
+    plt.rcParams.update(
+        {
+            "axes.edgecolor": "#C9C9C9",
+            "axes.labelcolor": DARK,
+            "axes.labelsize": 10,
+            "axes.spines.right": False,
+            "axes.spines.top": False,
+            "axes.titlesize": 12,
+            "axes.titleweight": "bold",
+            "figure.facecolor": "white",
+            "font.family": "DejaVu Sans",
+            "legend.fontsize": 9,
+            "savefig.facecolor": "white",
+            "xtick.labelsize": 9,
+            "ytick.labelsize": 9,
+        }
+    )
+
+
 def compute_A(df, state, t, pre_k=3, post_k=3):
     pre_years = list(range(t - pre_k, t))
     post_years = list(range(t + 1, t + post_k + 1))
@@ -136,19 +164,65 @@ def make_event_plot(df, adopters, controls):
     adopter_mean = adopter_df.groupby("event_time", as_index=False)["rate"].mean()
     control_mean = control_df.groupby("event_time", as_index=False)["rate"].mean()
 
-    plt.figure()
-    plt.plot(adopter_mean["event_time"], adopter_mean["rate"], marker="o", label="Adopters")
-    plt.plot(control_mean["event_time"], control_mean["rate"], marker="o", label="Controls")
-    plt.axvline(0, linestyle="--")
-    plt.xlabel("Event time")
-    plt.ylabel("Total firearm deaths per 100,000")
-    plt.title("Pre/post patterns around permitless carry adoption")
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(OUT_FIGS / "event_time_firearm_homicide_deaths.png", dpi=300)
-    plt.close()
+    fig, ax = plt.subplots(figsize=(7.6, 4.8))
+    ax.plot(
+        adopter_mean["event_time"],
+        adopter_mean["rate"],
+        color=BLUE,
+        linewidth=2.4,
+        marker="o",
+        markersize=5.5,
+        label="Adopting states",
+    )
+    ax.plot(
+        control_mean["event_time"],
+        control_mean["rate"],
+        color=GRAY,
+        linewidth=2.2,
+        marker="o",
+        markersize=5.2,
+        label="Never-adopting controls",
+    )
+    ax.axvline(0, color="#8A8A8A", linestyle="--", linewidth=1)
+    ax.grid(axis="y", color=LIGHT_GRAY, linewidth=0.8)
+    ax.tick_params(length=0, pad=3)
+    ax.set_xticks(k_range)
+    ax.set_xlabel("Years relative to permitless carry adoption")
+    ax.set_ylabel(f"{OUTCOME_LABEL} per 100,000")
+    ax.set_title(f"{OUTCOME_LABEL} around adoption", loc="left")
+
+    for series, color, label in [
+        (adopter_mean, BLUE, "Adopting states"),
+        (control_mean, GRAY, "Never-adopting controls"),
+    ]:
+        last = series.sort_values("event_time").iloc[-1]
+        ax.text(
+            last["event_time"] + 0.18,
+            last["rate"],
+            label,
+            color=color,
+            fontsize=9,
+            fontweight="bold",
+            va="center",
+        )
+
+    fig.text(
+        0.02,
+        0.02,
+        "Adoption year omitted; lines show annual group means.",
+        fontsize=8.3,
+        color="#555555",
+        ha="left",
+        va="bottom",
+    )
+    ax.set_xlim(min(k_range) - 0.4, max(k_range) + 1.9)
+    fig.tight_layout(rect=[0, 0.055, 1, 1])
+    fig.savefig(OUT_FIGS / EVENT_FIGURE, dpi=500, bbox_inches="tight", pad_inches=0.08)
+    plt.close(fig)
 
 def main():
+    configure_plot_style()
+
     if not DATA.exists():
         raise FileNotFoundError(f"Missing analysis panel: {DATA}")
 
