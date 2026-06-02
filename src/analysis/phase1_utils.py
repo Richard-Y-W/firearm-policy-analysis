@@ -27,6 +27,21 @@ OUTCOME_LABELS = {
     "total_firearm_rate_per_100k": "Total Firearm Deaths",
 }
 
+BASELINE_CONTROL_COLUMNS = [
+    "unemployment_rate",
+    "income_pc",
+]
+
+FIREARM_LAW_CONTROL_COLUMNS = [
+    "permit_to_purchase",
+    "waiting_period",
+    "universal_background_check",
+    "erpo_red_flag",
+    "safe_storage",
+    "stand_your_ground",
+    "dealer_license",
+]
+
 POLICY_AUDIT_COLUMNS = [
     "State",
     "permitless_year_current",
@@ -58,6 +73,12 @@ VERIFIED_POLICY_AUDIT_REQUIRED_FIELDS = [
     "violent_misdemeanor_permit_screen_removed",
     "source_url",
     "coding_notes",
+]
+
+POLICY_AUDIT_MECHANISM_FIELDS = [
+    "training_requirement_removed",
+    "background_check_permit_requirement_removed",
+    "violent_misdemeanor_permit_screen_removed",
 ]
 
 VERIFIED_POLICY_AUDIT_STATUSES = {
@@ -115,6 +136,30 @@ def validate_policy_audit_verified_rows(table: pd.DataFrame) -> pd.DataFrame:
         status_label = statuses[0] if len(statuses) == 1 else "verified legal audit"
         raise ValueError(
             f"{status_label} rows missing required legal audit fields: "
+            f"{details}"
+        )
+    return audit
+
+
+def validate_policy_audit_mechanism_rows(table: pd.DataFrame) -> pd.DataFrame:
+    audit = validate_policy_audit_schema(table)
+    source_verified = audit["audit_status"].astype(str).str.strip().eq("source_verified")
+    unresolved_rows = []
+    for row_number, row in audit.loc[source_verified].iterrows():
+        unresolved_fields = [
+            field
+            for field in POLICY_AUDIT_MECHANISM_FIELDS
+            if str(row[field]).strip() in {"", "needs_statute_review"}
+        ]
+        if unresolved_fields:
+            unresolved_rows.append(
+                f"{row.get('State', row_number)}: {', '.join(unresolved_fields)}"
+            )
+
+    if unresolved_rows:
+        details = "; ".join(unresolved_rows)
+        raise ValueError(
+            "source_verified mechanism fields still unresolved: "
             f"{details}"
         )
     return audit
@@ -288,6 +333,7 @@ def fit_twfe(
     data: pd.DataFrame,
     outcome: str,
     *,
+    controls=BASELINE_CONTROL_COLUMNS,
     weights: Optional[str] = None,
     state_trends: bool = False,
 ):
@@ -295,6 +341,7 @@ def fit_twfe(
         data,
         outcome,
         ["post_permitless"],
+        controls=controls,
         weights=weights,
         state_trends=state_trends,
     )

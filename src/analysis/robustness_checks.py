@@ -5,6 +5,8 @@ import pandas as pd
 
 try:
     from src.analysis.phase1_utils import (
+        BASELINE_CONTROL_COLUMNS,
+        FIREARM_LAW_CONTROL_COLUMNS,
         OUTCOMES,
         OUTCOME_LABELS,
         ROOT,
@@ -14,6 +16,8 @@ try:
     )
 except ModuleNotFoundError:
     from phase1_utils import (
+        BASELINE_CONTROL_COLUMNS,
+        FIREARM_LAW_CONTROL_COLUMNS,
         OUTCOMES,
         OUTCOME_LABELS,
         ROOT,
@@ -59,16 +63,29 @@ def model_row(outcome: str, specification: str, result, extra=None) -> dict:
 def run_twfe_robustness(panel: pd.DataFrame) -> pd.DataFrame:
     rows = []
     specs = [
-        ("baseline", "baseline", None, False),
-        ("exclude_covid", "exclude_covid", None, False),
-        ("pre_covid_only", "pre_covid_only", None, False),
-        ("population_weighted", "baseline", "population", False),
-        ("state_linear_trends", "baseline", None, True),
+        ("baseline", "baseline", None, False, BASELINE_CONTROL_COLUMNS),
+        ("exclude_covid", "exclude_covid", None, False, BASELINE_CONTROL_COLUMNS),
+        ("pre_covid_only", "pre_covid_only", None, False, BASELINE_CONTROL_COLUMNS),
+        ("population_weighted", "baseline", "population", False, BASELINE_CONTROL_COLUMNS),
+        ("state_linear_trends", "baseline", None, True, BASELINE_CONTROL_COLUMNS),
+        (
+            "firearm_law_controls",
+            "baseline",
+            None,
+            False,
+            BASELINE_CONTROL_COLUMNS + FIREARM_LAW_CONTROL_COLUMNS,
+        ),
     ]
     for outcome in OUTCOMES:
-        for spec_name, sample_name, weight, state_trends in specs:
+        for spec_name, sample_name, weight, state_trends, controls in specs:
             sample = build_robustness_sample(panel, sample_name)
-            result = fit_twfe(sample, outcome, weights=weight, state_trends=state_trends)
+            result = fit_twfe(
+                sample,
+                outcome,
+                controls=controls,
+                weights=weight,
+                state_trends=state_trends,
+            )
             rows.append(model_row(outcome, spec_name, result))
     return pd.DataFrame(rows)
 

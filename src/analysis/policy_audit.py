@@ -5,9 +5,11 @@ import pandas as pd
 try:
     from src.analysis.phase1_utils import (
         POLICY_AUDIT_COLUMNS,
+        POLICY_AUDIT_MECHANISM_FIELDS,
         POLICY_AUDIT_FILE,
         ROOT,
         load_panel,
+        validate_policy_audit_mechanism_rows,
         validate_policy_audit_verified_rows,
         validate_policy_audit_schema,
         validate_policy_year_consistency,
@@ -15,9 +17,11 @@ try:
 except ModuleNotFoundError:
     from phase1_utils import (
         POLICY_AUDIT_COLUMNS,
+        POLICY_AUDIT_MECHANISM_FIELDS,
         POLICY_AUDIT_FILE,
         ROOT,
         load_panel,
+        validate_policy_audit_mechanism_rows,
         validate_policy_audit_verified_rows,
         validate_policy_audit_schema,
         validate_policy_year_consistency,
@@ -27,6 +31,7 @@ except ModuleNotFoundError:
 OUT_DIR = ROOT / "outputs" / "tables" / "policy_audit"
 SUMMARY_FILE = OUT_DIR / "policy_audit_summary.csv"
 STATUS_FILE = OUT_DIR / "policy_audit_status_counts.csv"
+MECHANISM_FILE = OUT_DIR / "policy_mechanism_summary.csv"
 
 
 def build_policy_audit_scaffold(panel: pd.DataFrame) -> pd.DataFrame:
@@ -62,8 +67,30 @@ def load_or_create_policy_audit(panel: pd.DataFrame) -> pd.DataFrame:
         audit.to_csv(POLICY_AUDIT_FILE, index=False)
     audit = validate_policy_audit_schema(audit)
     audit = validate_policy_audit_verified_rows(audit)
+    audit = validate_policy_audit_mechanism_rows(audit)
     audit.to_csv(POLICY_AUDIT_FILE, index=False)
     return audit
+
+
+def build_policy_mechanism_summary(audit: pd.DataFrame) -> pd.DataFrame:
+    clean_adopters = audit.loc[
+        audit["audit_status"].astype(str).str.strip().eq("source_verified")
+    ]
+    rows = []
+    for field in POLICY_AUDIT_MECHANISM_FIELDS:
+        counts = clean_adopters[field].astype(str).str.strip().value_counts(sort=False)
+        for value, count in counts.items():
+            rows.append(
+                {
+                    "mechanism_field": field,
+                    "mechanism_value": value,
+                    "state_count": int(count),
+                }
+            )
+    return pd.DataFrame(
+        rows,
+        columns=["mechanism_field", "mechanism_value", "state_count"],
+    )
 
 
 def write_policy_audit_outputs(panel: pd.DataFrame, audit: pd.DataFrame) -> pd.DataFrame:
@@ -79,6 +106,9 @@ def write_policy_audit_outputs(panel: pd.DataFrame, audit: pd.DataFrame) -> pd.D
         .reset_index(name="state_count")
     )
     status_counts.to_csv(STATUS_FILE, index=False)
+
+    mechanism_summary = build_policy_mechanism_summary(audit)
+    mechanism_summary.to_csv(MECHANISM_FILE, index=False)
     return summary
 
 
@@ -91,6 +121,7 @@ def main():
     print(f"Year mismatches: {mismatch_count}")
     print(f"Wrote: {POLICY_AUDIT_FILE.relative_to(Path.cwd())}")
     print(f"Wrote: {SUMMARY_FILE.relative_to(Path.cwd())}")
+    print(f"Wrote: {MECHANISM_FILE.relative_to(Path.cwd())}")
 
 
 if __name__ == "__main__":

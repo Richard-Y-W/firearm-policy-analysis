@@ -2,6 +2,8 @@ import pandas as pd
 
 from src.analysis.phase1_publishability_report import (
     build_arkansas_sensitivity_sentence,
+    build_firearm_law_control_sentence,
+    build_mechanism_summary_sentence,
     build_policy_audit_status_sentence,
 )
 
@@ -43,4 +45,47 @@ def test_build_arkansas_sensitivity_sentence_reports_retained_signs():
     sentence = build_arkansas_sensitivity_sentence(summary)
 
     assert "1 of 2 outcomes retain the same sign" in sentence
+    assert "1 retain p < 0.05" in sentence
+
+
+def test_build_mechanism_summary_sentence_reports_key_counts():
+    summary = pd.DataFrame(
+        {
+            "mechanism_field": [
+                "training_requirement_removed",
+                "training_requirement_removed",
+                "background_check_permit_requirement_removed",
+                "background_check_permit_requirement_removed",
+                "violent_misdemeanor_permit_screen_removed",
+            ],
+            "mechanism_value": [
+                "yes",
+                "no_prior_training_requirement",
+                "yes",
+                "carry_permit_screen_removed_purchase_permit_retained",
+                "permit_specific_misdemeanor_screen_removed",
+            ],
+            "state_count": [21, 5, 25, 1, 12],
+        }
+    )
+
+    sentence = build_mechanism_summary_sentence(summary)
+
+    assert "21 had a training requirement removed" in sentence
+    assert "25 removed the carry-permit background-check screen" in sentence
+    assert "12 removed a permit-specific misdemeanor-violence screen" in sentence
+
+
+def test_build_firearm_law_control_sentence_reports_surviving_outcomes():
+    summary = pd.DataFrame(
+        {
+            "outcome_label": ["Firearm Suicide", "Firearm Homicide"],
+            "sign_retained": [True, True],
+            "p05_retained": [True, False],
+        }
+    )
+
+    sentence = build_firearm_law_control_sentence(summary)
+
+    assert "2 of 2 outcomes retain the same coefficient sign" in sentence
     assert "1 retain p < 0.05" in sentence

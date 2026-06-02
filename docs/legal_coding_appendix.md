@@ -38,10 +38,18 @@ Vermont is recorded as `baseline_permitless_verified` because it did not adopt p
 
 The audit table stores row-level source URLs in `data/policy/permitless_carry_legal_audit.csv`. Non-adopter verification uses a combination of state carry-permit pages, statutory citations, Giffords concealed-carry/open-carry summaries, and open-carry reference summaries where the key distinction is open versus concealed carry.
 
-The current source pass is enough to distinguish clean treated states, verified untreated states, baseline permitless states, partial cases, and ambiguous cases. It is not yet a full manuscript-grade coding of every permit-screening mechanism. Fields such as training removal, background-check permit-screening changes, and violent-misdemeanor screening should still receive statute-level review before they are modeled as separate mechanisms.
+The current source pass is enough to distinguish clean treated states, verified untreated states, baseline permitless states, partial cases, and ambiguous cases. For the 26 clean `source_verified` adopter rows, Phase 2D also resolves the three mechanism fields used in the audit table: training removal, carry-permit background-check screening, and misdemeanor-violence permit screening. These mechanism fields describe the carry-permit screen, not every underlying firearm-possession prohibition. Values such as `eligibility_standard_retained_no_precarry_check` indicate that substantive carry eligibility appears to remain in the law even though the person no longer has to apply before carrying.
+
+The generated mechanism summary is stored at `outputs/tables/policy_audit/policy_mechanism_summary.csv`. Arkansas, Mississippi, and Vermont remain outside the clean-adopter mechanism summary because they are ambiguous, partial, or baseline permitless rather than clean within-panel adoption events.
 
 ## Minimum Standard for a Manuscript Mechanism Appendix
 
 Before mechanism-specific models are presented as manuscript evidence, each state row should add statutory text or official bill history for the permit application, training, background-check, and disqualifier provisions before and after permitless-carry adoption. The appendix should then record whether each mechanism changed because of permitless carry itself, changed through a separate contemporaneous bill, was already absent before adoption, or remained in place for optional permits only.
 
 That additional pass would let the project distinguish the broad policy timing question from narrower mechanism questions. Until then, the main analysis should describe permitless carry as a statewide concealed-carry permit requirement change and should avoid attributing the estimates to a specific permit-screening component.
+
+## External Firearm-Law Controls
+
+Phase 3A uses the Tufts State Firearm Law Database for external firearm-law controls. The processed control file is `data/processed/state_year_firearm_law_controls_1999_2024.csv`. It combines all-firearm and handgun-specific Tufts provisions into domain indicators for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing.
+
+These controls are not used to define the permitless-carry treatment. They are included as sensitivity covariates to test whether the permitless-carry association survives adjustment for other state firearm laws.

@@ -1,0 +1,6 @@
+outcome,outcome_label,baseline_coef,baseline_p,controlled_coef,controlled_p,controlled_delta,sign_retained,p05_retained,interpretation_flag
+firearm_suicide_rate_per_100k,Firearm Suicide,1.2634148464146422,2.7233711554571292e-08,0.9942334969023513,1.3029896898411e-07,-0.2691813495122909,True,True,survives_firearm_law_controls
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,0.3122850219348391,0.0321960471541197,0.22906208670994435,0.10323978448378401,-0.08322293522489474,True,False,attenuated_by_firearm_law_controls
+total_suicide_rate_per_100k,Total Suicide,1.5756998683494803,6.260658899276136e-07,1.2232955836122947,2.4045037528272232e-05,-0.35240428473718555,True,True,survives_firearm_law_controls
+firearm_homicide_rate_per_100k,Firearm Homicide,-0.07164825203485262,0.8455231141661929,-0.13828063852268446,0.7075485550577836,-0.06663238648783185,True,False,attenuated_by_firearm_law_controls
+total_firearm_rate_per_100k,Total Firearm Deaths,1.341037519067065,0.004394025156552565,0.9559096149499977,0.023609057766857018,-0.3851279041170672,True,True,survives_firearm_law_controls
