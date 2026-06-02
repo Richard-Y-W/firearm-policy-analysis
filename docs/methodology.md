@@ -22,6 +22,11 @@ Phase 3A uses the Tufts State Firearm Law Database for external firearm-law cont
 - stand-your-ground laws
 - dealer licensing
 
+Phase 3B uses selected non-firearm confounders:
+
+- Census SAHIE uninsured rate for people under 65, 2008-2023
+- CDC annual drug-overdose mortality rate, 2019-2024
+
 ## Outcomes
 
 CDC WONDER state-year crude death rates per 100,000:
@@ -44,3 +49,4 @@ Adopter and non-adopter `A` values are compared using Welch's t-test.
 - Event-study and difference-in-differences models
 - Separate homicide and suicide outcomes
 - External firearm-law control sensitivity models
+- Non-firearm confounder sensitivity models

@@ -4,6 +4,7 @@ from src.analysis.phase1_publishability_report import (
     build_arkansas_sensitivity_sentence,
     build_firearm_law_control_sentence,
     build_mechanism_summary_sentence,
+    build_nonfirearm_confounder_sentence,
     build_policy_audit_status_sentence,
 )
 
@@ -89,3 +90,19 @@ def test_build_firearm_law_control_sentence_reports_surviving_outcomes():
 
     assert "2 of 2 outcomes retain the same coefficient sign" in sentence
     assert "1 retain p < 0.05" in sentence
+
+
+def test_build_nonfirearm_confounder_sentence_reports_sample_windows():
+    summary = pd.DataFrame(
+        {
+            "outcome_label": ["Firearm Suicide", "Total Suicide"],
+            "health_access_p05_retained": [True, True],
+            "overdose_p05_retained": [True, False],
+            "health_access_overdose_p05_retained": [False, False],
+        }
+    )
+
+    sentence = build_nonfirearm_confounder_sentence(summary)
+
+    assert "2 of 2 outcomes retain p < 0.05 in the 2008-2023 health-access specification" in sentence
+    assert "1 retain p < 0.05 in the 2019-2024 overdose specification" in sentence

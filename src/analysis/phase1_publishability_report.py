@@ -17,6 +17,9 @@ POLICY_MECHANISM_FILE = TABLES / "policy_audit" / "policy_mechanism_summary.csv"
 FIREARM_LAW_CONTROL_FILE = (
     TABLES / "did" / "twfe_did_firearm_law_control_summary.csv"
 )
+NONFIREARM_CONFOUNDER_FILE = (
+    TABLES / "did" / "twfe_did_nonfirearm_confounder_summary.csv"
+)
 
 
 def fmt_p(value) -> str:
@@ -160,6 +163,25 @@ def build_firearm_law_control_sentence(summary: pd.DataFrame) -> str:
     )
 
 
+def build_nonfirearm_confounder_sentence(summary: pd.DataFrame) -> str:
+    total = int(len(summary))
+    health_access = int(summary["health_access_p05_retained"].fillna(False).sum())
+    overdose = int(summary["overdose_p05_retained"].fillna(False).sum())
+    combined = int(
+        summary["health_access_overdose_p05_retained"].fillna(False).sum()
+    )
+    return (
+        "The non-firearm confounder check adds Census SAHIE uninsured rates "
+        "as a health-access proxy and CDC drug-overdose mortality as a "
+        "substance-use/distress proxy. "
+        f"{health_access} of {total} outcomes retain p < 0.05 in the "
+        "2008-2023 health-access specification, "
+        f"{overdose} retain p < 0.05 in the 2019-2024 overdose specification, "
+        f"and {combined} retain p < 0.05 in the narrower 2019-2023 combined "
+        "specification."
+    )
+
+
 def build_report() -> str:
     did = pd.read_csv(TABLES / "did" / "twfe_did_main_results.csv")
     welch = pd.read_csv(TABLES / "main" / "welch_change_score_results.csv")
@@ -168,6 +190,11 @@ def build_report() -> str:
     firearm_law_controls = (
         pd.read_csv(FIREARM_LAW_CONTROL_FILE)
         if FIREARM_LAW_CONTROL_FILE.exists()
+        else pd.DataFrame()
+    )
+    nonfirearm_confounders = (
+        pd.read_csv(NONFIREARM_CONFOUNDER_FILE)
+        if NONFIREARM_CONFOUNDER_FILE.exists()
         else pd.DataFrame()
     )
     modern = pd.read_csv(TABLES / "modern_did" / "modern_did_summary.csv")
@@ -210,6 +237,40 @@ def build_report() -> str:
         ]
     else:
         firearm_law_view = pd.DataFrame()
+
+    if not nonfirearm_confounders.empty:
+        nonfirearm_view = nonfirearm_confounders.copy()
+        for col in [
+            "firearm_law_coef",
+            "firearm_law_p",
+            "health_access_coef",
+            "health_access_p",
+            "overdose_coef",
+            "overdose_p",
+            "health_access_overdose_coef",
+            "health_access_overdose_p",
+        ]:
+            nonfirearm_view[col] = nonfirearm_view[col].map(
+                fmt_p if col.endswith("_p") else fmt_num
+            )
+        nonfirearm_view = nonfirearm_view[
+            [
+                "outcome_label",
+                "firearm_law_coef",
+                "firearm_law_p",
+                "health_access_coef",
+                "health_access_p",
+                "health_access_p05_retained",
+                "overdose_coef",
+                "overdose_p",
+                "overdose_p05_retained",
+                "health_access_overdose_coef",
+                "health_access_overdose_p",
+                "health_access_overdose_p05_retained",
+            ]
+        ]
+    else:
+        nonfirearm_view = pd.DataFrame()
 
     welch_view = welch.copy()
     welch_view["difference"] = welch_view["difference"].map(fmt_num)
@@ -283,6 +344,7 @@ def build_report() -> str:
         "- Verified non-adopter rows through the 1999-2024 panel window and documented the treatment rule in a legal-coding appendix.",
         "- Resolved clean-adopter mechanism fields for training, carry-permit background checks, and misdemeanor-violence permit screening.",
         "- Added Phase 3A external firearm-law controls from the Tufts State Firearm Law Database.",
+        "- Added Phase 3B non-firearm confounder controls for health insurance access and drug-overdose mortality.",
         "- Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.",
         "- Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.",
         "- Corrected the stale README change-score p-values against committed output tables.",
@@ -329,6 +391,36 @@ def build_report() -> str:
                         "interpretation_flag",
                     ],
                 ),
+                "",
+            ]
+        )
+
+    if not nonfirearm_view.empty:
+        lines.extend(
+            [
+                "## Non-Firearm Confounder Controls",
+                "",
+                build_nonfirearm_confounder_sentence(nonfirearm_confounders),
+                "",
+                markdown_table(
+                    nonfirearm_view,
+                    [
+                        "outcome_label",
+                        "firearm_law_coef",
+                        "firearm_law_p",
+                        "health_access_coef",
+                        "health_access_p",
+                        "health_access_p05_retained",
+                        "overdose_coef",
+                        "overdose_p",
+                        "overdose_p05_retained",
+                        "health_access_overdose_coef",
+                        "health_access_overdose_p",
+                        "health_access_overdose_p05_retained",
+                    ],
+                ),
+                "",
+                "The overdose specifications use shorter samples because CDC's state injury and overdose dataset provides annual `Drug_OD` rates for 2019-2024. The combined health-access and overdose specification is therefore a narrow recent-window sensitivity, not a full-panel replacement.",
                 "",
             ]
         )
@@ -405,7 +497,7 @@ def build_report() -> str:
         [
         "## Interpretation Boundary",
         "",
-        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. It still does not establish causal proof. Non-firearm confounder expansion remains Phase 3 work.",
+        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. Phase 3B adds health-access and overdose controls to test whether the suicide signal survives selected non-firearm confounders. It still does not establish causal proof. Additional demographic and mental-health-access expansion remains Phase 3 work.",
         "",
         ]
     )

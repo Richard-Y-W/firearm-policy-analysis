@@ -36,8 +36,10 @@ The analytic file is a 50-state annual panel for 1999-2024. Mortality rates are 
 | Politics | MIT Election Lab presidential returns | Baseline political environment and selection analysis |
 | Policy timing | Manual legal coding | Permitless carry adoption year |
 | Other firearm laws | Tufts State Firearm Law Database | External firearm-law controls for Phase 3A sensitivity models |
+| Health access | Census SAHIE | State-year uninsured rate for Phase 3B sensitivity models |
+| Drug overdose | CDC state injury and overdose dataset | State-year drug-overdose mortality rate for Phase 3B recent-window sensitivity models |
 
-The primary processed panel is stored at `data/processed/analysis_panel_full_outcomes.csv`. Phase 3A adds Tufts firearm-law controls for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing.
+The primary processed panel is stored at `data/processed/analysis_panel_full_outcomes.csv`. Phase 3A adds Tufts firearm-law controls for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing. Phase 3B adds Census SAHIE uninsured rates for 2008-2023 and CDC drug-overdose mortality rates for 2019-2024. A consolidated source appendix is stored at `docs/master_references.md`.
 
 Permitless carry adoption years were coded manually based on the current panel definition. Phase 1 added `data/policy/permitless_carry_legal_audit.csv` so the legal coding can be audited state by state. The current audit records 26 `source_verified` current-adopter rows, 21 `not_adopted_verified` rows, one `partial` row for Mississippi, one `baseline_permitless_verified` row for Vermont, and one `ambiguous_reviewed` row for Arkansas. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports Arkansas sensitivity runs coded as 2021 and 2023. Phase 2D resolves clean-adopter mechanism fields for training, carry-permit background checks, and misdemeanor-violence permit screening. Phase 3A adds external firearm-law controls from the Tufts State Firearm Law Database. The coding rule and edge cases are summarized in `docs/legal_coding_appendix.md`.
 
@@ -57,7 +59,7 @@ The project uses multiple estimators because no single observational specificati
 
 ## Phase 1 Publishability Upgrade
 
-The Phase 1 upgrade adds a policy-audit table, cohort-based staggered-adoption sensitivity estimates, never-treated-control event-time estimates, and robustness checks excluding COVID-era years, restricting to pre-2020 years, population weighting, state-specific linear trends, leave-one-adopter-out influence, and placebo timing among never-treated states. Phase 2A filled current-adopter legal audit fields; Phase 2B adds Nebraska, Louisiana, and South Carolina to the within-panel treatment map, records Vermont as baseline permitless, and keeps Arkansas out of the clean annual treatment map. Phase 2C adds Arkansas treatment-year sensitivity checks for 2021 and 2023. The non-adopter audit pass verifies the remaining untreated states through the 1999-2024 panel window, and Phase 2D resolves clean-adopter mechanism coding. Phase 3A adds external firearm-law controls and a controlled TWFE comparison.
+The Phase 1 upgrade adds a policy-audit table, cohort-based staggered-adoption sensitivity estimates, never-treated-control event-time estimates, and robustness checks excluding COVID-era years, restricting to pre-2020 years, population weighting, state-specific linear trends, leave-one-adopter-out influence, and placebo timing among never-treated states. Phase 2A filled current-adopter legal audit fields; Phase 2B adds Nebraska, Louisiana, and South Carolina to the within-panel treatment map, records Vermont as baseline permitless, and keeps Arkansas out of the clean annual treatment map. Phase 2C adds Arkansas treatment-year sensitivity checks for 2021 and 2023. The non-adopter audit pass verifies the remaining untreated states through the 1999-2024 panel window, and Phase 2D resolves clean-adopter mechanism coding. Phase 3A adds external firearm-law controls and a controlled TWFE comparison. Phase 3B adds uninsured-rate and drug-overdose controls.
 
 These checks strengthen transparency but do not convert the project into causal proof. The state-trend specification attenuates several suicide estimates, and several event-study specifications show pre-adoption signals, so the responsible interpretation remains associational. The generated Phase 1 report is available at `outputs/tables/main/phase1_publishability_report.md`.
 
@@ -76,6 +78,8 @@ The main fixed-effects estimates indicate positive post-adoption associations fo
 Change-score robustness checks show the same broad pattern: firearm suicide is the most stable outcome across windows, while firearm homicide remains statistically weak across the 2-, 3-, and 5-year comparisons.
 
 The Phase 3A firearm-law control check attenuates the estimates but does not erase the main suicide pattern. Firearm suicide remains positive and statistically significant after adding controls for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing. Total suicide and total firearm deaths also remain positive and statistically significant. Non-firearm suicide loses p < 0.05 after those controls, and firearm homicide remains statistically indistinguishable from zero.
+
+The Phase 3B non-firearm confounder check is more mixed and should be read by sample window. In the 2008-2023 health-access specification, firearm suicide, total suicide, and total firearm deaths remain positive and statistically significant after adding uninsured rate. In the shorter 2019-2024 overdose specification, firearm suicide remains positive and statistically significant, while total suicide and total firearm deaths attenuate. The combined health-access and overdose specification uses only 2019-2023 and is a recent-window sensitivity, not a full-panel replacement.
 
 The Arkansas sensitivity check does not change the substantive pattern. When Arkansas is recoded as either a 2021 or 2023 adopter, all five main TWFE outcomes retain the same coefficient sign as the primary model. Firearm suicide, non-firearm suicide, total suicide, and total firearm deaths remain statistically significant; firearm homicide remains statistically indistinguishable from zero.
 
@@ -121,7 +125,7 @@ The descriptive selection analysis shows that adopting states differ from never-
 - State-level models cannot identify individual behavior, firearm acquisition, storage practices, or carrying behavior.
 - Two-way fixed effects models can be sensitive to staggered adoption timing and heterogeneous treatment effects; Phase 1 adds sensitivity checks but does not eliminate all identification concerns.
 - Mortality data are population-level rates and do not capture nonfatal injury, defensive gun use, enforcement changes, or local policy implementation.
-- Phase 3A adds selected external firearm-law controls, but permitless carry laws may still coincide with unmeasured firearm policy changes or broader social trends.
+- Phase 3A adds selected external firearm-law controls, and Phase 3B adds uninsured-rate and drug-overdose controls. Permitless carry laws may still coincide with unmeasured firearm policy changes, mental-health-access conditions, demographic shifts, or broader social trends.
 - The legal audit table now source-checks current-adopter timing, non-adopter status, core carry-scope fields, and clean-adopter mechanism fields, but Arkansas remains ambiguous for a clean primary treatment date, Vermont is baseline permitless rather than a within-panel adoption, and Mississippi remains partial.
 - Gun ownership data are available through 2016 in the current processed panel and are carried forward afterward.
 - Some event-study outputs contain statistically significant pre-adoption coefficients, so the results should be framed as associations.
@@ -168,6 +172,7 @@ Build the processed panel:
 
 ```bash
 python3 src/data/process_firearm_law_controls.py
+python3 src/data/process_nonfirearm_confounders.py
 python3 src/data/build_master_analysis_panel.py
 python3 src/data/extend_master_outcomes.py
 ```
@@ -195,6 +200,7 @@ Run the Phase 1 publishability upgrade:
 ```bash
 python3 src/analysis/policy_audit.py
 python3 src/analysis/firearm_law_control_sensitivity.py
+python3 src/analysis/nonfirearm_confounder_sensitivity.py
 python3 src/analysis/modern_did.py
 python3 src/analysis/robustness_checks.py
 python3 src/analysis/arkansas_sensitivity.py
