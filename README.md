@@ -85,7 +85,7 @@ The Arkansas sensitivity check does not change the substantive pattern. When Ark
 
 ## Publication Figures
 
-The publication figures are exported as both high-resolution PNG files and editable PDF/vector files in `outputs/figures/publication`. The current figure set uses a professional academic style with a white canvas, high-contrast black axes, bold panel labels, saturated blue/orange/red categorical accents, clean light-gray gridlines, aligned multi-panel layouts, embedded TrueType PDF fonts, and 600 DPI raster exports for README display.
+The publication figures are exported as both high-resolution PNG files and editable PDF/vector files in `outputs/figures/publication`. The current figure set uses a professional academic style with a white canvas, high-contrast black axes, bold panel labels, outcome-specific color accents, clean light-gray gridlines, aligned multi-panel layouts, embedded TrueType PDF fonts, and 600 DPI raster exports for README display.
 
 ![Outcome trends by adoption status](outputs/figures/publication/figure_01_outcome_trends_by_adoption.png)
 
@@ -93,7 +93,7 @@ The publication figures are exported as both high-resolution PNG files and edita
 
 ![Adjusted difference-in-differences estimates](outputs/figures/publication/figure_02_twfe_coefficient_forest.png)
 
-**Figure 2. Adjusted difference-in-differences estimates.** Two-way fixed effects estimates are positive for suicide-related outcomes and total firearm deaths. The firearm homicide estimate is close to zero. Horizontal intervals show approximate 95% confidence intervals. [PDF](outputs/figures/publication/figure_02_twfe_coefficient_forest.pdf)
+**Figure 2. Adjusted difference-in-differences estimates.** Two-way fixed effects estimates are positive for suicide-related outcomes and total firearm deaths. The firearm homicide estimate is close to zero. Colored intervals show approximate 95% confidence intervals; pale background points show unadjusted adopter-state pre/post changes. [PDF](outputs/figures/publication/figure_02_twfe_coefficient_forest.pdf)
 
 ![Change-score robustness](outputs/figures/publication/figure_03_change_score_robustness.png)
 
@@ -101,11 +101,11 @@ The publication figures are exported as both high-resolution PNG files and edita
 
 ![Event-study estimates](outputs/figures/publication/figure_04_event_study_grid.png)
 
-**Figure 4. Event-study estimates.** Dynamic estimates show the evolution of outcome rates around adoption relative to the year immediately before the policy change. Shaded bands show 95% confidence intervals. [PDF](outputs/figures/publication/figure_04_event_study_grid.pdf)
+**Figure 4. Event-study estimates.** Dynamic estimates show the evolution of outcome rates around adoption relative to the year immediately before the policy change. Whiskers show 95% confidence intervals; pale background points show treated state-year deviations from each state's reference year. [PDF](outputs/figures/publication/figure_04_event_study_grid.pdf)
 
 ![Heterogeneity estimates](outputs/figures/publication/figure_05_heterogeneity_interactions.png)
 
-**Figure 5. Heterogeneity in post-adoption associations.** Interaction models evaluate whether associations are stronger in states with higher baseline firearm ownership, rurality, or firearm suicide rates. Blue markers denote interaction terms with p < 0.05. [PDF](outputs/figures/publication/figure_05_heterogeneity_interactions.pdf)
+**Figure 5. Heterogeneity in post-adoption associations.** Interaction models evaluate whether associations are stronger in states with higher baseline firearm ownership, rurality, or firearm suicide rates. Colors correspond to outcomes, and diamond markers denote interaction terms with p < 0.05. [PDF](outputs/figures/publication/figure_05_heterogeneity_interactions.pdf)
 
 ![Political selection scatter](outputs/figures/publication/figure_06_political_selection_scatter.png)
 

@@ -22,7 +22,11 @@ RED = "#C44E52"
 GRAY = "#5F5F5F"
 LIGHT_GRAY = "#E7E7E7"
 DARK = "#111111"
-PALE_BLUE = "#D8EAF7"
+MUTED_TEAL = "#3A8F8A"
+MUTED_PURPLE = "#7B6FAF"
+MUTED_GOLD = "#C49A34"
+MUTED_ROSE = "#B85C70"
+RAW_POINT = "#B9B9B9"
 
 OUTCOMES = {
     "firearm_suicide_rate_per_100k": "Firearm Suicide",
@@ -39,6 +43,14 @@ OUTCOME_ORDER = [
     "Non-Firearm Suicide",
     "Firearm Homicide",
 ]
+
+OUTCOME_COLORS = {
+    "Firearm Suicide": BLUE,
+    "Total Suicide": MUTED_TEAL,
+    "Total Firearm Deaths": MUTED_PURPLE,
+    "Non-Firearm Suicide": MUTED_GOLD,
+    "Firearm Homicide": MUTED_ROSE,
+}
 
 EVENT_FILES = {
     "firearm_suicide_rate_per_100k": "event_study_firearm_suicide.csv",
@@ -216,6 +228,41 @@ def p_text(p):
     return "p<0.001" if p < 0.001 else f"p={p:.3f}"
 
 
+def adopter_state_changes(df, outcomes):
+    rows = []
+    adopters = df[df["ever_adopter"] == 1].dropna(subset=["permitless_year"])
+    for (state, permitless_year), g in adopters.groupby(["State", "permitless_year"]):
+        pre = g[g["Year"] < permitless_year]
+        post = g[g["Year"] >= permitless_year]
+        if pre.empty or post.empty:
+            continue
+        for outcome in outcomes:
+            rows.append(
+                {
+                    "State": state,
+                    "outcome": outcome,
+                    "Outcome": OUTCOMES[outcome],
+                    "change": post[outcome].mean() - pre[outcome].mean(),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def event_state_context(df, outcome, window=(-5, 5)):
+    treated = df[df["ever_adopter"] == 1].dropna(subset=["permitless_year"]).copy()
+    treated["event_time"] = (treated["Year"] - treated["permitless_year"]).astype(int)
+    treated = treated[treated["event_time"].between(window[0], window[1])]
+    baselines = (
+        treated[treated["event_time"] == -1]
+        .set_index("State")[outcome]
+        .rename("reference_rate")
+    )
+    treated = treated.join(baselines, on="State")
+    treated = treated.dropna(subset=["reference_rate", outcome])
+    treated["relative_rate"] = treated[outcome] - treated["reference_rate"]
+    return treated[treated["event_time"] != -1]
+
+
 def fig_outcome_trends(df):
     outcomes = [
         ("firearm_suicide_rate_per_100k", "Firearm Suicide"),
@@ -280,7 +327,7 @@ def fig_outcome_trends(df):
     savefig(fig, "figure_01_outcome_trends_by_adoption")
 
 
-def fig_twfe_forest():
+def fig_twfe_forest(df):
     did = pd.read_csv(TABLES / "did" / "twfe_did_main_results.csv")
     did = did.assign(
         ci_low=lambda x: x["coef_post_permitless"] - 1.96 * x["se_post_permitless"],
@@ -290,11 +337,28 @@ def fig_twfe_forest():
     did = did.sort_values("outcome_label")
 
     fig, ax = plt.subplots(figsize=(6.7, 3.65))
-    colors = np.where(did["p_post_permitless"] < 0.05, BLUE, GRAY)
+    colors = did["outcome_label"].map(OUTCOME_COLORS).to_numpy()
     y = np.arange(len(did))
+    raw = adopter_state_changes(df, list(OUTCOMES.keys()))
+    raw["outcome_label"] = pd.Categorical(raw["Outcome"], categories=OUTCOME_ORDER[::-1], ordered=True)
+    base_y = {label: i for i, label in enumerate(did["outcome_label"])}
+    rng = np.random.default_rng(1934)
+    for label, g in raw.dropna(subset=["outcome_label"]).groupby("outcome_label", observed=False):
+        if label not in base_y:
+            continue
+        jitter = rng.uniform(-0.13, 0.13, len(g))
+        ax.scatter(
+            g["change"],
+            np.full(len(g), base_y[label]) + jitter,
+            s=12,
+            color=RAW_POINT,
+            alpha=0.36,
+            linewidth=0,
+            zorder=1,
+        )
     ax.axvspan(-0.25, 0.25, color="#F2F2F2", zorder=0)
-    ax.hlines(y, did["ci_low"], did["ci_high"], color=colors, linewidth=2.25)
-    ax.scatter(did["coef_post_permitless"], y, color=colors, s=56, zorder=3, edgecolor="white", linewidth=0.7)
+    ax.hlines(y, did["ci_low"], did["ci_high"], color=colors, linewidth=2.45, zorder=2)
+    ax.scatter(did["coef_post_permitless"], y, color=colors, s=62, zorder=3, edgecolor="white", linewidth=0.8)
     ax.axvline(0, color=DARK, linewidth=1.0)
     for yi, row in zip(y, did.itertuples()):
         ax.text(
@@ -314,7 +378,7 @@ def fig_twfe_forest():
     title_and_note(
         fig,
         "Adjusted difference-in-differences estimates",
-        "Two-way fixed effects models include state and year fixed effects plus unemployment and income controls; intervals are +/- 1.96 SE.",
+        "Colored estimates are adjusted TWFE coefficients with +/- 1.96 SE intervals; pale points show unadjusted adopter-state pre/post changes.",
     )
     fig.subplots_adjust(left=0.22, right=0.985, bottom=0.20, top=0.84)
     savefig(fig, "figure_02_twfe_coefficient_forest")
@@ -356,10 +420,11 @@ def fig_change_score_robustness():
     savefig(fig, "figure_03_change_score_robustness")
 
 
-def fig_event_study_grid():
+def fig_event_study_grid(df):
     frames = []
     for outcome, fname in EVENT_FILES.items():
         d = pd.read_csv(TABLES / "event_study" / fname)
+        d["outcome"] = outcome
         d["Outcome"] = OUTCOMES[outcome]
         frames.append(d)
     event = pd.concat(frames, ignore_index=True)
@@ -368,12 +433,39 @@ def fig_event_study_grid():
     axes = axes.ravel()
     for ax, outcome, letter in zip(axes, OUTCOME_ORDER, "ABCDE"):
         d = event[event["Outcome"] == outcome].sort_values("event_time")
-        ax.fill_between(d["event_time"], d["ci_low"], d["ci_high"], color=PALE_BLUE, alpha=0.95, linewidth=0)
-        ax.plot(d["event_time"], d["coef"], color=BLUE, marker="o", linewidth=1.75, markersize=3.6, markeredgecolor="white", markeredgewidth=0.45)
+        outcome_key = d["outcome"].iloc[0]
+        color = OUTCOME_COLORS[outcome]
+        raw = event_state_context(df, outcome_key)
+        rng = np.random.default_rng(sum(ord(ch) for ch in outcome))
+        ax.scatter(
+            raw["event_time"] + rng.uniform(-0.08, 0.08, len(raw)),
+            raw["relative_rate"],
+            s=9,
+            color=RAW_POINT,
+            alpha=0.28,
+            linewidth=0,
+            zorder=1,
+        )
+        ax.errorbar(
+            d["event_time"],
+            d["coef"],
+            yerr=[d["coef"] - d["ci_low"], d["ci_high"] - d["coef"]],
+            fmt="o",
+            color=color,
+            ecolor=color,
+            elinewidth=1.45,
+            capsize=3.2,
+            capthick=1.25,
+            markersize=4.2,
+            markeredgecolor="white",
+            markeredgewidth=0.55,
+            zorder=3,
+        )
+        ax.plot(d["event_time"], d["coef"], color=color, linewidth=1.25, alpha=0.85, zorder=2)
         ax.axhline(0, color=DARK, linewidth=0.9)
         ax.axvline(-1, color="#8A8A8A", linestyle=(0, (3, 2)), linewidth=0.85)
         ax.set_title(f"{letter}. {outcome}", loc="left")
-        ax.set_xticks([-4, -2, 0, 2, 4])
+        ax.set_xticks([-5, -3, -1, 1, 3, 5])
         ax.set_xlabel("Years relative to adoption")
         ax.set_ylabel("Estimate" if letter in "AD" else "")
         style_axis(ax, xgrid=True)
@@ -381,7 +473,12 @@ def fig_event_study_grid():
     axes[-1].text(
         0.02,
         0.82,
-        "\n".join(textwrap.wrap("Reference period: year immediately before adoption. Bands show 95% confidence intervals.", 30)),
+        "\n".join(
+            textwrap.wrap(
+                "Reference period: year immediately before adoption. Whiskers show 95% confidence intervals; pale points show treated state-year deviations from that state's reference year.",
+                32,
+            )
+        ),
         transform=axes[-1].transAxes,
         ha="left",
         va="top",
@@ -391,7 +488,7 @@ def fig_event_study_grid():
     title_and_note(
         fig,
         "Event-study estimates around adoption",
-        "Dynamic coefficients are plotted relative to the year before permitless carry adoption.",
+        "Dynamic coefficients are plotted relative to the year before permitless carry adoption; background points show the underlying treated-state event-time data.",
     )
     fig.subplots_adjust(left=0.075, right=0.985, bottom=0.14, top=0.84, wspace=0.28, hspace=0.48)
     savefig(fig, "figure_04_event_study_grid")
@@ -413,9 +510,20 @@ def fig_heterogeneity_forest():
     for ax, dim, letter in zip(axes, dim_labels.values(), "ABC"):
         d = hetero[hetero["Dimension"] == dim].sort_values("outcome_label")
         y = np.arange(len(d))
-        colors = np.where(d["interaction_p"] < 0.05, BLUE, GRAY)
-        ax.hlines(y, d["ci_low"], d["ci_high"], color=colors, linewidth=2.1)
-        ax.scatter(d["interaction_coef"], y, color=colors, s=48, zorder=3, edgecolor="white", linewidth=0.7)
+        colors = d["outcome_label"].map(OUTCOME_COLORS).to_numpy()
+        ax.hlines(y, d["ci_low"], d["ci_high"], color=colors, linewidth=2.25, alpha=0.92)
+        for yi, row, color in zip(y, d.itertuples(), colors):
+            marker = "D" if row.interaction_p < 0.05 else "o"
+            ax.scatter(
+                row.interaction_coef,
+                yi,
+                color=color,
+                marker=marker,
+                s=54,
+                zorder=3,
+                edgecolor="white",
+                linewidth=0.75,
+            )
         ax.axvline(0, color=DARK, linewidth=1.0)
         ax.set_yticks(y)
         ax.set_yticklabels(d["outcome_label"])
@@ -426,7 +534,7 @@ def fig_heterogeneity_forest():
     title_and_note(
         fig,
         "Heterogeneity in post-adoption associations",
-        "Interaction terms estimate whether post-adoption associations are larger in states above the median on each baseline dimension.",
+        "Interaction terms estimate whether associations are larger in states above each baseline median; diamonds mark p<0.05.",
     )
     fig.subplots_adjust(left=0.20, right=0.985, bottom=0.20, top=0.82, wspace=0.20)
     savefig(fig, "figure_05_heterogeneity_interactions")
@@ -505,9 +613,9 @@ def main():
     df = load_panel()
     state_level = load_state_baselines(df)
     fig_outcome_trends(df)
-    fig_twfe_forest()
+    fig_twfe_forest(df)
     fig_change_score_robustness()
-    fig_event_study_grid()
+    fig_event_study_grid(df)
     fig_heterogeneity_forest()
     fig_political_selection(state_level)
     print(f"Saved publication figures to: {OUT}")
