@@ -8,6 +8,7 @@
 - Verified non-adopter rows through the 1999-2024 panel window and documented the treatment rule in a legal-coding appendix.
 - Resolved clean-adopter mechanism fields for training, carry-permit background checks, and misdemeanor-violence permit screening.
 - Added Phase 3A external firearm-law controls from the Tufts State Firearm Law Database.
+- Added Phase 3B non-firearm confounder controls for health insurance access and drug-overdose mortality.
 - Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.
 - Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.
 - Corrected the stale README change-score p-values against committed output tables.
@@ -64,6 +65,20 @@ The external firearm-law control check adds controls for permit-to-purchase laws
 | Total Suicide | 1.576 | <0.001 | 1.223 | <0.001 | -0.352 | True | True | survives_firearm_law_controls |
 | Firearm Homicide | -0.072 | 0.846 | -0.138 | 0.708 | -0.067 | True | False | attenuated_by_firearm_law_controls |
 | Total Firearm Deaths | 1.341 | 0.004 | 0.956 | 0.024 | -0.385 | True | True | survives_firearm_law_controls |
+
+## Non-Firearm Confounder Controls
+
+The non-firearm confounder check adds Census SAHIE uninsured rates as a health-access proxy and CDC drug-overdose mortality as a substance-use/distress proxy. 3 of 5 outcomes retain p < 0.05 in the 2008-2023 health-access specification, 1 retain p < 0.05 in the 2019-2024 overdose specification, and 1 retain p < 0.05 in the narrower 2019-2023 combined specification.
+
+| outcome_label | firearm_law_coef | firearm_law_p | health_access_coef | health_access_p | health_access_p05_retained | overdose_coef | overdose_p | overdose_p05_retained | health_access_overdose_coef | health_access_overdose_p | health_access_overdose_p05_retained |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Firearm Suicide | 0.994 | <0.001 | 0.668 | <0.001 | True | 0.516 | 0.044 | True | 0.613 | 0.063 | False |
+| Non-Firearm Suicide | 0.229 | 0.103 | 0.138 | 0.422 | False | -0.107 | 0.486 | False | -0.186 | 0.309 | False |
+| Total Suicide | 1.223 | <0.001 | 0.806 | <0.001 | True | 0.409 | 0.171 | False | 0.427 | 0.232 | False |
+| Firearm Homicide | -0.138 | 0.708 | -0.042 | 0.887 | False | -0.118 | 0.528 | False | 0.067 | 0.692 | False |
+| Total Firearm Deaths | 0.956 | 0.024 | 0.631 | 0.038 | True | 0.316 | 0.312 | False | 0.658 | 0.036 | True |
+
+The overdose specifications use shorter samples because CDC's state injury and overdose dataset provides annual `Drug_OD` rates for 2019-2024. The combined health-access and overdose specification is therefore a narrow recent-window sensitivity, not a full-panel replacement.
 
 ## Change-Score Results
 
@@ -123,4 +138,4 @@ The Arkansas sensitivity check keeps Arkansas excluded in the primary model and 
 
 ## Interpretation Boundary
 
-Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. It still does not establish causal proof. Non-firearm confounder expansion remains Phase 3 work.
+Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. Phase 3B adds health-access and overdose controls to test whether the suicide signal survives selected non-firearm confounders. It still does not establish causal proof. Additional demographic and mental-health-access expansion remains Phase 3 work.

@@ -1,0 +1,851 @@
+State,Year,uninsured_under65_pct,drug_overdose_rate_per_100k
+Alabama,2008,15.3,
+Alabama,2009,15.8,
+Alabama,2010,16.9,
+Alabama,2011,16.6,
+Alabama,2012,15.8,
+Alabama,2013,15.9,
+Alabama,2014,14.2,
+Alabama,2015,11.9,
+Alabama,2016,10.8,
+Alabama,2017,11.0,
+Alabama,2018,11.9,
+Alabama,2019,11.6,14.7
+Alabama,2020,11.8,19.5
+Alabama,2021,11.7,27.0
+Alabama,2022,10.5,28.4
+Alabama,2023,10.2,30.4
+Alabama,2024,,23.1
+Alaska,2008,20.5,
+Alaska,2009,22.7,
+Alaska,2010,21.4,
+Alaska,2011,21.7,
+Alaska,2012,22.3,
+Alaska,2013,20.8,
+Alaska,2014,19.0,
+Alaska,2015,16.3,
+Alaska,2016,15.5,
+Alaska,2017,14.8,
+Alaska,2018,13.9,
+Alaska,2019,12.7,16.1
+Alaska,2020,13.0,20.3
+Alaska,2021,13.2,34.4
+Alaska,2022,13.3,33.4
+Alaska,2023,12.6,47.2
+Alaska,2024,,44.9
+Arizona,2008,20.5,
+Arizona,2009,19.9,
+Arizona,2010,19.3,
+Arizona,2011,19.6,
+Arizona,2012,20.4,
+Arizona,2013,20.0,
+Arizona,2014,16.1,
+Arizona,2015,12.8,
+Arizona,2016,11.9,
+Arizona,2017,12.1,
+Arizona,2018,12.8,
+Arizona,2019,13.6,24.1
+Arizona,2020,13.5,33.8
+Arizona,2021,13.1,35.8
+Arizona,2022,12.7,33.8
+Arizona,2023,12.4,33.4
+Arizona,2024,,31.3
+Arkansas,2008,19.8,
+Arkansas,2009,19.6,
+Arkansas,2010,20.6,
+Arkansas,2011,20.1,
+Arkansas,2012,19.4,
+Arkansas,2013,18.8,
+Arkansas,2014,13.8,
+Arkansas,2015,11.1,
+Arkansas,2016,9.4,
+Arkansas,2017,9.3,
+Arkansas,2018,9.6,
+Arkansas,2019,10.8,11.7
+Arkansas,2020,10.2,16.4
+Arkansas,2021,11.1,19.5
+Arkansas,2022,10.0,18.9
+Arkansas,2023,10.7,15.4
+Arkansas,2024,,12.5
+California,2008,19.2,
+California,2009,20.1,
+California,2010,20.7,
+California,2011,20.2,
+California,2012,20.0,
+California,2013,19.4,
+California,2014,14.1,
+California,2015,9.7,
+California,2016,8.4,
+California,2017,8.2,
+California,2018,8.3,
+California,2019,8.9,14.4
+California,2020,8.2,21.5
+California,2021,8.1,26.8
+California,2022,7.5,26.7
+California,2023,7.5,28.0
+California,2024,,22.1
+Colorado,2008,18.1,
+Colorado,2009,17.2,
+Colorado,2010,17.7,
+Colorado,2011,17.0,
+Colorado,2012,16.7,
+Colorado,2013,16.0,
+Colorado,2014,11.7,
+Colorado,2015,9.2,
+Colorado,2016,8.6,
+Colorado,2017,8.7,
+Colorado,2018,8.8,
+Colorado,2019,9.4,15.9
+Colorado,2020,9.9,22.9
+Colorado,2021,9.3,29.5
+Colorado,2022,8.4,28.1
+Colorado,2023,7.9,29.0
+Colorado,2024,,24.6
+Connecticut,2008,10.1,
+Connecticut,2009,10.2,
+Connecticut,2010,10.4,
+Connecticut,2011,10.1,
+Connecticut,2012,10.5,
+Connecticut,2013,10.9,
+Connecticut,2014,8.0,
+Connecticut,2015,6.9,
+Connecticut,2016,5.8,
+Connecticut,2017,6.3,
+Connecticut,2018,6.2,
+Connecticut,2019,7.0,31.8
+Connecticut,2020,5.4,36.6
+Connecticut,2021,6.0,40.9
+Connecticut,2022,6.1,39.3
+Connecticut,2023,6.6,34.7
+Connecticut,2024,,25.6
+Delaware,2008,11.7,
+Delaware,2009,12.0,
+Delaware,2010,11.6,
+Delaware,2011,11.2,
+Delaware,2012,10.3,
+Delaware,2013,10.9,
+Delaware,2014,9.3,
+Delaware,2015,6.9,
+Delaware,2016,6.7,
+Delaware,2017,6.1,
+Delaware,2018,6.8,
+Delaware,2019,8.0,43.4
+Delaware,2020,7.5,43.8
+Delaware,2021,6.9,50.1
+Delaware,2022,6.9,52.5
+Delaware,2023,7.7,49.1
+Delaware,2024,,31.4
+Florida,2008,24.2,
+Florida,2009,24.9,
+Florida,2010,25.3,
+Florida,2011,24.8,
+Florida,2012,24.1,
+Florida,2013,24.3,
+Florida,2014,20.2,
+Florida,2015,16.3,
+Florida,2016,15.4,
+Florida,2017,16.0,
+Florida,2018,16.1,
+Florida,2019,16.4,22.6
+Florida,2020,15.5,31.9
+Florida,2021,15.1,34.2
+Florida,2022,13.9,32.2
+Florida,2023,13.4,29.3
+Florida,2024,,20.4
+Georgia,2008,20.1,
+Georgia,2009,21.2,
+Georgia,2010,21.9,
+Georgia,2011,21.7,
+Georgia,2012,20.7,
+Georgia,2013,21.2,
+Georgia,2014,18.0,
+Georgia,2015,15.8,
+Georgia,2016,14.9,
+Georgia,2017,15.5,
+Georgia,2018,15.9,
+Georgia,2019,15.7,12.1
+Georgia,2020,15.3,17.0
+Georgia,2021,14.8,22.1
+Georgia,2022,13.6,23.5
+Georgia,2023,13.3,22.4
+Georgia,2024,,17.5
+Hawaii,2008,7.7,
+Hawaii,2009,8.2,
+Hawaii,2010,8.9,
+Hawaii,2011,8.1,
+Hawaii,2012,7.8,
+Hawaii,2013,7.6,
+Hawaii,2014,6.0,
+Hawaii,2015,4.8,
+Hawaii,2016,4.2,
+Hawaii,2017,4.6,
+Hawaii,2018,4.7,
+Hawaii,2019,4.8,15.1
+Hawaii,2020,4.7,17.4
+Hawaii,2021,4.4,17.2
+Hawaii,2022,4.3,18.1
+Hawaii,2023,3.9,21.0
+Hawaii,2024,,21.8
+Idaho,2008,19.1,
+Idaho,2009,19.3,
+Idaho,2010,20.3,
+Idaho,2011,18.9,
+Idaho,2012,18.5,
+Idaho,2013,18.8,
+Idaho,2014,15.7,
+Idaho,2015,12.8,
+Idaho,2016,11.8,
+Idaho,2017,11.8,
+Idaho,2018,13.1,
+Idaho,2019,12.7,12.9
+Idaho,2020,11.2,13.4
+Idaho,2021,10.5,17.3
+Idaho,2022,9.8,17.2
+Idaho,2023,10.9,17.6
+Idaho,2024,,14.9
+Illinois,2008,13.9,
+Illinois,2009,15.0,
+Illinois,2010,15.6,
+Illinois,2011,14.8,
+Illinois,2012,14.6,
+Illinois,2013,14.6,
+Illinois,2014,11.2,
+Illinois,2015,8.2,
+Illinois,2016,7.5,
+Illinois,2017,7.9,
+Illinois,2018,8.1,
+Illinois,2019,8.7,20.6
+Illinois,2020,8.4,26.5
+Illinois,2021,8.2,28.2
+Illinois,2022,7.7,29.2
+Illinois,2023,7.3,26.9
+Illinois,2024,,18.9
+Indiana,2008,15.1,
+Indiana,2009,16.2,
+Indiana,2010,17.0,
+Indiana,2011,16.6,
+Indiana,2012,16.6,
+Indiana,2013,16.1,
+Indiana,2014,14.0,
+Indiana,2015,11.3,
+Indiana,2016,9.5,
+Indiana,2017,9.6,
+Indiana,2018,9.7,
+Indiana,2019,10.3,24.0
+Indiana,2020,9.0,33.0
+Indiana,2021,8.9,39.9
+Indiana,2022,8.2,37.8
+Indiana,2023,8.2,31.4
+Indiana,2024,,23.7
+Iowa,2008,10.0,
+Iowa,2009,10.0,
+Iowa,2010,10.7,
+Iowa,2011,10.4,
+Iowa,2012,9.9,
+Iowa,2013,9.6,
+Iowa,2014,7.3,
+Iowa,2015,5.9,
+Iowa,2016,5.0,
+Iowa,2017,5.5,
+Iowa,2018,5.6,
+Iowa,2019,5.7,9.1
+Iowa,2020,5.7,11.3
+Iowa,2021,5.8,13.3
+Iowa,2022,5.4,12.3
+Iowa,2023,5.9,12.2
+Iowa,2024,,11.6
+Kansas,2008,12.8,
+Kansas,2009,14.6,
+Kansas,2010,15.8,
+Kansas,2011,14.4,
+Kansas,2012,14.4,
+Kansas,2013,14.1,
+Kansas,2014,11.7,
+Kansas,2015,10.5,
+Kansas,2016,9.9,
+Kansas,2017,10.1,
+Kansas,2018,10.1,
+Kansas,2019,10.7,12.2
+Kansas,2020,10.3,15.1
+Kansas,2021,10.9,21.6
+Kansas,2022,10.2,23.6
+Kansas,2023,9.8,20.0
+Kansas,2024,,18.0
+Kentucky,2008,15.0,
+Kentucky,2009,16.5,
+Kentucky,2010,17.5,
+Kentucky,2011,16.9,
+Kentucky,2012,16.2,
+Kentucky,2013,16.8,
+Kentucky,2014,9.9,
+Kentucky,2015,7.1,
+Kentucky,2016,6.0,
+Kentucky,2017,6.4,
+Kentucky,2018,6.7,
+Kentucky,2019,7.6,29.4
+Kentucky,2020,6.9,45.2
+Kentucky,2021,6.8,51.7
+Kentucky,2022,6.6,48.9
+Kentucky,2023,6.4,44.6
+Kentucky,2024,,31.7
+Louisiana,2008,19.5,
+Louisiana,2009,20.0,
+Louisiana,2010,20.5,
+Louisiana,2011,20.1,
+Louisiana,2012,19.4,
+Louisiana,2013,19.1,
+Louisiana,2014,16.9,
+Louisiana,2015,13.8,
+Louisiana,2016,11.8,
+Louisiana,2017,9.6,
+Louisiana,2018,9.3,
+Louisiana,2019,10.3,26.1
+Louisiana,2020,9.6,39.7
+Louisiana,2021,9.2,52.3
+Louisiana,2022,8.3,50.8
+Louisiana,2023,8.3,47.4
+Louisiana,2024,,31.2
+Maine,2008,12.1,
+Maine,2009,12.5,
+Maine,2010,12.2,
+Maine,2011,12.9,
+Maine,2012,12.4,
+Maine,2013,13.5,
+Maine,2014,12.4,
+Maine,2015,10.3,
+Maine,2016,10.1,
+Maine,2017,10.2,
+Maine,2018,10.2,
+Maine,2019,10.2,25.2
+Maine,2020,9.3,34.0
+Maine,2021,7.3,42.9
+Maine,2022,8.4,48.8
+Maine,2023,7.8,40.4
+Maine,2024,,32.4
+Maryland,2008,12.3,
+Maryland,2009,12.9,
+Maryland,2010,12.7,
+Maryland,2011,12.0,
+Maryland,2012,11.8,
+Maryland,2013,11.7,
+Maryland,2014,8.9,
+Maryland,2015,7.4,
+Maryland,2016,7.0,
+Maryland,2017,7.0,
+Maryland,2018,6.9,
+Maryland,2019,7.0,37.8
+Maryland,2020,6.7,43.8
+Maryland,2021,7.0,43.4
+Maryland,2022,6.8,40.5
+Maryland,2023,7.1,40.1
+Maryland,2024,,27.6
+Massachusetts,2008,4.4,
+Massachusetts,2009,4.9,
+Massachusetts,2010,5.2,
+Massachusetts,2011,4.9,
+Massachusetts,2012,4.5,
+Massachusetts,2013,4.3,
+Massachusetts,2014,3.8,
+Massachusetts,2015,3.2,
+Massachusetts,2016,3.0,
+Massachusetts,2017,3.3,
+Massachusetts,2018,3.3,
+Massachusetts,2019,3.5,30.9
+Massachusetts,2020,3.2,31.7
+Massachusetts,2021,2.9,35.7
+Massachusetts,2022,2.9,36.2
+Massachusetts,2023,3.0,32.8
+Massachusetts,2024,,21.5
+Michigan,2008,12.4,
+Michigan,2009,13.9,
+Michigan,2010,14.3,
+Michigan,2011,13.6,
+Michigan,2012,13.4,
+Michigan,2013,12.9,
+Michigan,2014,10.1,
+Michigan,2015,7.2,
+Michigan,2016,6.4,
+Michigan,2017,6.1,
+Michigan,2018,6.5,
+Michigan,2019,7.0,22.3
+Michigan,2020,6.4,25.9
+Michigan,2021,6.0,29.3
+Michigan,2022,5.5,28.4
+Michigan,2023,5.5,27.3
+Michigan,2024,,18.0
+Minnesota,2008,9.5,
+Minnesota,2009,10.2,
+Minnesota,2010,10.3,
+Minnesota,2011,10.2,
+Minnesota,2012,9.2,
+Minnesota,2013,9.5,
+Minnesota,2014,6.7,
+Minnesota,2015,5.2,
+Minnesota,2016,4.8,
+Minnesota,2017,5.1,
+Minnesota,2018,5.1,
+Minnesota,2019,5.8,11.8
+Minnesota,2020,5.9,16.8
+Minnesota,2021,5.3,22.2
+Minnesota,2022,5.4,22.6
+Minnesota,2023,5.1,21.7
+Minnesota,2024,,15.9
+Mississippi,2008,19.3,
+Mississippi,2009,20.5,
+Mississippi,2010,21.0,
+Mississippi,2011,20.6,
+Mississippi,2012,19.7,
+Mississippi,2013,20.0,
+Mississippi,2014,17.1,
+Mississippi,2015,14.8,
+Mississippi,2016,14.0,
+Mississippi,2017,14.5,
+Mississippi,2018,14.4,
+Mississippi,2019,15.4,12.7
+Mississippi,2020,13.9,19.1
+Mississippi,2021,14.3,26.1
+Mississippi,2022,13.1,24.8
+Mississippi,2023,12.5,23.2
+Mississippi,2024,,16.9
+Missouri,2008,14.3,
+Missouri,2009,15.2,
+Missouri,2010,15.3,
+Missouri,2011,16.0,
+Missouri,2012,15.8,
+Missouri,2013,15.3,
+Missouri,2014,13.7,
+Missouri,2015,11.5,
+Missouri,2016,10.6,
+Missouri,2017,10.9,
+Missouri,2018,11.4,
+Missouri,2019,11.9,24.0
+Missouri,2020,12.2,29.0
+Missouri,2021,11.4,33.4
+Missouri,2022,10.2,33.6
+Missouri,2023,9.0,30.6
+Missouri,2024,,21.9
+Montana,2008,20.4,
+Montana,2009,21.7,
+Montana,2010,20.7,
+Montana,2011,21.6,
+Montana,2012,21.6,
+Montana,2013,20.0,
+Montana,2014,16.8,
+Montana,2015,14.2,
+Montana,2016,10.0,
+Montana,2017,10.4,
+Montana,2018,10.2,
+Montana,2019,10.2,10.9
+Montana,2020,10.8,12.5
+Montana,2021,10.5,16.5
+Montana,2022,10.5,17.3
+Montana,2023,10.6,15.0
+Montana,2024,,12.6
+Nebraska,2008,12.2,
+Nebraska,2009,13.3,
+Nebraska,2010,13.4,
+Nebraska,2011,13.3,
+Nebraska,2012,12.9,
+Nebraska,2013,12.9,
+Nebraska,2014,11.0,
+Nebraska,2015,9.4,
+Nebraska,2016,9.7,
+Nebraska,2017,9.6,
+Nebraska,2018,9.4,
+Nebraska,2019,9.5,6.7
+Nebraska,2020,9.5,9.2
+Nebraska,2021,8.5,9.5
+Nebraska,2022,7.7,10.2
+Nebraska,2023,7.2,7.6
+Nebraska,2024,,6.6
+Nevada,2008,23.2,
+Nevada,2009,24.5,
+Nevada,2010,25.1,
+Nevada,2011,23.8,
+Nevada,2012,24.5,
+Nevada,2013,23.3,
+Nevada,2014,17.3,
+Nevada,2015,14.1,
+Nevada,2016,13.1,
+Nevada,2017,13.1,
+Nevada,2018,12.9,
+Nevada,2019,13.5,18.4
+Nevada,2020,13.8,24.9
+Nevada,2021,13.8,27.5
+Nevada,2022,13.2,29.1
+Nevada,2023,12.8,38.0
+Nevada,2024,,36.3
+New Hampshire,2008,12.1,
+New Hampshire,2009,12.0,
+New Hampshire,2010,13.0,
+New Hampshire,2011,12.5,
+New Hampshire,2012,12.6,
+New Hampshire,2013,12.8,
+New Hampshire,2014,11.0,
+New Hampshire,2015,7.8,
+New Hampshire,2016,7.2,
+New Hampshire,2017,7.0,
+New Hampshire,2018,7.1,
+New Hampshire,2019,7.7,28.1
+New Hampshire,2020,7.9,26.0
+New Hampshire,2021,6.3,29.9
+New Hampshire,2022,6.2,33.0
+New Hampshire,2023,6.0,30.2
+New Hampshire,2024,,18.7
+New Jersey,2008,13.7,
+New Jersey,2009,14.4,
+New Jersey,2010,15.0,
+New Jersey,2011,14.9,
+New Jersey,2012,14.6,
+New Jersey,2013,15.0,
+New Jersey,2014,12.6,
+New Jersey,2015,10.0,
+New Jersey,2016,9.2,
+New Jersey,2017,9.0,
+New Jersey,2018,8.7,
+New Jersey,2019,9.3,30.5
+New Jersey,2020,8.7,29.7
+New Jersey,2021,8.3,31.9
+New Jersey,2022,8.0,31.2
+New Jersey,2023,8.5,28.1
+New Jersey,2024,,20.5
+New Mexico,2008,23.9,
+New Mexico,2009,22.9,
+New Mexico,2010,22.6,
+New Mexico,2011,23.0,
+New Mexico,2012,21.5,
+New Mexico,2013,21.9,
+New Mexico,2014,17.1,
+New Mexico,2015,13.1,
+New Mexico,2016,11.2,
+New Mexico,2017,11.0,
+New Mexico,2018,11.5,
+New Mexico,2019,12.1,26.3
+New Mexico,2020,11.8,34.8
+New Mexico,2021,12.6,47.3
+New Mexico,2022,10.6,45.9
+New Mexico,2023,11.7,45.6
+New Mexico,2024,,34.7
+New York,2008,13.1,
+New York,2009,13.2,
+New York,2010,13.7,
+New York,2011,13.2,
+New York,2012,12.6,
+New York,2013,12.4,
+New York,2014,10.1,
+New York,2015,8.2,
+New York,2016,7.1,
+New York,2017,6.6,
+New York,2018,6.3,
+New York,2019,6.2,17.5
+New York,2020,6.1,23.6
+New York,2021,6.1,28.3
+New York,2022,5.7,31.1
+New York,2023,5.8,31.2
+New York,2024,,21.7
+North Carolina,2008,17.4,
+North Carolina,2009,18.0,
+North Carolina,2010,19.1,
+North Carolina,2011,18.7,
+North Carolina,2012,19.0,
+North Carolina,2013,18.1,
+North Carolina,2014,15.2,
+North Carolina,2015,13.0,
+North Carolina,2016,12.2,
+North Carolina,2017,12.6,
+North Carolina,2018,12.7,
+North Carolina,2019,13.4,20.1
+North Carolina,2020,12.7,28.8
+North Carolina,2021,12.5,36.7
+North Carolina,2022,11.2,38.8
+North Carolina,2023,11.1,31.1
+North Carolina,2024,,24.6
+North Dakota,2008,11.6,
+North Dakota,2009,11.5,
+North Dakota,2010,11.4,
+North Dakota,2011,11.6,
+North Dakota,2012,12.0,
+North Dakota,2013,12.3,
+North Dakota,2014,9.3,
+North Dakota,2015,8.7,
+North Dakota,2016,7.6,
+North Dakota,2017,8.6,
+North Dakota,2018,8.1,
+North Dakota,2019,7.2,9.6
+North Dakota,2020,8.2,13.7
+North Dakota,2021,9.2,14.9
+North Dakota,2022,7.2,16.9
+North Dakota,2023,5.7,14.2
+North Dakota,2024,,11.9
+Ohio,2008,13.1,
+Ohio,2009,14.0,
+Ohio,2010,14.3,
+Ohio,2011,13.9,
+Ohio,2012,13.5,
+Ohio,2013,13.0,
+Ohio,2014,9.9,
+Ohio,2015,7.7,
+Ohio,2016,6.7,
+Ohio,2017,7.1,
+Ohio,2018,7.7,
+Ohio,2019,7.9,34.9
+Ohio,2020,8.1,43.0
+Ohio,2021,7.8,44.4
+Ohio,2022,7.1,42.3
+Ohio,2023,7.4,38.7
+Ohio,2024,,25.4
+Oklahoma,2008,21.5,
+Oklahoma,2009,21.4,
+Oklahoma,2010,21.9,
+Oklahoma,2011,21.8,
+Oklahoma,2012,21.4,
+Oklahoma,2013,20.6,
+Oklahoma,2014,17.9,
+Oklahoma,2015,16.1,
+Oklahoma,2016,16.0,
+Oklahoma,2017,16.5,
+Oklahoma,2018,16.6,
+Oklahoma,2019,16.8,14.8
+Oklahoma,2020,18.1,17.9
+Oklahoma,2021,16.9,22.5
+Oklahoma,2022,14.3,28.8
+Oklahoma,2023,14.0,30.0
+Oklahoma,2024,,23.9
+Oregon,2008,18.0,
+Oregon,2009,19.4,
+Oregon,2010,19.7,
+Oregon,2011,18.1,
+Oregon,2012,17.4,
+Oregon,2013,17.2,
+Oregon,2014,11.6,
+Oregon,2015,8.4,
+Oregon,2016,7.4,
+Oregon,2017,8.2,
+Oregon,2018,8.4,
+Oregon,2019,8.6,12.2
+Oregon,2020,8.0,16.9
+Oregon,2021,7.4,25.5
+Oregon,2022,7.4,29.4
+Oregon,2023,6.8,39.5
+Oregon,2024,,32.9
+Pennsylvania,2008,10.6,
+Pennsylvania,2009,11.7,
+Pennsylvania,2010,12.1,
+Pennsylvania,2011,12.0,
+Pennsylvania,2012,11.7,
+Pennsylvania,2013,11.6,
+Pennsylvania,2014,10.2,
+Pennsylvania,2015,7.6,
+Pennsylvania,2016,6.8,
+Pennsylvania,2017,6.6,
+Pennsylvania,2018,6.7,
+Pennsylvania,2019,7.0,32.5
+Pennsylvania,2020,7.7,37.9
+Pennsylvania,2021,6.7,39.8
+Pennsylvania,2022,6.5,37.8
+Pennsylvania,2023,6.5,34.6
+Pennsylvania,2024,,24.3
+Rhode Island,2008,11.8,
+Rhode Island,2009,13.3,
+Rhode Island,2010,13.8,
+Rhode Island,2011,12.8,
+Rhode Island,2012,12.8,
+Rhode Island,2013,13.9,
+Rhode Island,2014,8.6,
+Rhode Island,2015,6.7,
+Rhode Island,2016,5.1,
+Rhode Island,2017,5.4,
+Rhode Island,2018,4.8,
+Rhode Island,2019,5.0,26.8
+Rhode Island,2020,4.6,34.9
+Rhode Island,2021,4.9,39.8
+Rhode Island,2022,5.2,36.3
+Rhode Island,2023,5.3,35.9
+Rhode Island,2024,,28.4
+South Carolina,2008,19.2,
+South Carolina,2009,19.4,
+South Carolina,2010,20.3,
+South Carolina,2011,19.4,
+South Carolina,2012,19.8,
+South Carolina,2013,18.6,
+South Carolina,2014,16.1,
+South Carolina,2015,13.0,
+South Carolina,2016,12.1,
+South Carolina,2017,13.1,
+South Carolina,2018,12.7,
+South Carolina,2019,13.2,20.6
+South Carolina,2020,12.8,32.6
+South Carolina,2021,12.3,39.7
+South Carolina,2022,11.0,41.5
+South Carolina,2023,11.1,39.0
+South Carolina,2024,,26.0
+South Dakota,2008,12.7,
+South Dakota,2009,14.8,
+South Dakota,2010,13.9,
+South Dakota,2011,13.9,
+South Dakota,2012,13.6,
+South Dakota,2013,12.8,
+South Dakota,2014,11.6,
+South Dakota,2015,11.8,
+South Dakota,2016,10.4,
+South Dakota,2017,10.8,
+South Dakota,2018,11.2,
+South Dakota,2019,12.0,8.6
+South Dakota,2020,11.6,8.1
+South Dakota,2021,11.5,9.8
+South Dakota,2022,10.0,9.5
+South Dakota,2023,9.8,8.2
+South Dakota,2024,,8.8
+Tennessee,2008,14.8,
+Tennessee,2009,16.3,
+Tennessee,2010,16.6,
+Tennessee,2011,17.0,
+Tennessee,2012,16.2,
+Tennessee,2013,16.2,
+Tennessee,2014,14.1,
+Tennessee,2015,12.0,
+Tennessee,2016,10.6,
+Tennessee,2017,11.3,
+Tennessee,2018,12.0,
+Tennessee,2019,12.1,29.3
+Tennessee,2020,12.2,42.5
+Tennessee,2021,11.9,53.5
+Tennessee,2022,11.1,52.9
+Tennessee,2023,11.0,49.5
+Tennessee,2024,,33.7
+Texas,2008,25.7,
+Texas,2009,26.3,
+Texas,2010,26.3,
+Texas,2011,25.7,
+Texas,2012,25.2,
+Texas,2013,24.8,
+Texas,2014,21.4,
+Texas,2015,19.2,
+Texas,2016,18.6,
+Texas,2017,19.4,
+Texas,2018,19.9,
+Texas,2019,20.7,9.8
+Texas,2020,19.9,13.2
+Texas,2021,20.3,15.9
+Texas,2022,18.8,17.2
+Texas,2023,18.6,17.6
+Texas,2024,,15.2
+Utah,2008,16.3,
+Utah,2009,15.9,
+Utah,2010,16.7,
+Utah,2011,16.6,
+Utah,2012,15.7,
+Utah,2013,15.3,
+Utah,2014,13.8,
+Utah,2015,11.6,
+Utah,2016,9.7,
+Utah,2017,10.0,
+Utah,2018,10.4,
+Utah,2019,10.7,15.5
+Utah,2020,9.7,16.3
+Utah,2021,10.1,17.6
+Utah,2022,9.2,15.8
+Utah,2023,9.0,17.8
+Utah,2024,,17.2
+Vermont,2008,10.3,
+Vermont,2009,10.4,
+Vermont,2010,9.7,
+Vermont,2011,8.0,
+Vermont,2012,7.9,
+Vermont,2013,8.7,
+Vermont,2014,6.1,
+Vermont,2015,4.7,
+Vermont,2016,4.7,
+Vermont,2017,5.5,
+Vermont,2018,4.9,
+Vermont,2019,5.7,19.6
+Vermont,2020,4.9,27.8
+Vermont,2021,4.5,35.5
+Vermont,2022,4.9,39.6
+Vermont,2023,4.6,38.1
+Vermont,2024,,30.6
+Virginia,2008,13.2,
+Virginia,2009,13.6,
+Virginia,2010,14.8,
+Virginia,2011,14.3,
+Virginia,2012,14.2,
+Virginia,2013,14.0,
+Virginia,2014,12.4,
+Virginia,2015,10.4,
+Virginia,2016,9.9,
+Virginia,2017,10.2,
+Virginia,2018,10.1,
+Virginia,2019,9.2,16.8
+Virginia,2020,8.6,24.6
+Virginia,2021,8.0,29.0
+Virginia,2022,7.5,27.5
+Virginia,2023,7.5,27.2
+Virginia,2024,,16.5
+Washington,2008,14.0,
+Washington,2009,15.0,
+Washington,2010,16.1,
+Washington,2011,16.0,
+Washington,2012,15.8,
+Washington,2013,15.9,
+Washington,2014,10.6,
+Washington,2015,7.6,
+Washington,2016,6.9,
+Washington,2017,7.1,
+Washington,2018,7.5,
+Washington,2019,7.7,14.7
+Washington,2020,7.4,20.7
+Washington,2021,7.6,27.8
+Washington,2022,7.2,33.1
+Washington,2023,7.4,42.4
+Washington,2024,,38.2
+West Virginia,2008,17.4,
+West Virginia,2009,16.8,
+West Virginia,2010,17.4,
+West Virginia,2011,18.1,
+West Virginia,2012,17.6,
+West Virginia,2013,17.1,
+West Virginia,2014,10.6,
+West Virginia,2015,7.3,
+West Virginia,2016,6.5,
+West Virginia,2017,7.5,
+West Virginia,2018,7.8,
+West Virginia,2019,8.1,46.9
+West Virginia,2020,8.4,72.8
+West Virginia,2021,7.7,82.3
+West Virginia,2022,7.4,73.2
+West Virginia,2023,7.4,76.7
+West Virginia,2024,,45.6
+Wisconsin,2008,10.0,
+Wisconsin,2009,10.6,
+Wisconsin,2010,10.8,
+Wisconsin,2011,10.3,
+Wisconsin,2012,10.4,
+Wisconsin,2013,10.6,
+Wisconsin,2014,8.6,
+Wisconsin,2015,6.6,
+Wisconsin,2016,6.3,
+Wisconsin,2017,6.4,
+Wisconsin,2018,6.5,
+Wisconsin,2019,6.8,19.1
+Wisconsin,2020,6.8,24.5
+Wisconsin,2021,6.5,28.4
+Wisconsin,2022,6.3,28.5
+Wisconsin,2023,5.9,28.1
+Wisconsin,2024,,18.1
+Wyoming,2008,15.8,
+Wyoming,2009,17.3,
+Wyoming,2010,17.3,
+Wyoming,2011,17.3,
+Wyoming,2012,17.3,
+Wyoming,2013,15.8,
+Wyoming,2014,14.2,
+Wyoming,2015,13.4,
+Wyoming,2016,13.4,
+Wyoming,2017,14.2,
+Wyoming,2018,12.4,
+Wyoming,2019,14.7,11.7
+Wyoming,2020,14.1,15.1
+Wyoming,2021,15.3,17.6
+Wyoming,2022,14.1,19.8
+Wyoming,2023,13.3,20.9
+Wyoming,2024,,18.3
