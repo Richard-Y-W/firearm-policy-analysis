@@ -81,7 +81,7 @@ The Arkansas sensitivity check does not change the substantive pattern. When Ark
 
 ## Publication Figures
 
-The publication figures are exported as both PNG and PDF files in `outputs/figures/publication`.
+The publication figures are exported as both high-resolution PNG files and editable PDF/vector files in `outputs/figures/publication`. The current figure set uses a consistent Seaborn/Matplotlib publication style with smaller journal-scale typography, colorblind-safe categorical colors, restrained gridlines, aligned multi-panel layouts, embedded TrueType PDF fonts, and 600 DPI raster exports for README display.
 
 ![Outcome trends by adoption status](outputs/figures/publication/figure_01_outcome_trends_by_adoption.png)
 
@@ -89,23 +89,23 @@ The publication figures are exported as both PNG and PDF files in `outputs/figur
 
 ![Adjusted difference-in-differences estimates](outputs/figures/publication/figure_02_twfe_coefficient_forest.png)
 
-**Figure 2. Adjusted difference-in-differences estimates.** Two-way fixed effects estimates are positive for suicide-related outcomes and total firearm deaths. The firearm homicide estimate is close to zero.
+**Figure 2. Adjusted difference-in-differences estimates.** Two-way fixed effects estimates are positive for suicide-related outcomes and total firearm deaths. The firearm homicide estimate is close to zero. Horizontal intervals show approximate 95% confidence intervals.
 
 ![Change-score robustness](outputs/figures/publication/figure_03_change_score_robustness.png)
 
-**Figure 3. Change-score robustness.** Pre/post window comparisons identify firearm suicide as the most consistent change-score signal. Homicide estimates remain small and statistically unstable.
+**Figure 3. Change-score robustness.** Pre/post window comparisons identify firearm suicide as the most consistent change-score signal. Homicide estimates remain small and statistically unstable across 2-, 3-, and 5-year windows.
 
 ![Event-study estimates](outputs/figures/publication/figure_04_event_study_grid.png)
 
-**Figure 4. Event-study estimates.** Dynamic estimates show the evolution of outcome rates around adoption relative to the year immediately before the policy change.
+**Figure 4. Event-study estimates.** Dynamic estimates show the evolution of outcome rates around adoption relative to the year immediately before the policy change. Shaded bands show 95% confidence intervals.
 
 ![Heterogeneity estimates](outputs/figures/publication/figure_05_heterogeneity_interactions.png)
 
-**Figure 5. Heterogeneity in post-adoption associations.** Interaction models evaluate whether associations are stronger in states with higher baseline firearm ownership, rurality, or firearm suicide rates.
+**Figure 5. Heterogeneity in post-adoption associations.** Interaction models evaluate whether associations are stronger in states with higher baseline firearm ownership, rurality, or firearm suicide rates. Blue markers denote interaction terms with p < 0.05.
 
 ![Political selection scatter](outputs/figures/publication/figure_06_political_selection_scatter.png)
 
-**Figure 6. Political and structural selection into adoption.** Adoption is patterned by baseline firearm suicide, firearm ownership, and partisan voting context, underscoring the importance of cautious interpretation.
+**Figure 6. Political and structural selection into adoption.** Adoption is patterned by baseline firearm suicide, firearm ownership, and partisan voting context, underscoring the importance of cautious interpretation. Point size is proportional to baseline household firearm ownership.
 
 ## Interpretation
 
