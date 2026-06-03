@@ -16,14 +16,13 @@ PANEL_FILE = ROOT / "data" / "processed" / "analysis_panel_full_outcomes.csv"
 TABLES = ROOT / "outputs" / "tables"
 OUT = ROOT / "outputs" / "figures" / "publication"
 
-BLUE = "#1F5A85"
-TEAL = "#009E73"
-GOLD = "#E69F00"
-RED = "#D55E00"
-GRAY = "#6F6F6F"
-LIGHT_GRAY = "#E6E8EB"
-DARK = "#222222"
-MUTED_BLUE = "#DCE8F3"
+BLUE = "#2F77B4"
+ORANGE = "#DF8F2D"
+RED = "#C44E52"
+GRAY = "#5F5F5F"
+LIGHT_GRAY = "#E7E7E7"
+DARK = "#111111"
+PALE_BLUE = "#D8EAF7"
 
 OUTCOMES = {
     "firearm_suicide_rate_per_100k": "Firearm Suicide",
@@ -106,17 +105,17 @@ STATE_ABBR = {
 def configure_style():
     sns.set_theme(
         context="paper",
-        style="ticks",
+        style="white",
         font="Arial",
         rc={
-            "axes.edgecolor": "#9EA3A8",
+            "axes.edgecolor": DARK,
             "axes.labelcolor": DARK,
-            "axes.labelsize": 8.7,
-            "axes.titlesize": 9.4,
-            "xtick.labelsize": 7.8,
-            "ytick.labelsize": 7.8,
-            "legend.fontsize": 7.8,
-            "legend.title_fontsize": 7.8,
+            "axes.labelsize": 9.5,
+            "axes.titlesize": 10.2,
+            "xtick.labelsize": 8.5,
+            "ytick.labelsize": 8.5,
+            "legend.fontsize": 8.5,
+            "legend.title_fontsize": 8.5,
             "figure.dpi": 180,
             "savefig.dpi": 600,
             "pdf.fonttype": 42,
@@ -127,13 +126,15 @@ def configure_style():
     )
     plt.rcParams.update(
         {
-            "axes.titleweight": "semibold",
-            "axes.linewidth": 0.75,
+            "axes.titleweight": "bold",
+            "axes.linewidth": 0.9,
             "axes.spines.top": False,
             "axes.spines.right": False,
             "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
             "figure.facecolor": "white",
+            "axes.facecolor": "white",
             "savefig.facecolor": "white",
+            "legend.frameon": False,
         }
     )
 
@@ -183,12 +184,13 @@ def load_state_baselines(df):
 
 
 def style_axis(ax, xgrid=False):
-    ax.grid(axis="y", color=LIGHT_GRAY, linewidth=0.65)
+    ax.grid(axis="y", color=LIGHT_GRAY, linewidth=0.7, alpha=0.78)
     if xgrid:
-        ax.grid(axis="x", color="#F1F2F4", linewidth=0.45)
-    ax.tick_params(length=2.4, width=0.7, color="#7F858A", pad=2.5)
-    ax.spines["left"].set_color("#B9BDC1")
-    ax.spines["bottom"].set_color("#B9BDC1")
+        ax.grid(axis="x", color=LIGHT_GRAY, linewidth=0.55, alpha=0.6)
+    ax.set_axisbelow(True)
+    ax.tick_params(length=3.0, width=0.9, color=DARK, labelcolor=DARK, pad=2.8)
+    ax.spines["left"].set_color(DARK)
+    ax.spines["bottom"].set_color(DARK)
 
 
 def panel_label(ax, label):
@@ -205,9 +207,9 @@ def panel_label(ax, label):
     )
 
 
-def title_and_note(fig, title, note, y_title=0.985, y_note=0.015):
-    fig.suptitle(title, x=0.01, y=y_title, ha="left", fontsize=10.8, fontweight="semibold", color=DARK)
-    fig.text(0.01, y_note, note, ha="left", va="bottom", fontsize=7.3, color="#555555")
+def title_and_note(fig, title, note, y_title=0.95, y_note=0.015):
+    fig.suptitle(title, x=0.01, y=y_title, ha="left", fontsize=10.6, fontweight="bold", color=DARK)
+    fig.text(0.01, y_note, note, ha="left", va="bottom", fontsize=7.2, color="#4B4B4B")
 
 
 def p_text(p):
@@ -233,21 +235,25 @@ def fig_outcome_trends(df):
         .mean()
     )
 
-    fig, axes = plt.subplots(2, 2, figsize=(7.4, 5.3), sharex=True)
+    fig, axes = plt.subplots(2, 2, figsize=(7.6, 5.35), sharex=True)
     axes = axes.ravel()
 
     for ax, (_, label), letter in zip(axes, outcomes, "ABCD"):
         d = annual[annual["Outcome"] == label]
-        for group, color, width in [("Adopting states", BLUE, 1.9), ("Never-adopting states", GRAY, 1.65)]:
+        line_specs = [
+            ("Adopting states", BLUE, 2.25, "-"),
+            ("Never-adopting states", ORANGE, 2.0, (0, (3, 2))),
+        ]
+        for group, color, width, linestyle in line_specs:
             g = d[d["Adoption group"] == group].sort_values("Year")
-            ax.plot(g["Year"], g["rate"], color=color, linewidth=width)
-            ax.scatter(g["Year"].iloc[-1], g["rate"].iloc[-1], s=15, color=color, zorder=3)
+            ax.plot(g["Year"], g["rate"], color=color, linewidth=width, linestyle=linestyle)
+            ax.scatter(g["Year"].iloc[-1], g["rate"].iloc[-1], s=24, color=color, zorder=3, edgecolor="white", linewidth=0.55)
             ax.text(
                 g["Year"].iloc[-1] + 0.25,
                 g["rate"].iloc[-1],
                 f"{g['rate'].iloc[-1]:.1f}",
                 color=color,
-                fontsize=7.5,
+                fontsize=8.0,
                 va="center",
                 fontweight="semibold",
             )
@@ -259,8 +265,8 @@ def fig_outcome_trends(df):
         style_axis(ax)
 
     handles = [
-        Line2D([0], [0], color=BLUE, linewidth=2.7, label="Adopting states"),
-        Line2D([0], [0], color=GRAY, linewidth=2.2, label="Never-adopting states"),
+        Line2D([0], [0], color=BLUE, linewidth=2.9, label="Adopting states"),
+        Line2D([0], [0], color=ORANGE, linewidth=2.5, linestyle=(0, (3, 2)), label="Never-adopting states"),
     ]
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.56, 0.955), ncol=2, frameon=False)
     title_and_note(
@@ -270,7 +276,7 @@ def fig_outcome_trends(df):
         y_title=0.995,
         y_note=0.01,
     )
-    fig.tight_layout(rect=[0, 0.055, 1, 0.9], w_pad=2.0, h_pad=1.7)
+    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.12, top=0.84, wspace=0.18, hspace=0.38)
     savefig(fig, "figure_01_outcome_trends_by_adoption")
 
 
@@ -283,13 +289,13 @@ def fig_twfe_forest():
     did["outcome_label"] = pd.Categorical(did["outcome_label"], categories=OUTCOME_ORDER[::-1], ordered=True)
     did = did.sort_values("outcome_label")
 
-    fig, ax = plt.subplots(figsize=(6.6, 3.6))
+    fig, ax = plt.subplots(figsize=(6.7, 3.65))
     colors = np.where(did["p_post_permitless"] < 0.05, BLUE, GRAY)
     y = np.arange(len(did))
-    ax.axvspan(-0.25, 0.25, color="#F4F5F6", zorder=0)
-    ax.hlines(y, did["ci_low"], did["ci_high"], color=colors, linewidth=1.9)
-    ax.scatter(did["coef_post_permitless"], y, color=colors, s=42, zorder=3, edgecolor="white", linewidth=0.55)
-    ax.axvline(0, color=DARK, linewidth=0.85)
+    ax.axvspan(-0.25, 0.25, color="#F2F2F2", zorder=0)
+    ax.hlines(y, did["ci_low"], did["ci_high"], color=colors, linewidth=2.25)
+    ax.scatter(did["coef_post_permitless"], y, color=colors, s=56, zorder=3, edgecolor="white", linewidth=0.7)
+    ax.axvline(0, color=DARK, linewidth=1.0)
     for yi, row in zip(y, did.itertuples()):
         ax.text(
             row.ci_high + 0.07,
@@ -297,7 +303,7 @@ def fig_twfe_forest():
             f"{row.coef_post_permitless:+.2f} ({p_text(row.p_post_permitless)})",
             va="center",
             fontsize=7.5,
-            color="#4A4A4A",
+            color="#333333",
         )
     ax.set_yticks(y)
     ax.set_yticklabels(did["outcome_label"])
@@ -310,7 +316,7 @@ def fig_twfe_forest():
         "Adjusted difference-in-differences estimates",
         "Two-way fixed effects models include state and year fixed effects plus unemployment and income controls; intervals are +/- 1.96 SE.",
     )
-    fig.tight_layout(rect=[0, 0.08, 1, 0.9])
+    fig.subplots_adjust(left=0.22, right=0.985, bottom=0.20, top=0.84)
     savefig(fig, "figure_02_twfe_coefficient_forest")
 
 
@@ -320,21 +326,21 @@ def fig_change_score_robustness():
     welch["window_label"] = welch["window"].astype(int).astype(str) + "-year"
     welch = welch.sort_values(["outcome_label", "window"])
 
-    fig, ax = plt.subplots(figsize=(6.8, 3.9))
+    fig, ax = plt.subplots(figsize=(6.9, 3.95))
     windows = list(welch["window_label"].drop_duplicates())
     offsets = np.linspace(-0.22, 0.22, len(windows))
-    colors = dict(zip(windows, [BLUE, TEAL, GOLD]))
+    colors = dict(zip(windows, [BLUE, ORANGE, RED]))
     base_y = {label: i for i, label in enumerate(welch["outcome_label"].cat.categories)}
 
     for offset, window in zip(offsets, windows):
         d = welch[welch["window_label"] == window]
         yy = [base_y[x] + offset for x in d["outcome_label"]]
-        ax.scatter(d["difference"], yy, s=37, color=colors[window], label=window, edgecolor="white", linewidth=0.55, zorder=3)
+        ax.scatter(d["difference"], yy, s=48, color=colors[window], label=window, edgecolor="white", linewidth=0.7, zorder=3)
         for x, yval, p in zip(d["difference"], yy, d["p_value"]):
             if p < 0.05:
                 ax.text(x + 0.028, yval, "*", va="center", ha="left", color=colors[window], fontsize=10.5, fontweight="bold")
 
-    ax.axvline(0, color=DARK, linewidth=0.85)
+    ax.axvline(0, color=DARK, linewidth=1.0)
     ax.set_yticks(range(len(base_y)))
     ax.set_yticklabels(list(base_y.keys()))
     ax.set_xlabel("Adopter minus never-adopter change score, deaths per 100,000")
@@ -346,7 +352,7 @@ def fig_change_score_robustness():
         "Change-score comparisons across robustness windows",
         "Positive values indicate larger pre/post increases in adopting states. Asterisks denote Welch-test p<0.05.",
     )
-    fig.tight_layout(rect=[0, 0.08, 1, 0.9])
+    fig.subplots_adjust(left=0.24, right=0.985, bottom=0.20, top=0.84)
     savefig(fig, "figure_03_change_score_robustness")
 
 
@@ -362,10 +368,10 @@ def fig_event_study_grid():
     axes = axes.ravel()
     for ax, outcome, letter in zip(axes, OUTCOME_ORDER, "ABCDE"):
         d = event[event["Outcome"] == outcome].sort_values("event_time")
-        ax.fill_between(d["event_time"], d["ci_low"], d["ci_high"], color=MUTED_BLUE, alpha=0.9, linewidth=0)
-        ax.plot(d["event_time"], d["coef"], color=BLUE, marker="o", linewidth=1.45, markersize=3.2)
-        ax.axhline(0, color=DARK, linewidth=0.75)
-        ax.axvline(-1, color="#777777", linestyle="--", linewidth=0.75)
+        ax.fill_between(d["event_time"], d["ci_low"], d["ci_high"], color=PALE_BLUE, alpha=0.95, linewidth=0)
+        ax.plot(d["event_time"], d["coef"], color=BLUE, marker="o", linewidth=1.75, markersize=3.6, markeredgecolor="white", markeredgewidth=0.45)
+        ax.axhline(0, color=DARK, linewidth=0.9)
+        ax.axvline(-1, color="#8A8A8A", linestyle=(0, (3, 2)), linewidth=0.85)
         ax.set_title(f"{letter}. {outcome}", loc="left")
         ax.set_xticks([-4, -2, 0, 2, 4])
         ax.set_xlabel("Years relative to adoption")
@@ -380,14 +386,14 @@ def fig_event_study_grid():
         ha="left",
         va="top",
         fontsize=7.8,
-        color="#555555",
+        color="#4B4B4B",
     )
     title_and_note(
         fig,
         "Event-study estimates around adoption",
         "Dynamic coefficients are plotted relative to the year before permitless carry adoption.",
     )
-    fig.tight_layout(rect=[0, 0.08, 1, 0.9], w_pad=1.6, h_pad=1.8)
+    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.14, top=0.84, wspace=0.28, hspace=0.48)
     savefig(fig, "figure_04_event_study_grid")
 
 
@@ -403,14 +409,14 @@ def fig_heterogeneity_forest():
     hetero["ci_high"] = hetero["interaction_coef"] + 1.96 * hetero["interaction_se"]
     hetero["outcome_label"] = pd.Categorical(hetero["outcome_label"], categories=OUTCOME_ORDER[::-1], ordered=True)
 
-    fig, axes = plt.subplots(1, 3, figsize=(7.7, 3.9), sharey=True)
+    fig, axes = plt.subplots(1, 3, figsize=(7.85, 3.9), sharey=True)
     for ax, dim, letter in zip(axes, dim_labels.values(), "ABC"):
         d = hetero[hetero["Dimension"] == dim].sort_values("outcome_label")
         y = np.arange(len(d))
         colors = np.where(d["interaction_p"] < 0.05, BLUE, GRAY)
-        ax.hlines(y, d["ci_low"], d["ci_high"], color=colors, linewidth=1.75)
-        ax.scatter(d["interaction_coef"], y, color=colors, s=34, zorder=3, edgecolor="white", linewidth=0.5)
-        ax.axvline(0, color=DARK, linewidth=0.85)
+        ax.hlines(y, d["ci_low"], d["ci_high"], color=colors, linewidth=2.1)
+        ax.scatter(d["interaction_coef"], y, color=colors, s=48, zorder=3, edgecolor="white", linewidth=0.7)
+        ax.axvline(0, color=DARK, linewidth=1.0)
         ax.set_yticks(y)
         ax.set_yticklabels(d["outcome_label"])
         ax.set_title(f"{letter}. {dim}", loc="left")
@@ -422,24 +428,24 @@ def fig_heterogeneity_forest():
         "Heterogeneity in post-adoption associations",
         "Interaction terms estimate whether post-adoption associations are larger in states above the median on each baseline dimension.",
     )
-    fig.tight_layout(rect=[0, 0.08, 1, 0.9], w_pad=1.5)
+    fig.subplots_adjust(left=0.20, right=0.985, bottom=0.20, top=0.82, wspace=0.20)
     savefig(fig, "figure_05_heterogeneity_interactions")
 
 
 def fig_political_selection(state_level):
     d = state_level.dropna(subset=["baseline_firearm_suicide", "rep_vote_share_baseline", "gun_ownership_baseline"]).copy()
-    fig, ax = plt.subplots(figsize=(6.7, 4.6))
-    palette = {"Adopting states": BLUE, "Never-adopting states": GRAY}
+    fig, ax = plt.subplots(figsize=(6.95, 4.75))
+    palette = {"Adopting states": BLUE, "Never-adopting states": ORANGE}
     sns.scatterplot(
         data=d,
         x="baseline_firearm_suicide",
         y="rep_vote_share_baseline",
         hue="Adoption group",
         size="gun_ownership_baseline",
-        sizes=(32, 150),
+        sizes=(34, 155),
         alpha=0.86,
         edgecolor="white",
-        linewidth=0.55,
+        linewidth=0.75,
         palette=palette,
         legend=False,
         ax=ax,
@@ -449,8 +455,8 @@ def fig_political_selection(state_level):
         x="baseline_firearm_suicide",
         y="rep_vote_share_baseline",
         scatter=False,
-        color="#444444",
-        line_kws={"linewidth": 1.2, "linestyle": "--", "alpha": 0.7},
+        color="#595959",
+        line_kws={"linewidth": 1.25, "linestyle": (0, (3, 2)), "alpha": 0.8},
         ci=None,
         ax=ax,
     )
@@ -473,15 +479,15 @@ def fig_political_selection(state_level):
             row["rep_vote_share_baseline"] + dy,
             row["abbr"],
             fontsize=7.0,
-            color="#333333",
-            bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.68, "pad": 0.4},
+            color=DARK,
+            bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.82, "pad": 0.35},
         )
 
     ax.set_xlabel("Baseline firearm suicide rate per 100,000")
     ax.set_ylabel("Baseline Republican two-party vote share")
     handles = [
-        Line2D([0], [0], marker="o", color="w", label="Adopting states", markerfacecolor=BLUE, markersize=5.8),
-        Line2D([0], [0], marker="o", color="w", label="Never-adopting states", markerfacecolor=GRAY, markersize=5.8),
+        Line2D([0], [0], marker="o", color="w", label="Adopting states", markerfacecolor=BLUE, markeredgecolor="white", markersize=6.4),
+        Line2D([0], [0], marker="o", color="w", label="Never-adopting states", markerfacecolor=ORANGE, markeredgecolor="white", markersize=6.4),
     ]
     ax.legend(handles=handles, frameon=False, loc="upper left", title="Adoption group")
     style_axis(ax, xgrid=True)
@@ -490,7 +496,7 @@ def fig_political_selection(state_level):
         "Policy adoption is patterned by baseline risk and politics",
         "Point size is proportional to baseline household firearm ownership. State-level baseline measures describe selection, not treatment effects.",
     )
-    fig.tight_layout(rect=[0, 0.08, 1, 0.9])
+    fig.subplots_adjust(left=0.12, right=0.985, bottom=0.20, top=0.84)
     savefig(fig, "figure_06_political_selection_scatter")
 
 
