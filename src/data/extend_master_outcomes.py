@@ -9,6 +9,7 @@ HOMICIDE_FILE = PROCESSED_DIR / "analysis_panel_firearm_homicide_deaths_1999_202
 TOTAL_FIREARM_FILE = PROCESSED_DIR / "analysis_panel_total_firearm_deaths_1999_2024.csv"
 FIREARM_LAW_CONTROLS_FILE = PROCESSED_DIR / "state_year_firearm_law_controls_1999_2024.csv"
 NONFIREARM_CONFOUNDERS_FILE = PROCESSED_DIR / "state_year_nonfirearm_confounders_2008_2024.csv"
+PHASE3B2_CONFOUNDERS_FILE = PROCESSED_DIR / "state_year_phase3b2_confounders_2005_2024.csv"
 
 OUT_FILE = PROCESSED_DIR / "analysis_panel_full_outcomes.csv"
 
@@ -19,6 +20,7 @@ def main():
     total_firearm = pd.read_csv(TOTAL_FIREARM_FILE)
     firearm_laws = pd.read_csv(FIREARM_LAW_CONTROLS_FILE)
     nonfirearm_confounders = pd.read_csv(NONFIREARM_CONFOUNDERS_FILE)
+    phase3b2_confounders = pd.read_csv(PHASE3B2_CONFOUNDERS_FILE)
 
     homicide = homicide.rename(columns={
         "Deaths": "firearm_homicide_deaths",
@@ -34,6 +36,7 @@ def main():
     full = full.merge(total_firearm, on=["State", "State Code", "Year"], how="left")
     full = full.merge(firearm_laws, on=["State", "Year"], how="left")
     full = full.merge(nonfirearm_confounders, on=["State", "Year"], how="left")
+    full = full.merge(phase3b2_confounders, on=["State", "Year"], how="left")
 
     full.to_csv(OUT_FILE, index=False)
 
@@ -58,6 +61,13 @@ def main():
         "dealer_license",
         "uninsured_under65_pct",
         "drug_overdose_rate_per_100k",
+        "share_age_18_34",
+        "share_age_35_64",
+        "share_age_65plus",
+        "share_black_nonhispanic",
+        "share_hispanic",
+        "poverty_rate",
+        "mental_health_provider_rate_per_100k",
     ]
     print("\nMissing values:")
     print(full[key_vars].isna().sum())

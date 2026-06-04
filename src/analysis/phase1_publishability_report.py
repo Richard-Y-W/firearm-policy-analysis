@@ -20,6 +20,13 @@ FIREARM_LAW_CONTROL_FILE = (
 NONFIREARM_CONFOUNDER_FILE = (
     TABLES / "did" / "twfe_did_nonfirearm_confounder_summary.csv"
 )
+PHASE3B2_CONFOUNDER_FILE = (
+    TABLES / "did" / "twfe_did_phase3b2_confounder_summary.csv"
+)
+PANEL_FILE = ROOT / "data" / "processed" / "analysis_panel_full_outcomes.csv"
+MECHANISM_HETEROGENEITY_FILE = (
+    TABLES / "mechanism" / "mechanism_heterogeneity_results.csv"
+)
 
 
 def fmt_p(value) -> str:
@@ -45,6 +52,53 @@ def markdown_table(df: pd.DataFrame, columns: list[str]) -> str:
     for _, row in shown.iterrows():
         lines.append("| " + " | ".join(str(row[col]) for col in columns) + " |")
     return "\n".join(lines)
+
+
+def build_results_hierarchy_table() -> pd.DataFrame:
+    return pd.DataFrame(
+        [
+            {
+                "evidence_tier": "Primary outcome",
+                "items": "Firearm Suicide",
+                "manuscript_role": "central confirmatory claim",
+                "interpretation_boundary": "main mortality claim",
+                "multiple_testing_role": "single prespecified primary outcome",
+                "placement": "main text",
+            },
+            {
+                "evidence_tier": "Secondary outcomes",
+                "items": "Total Suicide; Non-Firearm Suicide; Firearm Homicide; Total Firearm Deaths",
+                "manuscript_role": "specificity and outcome-family interpretation",
+                "interpretation_boundary": "supports or limits the primary claim",
+                "multiple_testing_role": "main outcome family",
+                "placement": "main text",
+            },
+            {
+                "evidence_tier": "Sensitivity checks",
+                "items": "firearm-law controls; health-access and overdose controls; staggered-adoption checks; Arkansas recoding; leave-one-out; placebo timing",
+                "manuscript_role": "design credibility and robustness",
+                "interpretation_boundary": "tests stability, not additional headline effects",
+                "multiple_testing_role": "diagnostic sensitivity layer",
+                "placement": "main text summary with appendix detail",
+            },
+            {
+                "evidence_tier": "Exploratory checks",
+                "items": "policy-feature heterogeneity; rurality, gun-ownership, and baseline-risk heterogeneity",
+                "manuscript_role": "mechanism and boundary exploration",
+                "interpretation_boundary": "sample-size limited and hypothesis-generating",
+                "multiple_testing_role": "hypothesis-generating only",
+                "placement": "secondary results or appendix",
+            },
+            {
+                "evidence_tier": "Appendix-only diagnostics",
+                "items": "cohort ATT rows; event-time rows; full legal source table; full robustness grids",
+                "manuscript_role": "audit trail and transparency",
+                "interpretation_boundary": "not interpreted as independent discoveries",
+                "multiple_testing_role": "not treated as confirmatory tests",
+                "placement": "appendix",
+            },
+        ]
+    )
 
 
 def _audit_count(audit_status: pd.DataFrame, status: str) -> int:
@@ -182,9 +236,134 @@ def build_nonfirearm_confounder_sentence(summary: pd.DataFrame) -> str:
     )
 
 
+def build_phase3b2_confounder_sentence(summary: pd.DataFrame) -> str:
+    total = int(len(summary))
+    demographic_poverty = int(
+        summary["demographic_poverty_p05_retained"].fillna(False).sum()
+    )
+    mental_health = int(
+        summary["mental_health_access_p05_retained"].fillna(False).sum()
+    )
+    full = int(summary["full_phase3b2_p05_retained"].fillna(False).sum())
+    return (
+        "The Phase 3B2 confounder check adds Census Population Estimates "
+        "state age and race/ethnicity shares, Census SAIPE poverty rates, "
+        "and HRSA AHRF mental-health provider access. "
+        f"{demographic_poverty} of {total} outcomes retain p < 0.05 in the "
+        "demographic-poverty specification, "
+        f"{mental_health} retain p < 0.05 in the short HRSA mental-health "
+        "access specification, and "
+        f"{full} retain p < 0.05 in the combined short-window Phase 3B2 "
+        "specification."
+    )
+
+
+def build_modern_did_sentence(summary: pd.DataFrame) -> str:
+    total = int(len(summary))
+    if "not_yet_post_mean_att" in summary:
+        positive_dynamic = int((summary["not_yet_post_mean_att"] > 0).fillna(False).sum())
+    else:
+        positive_dynamic = 0
+    return (
+        "The modern staggered-adoption check reports cohort-window ATT estimates, "
+        "a not-yet-treated control dynamic ATT, and a never-treated-control "
+        "event-time fixed-effect sensitivity check. "
+        f"{positive_dynamic} of {total} outcomes have positive post-adoption "
+        "dynamic ATT estimates. `pretrend_flag_p05` marks outcomes with at "
+        "least one statistically significant pre-adoption event-time coefficient."
+    )
+
+
+def build_mechanism_heterogeneity_sentence(results: pd.DataFrame) -> str:
+    total = int(len(results))
+    p05 = int((results["interaction_p"] < 0.05).fillna(False).sum())
+    sparse = (
+        int(results["sparse_comparison"].fillna(False).sum())
+        if "sparse_comparison" in results
+        else 0
+    )
+    return (
+        "The policy-feature heterogeneity models are exploratory because "
+        "permitless-carry mechanism fields create small mechanism-specific "
+        "adopter groups. "
+        f"{p05} of {total} policy-feature interactions have p < 0.05; "
+        f"{sparse} have sparse or unavailable source-verified comparison groups. "
+        "These rows should be interpreted as boundary checks, not as "
+        "independent confirmatory findings."
+    )
+
+
+def build_phase3b2_data_availability_table(available_columns) -> pd.DataFrame:
+    available = set(available_columns)
+
+    def status_for(candidates: list[str]) -> str:
+        return "modeled" if any(col in available for col in candidates) else "missing source input"
+
+    return pd.DataFrame(
+        [
+            {
+                "domain": "health insurance access",
+                "target_columns": "uninsured_under65_pct",
+                "status": status_for(["uninsured_under65_pct"]),
+                "current_role": "Phase 3B modeled proxy",
+                "needed_source": "already processed from Census SAHIE",
+            },
+            {
+                "domain": "substance-use/distress proxy",
+                "target_columns": "drug_overdose_rate_per_100k",
+                "status": status_for(["drug_overdose_rate_per_100k"]),
+                "current_role": "Phase 3B modeled proxy",
+                "needed_source": "already processed from CDC overdose data",
+            },
+            {
+                "domain": "age structure",
+                "target_columns": "share_age_18_34; share_age_35_64; share_age_65plus",
+                "status": status_for(
+                    ["share_age_18_34", "share_age_35_64", "share_age_65plus", "median_age"]
+                ),
+                "current_role": "Phase 3B2 modeled confounder",
+                "needed_source": "Census Population Estimates state age distribution",
+            },
+            {
+                "domain": "race/ethnicity",
+                "target_columns": "share_black_nonhispanic; share_hispanic; share_white_nonhispanic",
+                "status": status_for(
+                    ["share_black", "share_hispanic", "share_white_nonhispanic"]
+                ),
+                "current_role": "Phase 3B2 modeled confounder",
+                "needed_source": "Census Population Estimates state race and ethnicity distribution",
+            },
+            {
+                "domain": "poverty",
+                "target_columns": "poverty_rate",
+                "status": status_for(["poverty_rate", "saipe_poverty_rate"]),
+                "current_role": "Phase 3B2 modeled confounder",
+                "needed_source": "Census SAIPE state-year poverty estimates",
+            },
+            {
+                "domain": "mental-health provider access",
+                "target_columns": "mental_health_provider_rate_per_100k",
+                "status": status_for(
+                    [
+                        "mental_health_provider_rate",
+                        "mental_health_hpsa_score",
+                        "mental_health_provider_per_100k",
+                        "mental_health_provider_rate_per_100k",
+                    ]
+                ),
+                "current_role": "Phase 3B2 short-window modeled confounder",
+                "needed_source": "HRSA AHRF state/national workforce counts",
+            },
+        ]
+    )
+
+
 def build_report() -> str:
     did = pd.read_csv(TABLES / "did" / "twfe_did_main_results.csv")
     welch = pd.read_csv(TABLES / "main" / "welch_change_score_results.csv")
+    hierarchy = build_results_hierarchy_table()
+    panel_columns = pd.read_csv(PANEL_FILE, nrows=0).columns
+    phase3b2_availability = build_phase3b2_data_availability_table(panel_columns)
     audit_status = pd.read_csv(TABLES / "policy_audit" / "policy_audit_status_counts.csv")
     mechanisms = pd.read_csv(POLICY_MECHANISM_FILE)
     firearm_law_controls = (
@@ -197,7 +376,17 @@ def build_report() -> str:
         if NONFIREARM_CONFOUNDER_FILE.exists()
         else pd.DataFrame()
     )
+    phase3b2_confounders = (
+        pd.read_csv(PHASE3B2_CONFOUNDER_FILE)
+        if PHASE3B2_CONFOUNDER_FILE.exists()
+        else pd.DataFrame()
+    )
     modern = pd.read_csv(TABLES / "modern_did" / "modern_did_summary.csv")
+    mechanism_heterogeneity = (
+        pd.read_csv(MECHANISM_HETEROGENEITY_FILE)
+        if MECHANISM_HETEROGENEITY_FILE.exists()
+        else pd.DataFrame()
+    )
     robust = pd.read_csv(TABLES / "robustness" / "robustness_summary.csv")
     arkansas = (
         pd.read_csv(ARKANSAS_SENSITIVITY_FILE)
@@ -272,25 +461,112 @@ def build_report() -> str:
     else:
         nonfirearm_view = pd.DataFrame()
 
+    if not phase3b2_confounders.empty:
+        phase3b2_view = phase3b2_confounders.copy()
+        for col in [
+            "firearm_law_coef",
+            "firearm_law_p",
+            "demographic_poverty_coef",
+            "demographic_poverty_p",
+            "mental_health_access_coef",
+            "mental_health_access_p",
+            "full_phase3b2_coef",
+            "full_phase3b2_p",
+        ]:
+            phase3b2_view[col] = phase3b2_view[col].map(
+                fmt_p if col.endswith("_p") else fmt_num
+            )
+        phase3b2_view = phase3b2_view[
+            [
+                "outcome_label",
+                "firearm_law_coef",
+                "firearm_law_p",
+                "demographic_poverty_coef",
+                "demographic_poverty_p",
+                "demographic_poverty_p05_retained",
+                "mental_health_access_coef",
+                "mental_health_access_p",
+                "mental_health_access_p05_retained",
+                "full_phase3b2_coef",
+                "full_phase3b2_p",
+                "full_phase3b2_p05_retained",
+            ]
+        ]
+    else:
+        phase3b2_view = pd.DataFrame()
+
     welch_view = welch.copy()
     welch_view["difference"] = welch_view["difference"].map(fmt_num)
     welch_view["p"] = welch_view["p_value"].map(fmt_p)
     welch_view = welch_view[["outcome_label", "window", "difference", "p"]]
 
     modern_view = modern.copy()
-    for col in ["cohort_att_w2", "cohort_att_w3", "cohort_att_w5", "event_post_mean_coef", "event_pretrend_min_p"]:
+    for col in [
+        "not_yet_post_mean_att",
+        "not_yet_pre_mean_att",
+        "not_yet_dynamic_rows",
+    ]:
+        if col not in modern_view:
+            modern_view[col] = pd.NA
+    for col in [
+        "cohort_att_w2",
+        "cohort_att_w3",
+        "cohort_att_w5",
+        "not_yet_post_mean_att",
+        "not_yet_pre_mean_att",
+        "event_post_mean_coef",
+        "event_pretrend_min_p",
+    ]:
         modern_view[col] = modern_view[col].map(fmt_num if col != "event_pretrend_min_p" else fmt_p)
+    modern_view["not_yet_dynamic_rows"] = modern_view["not_yet_dynamic_rows"].map(
+        lambda value: "NA" if pd.isna(value) else str(int(value))
+    )
     modern_view = modern_view[
         [
             "outcome_label",
             "cohort_att_w2",
             "cohort_att_w3",
             "cohort_att_w5",
+            "not_yet_post_mean_att",
+            "not_yet_pre_mean_att",
+            "not_yet_dynamic_rows",
             "event_post_mean_coef",
             "pretrend_flag_p05",
             "interpretation_flag",
         ]
     ]
+
+    if not mechanism_heterogeneity.empty:
+        mechanism_heterogeneity_view = mechanism_heterogeneity.copy()
+        for col in ["sparse_comparison", "comparison_warning"]:
+            if col not in mechanism_heterogeneity_view:
+                mechanism_heterogeneity_view[col] = pd.NA
+        for col in [
+            "main_post_coef",
+            "interaction_coef",
+            "interaction_se",
+            "interaction_p",
+        ]:
+            mechanism_heterogeneity_view[col] = mechanism_heterogeneity_view[col].map(
+                fmt_p if col == "interaction_p" else fmt_num
+            )
+        mechanism_heterogeneity_view = mechanism_heterogeneity_view[
+            [
+                "outcome_label",
+                "mechanism_dimension",
+                "main_post_coef",
+                "interaction_coef",
+                "interaction_se",
+                "interaction_p",
+                "n_mechanism_states",
+                "n_other_states",
+                "sparse_comparison",
+                "comparison_warning",
+                "interpretation_scope",
+            ]
+        ]
+    else:
+        mechanism_heterogeneity_view = pd.DataFrame()
 
     robust_view = robust.copy()
     for col in ["baseline_coef", "baseline_p", "leave_one_min_coef", "leave_one_max_coef", "placebo_abs_p95"]:
@@ -345,7 +621,10 @@ def build_report() -> str:
         "- Resolved clean-adopter mechanism fields for training, carry-permit background checks, and misdemeanor-violence permit screening.",
         "- Added Phase 3A external firearm-law controls from the Tufts State Firearm Law Database.",
         "- Added Phase 3B non-firearm confounder controls for health insurance access and drug-overdose mortality.",
+        "- Added Phase 3B2 controls for state age structure, race/ethnicity, poverty, and HRSA mental-health provider access.",
         "- Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.",
+        "- Added a results hierarchy that separates the primary claim, secondary outcomes, sensitivity checks, exploratory checks, and appendix-only diagnostics.",
+        "- Added exploratory policy-feature heterogeneity models for training removal, carry-permit background-check removal, and misdemeanor-screen removal.",
         "- Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.",
         "- Corrected the stale README change-score p-values against committed output tables.",
         "",
@@ -362,6 +641,22 @@ def build_report() -> str:
         markdown_table(
             mechanisms,
             ["mechanism_field", "mechanism_value", "state_count"],
+        ),
+        "",
+        "## Results Hierarchy",
+        "",
+        "The hierarchy below defines which estimates support the central claim and which estimates function as diagnostics. This keeps the main inference tied to the prespecified firearm-suicide outcome while using the broader result set to test specificity, stability, and boundary conditions.",
+        "",
+        markdown_table(
+            hierarchy,
+            [
+                "evidence_tier",
+                "items",
+                "manuscript_role",
+                "interpretation_boundary",
+                "multiple_testing_role",
+                "placement",
+            ],
         ),
         "",
         "## Main TWFE Results",
@@ -425,6 +720,56 @@ def build_report() -> str:
             ]
         )
 
+    if not phase3b2_view.empty:
+        lines.extend(
+            [
+                "## Phase 3B2 Demographic, Poverty, And Mental-Health Controls",
+                "",
+                build_phase3b2_confounder_sentence(phase3b2_confounders),
+                "",
+                markdown_table(
+                    phase3b2_view,
+                    [
+                        "outcome_label",
+                        "firearm_law_coef",
+                        "firearm_law_p",
+                        "demographic_poverty_coef",
+                        "demographic_poverty_p",
+                        "demographic_poverty_p05_retained",
+                        "mental_health_access_coef",
+                        "mental_health_access_p",
+                        "mental_health_access_p05_retained",
+                        "full_phase3b2_coef",
+                        "full_phase3b2_p",
+                        "full_phase3b2_p05_retained",
+                    ],
+                ),
+                "",
+                "The demographic-poverty specification uses Census Population Estimates state demographic shares and Census SAIPE poverty rates. The 2005-2009 age-structure controls use intercensal grouped-age approximations for the 18-34 category. The mental-health and full Phase 3B2 specifications use a short HRSA AHRF state/national workforce window, so they are sensitivity checks rather than replacements for the full-panel primary model.",
+                "",
+            ]
+        )
+
+    lines.extend(
+        [
+            "## Phase 3B2 Data Availability",
+            "",
+            "The table below documents which Phase 3B/3B2 confounder domains are available in the current panel and which source family supports each domain.",
+            "",
+            markdown_table(
+                phase3b2_availability,
+                [
+                    "domain",
+                    "target_columns",
+                    "status",
+                    "current_role",
+                    "needed_source",
+                ],
+            ),
+            "",
+        ]
+    )
+
     lines.extend(
         [
             "## Change-Score Results",
@@ -433,7 +778,7 @@ def build_report() -> str:
             "",
             "## Modern Staggered-Adoption Sensitivity",
             "",
-            "The cohort ATT columns compare cohort-specific treated changes with never-treated state changes. The event-time column is a never-treated-control fixed-effect sensitivity check; `pretrend_flag_p05` marks outcomes with at least one statistically significant pre-adoption coefficient.",
+            build_modern_did_sentence(modern),
             "",
             markdown_table(
                 modern_view,
@@ -442,12 +787,47 @@ def build_report() -> str:
                     "cohort_att_w2",
                     "cohort_att_w3",
                     "cohort_att_w5",
+                    "not_yet_post_mean_att",
+                    "not_yet_pre_mean_att",
+                    "not_yet_dynamic_rows",
                     "event_post_mean_coef",
                     "pretrend_flag_p05",
                     "interpretation_flag",
                 ],
             ),
             "",
+        ]
+    )
+
+    if not mechanism_heterogeneity_view.empty:
+        lines.extend(
+            [
+                "## Exploratory Policy-Feature Heterogeneity",
+                "",
+                build_mechanism_heterogeneity_sentence(mechanism_heterogeneity),
+                "",
+                markdown_table(
+                    mechanism_heterogeneity_view,
+                    [
+                        "outcome_label",
+                        "mechanism_dimension",
+                        "main_post_coef",
+                        "interaction_coef",
+                        "interaction_se",
+                        "interaction_p",
+                        "n_mechanism_states",
+                        "n_other_states",
+                        "sparse_comparison",
+                        "comparison_warning",
+                        "interpretation_scope",
+                    ],
+                ),
+                "",
+            ]
+        )
+
+    lines.extend(
+        [
             "## Robustness Summary",
             "",
             "The state-trend specification attenuates several suicide estimates, so the strongest responsible claim remains associational. Firearm homicide remains unstable and statistically weak across the Phase 1 checks.",
@@ -497,7 +877,7 @@ def build_report() -> str:
         [
         "## Interpretation Boundary",
         "",
-        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. Phase 3B adds health-access and overdose controls to test whether the suicide signal survives selected non-firearm confounders. It still does not establish causal proof. Additional demographic and mental-health-access expansion remains Phase 3 work.",
+        "Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. Phase 3B adds health-access and overdose controls to test whether the suicide signal survives selected non-firearm confounders. Phase 3B2 adds demographic, poverty, and mental-health-provider controls; the demographic-poverty results preserve the firearm-suicide signal, while the short HRSA mental-health window is too limited to serve as a full-panel replacement. The expanded evidence still does not establish causal proof.",
         "",
         ]
     )

@@ -20,6 +20,10 @@ try:
         build_nonfirearm_confounder_summary,
         run_nonfirearm_confounder_models,
     )
+    from src.analysis.phase3b2_confounder_sensitivity import (
+        build_phase3b2_confounder_summary,
+        run_phase3b2_confounder_models,
+    )
 except ModuleNotFoundError:
     from firearm_law_control_sensitivity import (
         build_firearm_law_control_summary,
@@ -28,6 +32,10 @@ except ModuleNotFoundError:
     from nonfirearm_confounder_sensitivity import (
         build_nonfirearm_confounder_summary,
         run_nonfirearm_confounder_models,
+    )
+    from phase3b2_confounder_sensitivity import (
+        build_phase3b2_confounder_summary,
+        run_phase3b2_confounder_models,
     )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -301,6 +309,20 @@ def run_nonfirearm_confounder_did(df):
         index=False,
     )
     print("Saved non-firearm confounder TWFE DiD results.")
+
+
+def run_phase3b2_confounder_did(df):
+    detail = run_phase3b2_confounder_models(df)
+    summary = build_phase3b2_confounder_summary(detail)
+    detail.to_csv(
+        OUT_TABLES / "did" / "twfe_did_phase3b2_confounder_results.csv",
+        index=False,
+    )
+    summary.to_csv(
+        OUT_TABLES / "did" / "twfe_did_phase3b2_confounder_summary.csv",
+        index=False,
+    )
+    print("Saved Phase 3B2 confounder TWFE DiD results.")
 
 
 def event_study_design(df, outcome, min_k=-5, max_k=5):
@@ -580,6 +602,7 @@ def main():
     run_twfe_did(df)
     run_firearm_law_control_did(df)
     run_nonfirearm_confounder_did(df)
+    run_phase3b2_confounder_did(df)
     save_event_study_outputs(df)
     run_heterogeneity_did(df)
     make_heterogeneity_plots(df)

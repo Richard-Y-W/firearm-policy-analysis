@@ -219,7 +219,8 @@ def build_limitations_section():
     return """## Limitations
 
 - This is still an **observational, state-level quasi-experimental design**, not a randomized experiment.
-- The TWFE event-study / DiD results should be treated as a first-pass design; a modern staggered-adoption estimator would be a worthwhile next upgrade.
+- The modern staggered-adoption checks reduce reliance on plain TWFE, but several pre-adoption signals remain, so the estimates should still be framed as associational sensitivity evidence.
+- Policy-feature heterogeneity is exploratory because some mechanism-specific adopter groups are small or lack a source-verified comparison group.
 - The political-selection logit showed **perfect-separation / convergence problems**, so those coefficients should not be overinterpreted.
 - Some homicide observations are missing due to suppression / incomplete availability, so homicide results are based on a smaller effective sample.
 - State-level analysis cannot identify which individuals changed behavior; avoid ecological fallacy language.

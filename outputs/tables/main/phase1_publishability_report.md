@@ -9,7 +9,10 @@
 - Resolved clean-adopter mechanism fields for training, carry-permit background checks, and misdemeanor-violence permit screening.
 - Added Phase 3A external firearm-law controls from the Tufts State Firearm Law Database.
 - Added Phase 3B non-firearm confounder controls for health insurance access and drug-overdose mortality.
+- Added Phase 3B2 controls for state age structure, race/ethnicity, poverty, and HRSA mental-health provider access.
 - Added cohort-based staggered-adoption sensitivity estimates and never-treated-control event-time estimates.
+- Added a results hierarchy that separates the primary claim, secondary outcomes, sensitivity checks, exploratory checks, and appendix-only diagnostics.
+- Added exploratory policy-feature heterogeneity models for training removal, carry-permit background-check removal, and misdemeanor-screen removal.
 - Added robustness checks for COVID-period exclusion, pre-2020 restriction, population weighting, state trends, leave-one-adopter-out influence, and placebo timing among never-treated states.
 - Corrected the stale README change-score p-values against committed output tables.
 
@@ -43,6 +46,18 @@ Among the 26 clean source-verified adopter rows, 21 had a training requirement r
 | violent_misdemeanor_permit_screen_removed | precarry_check_removed_purchase_screen_retained | 1 |
 | violent_misdemeanor_permit_screen_removed | suitable_person_review_removed | 1 |
 | violent_misdemeanor_permit_screen_removed | partial_violent_misdemeanor_restriction_retained | 1 |
+
+## Results Hierarchy
+
+The hierarchy below defines which estimates support the central claim and which estimates function as diagnostics. This keeps the main inference tied to the prespecified firearm-suicide outcome while using the broader result set to test specificity, stability, and boundary conditions.
+
+| evidence_tier | items | manuscript_role | interpretation_boundary | multiple_testing_role | placement |
+| --- | --- | --- | --- | --- | --- |
+| Primary outcome | Firearm Suicide | central confirmatory claim | main mortality claim | single prespecified primary outcome | main text |
+| Secondary outcomes | Total Suicide; Non-Firearm Suicide; Firearm Homicide; Total Firearm Deaths | specificity and outcome-family interpretation | supports or limits the primary claim | main outcome family | main text |
+| Sensitivity checks | firearm-law controls; health-access and overdose controls; staggered-adoption checks; Arkansas recoding; leave-one-out; placebo timing | design credibility and robustness | tests stability, not additional headline effects | diagnostic sensitivity layer | main text summary with appendix detail |
+| Exploratory checks | policy-feature heterogeneity; rurality, gun-ownership, and baseline-risk heterogeneity | mechanism and boundary exploration | sample-size limited and hypothesis-generating | hypothesis-generating only | secondary results or appendix |
+| Appendix-only diagnostics | cohort ATT rows; event-time rows; full legal source table; full robustness grids | audit trail and transparency | not interpreted as independent discoveries | not treated as confirmatory tests | appendix |
 
 ## Main TWFE Results
 
@@ -80,6 +95,33 @@ The non-firearm confounder check adds Census SAHIE uninsured rates as a health-a
 
 The overdose specifications use shorter samples because CDC's state injury and overdose dataset provides annual `Drug_OD` rates for 2019-2024. The combined health-access and overdose specification is therefore a narrow recent-window sensitivity, not a full-panel replacement.
 
+## Phase 3B2 Demographic, Poverty, And Mental-Health Controls
+
+The Phase 3B2 confounder check adds Census Population Estimates state age and race/ethnicity shares, Census SAIPE poverty rates, and HRSA AHRF mental-health provider access. 2 of 5 outcomes retain p < 0.05 in the demographic-poverty specification, 0 retain p < 0.05 in the short HRSA mental-health access specification, and 0 retain p < 0.05 in the combined short-window Phase 3B2 specification.
+
+| outcome_label | firearm_law_coef | firearm_law_p | demographic_poverty_coef | demographic_poverty_p | demographic_poverty_p05_retained | mental_health_access_coef | mental_health_access_p | mental_health_access_p05_retained | full_phase3b2_coef | full_phase3b2_p | full_phase3b2_p05_retained |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Firearm Suicide | 0.994 | <0.001 | 0.648 | <0.001 | True | 0.159 | 0.625 | False | 0.197 | 0.546 | False |
+| Non-Firearm Suicide | 0.229 | 0.103 | 0.063 | 0.679 | False | 0.145 | 0.547 | False | 0.109 | 0.663 | False |
+| Total Suicide | 1.223 | <0.001 | 0.711 | 0.004 | True | 0.304 | 0.502 | False | 0.306 | 0.509 | False |
+| Firearm Homicide | -0.138 | 0.708 | -0.229 | 0.367 | False | -0.130 | 0.640 | False | -0.052 | 0.882 | False |
+| Total Firearm Deaths | 0.956 | 0.024 | 0.469 | 0.127 | False | 0.094 | 0.800 | False | 0.240 | 0.575 | False |
+
+The demographic-poverty specification uses Census Population Estimates state demographic shares and Census SAIPE poverty rates. The 2005-2009 age-structure controls use intercensal grouped-age approximations for the 18-34 category. The mental-health and full Phase 3B2 specifications use a short HRSA AHRF state/national workforce window, so they are sensitivity checks rather than replacements for the full-panel primary model.
+
+## Phase 3B2 Data Availability
+
+The table below documents which Phase 3B/3B2 confounder domains are available in the current panel and which source family supports each domain.
+
+| domain | target_columns | status | current_role | needed_source |
+| --- | --- | --- | --- | --- |
+| health insurance access | uninsured_under65_pct | modeled | Phase 3B modeled proxy | already processed from Census SAHIE |
+| substance-use/distress proxy | drug_overdose_rate_per_100k | modeled | Phase 3B modeled proxy | already processed from CDC overdose data |
+| age structure | share_age_18_34; share_age_35_64; share_age_65plus | modeled | Phase 3B2 modeled confounder | Census Population Estimates state age distribution |
+| race/ethnicity | share_black_nonhispanic; share_hispanic; share_white_nonhispanic | modeled | Phase 3B2 modeled confounder | Census Population Estimates state race and ethnicity distribution |
+| poverty | poverty_rate | modeled | Phase 3B2 modeled confounder | Census SAIPE state-year poverty estimates |
+| mental-health provider access | mental_health_provider_rate_per_100k | modeled | Phase 3B2 short-window modeled confounder | HRSA AHRF state/national workforce counts |
+
 ## Change-Score Results
 
 | outcome_label | window | difference | p |
@@ -102,15 +144,37 @@ The overdose specifications use shorter samples because CDC's state injury and o
 
 ## Modern Staggered-Adoption Sensitivity
 
-The cohort ATT columns compare cohort-specific treated changes with never-treated state changes. The event-time column is a never-treated-control fixed-effect sensitivity check; `pretrend_flag_p05` marks outcomes with at least one statistically significant pre-adoption coefficient.
+The modern staggered-adoption check reports cohort-window ATT estimates, a not-yet-treated control dynamic ATT, and a never-treated-control event-time fixed-effect sensitivity check. 4 of 5 outcomes have positive post-adoption dynamic ATT estimates. `pretrend_flag_p05` marks outcomes with at least one statistically significant pre-adoption event-time coefficient.
 
-| outcome_label | cohort_att_w2 | cohort_att_w3 | cohort_att_w5 | event_post_mean_coef | pretrend_flag_p05 | interpretation_flag |
-| --- | --- | --- | --- | --- | --- | --- |
-| Firearm Suicide | 0.591 | 0.553 | 0.627 | 0.617 | True | sensitivity_only_pretrend_signal |
-| Non-Firearm Suicide | 0.263 | 0.232 | 0.199 | 0.154 | False | positive_post_adoption_sensitivity |
-| Total Suicide | 0.854 | 0.785 | 0.827 | 0.772 | True | sensitivity_only_pretrend_signal |
-| Firearm Homicide | 0.085 | -0.011 | 0.037 | -0.142 | False | no_positive_post_adoption_sensitivity |
-| Total Firearm Deaths | 0.391 | 0.454 | 0.557 | 0.530 | True | sensitivity_only_pretrend_signal |
+| outcome_label | cohort_att_w2 | cohort_att_w3 | cohort_att_w5 | not_yet_post_mean_att | not_yet_pre_mean_att | not_yet_dynamic_rows | event_post_mean_coef | pretrend_flag_p05 | interpretation_flag |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Firearm Suicide | 0.591 | 0.553 | 0.627 | 0.431 | -0.284 | 10 | 0.617 | True | sensitivity_only_pretrend_signal |
+| Non-Firearm Suicide | 0.263 | 0.232 | 0.199 | 0.050 | -0.118 | 10 | 0.154 | False | positive_post_adoption_sensitivity |
+| Total Suicide | 0.854 | 0.785 | 0.827 | 0.481 | -0.402 | 10 | 0.772 | True | sensitivity_only_pretrend_signal |
+| Firearm Homicide | 0.085 | -0.011 | 0.037 | -0.030 | 0.038 | 10 | -0.142 | False | no_positive_post_adoption_sensitivity |
+| Total Firearm Deaths | 0.391 | 0.454 | 0.557 | 0.360 | -0.268 | 10 | 0.530 | True | sensitivity_only_pretrend_signal |
+
+## Exploratory Policy-Feature Heterogeneity
+
+The policy-feature heterogeneity models are exploratory because permitless-carry mechanism fields create small mechanism-specific adopter groups. 0 of 15 policy-feature interactions have p < 0.05; 5 have sparse or unavailable source-verified comparison groups. These rows should be interpreted as boundary checks, not as independent confirmatory findings.
+
+| outcome_label | mechanism_dimension | main_post_coef | interaction_coef | interaction_se | interaction_p | n_mechanism_states | n_other_states | sparse_comparison | comparison_warning | interpretation_scope |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Firearm Suicide | training_removed | 1.172 | 0.220 | 0.312 | 0.481 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Firearm Suicide | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
+| Firearm Suicide | misdemeanor_screen_removed | 1.396 | -0.087 | 0.376 | 0.817 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Non-Firearm Suicide | training_removed | 0.454 | -0.100 | 0.306 | 0.745 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Non-Firearm Suicide | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
+| Non-Firearm Suicide | misdemeanor_screen_removed | 0.241 | 0.279 | 0.200 | 0.163 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Total Suicide | training_removed | 1.626 | 0.120 | 0.465 | 0.796 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Total Suicide | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
+| Total Suicide | misdemeanor_screen_removed | 1.638 | 0.192 | 0.484 | 0.692 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Firearm Homicide | training_removed | 0.353 | -0.706 | 0.394 | 0.073 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Firearm Homicide | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
+| Firearm Homicide | misdemeanor_screen_removed | -0.599 | 0.670 | 0.494 | 0.175 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Total Firearm Deaths | training_removed | 1.532 | -0.350 | 0.527 | 0.507 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Total Firearm Deaths | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
+| Total Firearm Deaths | misdemeanor_screen_removed | 1.015 | 0.481 | 0.701 | 0.493 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
 
 ## Robustness Summary
 
@@ -138,4 +202,4 @@ The Arkansas sensitivity check keeps Arkansas excluded in the primary model and 
 
 ## Interpretation Boundary
 
-Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. Phase 3B adds health-access and overdose controls to test whether the suicide signal survives selected non-firearm confounders. It still does not establish causal proof. Additional demographic and mental-health-access expansion remains Phase 3 work.
+Phase 1 strengthens the repository by making treatment coding auditable and by adding sensitivity checks that target staggered timing and robustness concerns. Phase 2B adds recent within-panel adopters to the analytic treatment map and documents Vermont and Arkansas as non-clean adoption cases. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports 2021 and 2023 Arkansas treatment-year sensitivities. The non-adopter audit pass verifies that the remaining untreated states do not have a statewide permitless concealed-carry adoption through the panel window, and the mechanism audit resolves clean-adopter coding for the main permit-screening fields. Phase 3A adds external firearm-law controls to test whether the main association survives adjustment for other state gun laws. Phase 3B adds health-access and overdose controls to test whether the suicide signal survives selected non-firearm confounders. Phase 3B2 adds demographic, poverty, and mental-health-provider controls; the demographic-poverty results preserve the firearm-suicide signal, while the short HRSA mental-health window is too limited to serve as a full-panel replacement. The expanded evidence still does not establish causal proof.
