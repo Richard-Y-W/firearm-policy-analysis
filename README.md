@@ -1,163 +1,101 @@
-# Permitless Carry Laws and Firearm Mortality in the United States
+# Permitless Carry and Firearm Mortality
 
-This repository contains a state-year panel analysis of whether permitless carry law adoption is associated with changes in firearm mortality in the United States. The study links public mortality, economic, demographic, firearm ownership, rurality, and electoral data for the 50 states from 1999 through 2024, then evaluates post-adoption changes using complementary observational designs.
+This repository contains the data-processing code, analysis scripts, outputs, and manuscript files for a state-level study of permitless concealed carry adoption and firearm mortality in the United States.
 
-The analysis is designed as a transparent empirical research project rather than a causal claim. Permitless carry adoption is politically and structurally selected; the estimates should therefore be interpreted as adjusted associations conditional on the model and data, not as definitive evidence of individual-level mechanisms.
+The project uses a 50-state annual panel from 1999 through 2024. The primary outcome is firearm suicide. Secondary outcomes include total suicide, non-firearm suicide, firearm homicide, and total firearm deaths. The analysis is observational: the estimates should be read as adjusted state-level associations, not as individual-level causal proof.
 
-## Abstract
+## Manuscript
 
-Permitless carry laws remove permit requirements for carrying concealed handguns. Their rapid diffusion across U.S. states raises a policy question: after adoption, do firearm mortality rates evolve differently in adopting states than in states that do not adopt? This project constructs a balanced state-year panel covering 1999-2024 and evaluates firearm suicide, firearm homicide, total firearm deaths, total suicide, and non-firearm suicide. The empirical strategy combines pre/post change-score comparisons, two-way fixed effects difference-in-differences models, event-study specifications, heterogeneity tests, and a descriptive political-selection analysis.
+The current manuscript files are in `manuscript/`:
 
-Across specifications, the clearest and most consistent signal is an increase in firearm suicide and total suicide rates after adoption. Firearm homicide does not show a statistically significant post-adoption association in the main fixed-effects model or in change-score robustness checks. These patterns are consistent with the hypothesis that suicide-related outcomes are more strongly associated with permitless carry adoption than homicide outcomes in this state-level panel, but the observational design and nonrandom policy adoption limit causal interpretation.
+- `manuscript/main.pdf`
+- `manuscript/main.tex`
+- `manuscript/supplementary.pdf`
+- `manuscript/supplementary.tex`
+- `manuscript/references.bib`
+- `manuscript/figures/`
+- `manuscript/tables/`
 
-## Research Question
+The manuscript reports a source-audited permitless-carry treatment map, fixed-effects panel estimates, staggered-adoption diagnostics, event-time checks, covariate sensitivity analyses, legal-coding edge cases, and exploratory heterogeneity analyses.
 
-After a state adopts a permitless carry law, do mortality rates change differently than in states that do not adopt the policy?
+## Main Finding
 
-Primary outcomes:
+Across the main state-year specifications, permitless carry adoption is most consistently associated with higher firearm suicide and total suicide rates. Firearm homicide does not show a comparable positive association in the available state-year data. The firearm-suicide result remains positive across several robustness checks, but it attenuates under state-specific linear trends and event-time diagnostics show pre-adoption signal. Those diagnostics are central to the interpretation: the paper presents an observational association with meaningful identification limits.
 
-- Firearm suicide deaths per 100,000 residents
-- Firearm homicide deaths per 100,000 residents
-- Total firearm deaths per 100,000 residents
-- Total suicide deaths per 100,000 residents
-- Non-firearm suicide deaths per 100,000 residents
+## Data Sources
 
-## Data
-
-The analytic file is a 50-state annual panel for 1999-2024. Mortality rates are derived from CDC WONDER Underlying Cause of Death files and expressed as deaths per 100,000 residents. The panel also includes unemployment, income, household firearm ownership estimates, rurality, and presidential voting measures.
-
-| Domain | Source | Role in analysis |
+| Domain | Source | Role |
 | --- | --- | --- |
-| Mortality | CDC WONDER Underlying Cause of Death | Outcome rates by state and year |
-| Firearm ownership | RAND State-Level Household Firearm Ownership Database | Baseline firearm prevalence and time-varying ownership proxy |
-| Labor market | Bureau of Labor Statistics LAUS | State unemployment control |
+| Mortality | CDC WONDER Underlying Cause of Death | State-year outcome rates |
+| Permitless carry timing | Source-audited legal coding | Treatment definition and adoption year |
+| Firearm laws | Tufts State Firearm Law Database | External firearm-law sensitivity controls |
+| Firearm ownership | RAND state-level firearm ownership estimates | Descriptive selection and heterogeneity |
+| Labor market | Bureau of Labor Statistics LAUS | Unemployment control |
 | Income | Bureau of Economic Analysis | Per-capita income control |
-| Rurality | USDA Economic Research Service | Structural state rurality measures |
-| Politics | MIT Election Lab presidential returns | Baseline political environment and selection analysis |
-| Policy timing | Manual legal coding | Permitless carry adoption year |
-| Other firearm laws | Tufts State Firearm Law Database | External firearm-law controls for Phase 3A sensitivity models |
-| Health access | Census SAHIE | State-year uninsured rate for Phase 3B sensitivity models |
-| Drug overdose | CDC state injury and overdose dataset | State-year drug-overdose mortality rate for Phase 3B recent-window sensitivity models |
+| Rurality | USDA Economic Research Service | Baseline structural measure |
+| Politics | MIT Election Lab presidential returns | Descriptive selection measure |
+| Health access | Census SAHIE | Recent-window sensitivity controls |
+| Drug overdose | CDC overdose mortality data | Recent-window sensitivity controls |
 
-The primary processed panel is stored at `data/processed/analysis_panel_full_outcomes.csv`. Phase 3A adds Tufts firearm-law controls for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing. Phase 3B adds Census SAHIE uninsured rates for 2008-2023 and CDC drug-overdose mortality rates for 2019-2024. A consolidated source appendix is stored at `docs/master_references.md`.
-
-Permitless carry adoption years were coded manually based on the current panel definition. Phase 1 added `data/policy/permitless_carry_legal_audit.csv` so the legal coding can be audited state by state. The current audit records 26 `source_verified` current-adopter rows, 21 `not_adopted_verified` rows, one `partial` row for Mississippi, one `baseline_permitless_verified` row for Vermont, and one `ambiguous_reviewed` row for Arkansas. Phase 2C keeps Arkansas out of the primary clean-adoption map and reports Arkansas sensitivity runs coded as 2021 and 2023. Phase 2D resolves clean-adopter mechanism fields for training, carry-permit background checks, and misdemeanor-violence permit screening. Phase 3A adds external firearm-law controls from the Tufts State Firearm Law Database. The coding rule and edge cases are summarized in `docs/legal_coding_appendix.md`.
+The primary processed panel is `data/processed/analysis_panel_full_outcomes.csv`. The legal audit is `data/policy/permitless_carry_legal_audit.csv`. Additional source notes are in `docs/master_references.md` and `docs/legal_coding_appendix.md`.
 
 ## Empirical Design
 
-The project uses multiple estimators because no single observational specification resolves policy selection.
+The analysis combines several complementary specifications:
 
-1. **Change-score comparisons.** For each state, mean post-adoption outcome rates are compared with mean pre-adoption rates. Adopting-state changes are then compared with never-adopting-state changes using Welch two-sample tests across 2-, 3-, and 5-year windows.
+1. Two-way fixed-effects state-year regressions with state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors.
+2. Population-weighted fixed-effects models.
+3. Pre-COVID and COVID-excluded samples.
+4. External firearm-law covariate sensitivity models.
+5. Non-firearm contextual covariate sensitivity models.
+6. State-specific linear trend specifications.
+7. Change-score comparisons across 2-, 3-, and 5-year windows.
+8. Staggered-adoption diagnostics using cohort windows, not-yet-treated comparisons, and event-time checks.
+9. Arkansas treatment-year recoding, leave-one-adopter-out checks, and placebo timing among never-treated states.
+10. Exploratory heterogeneity by baseline gun ownership, rurality, and baseline firearm-suicide rate.
 
-2. **Two-way fixed effects difference-in-differences.** Main panel regressions estimate the association between `post_permitless` and each mortality outcome, including state fixed effects, year fixed effects, unemployment, and per-capita income. Standard errors are clustered by state.
+These specifications are intended to show where the association is stable and where it weakens. They do not eliminate the central concern that permitless carry adoption is politically and structurally selected.
 
-3. **Event-study models.** Dynamic specifications estimate coefficients for years relative to adoption, using the year immediately before adoption as the reference period.
+## Key Outputs
 
-4. **Heterogeneity analysis.** Interaction models test whether post-adoption associations differ by baseline firearm ownership, rurality, and baseline firearm suicide rates.
+Publication figures:
 
-5. **Political-selection analysis.** State-level plots and summaries describe whether adopting states differ systematically from never-adopting states before treatment.
+- `outputs/figures/publication/figure_01_outcome_trends_by_adoption.pdf`
+- `outputs/figures/publication/figure_02_twfe_coefficient_forest.pdf`
+- `outputs/figures/publication/figure_03_change_score_robustness.pdf`
+- `outputs/figures/publication/figure_04_event_study_grid.pdf`
+- `outputs/figures/publication/figure_05_heterogeneity_interactions.pdf`
+- `outputs/figures/publication/figure_06_political_selection_scatter.pdf`
 
-## Phase 1 Publishability Upgrade
+Main tables and reports:
 
-The Phase 1 upgrade adds a policy-audit table, cohort-based staggered-adoption sensitivity estimates, never-treated-control event-time estimates, and robustness checks excluding COVID-era years, restricting to pre-2020 years, population weighting, state-specific linear trends, leave-one-adopter-out influence, and placebo timing among never-treated states. Phase 2A filled current-adopter legal audit fields; Phase 2B adds Nebraska, Louisiana, and South Carolina to the within-panel treatment map, records Vermont as baseline permitless, and keeps Arkansas out of the clean annual treatment map. Phase 2C adds Arkansas treatment-year sensitivity checks for 2021 and 2023. The non-adopter audit pass verifies the remaining untreated states through the 1999-2024 panel window, and Phase 2D resolves clean-adopter mechanism coding. Phase 3A adds external firearm-law controls and a controlled TWFE comparison. Phase 3B adds uninsured-rate and drug-overdose controls.
-
-These checks strengthen transparency but do not convert the project into causal proof. The state-trend specification attenuates several suicide estimates, and several event-study specifications show pre-adoption signals, so the responsible interpretation remains associational. The generated Phase 1 report is available at `outputs/tables/main/phase1_publishability_report.md`.
-
-## Main Results
-
-The main fixed-effects estimates indicate positive post-adoption associations for firearm suicide, total suicide, total firearm deaths, and non-firearm suicide. The firearm homicide estimate is near zero and statistically indistinguishable from zero.
-
-| Outcome | Main TWFE estimate | Interpretation |
-| --- | ---: | --- |
-| Firearm suicide | +1.26 | Higher post-adoption rate in adopting states |
-| Total suicide | +1.58 | Higher post-adoption rate in adopting states |
-| Total firearm deaths | +1.34 | Higher post-adoption rate in adopting states |
-| Non-firearm suicide | +0.31 | Smaller positive association |
-| Firearm homicide | -0.07 | No detectable post-adoption association |
-
-Change-score robustness checks show the same broad pattern: firearm suicide is the most stable outcome across windows, while firearm homicide remains statistically weak across the 2-, 3-, and 5-year comparisons.
-
-The Phase 3A firearm-law control check attenuates the estimates but does not erase the main suicide pattern. Firearm suicide remains positive and statistically significant after adding controls for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing. Total suicide and total firearm deaths also remain positive and statistically significant. Non-firearm suicide loses p < 0.05 after those controls, and firearm homicide remains statistically indistinguishable from zero.
-
-The Phase 3B non-firearm confounder check is more mixed and should be read by sample window. In the 2008-2023 health-access specification, firearm suicide, total suicide, and total firearm deaths remain positive and statistically significant after adding uninsured rate. In the shorter 2019-2024 overdose specification, firearm suicide remains positive and statistically significant, while total suicide and total firearm deaths attenuate. The combined health-access and overdose specification uses only 2019-2023 and is a recent-window sensitivity, not a full-panel replacement.
-
-The Arkansas sensitivity check does not change the substantive pattern. When Arkansas is recoded as either a 2021 or 2023 adopter, all five main TWFE outcomes retain the same coefficient sign as the primary model. Firearm suicide, non-firearm suicide, total suicide, and total firearm deaths remain statistically significant; firearm homicide remains statistically indistinguishable from zero.
-
-## Publication Figures
-
-The publication figures are exported as both high-resolution PNG files and editable PDF/vector files in `outputs/figures/publication`. The current figure set uses a professional academic style with a white canvas, high-contrast black axes, bold panel labels, outcome-specific color accents, clean light-gray gridlines, aligned multi-panel layouts, embedded TrueType PDF fonts, and 600 DPI raster exports for README display.
-
-![Outcome trends by adoption status](outputs/figures/publication/figure_01_outcome_trends_by_adoption.png)
-
-**Figure 1. Outcome trends by adoption status.** Annual state means show that adopting states had higher firearm suicide and total firearm mortality rates throughout much of the panel. The figure is descriptive and does not adjust for state fixed effects or covariates. [PDF](outputs/figures/publication/figure_01_outcome_trends_by_adoption.pdf)
-
-![Adjusted difference-in-differences estimates](outputs/figures/publication/figure_02_twfe_coefficient_forest.png)
-
-**Figure 2. Adjusted difference-in-differences estimates.** Two-way fixed effects estimates are positive for suicide-related outcomes and total firearm deaths. The firearm homicide estimate is close to zero. Colored intervals show approximate 95% confidence intervals; pale background points show unadjusted adopter-state pre/post changes. [PDF](outputs/figures/publication/figure_02_twfe_coefficient_forest.pdf)
-
-![Change-score robustness](outputs/figures/publication/figure_03_change_score_robustness.png)
-
-**Figure 3. Change-score robustness.** Pre/post window comparisons identify firearm suicide as the most consistent change-score signal. Homicide estimates remain small and statistically unstable across 2-, 3-, and 5-year windows. [PDF](outputs/figures/publication/figure_03_change_score_robustness.pdf)
-
-![Event-study estimates](outputs/figures/publication/figure_04_event_study_grid.png)
-
-**Figure 4. Event-study estimates.** Dynamic estimates show the evolution of outcome rates around adoption relative to the year immediately before the policy change. Whiskers show 95% confidence intervals; pale background points show treated state-year deviations from each state's reference year. [PDF](outputs/figures/publication/figure_04_event_study_grid.pdf)
-
-![Heterogeneity estimates](outputs/figures/publication/figure_05_heterogeneity_interactions.png)
-
-**Figure 5. Heterogeneity in post-adoption associations.** Interaction models evaluate whether associations are stronger in states with higher baseline firearm ownership, rurality, or firearm suicide rates. Colors correspond to outcomes, and diamond markers denote interaction terms with p < 0.05. [PDF](outputs/figures/publication/figure_05_heterogeneity_interactions.pdf)
-
-![Political selection scatter](outputs/figures/publication/figure_06_political_selection_scatter.png)
-
-**Figure 6. Political and structural selection into adoption.** Adoption is patterned by baseline firearm suicide, firearm ownership, and partisan voting context, underscoring the importance of cautious interpretation. Point size is proportional to baseline household firearm ownership. [PDF](outputs/figures/publication/figure_06_political_selection_scatter.pdf)
-
-## Interpretation
-
-The evidence is most consistent for firearm suicide. Adopting states experience larger post-adoption increases in firearm suicide rates than never-adopting states across the principal specifications. Total suicide also rises, which suggests that the observed association is not confined to firearm-specific mortality alone.
-
-By contrast, firearm homicide does not show a detectable post-adoption association in the main analyses. This distinction matters substantively: the panel evidence points toward suicide-related mortality as the primary empirical signal, not interpersonal homicide.
-
-The descriptive selection analysis shows that adopting states differ from never-adopting states before policy adoption. They tend to have higher baseline firearm suicide risk, higher firearm ownership, more rural structure, and different political profiles. These differences do not invalidate the analysis, but they do limit the strength of causal claims that can be made from state-level observational data.
-
-## Limitations
-
-- Policy adoption is not random; adopting states differ structurally and politically from never-adopting states.
-- State-level models cannot identify individual behavior, firearm acquisition, storage practices, or carrying behavior.
-- Two-way fixed effects models can be sensitive to staggered adoption timing and heterogeneous treatment effects; Phase 1 adds sensitivity checks but does not eliminate all identification concerns.
-- Mortality data are population-level rates and do not capture nonfatal injury, defensive gun use, enforcement changes, or local policy implementation.
-- Phase 3A adds selected external firearm-law controls, and Phase 3B adds uninsured-rate and drug-overdose controls. Permitless carry laws may still coincide with unmeasured firearm policy changes, mental-health-access conditions, demographic shifts, or broader social trends.
-- The legal audit table now source-checks current-adopter timing, non-adopter status, core carry-scope fields, and clean-adopter mechanism fields, but Arkansas remains ambiguous for a clean primary treatment date, Vermont is baseline permitless rather than a within-panel adoption, and Mississippi remains partial.
-- Gun ownership data are available through 2016 in the current processed panel and are carried forward afterward.
-- Some event-study outputs contain statistically significant pre-adoption coefficients, so the results should be framed as associations.
+- `outputs/tables/did/twfe_did_main_results.csv`
+- `outputs/tables/modern_did/modern_did_summary.csv`
+- `outputs/tables/robustness/robustness_summary.csv`
+- `outputs/tables/robustness/arkansas_treatment_sensitivity_summary.csv`
+- `outputs/tables/main/final_interpretation_report.md`
 
 ## Repository Structure
 
 ```text
 data/
   raw/                         Public source files
-  processed/                   Cleaned state-year analysis panels
-  policy/                      Permitless-carry legal audit table
+  processed/                   Cleaned state-year panels
+  policy/                      Source-audited permitless-carry legal coding
+
+docs/                          Source notes and method documentation
+
+manuscript/                    LaTeX manuscript, supplement, figures, and PDFs
 
 outputs/
-  figures/
-    publication/               Journal-style PNG and PDF figures
-  tables/                      Model outputs and robustness tables
+  figures/                     Generated figures
+  tables/                      Model outputs and summary reports
 
 src/
-  analysis/
-    run_all_analysis.py        Main empirical pipeline
-    make_publication_figures.py
-    interpret_results.py
-    policy_audit.py
-    modern_did.py
-    robustness_checks.py
-    arkansas_sensitivity.py
-    phase1_publishability_report.py
-    wrhc_change_score.py
-  data/
-    build_master_analysis_panel.py
-    extend_master_outcomes.py
-    process_*.py
+  analysis/                    Estimation, robustness, plotting, and reports
+  data/                        Data cleaning and panel construction
+
+tests/                         Unit and regression tests for core code paths
 ```
 
 ## Reproducibility
@@ -165,57 +103,66 @@ src/
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 Build the processed panel:
 
 ```bash
-python3 src/data/process_firearm_law_controls.py
-python3 src/data/process_nonfirearm_confounders.py
-python3 src/data/build_master_analysis_panel.py
-python3 src/data/extend_master_outcomes.py
+python -m src.data.process_firearm_law_controls
+python -m src.data.process_nonfirearm_confounders
+python -m src.data.build_master_analysis_panel
+python -m src.data.extend_master_outcomes
 ```
 
-Run the full analysis:
+Run the main analysis:
 
 ```bash
-python3 src/analysis/run_all_analysis.py
+python -m src.analysis.run_all_analysis
 ```
 
-Generate the interpretation report:
+Run the robustness and diagnostic scripts:
 
 ```bash
-python3 src/analysis/interpret_results.py
+python -m src.analysis.policy_audit
+python -m src.analysis.firearm_law_control_sensitivity
+python -m src.analysis.nonfirearm_confounder_sensitivity
+python -m src.analysis.modern_did
+python -m src.analysis.robustness_checks
+python -m src.analysis.arkansas_sensitivity
+python -m src.analysis.phase1_publishability_report
 ```
 
-Generate the publication figures:
+Generate publication figures and the interpretation report:
 
 ```bash
-python3 src/analysis/make_publication_figures.py
+python -m src.analysis.make_publication_figures
+python -m src.analysis.interpret_results
 ```
 
-Run the Phase 1 publishability upgrade:
+Compile the manuscript from `manuscript/`:
 
 ```bash
-python3 src/analysis/policy_audit.py
-python3 src/analysis/firearm_law_control_sensitivity.py
-python3 src/analysis/nonfirearm_confounder_sensitivity.py
-python3 src/analysis/modern_did.py
-python3 src/analysis/robustness_checks.py
-python3 src/analysis/arkansas_sensitivity.py
-python3 src/analysis/phase1_publishability_report.py
+latexmk -pdf main.tex
+latexmk -pdf supplementary.tex
 ```
 
 Run tests:
 
 ```bash
-python3 -m pytest
+python -m pytest
 ```
 
-Outputs are written to `outputs/tables` and `outputs/figures`.
+## Limitations
+
+- Adoption is not random. Adopting states differ from non-adopting states in baseline firearm suicide, gun ownership, rurality, and political context.
+- State-level mortality models cannot identify individual firearm acquisition, storage, carrying behavior, or clinical mechanisms.
+- Staggered adoption and heterogeneous treatment effects limit simple two-way fixed-effects interpretation.
+- Event-time diagnostics show pre-adoption signal, so the estimates should not be presented as definitive causal effects.
+- Firearm-homicide rates have missing or suppressed state-years concentrated in small-population states.
+- Some contextual covariates are available only in shorter recent windows.
+- Arkansas, Vermont, and Mississippi require special legal-coding treatment and are documented separately in the audit.
 
 ## Project Information
 
-Author: Yucheng (Richard) Wang  
-Project: WRHC 2026 Research Project
+Authors: Byung Kim and Yucheng Wang

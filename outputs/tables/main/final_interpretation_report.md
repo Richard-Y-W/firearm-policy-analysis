@@ -92,7 +92,7 @@ That means the adoption model should be treated as **exploratory only**, not as 
 
 The political-selection section can therefore be framed as: **policy adoption is politically and structurally patterned**, but the formal adoption model is unstable in this small sample and should be interpreted cautiously.
 
-## Draft Results Paragraph
+## Results Summary
 
 Across the main state-year panel models, permitless carry adoption was associated with a **1.263-point increase** in firearm suicide rates per 100,000 (p = 0.0000), while firearm homicide showed a **-0.072-point estimate** that was not statistically distinguishable from zero (p = 0.8455). Total suicide also increased in the main TWFE specification (coef = 1.576, p = 0.0000). Taken together, these findings suggest that permitless carry adoption is more consistently associated with suicide-related mortality than with firearm homicide in this dataset.
 

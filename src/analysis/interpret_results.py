@@ -208,7 +208,7 @@ def build_abstract_style_section(did):
     fh = did.loc[did["outcome_label"] == "Firearm Homicide"].iloc[0]
     ts = did.loc[did["outcome_label"] == "Total Suicide"].iloc[0]
 
-    return f"""## Draft Results Paragraph
+    return f"""## Results Summary
 
 Across the main state-year panel models, permitless carry adoption was associated with a **{fs['coef_post_permitless']:.3f}-point increase** in firearm suicide rates per 100,000 (p = {fs['p_post_permitless']:.4f}), while firearm homicide showed a **{fh['coef_post_permitless']:.3f}-point estimate** that was not statistically distinguishable from zero (p = {fh['p_post_permitless']:.4f}). Total suicide also increased in the main TWFE specification (coef = {ts['coef_post_permitless']:.3f}, p = {ts['p_post_permitless']:.4f}). Taken together, these findings suggest that permitless carry adoption is more consistently associated with suicide-related mortality than with firearm homicide in this dataset.
 

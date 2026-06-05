@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Temporary review/build artifacts
+tmp/
+review_source.pdf
+review_source.txt
+*_page-*.png
+page-*.png
+supp_page-*.png
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# OS/editor files
+.DS_Store
+Thumbs.db

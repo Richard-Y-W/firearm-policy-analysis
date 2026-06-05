@@ -1,0 +1,27 @@
+\begin{table}[H]
+\centering
+\caption{\textbf{Firearm-suicide diagnostic spine.}}
+\label{tab:diagnostic_spine}
+\begin{threeparttable}
+\small
+\begin{tabular}{@{}p{0.33\linewidth}p{0.18\linewidth}p{0.09\linewidth}p{0.29\linewidth}@{}}
+\toprule
+Diagnostic row & Estimate & $p$ & Interpretation \\
+\midrule
+Baseline unweighted fixed effects & 1.263 & $<0.001$ & Average state-level association \\
+Population-weighted fixed effects & 0.853 & $<0.001$ & Resident-weighted association \\
+Pre-COVID only & 1.137 & $<0.001$ & Drops post-2019 years \\
+COVID-excluded & 1.238 & $<0.001$ & Drops 2020--2021 \\
+External firearm-law covariates & 0.994 & $<0.001$ & Policy-environment sensitivity \\
+State-specific linear trends & 0.253 & 0.069 & Central attenuation caveat \\
+Cohort ATT windows & 0.591/0.553/0.627 & -- & 2-, 3-, and 5-year windows \\
+Not-yet-treated dynamic ATT & 0.431 & -- & Positive post-adoption mean \\
+Event-time fixed effects & 0.617 & 0.000007 & Positive post mean; pretrend flagged \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Estimates are deaths per 100,000 residents. TWFE rows include state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors unless otherwise noted. Modern staggered-adoption rows are reported as diagnostics because event-time checks flag pre-adoption signal.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
