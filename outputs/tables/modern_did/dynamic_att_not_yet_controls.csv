@@ -1,51 +1,51 @@
 outcome,outcome_label,event_time,weighted_att,n_cohorts,n_treated_states,min_control_states
-firearm_homicide_rate_per_100k,Firearm Homicide,-5,-0.12869989550304417,9,22,22
-firearm_homicide_rate_per_100k,Firearm Homicide,-4,0.1935663469009675,10,24,22
-firearm_homicide_rate_per_100k,Firearm Homicide,-3,-0.035380341908580866,10,24,22
-firearm_homicide_rate_per_100k,Firearm Homicide,-2,0.1242915026575588,10,25,23
-firearm_homicide_rate_per_100k,Firearm Homicide,0,-0.13833849000294396,10,24,23
-firearm_homicide_rate_per_100k,Firearm Homicide,1,0.010934218087864721,9,22,23
-firearm_homicide_rate_per_100k,Firearm Homicide,2,-0.037588718095706374,8,20,22
-firearm_homicide_rate_per_100k,Firearm Homicide,3,0.19746474010735499,7,16,22
-firearm_homicide_rate_per_100k,Firearm Homicide,4,-0.28791608281205605,6,12,25
-firearm_homicide_rate_per_100k,Firearm Homicide,5,0.07784891175502046,6,12,23
-firearm_suicide_rate_per_100k,Firearm Suicide,-5,-0.4444377047456602,10,26,23
-firearm_suicide_rate_per_100k,Firearm Suicide,-4,-0.34110660178558444,11,27,23
-firearm_suicide_rate_per_100k,Firearm Suicide,-3,0.0666279314021317,11,27,23
-firearm_suicide_rate_per_100k,Firearm Suicide,-2,-0.41747022634837455,11,27,23
-firearm_suicide_rate_per_100k,Firearm Suicide,0,0.20969088821150053,11,27,23
-firearm_suicide_rate_per_100k,Firearm Suicide,1,0.47430625988088565,10,25,23
-firearm_suicide_rate_per_100k,Firearm Suicide,2,0.5658771584753665,9,22,23
-firearm_suicide_rate_per_100k,Firearm Suicide,3,-0.02807164212188527,8,19,23
-firearm_suicide_rate_per_100k,Firearm Suicide,4,0.567651656887069,7,14,25
-firearm_suicide_rate_per_100k,Firearm Suicide,5,0.795916063449676,7,14,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,-5,-0.24404972557596655,10,26,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,-4,0.029943228714028523,11,27,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,-3,-0.17684744185371593,11,27,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,-2,-0.08203145562351254,11,27,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,0,-0.04784650077281447,11,27,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,1,0.4503432809042333,10,25,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,2,-0.15779084839478347,9,22,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,3,-0.18969443058669108,8,19,23
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,4,0.2066172615754477,7,14,25
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,5,0.03908802638315651,7,14,23
-total_firearm_rate_per_100k,Total Firearm Deaths,-5,-0.5691134578179076,10,26,23
-total_firearm_rate_per_100k,Total Firearm Deaths,-4,-0.18794037228954377,11,27,23
-total_firearm_rate_per_100k,Total Firearm Deaths,-3,-0.013057573612516207,11,27,23
-total_firearm_rate_per_100k,Total Firearm Deaths,-2,-0.30185885413994396,11,27,23
-total_firearm_rate_per_100k,Total Firearm Deaths,0,0.043278644762445403,11,27,23
-total_firearm_rate_per_100k,Total Firearm Deaths,1,0.3810254024864254,10,25,23
-total_firearm_rate_per_100k,Total Firearm Deaths,2,0.5567584047464809,9,22,23
-total_firearm_rate_per_100k,Total Firearm Deaths,3,0.03288079084634772,8,19,23
-total_firearm_rate_per_100k,Total Firearm Deaths,4,0.2587259971532857,7,14,25
-total_firearm_rate_per_100k,Total Firearm Deaths,5,0.8883384324060941,7,14,23
-total_suicide_rate_per_100k,Total Suicide,-5,-0.6884874303216267,10,26,23
-total_suicide_rate_per_100k,Total Suicide,-4,-0.3111633730715559,11,27,23
-total_suicide_rate_per_100k,Total Suicide,-3,-0.11021951045158425,11,27,23
-total_suicide_rate_per_100k,Total Suicide,-2,-0.49950168197188705,11,27,23
-total_suicide_rate_per_100k,Total Suicide,0,0.16184438743868615,11,27,23
-total_suicide_rate_per_100k,Total Suicide,1,0.9246495407851194,10,25,23
-total_suicide_rate_per_100k,Total Suicide,2,0.4080863100805833,9,22,23
-total_suicide_rate_per_100k,Total Suicide,3,-0.21776607270857673,8,19,23
-total_suicide_rate_per_100k,Total Suicide,4,0.7742689184625163,7,14,25
-total_suicide_rate_per_100k,Total Suicide,5,0.8350040898328331,7,14,23
+firearm_homicide_rate_per_100k,Firearm Homicide,-5,-0.07594198406058991,9,21,21
+firearm_homicide_rate_per_100k,Firearm Homicide,-4,0.2350111556324143,10,23,21
+firearm_homicide_rate_per_100k,Firearm Homicide,-3,0.022366599627568845,10,23,21
+firearm_homicide_rate_per_100k,Firearm Homicide,-2,0.184571937505542,10,24,21
+firearm_homicide_rate_per_100k,Firearm Homicide,0,-0.12723641773651184,10,23,21
+firearm_homicide_rate_per_100k,Firearm Homicide,1,0.03296009202093919,9,21,21
+firearm_homicide_rate_per_100k,Firearm Homicide,2,-0.05093107259426534,8,19,21
+firearm_homicide_rate_per_100k,Firearm Homicide,3,0.12317345203634605,7,15,21
+firearm_homicide_rate_per_100k,Firearm Homicide,4,-0.5175789160865919,6,11,23
+firearm_homicide_rate_per_100k,Firearm Homicide,5,-0.4003872675443541,6,11,21
+firearm_suicide_rate_per_100k,Firearm Suicide,-5,-0.506712404613872,10,25,21
+firearm_suicide_rate_per_100k,Firearm Suicide,-4,-0.4071284129125056,11,26,21
+firearm_suicide_rate_per_100k,Firearm Suicide,-3,-0.01047166053826966,11,26,21
+firearm_suicide_rate_per_100k,Firearm Suicide,-2,-0.4843032195872149,11,26,21
+firearm_suicide_rate_per_100k,Firearm Suicide,0,0.16038616821218185,11,26,21
+firearm_suicide_rate_per_100k,Firearm Suicide,1,0.47093350803874184,10,24,21
+firearm_suicide_rate_per_100k,Firearm Suicide,2,0.5259649421254622,9,21,21
+firearm_suicide_rate_per_100k,Firearm Suicide,3,-0.14910053052931224,8,18,21
+firearm_suicide_rate_per_100k,Firearm Suicide,4,0.4994637641274319,7,13,23
+firearm_suicide_rate_per_100k,Firearm Suicide,5,0.8148521920095946,7,13,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,-5,-0.3197458929533455,10,25,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,-4,-0.017476181873913463,11,26,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,-3,-0.19541081515830502,11,26,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,-2,-0.08819243241509074,11,26,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,0,-0.05662933787282998,11,26,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,1,0.479173680985161,10,24,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,2,-0.1711923155791995,9,21,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,3,-0.1457161929460768,8,18,21
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,4,0.3066780019803758,7,13,23
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,5,0.048530472387280144,7,13,21
+total_firearm_rate_per_100k,Total Firearm Deaths,-5,-0.5310829268573886,10,25,21
+total_firearm_rate_per_100k,Total Firearm Deaths,-4,-0.19917375567183093,11,26,21
+total_firearm_rate_per_100k,Total Firearm Deaths,-3,-0.006626513737832475,11,26,21
+total_firearm_rate_per_100k,Total Firearm Deaths,-2,-0.2982486628538999,11,26,21
+total_firearm_rate_per_100k,Total Firearm Deaths,0,0.00894761054565858,11,26,21
+total_firearm_rate_per_100k,Total Firearm Deaths,1,0.4005800560655384,10,24,21
+total_firearm_rate_per_100k,Total Firearm Deaths,2,0.5100792216499661,9,21,21
+total_firearm_rate_per_100k,Total Firearm Deaths,3,-0.15164490517250045,8,18,21
+total_firearm_rate_per_100k,Total Firearm Deaths,4,-0.035483825799947806,7,13,23
+total_firearm_rate_per_100k,Total Firearm Deaths,5,0.46629773917640327,7,13,21
+total_suicide_rate_per_100k,Total Suicide,-5,-0.8264582975672176,10,25,21
+total_suicide_rate_per_100k,Total Suicide,-4,-0.4246045947864191,11,26,21
+total_suicide_rate_per_100k,Total Suicide,-3,-0.20588247569657453,11,26,21
+total_suicide_rate_per_100k,Total Suicide,-2,-0.5724956520023051,11,26,21
+total_suicide_rate_per_100k,Total Suicide,0,0.10375683033935236,11,26,21
+total_suicide_rate_per_100k,Total Suicide,1,0.9501071890239037,10,24,21
+total_suicide_rate_per_100k,Total Suicide,2,0.35477262654626346,9,21,21
+total_suicide_rate_per_100k,Total Suicide,3,-0.2948167234753886,8,18,21
+total_suicide_rate_per_100k,Total Suicide,4,0.8061417661078079,7,13,23
+total_suicide_rate_per_100k,Total Suicide,5,0.8633826643968756,7,13,21

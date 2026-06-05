@@ -8,15 +8,17 @@
 \toprule
 Diagnostic row & Estimate & Diag. $p$ & Interpretation \\
 \midrule
-Baseline unweighted fixed effects & 1.263 & $<0.001$ & Average state-level association \\
-Population-weighted fixed effects & 0.853 & $<0.001$ & Resident-weighted association \\
-Pre-COVID only & 1.137 & $<0.001$ & Drops post-2019 years \\
-COVID-excluded & 1.238 & $<0.001$ & Drops 2020--2021 \\
-External firearm-law covariates & 0.994 & $<0.001$ & Policy-environment sensitivity \\
-State-specific linear trends & 0.253 & 0.069 & Central attenuation caveat \\
-Cohort ATT windows & 0.591/0.553/0.627 & -- & 2-, 3-, and 5-year windows \\
-Not-yet-treated dynamic ATT & 0.431 & -- & Positive post-adoption mean \\
-Event-time fixed effects & 0.617 & 0.000007 & Positive post mean; diagnostic $p$ is the minimum pre-adoption $p$ \\
+Baseline unweighted fixed effects & 1.391 & $<0.001$ & Clean-adoption state-level association \\
+Population-weighted fixed effects & 0.919 & $<0.001$ & Resident-weighted association \\
+Pre-COVID only & 1.298 & $<0.001$ & Drops post-2019 years \\
+COVID-excluded & 1.356 & $<0.001$ & Drops 2020--2021 \\
+External firearm-law covariates & 1.096 & $<0.001$ & Policy-environment sensitivity \\
+Leave-one-adopter-out & 1.265--1.481 & -- & No sign changes across adopter exclusions \\
+Never-treated placebo timing & 1.391 $>$ 0.338 & -- & Observed estimate exceeds placebo timing distribution \\
+State-specific linear trends & 0.249 & 0.079 & Central attenuation caveat \\
+Cohort ATT windows & 0.601/0.577/0.641 & -- & 2-, 3-, and 5-year windows \\
+Not-yet-treated dynamic ATT & 0.387 & -- & Positive post-adoption mean \\
+Event-time fixed effects & 0.651 & 0.0000001 & Positive post mean; diagnostic $p$ is the minimum pre-adoption $p$ \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}

@@ -25,7 +25,7 @@
 
 \section*{Supplementary Note 1. Evidence hierarchy}
 
-The main manuscript interprets results through a hierarchy rather than treating every diagnostic row as an independent hypothesis test. Firearm suicide is the primary outcome. Total suicide, non-firearm suicide, firearm homicide, and total firearm deaths are secondary outcome-family checks. Firearm-law covariates, contextual covariate layers, staggered-adoption diagnostics, Arkansas recoding, leave-one-out influence, and placebo timing are sensitivity checks. Rurality, gun ownership, baseline-risk heterogeneity, and policy-feature interactions are exploratory. Cohort ATT rows, event-time rows, full legal source tables, and full robustness grids are appendix diagnostics.
+The main manuscript interprets results through a hierarchy rather than treating every diagnostic row as an independent hypothesis test. Firearm suicide is the primary outcome. Total suicide, non-firearm suicide, firearm homicide, and total firearm deaths are secondary outcome-family checks. Firearm-law covariates, contextual covariate layers, age-adjusted outcome rates, staggered-adoption diagnostics, Arkansas recoding, leave-one-out influence, and placebo timing are sensitivity checks. Rurality, gun ownership, baseline-risk heterogeneity, and policy-feature interactions are exploratory. Cohort ATT rows, event-time rows, full legal source tables, and full robustness grids are appendix diagnostics.
 
 \begin{center}
 \begin{tabular}{p{0.20\linewidth}p{0.31\linewidth}p{0.34\linewidth}}
@@ -34,7 +34,7 @@ Tier & Items & Interpretation \\
 \midrule
 Primary outcome & Firearm suicide & Central mortality claim. \\
 Secondary outcomes & Total suicide; non-firearm suicide; firearm homicide; total firearm deaths & Specificity and outcome-family interpretation. \\
-Sensitivity checks & Firearm-law covariates; health-access and overdose covariates; Phase 3B2 covariate layers; staggered-adoption diagnostics; Arkansas recoding; leave-one-out; placebo timing & Tests stability and boundaries. \\
+Sensitivity checks & Firearm-law covariates; health-access and overdose covariates; Phase 3B2 covariate layers; age-adjusted outcome rates; staggered-adoption diagnostics; Arkansas recoding; leave-one-out; placebo timing & Tests stability and boundaries. \\
 Exploratory checks & Rurality, gun-ownership, baseline-risk, and policy-feature heterogeneity & Hypothesis-generating only. \\
 Appendix diagnostics & Cohort ATT rows; event-time rows; legal source table; full robustness grids & Transparency and audit trail. \\
 \bottomrule
@@ -88,22 +88,39 @@ The full state-level audit below reports the adoption year, audit status, whethe
 \toprule
 Outcome & Coef. & SE & $p$ & N \\
 \midrule
-Firearm suicide & 1.263 & 0.227 & $<0.001$ & 1300 \\
-Non-firearm suicide & 0.312 & 0.146 & 0.032 & 1300 \\
-Total suicide & 1.576 & 0.316 & $<0.001$ & 1300 \\
-Firearm homicide & -0.072 & 0.368 & 0.846 & 1199 \\
-Total firearm deaths & 1.341 & 0.471 & 0.004 & 1300 \\
+Firearm suicide & 1.391 & 0.222 & $<0.001$ & 1222 \\
+Non-firearm suicide & 0.415 & 0.139 & 0.003 & 1222 \\
+Total suicide & 1.805 & 0.294 & $<0.001$ & 1222 \\
+Firearm homicide & -0.234 & 0.338 & 0.489 & 1142 \\
+Total firearm deaths & 1.271 & 0.482 & 0.008 & 1222 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 \section*{Supplementary Note 4. Firearm-suicide diagnostic spine}
 
-The diagnostic spine places the baseline fixed-effects estimate beside population weighting, COVID-window restrictions, state-specific trends, and staggered-adoption diagnostics. It is the main table for interpreting identification strength and fragility.
+The diagnostic spine places the baseline fixed-effects estimate beside population weighting, COVID-window restrictions, leave-one-adopter-out checks, placebo timing, state-specific trends, and staggered-adoption diagnostics. It is the main table for interpreting identification strength and fragility.
 
 \input{tables/firearm_suicide_diagnostic_spine.tex}
 
-\section*{Supplementary Note 5. Firearm-law and contextual covariate sensitivity}
+\section*{Supplementary Note 5. Age-adjusted outcome-rate sensitivity}
+
+Crude mortality rates are the primary outcome scale because they measure realized state-year mortality burden. Age-adjusted rates are reported as a demographic-composition sensitivity check using CDC WONDER age-adjusted rates standardized to the 2000 U.S. standard population. The age-adjusted estimates preserve the crude-rate pattern: firearm suicide, total suicide, and total firearm deaths remain positive, while firearm homicide remains statistically weak and centered below zero.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Outcome & Coef. & SE & $p$ & N \\
+\midrule
+Firearm suicide, age-adjusted & 1.407 & 0.228 & $<0.001$ & 1220 \\
+Total suicide, age-adjusted & 1.914 & 0.327 & $<0.001$ & 1222 \\
+Total firearm deaths, age-adjusted & 1.230 & 0.510 & 0.016 & 1222 \\
+Firearm homicide, age-adjusted & -0.230 & 0.426 & 0.590 & 1037 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Supplementary Note 6. Firearm-law and contextual covariate sensitivity}
 
 External firearm-law covariates attenuated but did not erase the firearm-suicide estimate. Demographic-poverty covariates also preserved the firearm-suicide and total-suicide estimates. The short HRSA mental-health-provider window did not retain statistical significance and should be interpreted as a short-window sensitivity rather than a full-panel replacement. These rows are covariate-layer sensitivity checks, not uniformly superior causal models, because some time-varying covariates may lie downstream of broader state policy environments.
 
@@ -112,87 +129,150 @@ External firearm-law covariates attenuated but did not erase the firearm-suicide
 \toprule
 Firearm-suicide specification & Coef. & $p$ & N \\
 \midrule
-Baseline fixed effects & 1.263 & $<0.001$ & 1300 \\
-External firearm-law covariates & 0.994 & $<0.001$ & 1300 \\
-Health-access covariates & 0.668 & $<0.001$ & 800 \\
-Overdose covariates & 0.516 & 0.044 & 300 \\
-Demographic-poverty covariates & 0.648 & $<0.001$ & 1000 \\
-Mental-health-provider access covariates & 0.159 & 0.625 & 150 \\
-Full Phase 3B2 covariates & 0.197 & 0.546 & 150 \\
+Baseline fixed effects & 1.391 & $<0.001$ & 1222 \\
+External firearm-law covariates & 1.096 & $<0.001$ & 1222 \\
+Health-access covariates & 0.707 & $<0.001$ & 752 \\
+Overdose covariates & 0.492 & 0.060 & 282 \\
+Demographic-poverty covariates & 0.695 & $<0.001$ & 940 \\
+Mental-health-provider access covariates & 0.116 & 0.744 & 141 \\
+Full Phase 3B2 covariates & 0.176 & 0.633 & 141 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\section*{Supplementary Note 6. Change-score checks}
+\section*{Supplementary Note 7. Change-score checks}
 
 \begin{center}
 \begin{tabular}{lrrr}
 \toprule
 Outcome & 2-year diff. & 3-year diff. & 5-year diff. \\
 \midrule
-Firearm suicide & 0.641 & 0.603 & 0.674 \\
-Non-firearm suicide & 0.219 & 0.151 & 0.033 \\
-Total suicide & 0.860 & 0.754 & 0.707 \\
-Firearm homicide & 0.016 & 0.081 & 0.112 \\
-Total firearm deaths & 0.561 & 0.645 & 0.779 \\
+Firearm suicide & 0.658 & 0.634 & 0.699 \\
+Non-firearm suicide & 0.214 & 0.134 & 0.047 \\
+Total suicide & 0.872 & 0.767 & 0.746 \\
+Firearm homicide & -0.034 & 0.024 & 0.035 \\
+Total firearm deaths & 0.537 & 0.617 & 0.718 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\section*{Supplementary Note 7. Staggered-adoption diagnostics}
+\section*{Supplementary Note 8. Staggered-adoption diagnostics}
 
 \begin{center}
 \begin{tabular}{lrrrrp{0.23\linewidth}}
 \toprule
 Outcome & ATT w2 & ATT w3 & ATT w5 & Not-yet post & Interpretation \\
 \midrule
-Firearm suicide & 0.591 & 0.553 & 0.627 & 0.431 & Positive post-adoption diagnostic with pretrend flag. \\
-Non-firearm suicide & 0.263 & 0.232 & 0.199 & 0.050 & Positive post-adoption diagnostic. \\
-Total suicide & 0.854 & 0.785 & 0.827 & 0.481 & Positive post-adoption diagnostic with pretrend flag. \\
-Firearm homicide & 0.085 & -0.011 & 0.037 & -0.030 & No positive post-adoption diagnostic. \\
-Total firearm deaths & 0.391 & 0.454 & 0.557 & 0.360 & Positive post-adoption diagnostic with pretrend flag. \\
+Firearm suicide & 0.601 & 0.577 & 0.641 & 0.387 & Positive post-adoption diagnostic with pretrend flag. \\
+Non-firearm suicide & 0.270 & 0.239 & 0.241 & 0.077 & Positive post-adoption diagnostic. \\
+Total suicide & 0.871 & 0.816 & 0.882 & 0.464 & Positive post-adoption diagnostic with pretrend flag. \\
+Firearm homicide & -0.004 & -0.107 & -0.106 & -0.157 & No positive post-adoption diagnostic. \\
+Total firearm deaths & 0.382 & 0.435 & 0.493 & 0.200 & Positive post-adoption diagnostic with pretrend flag. \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\section*{Supplementary Note 8. Robustness and Arkansas sensitivity}
+\section*{Supplementary Note 9. Robustness and Arkansas sensitivity}
 
 \begin{center}
 \begin{tabular}{lrrrrp{0.22\linewidth}}
 \toprule
 Outcome & Baseline & P05 specs & Leave-one min & Leave-one max & Flag \\
 \midrule
-Firearm suicide & 1.263 & 5 & 1.135 & 1.356 & Stable positive, trend-sensitive. \\
-Non-firearm suicide & 0.312 & 1 & 0.269 & 0.370 & Positive but less stable. \\
-Total suicide & 1.576 & 6 & 1.420 & 1.727 & Stable positive. \\
-Firearm homicide & -0.072 & 0 & -0.258 & 0.120 & No stable signal. \\
-Total firearm deaths & 1.341 & 4 & 1.129 & 1.592 & Positive, trend-sensitive. \\
+Firearm suicide & 1.391 & 5 & 1.265 & 1.481 & Stable positive, trend-sensitive. \\
+Non-firearm suicide & 0.415 & 5 & 0.371 & 0.472 & Stable positive, trend-sensitive. \\
+Total suicide & 1.805 & 6 & 1.656 & 1.954 & Stable positive. \\
+Firearm homicide & -0.234 & 0 & -0.399 & -0.049 & No stable positive signal. \\
+Total firearm deaths & 1.271 & 4 & 1.058 & 1.532 & Positive, trend-sensitive. \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Arkansas recoding as 2021 or 2023 retained the sign of all five outcomes. Firearm suicide, total suicide, non-firearm suicide, and total firearm deaths retained $p<0.05$ across both Arkansas codings; firearm homicide did not.
+Arkansas recoding as 2021 or 2023 retained the sign of all five outcomes. Firearm suicide, total suicide, non-firearm suicide, and total firearm deaths retained $p<0.05$ across both Arkansas codings; firearm homicide did not. Reintroducing Mississippi alone and in combination with both Arkansas codings preserved the positive firearm-suicide and total-suicide pattern.
 
-\section*{Supplementary Note 9. Heterogeneity and policy-feature checks}
+\begin{table}[H]
+\centering
+\caption{\textbf{Firearm-suicide leave-one-adopter-out estimates by excluded state.}}
+\small
+\begin{tabular}{lrr}
+\toprule
+Excluded state & Coef. & $p$ \\
+\midrule
+Alabama & 1.415 & $<0.001$ \\
+Alaska & 1.405 & $<0.001$ \\
+Arizona & 1.481 & $<0.001$ \\
+Florida & 1.398 & $<0.001$ \\
+Georgia & 1.413 & $<0.001$ \\
+Idaho & 1.375 & $<0.001$ \\
+Indiana & 1.393 & $<0.001$ \\
+Iowa & 1.395 & $<0.001$ \\
+Kansas & 1.414 & $<0.001$ \\
+Kentucky & 1.451 & $<0.001$ \\
+Louisiana & 1.411 & $<0.001$ \\
+Maine & 1.399 & $<0.001$ \\
+Missouri & 1.366 & $<0.001$ \\
+Montana & 1.342 & $<0.001$ \\
+Nebraska & 1.404 & $<0.001$ \\
+New Hampshire & 1.391 & $<0.001$ \\
+North Dakota & 1.358 & $<0.001$ \\
+Ohio & 1.410 & $<0.001$ \\
+Oklahoma & 1.383 & $<0.001$ \\
+South Carolina & 1.406 & $<0.001$ \\
+South Dakota & 1.403 & $<0.001$ \\
+Tennessee & 1.416 & $<0.001$ \\
+Texas & 1.415 & $<0.001$ \\
+Utah & 1.424 & $<0.001$ \\
+West Virginia & 1.420 & $<0.001$ \\
+Wyoming & 1.265 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Rurality was the clearest recurring heterogeneity dimension: firearm suicide, total suicide, and total firearm deaths had positive high-rurality interactions. These models are exploratory because state-level subgroup indicators are coarse and adoption is politically patterned.
+\begin{table}[H]
+\centering
+\caption{\textbf{Firearm-suicide never-treated placebo timing estimates.}}
+\small
+\begin{tabular}{rrr}
+\toprule
+Placebo shift & Coef. & $p$ \\
+\midrule
+0 & -0.026 & 0.850 \\
+1 & -0.246 & 0.173 \\
+2 & -0.062 & 0.788 \\
+3 & 0.081 & 0.721 \\
+4 & 0.385 & 0.060 \\
+5 & 0.291 & 0.047 \\
+6 & 0.054 & 0.675 \\
+7 & 0.050 & 0.767 \\
+8 & -0.032 & 0.883 \\
+9 & -0.224 & 0.375 \\
+10 & -0.275 & 0.156 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The absolute median placebo estimate was 0.081 deaths per 100,000 and the absolute 95th percentile was 0.338. The observed firearm-suicide estimate was 1.391, exceeding that placebo timing distribution.
+
+\section*{Supplementary Note 10. Heterogeneity and policy-feature checks}
+
+Rurality was the clearest recurring heterogeneity dimension: firearm suicide, non-firearm suicide, and total suicide had positive high-rurality interactions. These models are exploratory because state-level subgroup indicators are coarse and adoption is politically patterned.
 
 \begin{center}
 \begin{tabular}{lrr}
 \toprule
 Outcome/dimension & Interaction & $p$ \\
 \midrule
-Firearm suicide, high rurality & 0.870 & 0.003 \\
-Total suicide, high rurality & 1.325 & 0.002 \\
-Total firearm deaths, high rurality & 1.630 & 0.026 \\
-Non-firearm suicide, high gun ownership & 0.549 & 0.001 \\
+Firearm suicide, high rurality & 0.988 & $<0.001$ \\
+Total suicide, high rurality & 1.733 & $<0.001$ \\
+Non-firearm suicide, high rurality & 0.745 & $<0.001$ \\
+Non-firearm suicide, high gun ownership & 0.586 & $<0.001$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 Policy-feature heterogeneity did not identify a stable mechanism. None of the 15 training, carry-permit background-check, or misdemeanor-screen interaction rows had $p<0.05$. Five rows were sparse or unavailable because the feature-specific clean-adopter comparison group was absent.
 
-\section*{Supplementary Note 10. Homicide missingness audit}
+\section*{Supplementary Note 11. Homicide missingness audit}
 
 Firearm-homicide outcome rows have fewer observations than suicide and total-firearm rows because some state-year rates are unavailable or suppressed. The missingness audit shows that all missing firearm-homicide rows occur in the smallest-population state-years.
 
@@ -200,12 +280,13 @@ Firearm-homicide outcome rows have fewer observations than suicide and total-fir
 
 \input{tables/homicide_missingness_by_state.tex}
 
-\section*{Supplementary Note 11. Full diagnostic source files}
+\section*{Supplementary Note 12. Full diagnostic source files}
 
 The following repository outputs provide the full machine-readable diagnostic trail used to write the manuscript and this supplement:
 
 \begin{itemize}
 \item \texttt{outputs/tables/did/twfe\_did\_main\_results.csv}
+\item \texttt{outputs/tables/did/twfe\_did\_ageadj\_sensitivity\_summary.csv}
 \item \texttt{outputs/tables/did/twfe\_did\_firearm\_law\_control\_summary.csv}
 \item \texttt{outputs/tables/did/twfe\_did\_nonfirearm\_confounder\_summary.csv}
 \item \texttt{outputs/tables/did/twfe\_did\_phase3b2\_confounder\_summary.csv}
@@ -213,6 +294,8 @@ The following repository outputs provide the full machine-readable diagnostic tr
 \item \texttt{outputs/tables/modern\_did/modern\_did\_summary.csv}
 \item \texttt{outputs/tables/modern\_did/event\_time\_never\_control\_estimates.csv}
 \item \texttt{outputs/tables/robustness/robustness\_summary.csv}
+\item \texttt{outputs/tables/robustness/leave\_one\_state\_out.csv}
+\item \texttt{outputs/tables/robustness/placebo\_never\_treated.csv}
 \item \texttt{outputs/tables/robustness/arkansas\_treatment\_sensitivity\_summary.csv}
 \item \texttt{outputs/tables/heterogeneity/heterogeneity\_did\_results.csv}
 \item \texttt{outputs/tables/mechanism/mechanism\_heterogeneity\_results.csv}

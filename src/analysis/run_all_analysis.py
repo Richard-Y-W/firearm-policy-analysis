@@ -12,6 +12,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 try:
+    from src.analysis.phase1_utils import apply_clean_primary_sample
     from src.analysis.firearm_law_control_sensitivity import (
         build_firearm_law_control_summary,
         run_firearm_law_control_models,
@@ -24,7 +25,12 @@ try:
         build_phase3b2_confounder_summary,
         run_phase3b2_confounder_models,
     )
+    from src.analysis.ageadj_sensitivity import (
+        build_summary as build_ageadj_summary,
+        run_ageadj_models,
+    )
 except ModuleNotFoundError:
+    from phase1_utils import apply_clean_primary_sample
     from firearm_law_control_sensitivity import (
         build_firearm_law_control_summary,
         run_firearm_law_control_models,
@@ -36,6 +42,10 @@ except ModuleNotFoundError:
     from phase3b2_confounder_sensitivity import (
         build_phase3b2_confounder_summary,
         run_phase3b2_confounder_models,
+    )
+    from ageadj_sensitivity import (
+        build_summary as build_ageadj_summary,
+        run_ageadj_models,
     )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -77,6 +87,7 @@ OUTCOME_LABELS = {
 
 def load_panel():
     df = pd.read_csv(DATA_FILE)
+    df = apply_clean_primary_sample(df)
     df = df.sort_values(["State", "Year"]).reset_index(drop=True)
 
     for base_col in [
@@ -323,6 +334,20 @@ def run_phase3b2_confounder_did(df):
         index=False,
     )
     print("Saved Phase 3B2 confounder TWFE DiD results.")
+
+
+def run_ageadj_did(df):
+    detail = run_ageadj_models(df)
+    summary = build_ageadj_summary(detail)
+    detail.to_csv(
+        OUT_TABLES / "did" / "twfe_did_ageadj_sensitivity_results.csv",
+        index=False,
+    )
+    summary.to_csv(
+        OUT_TABLES / "did" / "twfe_did_ageadj_sensitivity_summary.csv",
+        index=False,
+    )
+    print("Saved age-adjusted sensitivity TWFE DiD results.")
 
 
 def event_study_design(df, outcome, min_k=-5, max_k=5):
@@ -603,6 +628,7 @@ def main():
     run_firearm_law_control_did(df)
     run_nonfirearm_confounder_did(df)
     run_phase3b2_confounder_did(df)
+    run_ageadj_did(df)
     save_event_study_outputs(df)
     run_heterogeneity_did(df)
     make_heterogeneity_plots(df)

@@ -10,6 +10,11 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
+try:
+    from src.analysis.phase1_utils import apply_clean_primary_sample
+except ModuleNotFoundError:
+    from phase1_utils import apply_clean_primary_sample
+
 
 ROOT = Path(__file__).resolve().parents[2]
 PANEL_FILE = ROOT / "data" / "processed" / "analysis_panel_full_outcomes.csv"
@@ -160,6 +165,7 @@ def savefig(fig, stem):
 
 def load_panel():
     df = pd.read_csv(PANEL_FILE)
+    df = apply_clean_primary_sample(df)
     df["Adoption group"] = np.where(df["ever_adopter"] == 1, "Adopting states", "Never-adopting states")
     return df
 

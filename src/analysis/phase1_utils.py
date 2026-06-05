@@ -10,6 +10,10 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 PANEL_FILE = ROOT / "data" / "processed" / "analysis_panel_full_outcomes.csv"
 POLICY_AUDIT_FILE = ROOT / "data" / "policy" / "permitless_carry_legal_audit.csv"
+PRIMARY_AUDIT_STATUSES = {
+    "source_verified",
+    "not_adopted_verified",
+}
 
 OUTCOMES = [
     "firearm_suicide_rate_per_100k",
@@ -96,8 +100,28 @@ class RegressionResult:
         self.rsquared = rsquared
 
 
-def load_panel() -> pd.DataFrame:
-    return pd.read_csv(PANEL_FILE).sort_values(["State", "Year"]).reset_index(drop=True)
+def apply_clean_primary_sample(panel: pd.DataFrame, audit: Optional[pd.DataFrame] = None) -> pd.DataFrame:
+    """Keep source-verified adopters and verified non-adopters for the primary estimand."""
+    if audit is None:
+        audit = pd.read_csv(POLICY_AUDIT_FILE)
+    status = audit[["State", "audit_status"]].copy()
+    status["audit_status"] = status["audit_status"].astype(str).str.strip()
+    clean_states = status.loc[
+        status["audit_status"].isin(PRIMARY_AUDIT_STATUSES),
+        "State",
+    ]
+    return (
+        panel.loc[panel["State"].isin(clean_states)]
+        .sort_values(["State", "Year"])
+        .reset_index(drop=True)
+    )
+
+
+def load_panel(*, clean_primary: bool = True) -> pd.DataFrame:
+    panel = pd.read_csv(PANEL_FILE).sort_values(["State", "Year"]).reset_index(drop=True)
+    if clean_primary:
+        panel = apply_clean_primary_sample(panel)
+    return panel
 
 
 def validate_policy_audit_schema(table: pd.DataFrame) -> pd.DataFrame:

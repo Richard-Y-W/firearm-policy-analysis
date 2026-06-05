@@ -35,7 +35,7 @@
 \maketitle
 
 \begin{abstract}
-Permitless concealed carry laws allow eligible adults to carry concealed handguns in public without first obtaining a carry permit. The rapid spread of these laws creates a timely policy question, but estimation is difficult because adoption is politically patterned, legal classifications contain edge cases, and permitless-carry statutes often remove several pre-carry requirements at once. We assembled a 50-state annual panel from 1999 through 2024 using CDC mortality outcomes and a source-audited permitless-carry treatment file. Firearm suicide was the prespecified primary outcome; total suicide, non-firearm suicide, firearm homicide, and total firearm deaths were secondary outcome-family checks. In the baseline fixed-effects model with state and year fixed effects, unemployment, income, and state-clustered standard errors, permitless carry adoption was associated with a 1.263 deaths per 100,000 increase in firearm suicide rates (SE 0.227; $p<0.001$). The estimate remained positive in population-weighted models (0.853; $p<0.001$), pre-COVID and COVID-excluded samples, and staggered-adoption summaries based on cohort windows and not-yet-treated comparisons. It attenuated with state-specific linear trends (0.253; $p=0.069$), and event-time estimates showed statistically significant pre-adoption signal. Firearm homicide showed no comparable baseline association (-0.072; SE 0.368; $p=0.846$), although homicide-rate missingness was concentrated in the smallest-population state-years. Overall, permitless carry adoption was most consistently associated with firearm suicide and total suicide, not firearm homicide. The findings support a state-level observational association and should not be interpreted as individual-level causal evidence.
+Permitless concealed carry laws allow eligible adults to carry concealed handguns in public without first obtaining a carry permit. The rapid spread of these laws creates a timely policy question, but estimation is difficult because adoption is politically patterned, legal classifications contain edge cases, and permitless-carry statutes often remove several pre-carry requirements at once. We assembled a 50-state annual panel from 1999 through 2024 using CDC mortality outcomes and a source-audited permitless-carry treatment file. Firearm suicide was the prespecified primary outcome; total suicide, non-firearm suicide, firearm homicide, and total firearm deaths were secondary outcome-family checks. The primary estimand compares 26 source-verified within-panel adopters with 21 verified non-adopters; ambiguous, partial, and baseline-permitless states are handled outside the primary model. In the baseline fixed-effects model with state and year fixed effects, unemployment, income, and state-clustered standard errors, permitless carry adoption was associated with a 1.391 deaths per 100,000 increase in firearm suicide rates (SE 0.222; $p<0.001$). Age-adjusted firearm-suicide models gave a similar estimate (1.407; SE 0.228; $p<0.001$). The estimate remained positive in population-weighted models (0.919; $p<0.001$), pre-COVID and COVID-excluded samples, and staggered-adoption summaries based on cohort windows and not-yet-treated comparisons. It attenuated with state-specific linear trends (0.249; $p=0.079$), and event-time estimates showed statistically significant pre-adoption signal. Firearm homicide showed no comparable baseline association (-0.234; SE 0.338; $p=0.489$), although homicide-rate missingness was concentrated in the smallest-population state-years. Overall, permitless carry adoption was most consistently associated with firearm suicide and total suicide, not firearm homicide. The findings support a state-level observational association and should not be interpreted as individual-level causal evidence.
 \end{abstract}
 
 \section*{Introduction}
@@ -58,7 +58,7 @@ The resulting claim is deliberately narrow. This is a source-audited state-panel
 
 \subsection*{State-year panel}
 
-The analysis uses an annual 50-state panel from 1999 through 2024. Mortality outcomes come from CDC WONDER underlying-cause mortality files and are expressed as crude rates per 100,000 residents \citep{cdcWonder}. CDC WISQARS documentation provides the broader injury-surveillance context for fatal injury data derived from National Center for Health Statistics mortality files \citep{cdcWisqars}. The primary outcome is firearm suicide. Secondary outcomes are total suicide, non-firearm suicide, firearm homicide, and total firearm deaths. Suicide and total-firearm models use 1,300 state-year observations; firearm-homicide models use 1,199 observations because some state-year homicide rates are unavailable or suppressed.
+The analysis uses an annual 50-state panel from 1999 through 2024. Mortality outcomes come from CDC WONDER underlying-cause mortality files and are expressed as crude rates per 100,000 residents \citep{cdcWonder}. Crude rates are the primary outcome scale because they measure the realized mortality burden in each state-year. Age-adjusted WONDER rates, standardized to the 2000 U.S. standard population, are used as demographic-composition sensitivity checks for firearm suicide, total suicide, firearm homicide, and total firearm deaths. CDC WISQARS documentation provides the broader injury-surveillance context for fatal injury data derived from National Center for Health Statistics mortality files \citep{cdcWisqars}. The primary clean-adoption models use 1,222 state-year observations from 26 source-verified within-panel adopters and 21 verified non-adopters. Firearm-homicide models use 1,142 observations because some state-year homicide rates are unavailable or suppressed. The primary outcome is firearm suicide. Secondary outcomes are total suicide, non-firearm suicide, firearm homicide, and total firearm deaths.
 
 The baseline state-year covariates are unemployment and per-capita income. Sensitivity layers add external firearm-law indicators from the Tufts State Firearm Law Database \citep{tuftsFirearmLaws}, health-insurance access from Census SAHIE, drug-overdose mortality, Census demographic and poverty measures, and HRSA mental-health-provider access. RAND state-level household firearm-ownership estimates, rurality, presidential vote share, and baseline firearm-suicide rates are used for descriptive selection and heterogeneity analyses \citep{randOwnership}.
 
@@ -66,7 +66,7 @@ The baseline state-year covariates are unemployment and per-capita income. Sensi
 
 The treatment is statewide permitless concealed carry: eligible adults can carry a concealed handgun in public without first obtaining a carry permit. The annual treatment indicator turns on in the first calendar year the statewide permitless concealed-carry rule is effective. Permitless open carry alone is not treated as permitless concealed carry.
 
-The legal audit contains one row per state. It records 26 source-verified current-adopter rows, 21 verified non-adopter rows, one partial row, one ambiguous reviewed row, and one baseline-permitless row (Table~\ref{tab:audit}). The processed panel contains 27 adoption-year states because the Mississippi coding is retained for consistency in the state-year treatment map; the audit separately marks Mississippi as partial and not clean policy-feature evidence. Arkansas is excluded from the primary clean-adoption map and is tested separately under 2021 and 2023 coding. Vermont is recorded as baseline permitless and is not treated as a within-panel adopter. The full state-by-state treatment table in Supplementary Note 2 reports the state, adoption year, audit status, primary-map inclusion flag, coding note, and source URL trail.
+The legal audit contains one row per state. It records 26 source-verified current-adopter rows, 21 verified non-adopter rows, one partial row, one ambiguous reviewed row, and one baseline-permitless row (Table~\ref{tab:audit}). The primary analysis excludes the partial, ambiguous, and baseline-permitless rows so the headline estimate compares clean within-panel adopters with verified non-adopters. Mississippi, Arkansas, and Vermont remain visible in the legal audit rather than being hidden inside the binary treatment variable. Arkansas is tested separately under 2021 and 2023 coding, Mississippi is reintroduced in edge-case sensitivity runs, and Vermont is recorded as baseline permitless rather than as a within-panel adoption event. The full state-by-state treatment table in Supplementary Note 2 reports the state, adoption year, audit status, primary-map inclusion flag, coding note, and source URL trail.
 
 \begin{table}[H]
 \centering
@@ -86,7 +86,7 @@ Baseline permitless & 1 \\
 \end{tabular}
 \begin{tablenotes}
 \small
-\item The analytic panel retains 27 adoption-year states because Mississippi remains in the processed treatment map, while the legal audit marks it as partial. Arkansas is handled by sensitivity coding; Vermont is baseline permitless.
+\item The primary analytic panel contains 26 clean source-verified adoption-year states and 21 verified non-adopter states. Mississippi, Arkansas, and Vermont are handled outside the primary clean-adoption estimate.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
@@ -105,13 +105,13 @@ Here $Y_{st}$ is the mortality rate for state $s$ in year $t$, $D_{st}$ equals o
 
 This estimand is familiar in firearm-policy panel studies, but staggered adoption complicates interpretation when effects vary across cohorts or time \citep{goodmanBacon2021,deChaisemartin2020,callawaySantanna2021,sunAbraham2021}. We therefore report cohort-window ATT summaries, not-yet-treated dynamic ATT estimates, and never-treated-control event-time fixed-effect estimates. These analyses ask whether the direction of the result is similar under alternative timing comparisons and whether pre-adoption event-time patterns undermine a parallel-trends interpretation \citep{roth2022}.
 
-The outcome ordering was fixed before drafting. Firearm suicide is primary. Total suicide, non-firearm suicide, firearm homicide, and total firearm deaths assess outcome specificity. Sensitivity analyses add firearm-law covariates, non-firearm contextual covariates, demographic and mental-health covariates, state-specific trends, COVID-period exclusions, Arkansas recoding, leave-one-adopter-out checks, and placebo timing among never-treated states. We do not treat every covariate layer as a superior causal model because some time-varying covariates may reflect broader state policy environments. Heterogeneity and policy-feature analyses are hypothesis-generating because subgroup and feature-specific adopter counts are small.
+The outcome ordering was fixed before drafting. Firearm suicide is primary. Total suicide, non-firearm suicide, firearm homicide, and total firearm deaths assess outcome specificity. Sensitivity analyses add firearm-law covariates, non-firearm contextual covariates, demographic and mental-health covariates, age-adjusted outcome rates, state-specific trends, COVID-period exclusions, Arkansas recoding, leave-one-adopter-out checks, and placebo timing among never-treated states. We do not treat every covariate layer as a superior causal model because some time-varying covariates may reflect broader state policy environments. Heterogeneity and policy-feature analyses are hypothesis-generating because subgroup and feature-specific adopter counts are small.
 
 \section*{Results}
 
 \subsection*{Adopting states differed before adoption}
 
-Before estimating mortality models, we compared adopter and non-adopter states on baseline state characteristics (Fig.~\ref{fig:selection}). Adopter states had higher Republican two-party presidential vote share (0.579 vs. 0.425), higher estimated household gun ownership (0.479 vs. 0.342), greater rurality (0.683 vs. 0.461), and higher baseline firearm-suicide rates (8.847 vs. 5.734 deaths per 100,000). These differences make an unadjusted adopter-versus-non-adopter comparison uninformative.
+Before estimating mortality models, we compared clean-adopter and verified non-adopter states on baseline state characteristics (Fig.~\ref{fig:selection}). Adopter states had higher Republican two-party presidential vote share (0.579 vs. 0.421), higher estimated household gun ownership (0.476 vs. 0.322), greater rurality (0.679 vs. 0.433), and higher baseline firearm-suicide rates (8.849 vs. 5.435 deaths per 100,000). These differences make an unadjusted adopter-versus-non-adopter comparison uninformative.
 
 \begin{figure}[H]
 \centering
@@ -135,7 +135,7 @@ Descriptive trends separated suicide and homicide before regression adjustment (
 
 \subsection*{Baseline models showed a suicide association}
 
-The baseline fixed-effects model estimated a positive post-adoption association for firearm suicide (Table~\ref{tab:main}; Fig.~\ref{fig:twfe}). Permitless carry adoption was associated with a 1.263 deaths per 100,000 increase in firearm suicide rates (SE 0.227; $p<0.001$). Total suicide also increased by 1.576 deaths per 100,000 (SE 0.316; $p<0.001$), and total firearm deaths increased by 1.341 deaths per 100,000 (SE 0.471; $p=0.004$). Non-firearm suicide was positive but smaller (0.312; SE 0.146; $p=0.032$).
+The baseline fixed-effects model estimated a positive post-adoption association for firearm suicide (Table~\ref{tab:main}; Fig.~\ref{fig:twfe}). Permitless carry adoption was associated with a 1.391 deaths per 100,000 increase in firearm suicide rates (SE 0.222; $p<0.001$). Total suicide also increased by 1.805 deaths per 100,000 (SE 0.294; $p<0.001$), and total firearm deaths increased by 1.271 deaths per 100,000 (SE 0.482; $p=0.008$). Non-firearm suicide was positive but smaller (0.415; SE 0.139; $p=0.003$).
 
 \begin{table}[H]
 \centering
@@ -145,11 +145,11 @@ The baseline fixed-effects model estimated a positive post-adoption association 
 \toprule
 Outcome & Coef. & SE & $p$ & N \\
 \midrule
-Firearm suicide & 1.263 & 0.227 & $<0.001$ & 1300 \\
-Non-firearm suicide & 0.312 & 0.146 & 0.032 & 1300 \\
-Total suicide & 1.576 & 0.316 & $<0.001$ & 1300 \\
-Firearm homicide & -0.072 & 0.368 & 0.846 & 1199 \\
-Total firearm deaths & 1.341 & 0.471 & 0.004 & 1300 \\
+Firearm suicide & 1.391 & 0.222 & $<0.001$ & 1222 \\
+Non-firearm suicide & 0.415 & 0.139 & 0.003 & 1222 \\
+Total suicide & 1.805 & 0.294 & $<0.001$ & 1222 \\
+Firearm homicide & -0.234 & 0.338 & 0.489 & 1142 \\
+Total firearm deaths & 1.271 & 0.482 & 0.008 & 1222 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -161,13 +161,33 @@ Total firearm deaths & 1.341 & 0.471 & 0.004 & 1300 \\
 \label{fig:twfe}
 \end{figure}
 
-Table~\ref{tab:diagnostic_spine} places the firearm-suicide estimate beside the main sensitivity checks. The association is positive across many specifications, including population weighting, pre-COVID restriction, COVID-period exclusion, and external firearm-law covariates. The most important attenuation occurs with state-specific linear trends, where the estimate falls to 0.253 ($p=0.069$). Event-time fixed effects also show a positive post-adoption mean but a statistically significant pre-adoption signal. These results support the direction of the baseline association while limiting a strong causal interpretation.
+\subsection*{Age-adjusted outcome rates preserved the main pattern}
+
+Because suicide mortality varies strongly by age and adopting states may differ in age composition, we repeated the baseline fixed-effects models using age-adjusted WONDER rates where available (Table~\ref{tab:ageadj}). These models ask whether the post-adoption association remains after recalculating rates as if states shared the same standard age distribution. Firearm suicide remained positive and similar to the crude-rate estimate (1.407 vs. 1.391 deaths per 100,000), total suicide remained positive, and total firearm deaths remained positive. Firearm homicide remained statistically weak and centered below zero. The age-adjusted homicide model used fewer observations because WONDER marks more small-cell homicide rates as unreliable.
+
+\begin{table}[H]
+\centering
+\caption{\textbf{Age-adjusted outcome-rate sensitivity.}}
+\label{tab:ageadj}
+\begin{tabular}{lrrrr}
+\toprule
+Outcome & Coef. & SE & $p$ & N \\
+\midrule
+Firearm suicide, age-adjusted & 1.407 & 0.228 & $<0.001$ & 1220 \\
+Total suicide, age-adjusted & 1.914 & 0.327 & $<0.001$ & 1222 \\
+Total firearm deaths, age-adjusted & 1.230 & 0.510 & 0.016 & 1222 \\
+Firearm homicide, age-adjusted & -0.230 & 0.426 & 0.590 & 1037 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:diagnostic_spine} places the firearm-suicide estimate beside the main sensitivity checks. The association is positive across many specifications, including population weighting, pre-COVID restriction, COVID-period exclusion, and external firearm-law covariates. The most important attenuation occurs with state-specific linear trends, where the estimate falls to 0.249 ($p=0.079$). Event-time fixed effects also show a positive post-adoption mean but a statistically significant pre-adoption signal. These results support the direction of the baseline association while limiting a strong causal interpretation.
 
 \input{tables/firearm_suicide_diagnostic_spine.tex}
 
 \subsection*{Firearm-homicide missingness was concentrated in small states}
 
-Firearm homicide did not follow the same pattern. The baseline fixed-effects estimate was -0.072 deaths per 100,000 (SE 0.368; $p=0.846$), with 1,199 state-year observations. The estimate was statistically weak and centered near zero. Missingness remains relevant: 101 of 1,300 possible state-years were missing or suppressed, all in the smallest-population quartile (Table~\ref{tab:homicide_missingness}). This limitation tempers any strong homicide-null claim, but it does not account for the suicide-homicide contrast because total suicide and total firearm deaths show positive associations where firearm homicide does not.
+Firearm homicide did not follow the same pattern. The baseline fixed-effects estimate was -0.234 deaths per 100,000 (SE 0.338; $p=0.489$), with 1,142 state-year observations. The estimate was statistically weak and centered near zero. Missingness remains relevant: 80 of 1,222 possible clean-primary state-years were missing or suppressed, all in the smallest-population quartile (Table~\ref{tab:homicide_missingness}). This limitation tempers any strong homicide-null claim, but it does not account for the suicide-homicide contrast because total suicide and total firearm deaths show positive associations where firearm homicide does not.
 
 \input{tables/homicide_missingness_audit.tex}
 
@@ -175,9 +195,9 @@ Together, the baseline estimates and missingness audit support an outcome-specif
 
 \subsection*{Change-score windows showed the same outcome contrast}
 
-The pre-post change-score design asks a simpler question: within fixed windows around adoption, did adopter states experience larger changes than never-adopter states? Firearm suicide was positive and statistically significant in all three windows. The adopter-minus-never difference was 0.641 deaths per 100,000 in the 2-year window ($p=0.001$), 0.603 in the 3-year window ($p<0.001$), and 0.674 in the 5-year window ($p<0.001$).
+The pre-post change-score design asks a simpler question: within fixed windows around adoption, did adopter states experience larger changes than never-adopter states? Firearm suicide was positive and statistically significant in all three windows. The adopter-minus-never difference was 0.658 deaths per 100,000 in the 2-year window ($p=0.001$), 0.634 in the 3-year window ($p<0.001$), and 0.699 in the 5-year window ($p<0.001$).
 
-Firearm homicide again showed little evidence of a post-adoption increase (Table~\ref{tab:change}; Fig.~\ref{fig:change}). The corresponding homicide differences were 0.016 ($p=0.944$), 0.081 ($p=0.757$), and 0.112 ($p=0.686$). Total suicide was positive in all three windows, while total firearm deaths became significant only in the 5-year window. Although less adjusted than the fixed-effects model, the change-score comparison shows that the suicide-homicide contrast is not unique to the baseline regression specification.
+Firearm homicide again showed little evidence of a post-adoption increase (Table~\ref{tab:change}; Fig.~\ref{fig:change}). The corresponding homicide differences were -0.034 ($p=0.881$), 0.024 ($p=0.928$), and 0.035 ($p=0.899$). Total suicide was positive in all three windows, while total firearm deaths was positive but did not reach $p<0.05$ in these window checks. Although less adjusted than the fixed-effects model, the change-score comparison shows that the suicide-homicide contrast is not unique to the baseline regression specification.
 
 \begin{table}[H]
 \centering
@@ -187,11 +207,11 @@ Firearm homicide again showed little evidence of a post-adoption increase (Table
 \toprule
 Outcome & 2-year diff. & 3-year diff. & 5-year diff. \\
 \midrule
-Firearm suicide & 0.641$^{**}$ & 0.603$^{***}$ & 0.674$^{***}$ \\
-Non-firearm suicide & 0.219 & 0.151 & 0.033 \\
-Total suicide & 0.860$^{**}$ & 0.754$^{***}$ & 0.707$^{**}$ \\
-Firearm homicide & 0.016 & 0.081 & 0.112 \\
-Total firearm deaths & 0.561 & 0.645 & 0.779$^{*}$ \\
+Firearm suicide & 0.658$^{**}$ & 0.634$^{***}$ & 0.699$^{***}$ \\
+Non-firearm suicide & 0.214 & 0.134 & 0.047 \\
+Total suicide & 0.872$^{**}$ & 0.767$^{***}$ & 0.746$^{**}$ \\
+Firearm homicide & -0.034 & 0.024 & 0.035 \\
+Total firearm deaths & 0.537 & 0.617 & 0.718 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -205,11 +225,11 @@ Total firearm deaths & 0.561 & 0.645 & 0.779$^{*}$ \\
 
 \subsection*{Covariate layers attenuated the firearm-suicide estimate}
 
-Permitless carry may move alongside other firearm policies. We therefore added covariates for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing using the Tufts database \citep{tuftsFirearmLaws}. The firearm-suicide estimate decreased from 1.263 to 0.994 deaths per 100,000 but remained statistically significant ($p<0.001$). Total suicide and total firearm deaths also remained positive; firearm homicide remained statistically weak.
+Permitless carry may move alongside other firearm policies. We therefore added covariates for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing using the Tufts database \citep{tuftsFirearmLaws}. The firearm-suicide estimate decreased from 1.391 to 1.096 deaths per 100,000 but remained statistically significant ($p<0.001$). Total suicide and total firearm deaths also remained positive; firearm homicide remained statistically weak.
 
-Suicide-related social environments may also differ across adopting and non-adopting states. Health-access covariates reduced the firearm-suicide estimate to 0.668 ($p<0.001$), overdose covariates reduced it to 0.516 ($p=0.044$), and demographic-poverty covariates reduced it to 0.648 ($p<0.001$). These results suggest that the firearm-suicide association is not explained entirely by these measured domains.
+Suicide-related social environments may also differ across adopting and non-adopting states. Health-access covariates reduced the firearm-suicide estimate to 0.707 ($p<0.001$), overdose covariates reduced it to 0.492 ($p=0.060$), and demographic-poverty covariates reduced it to 0.695 ($p<0.001$). These results suggest that the firearm-suicide association is not explained entirely by these measured domains, while the short overdose window marks a boundary for statistical precision.
 
-The strongest attenuation came from specifications that included mental-health-provider access (Table~\ref{tab:sensitivity}). The HRSA mental-health-provider window is short, leaving only 150 state-year observations for the mental-health and full Phase 3B2 models. In that shorter window, firearm suicide remained positive but was no longer statistically significant (0.159, $p=0.625$ for mental-health access; 0.197, $p=0.546$ for the combined Phase 3B2 specification). These rows should not replace the full-panel model, but they identify an important boundary: the association weakens in a short recent window after adding mental-health-provider access and the full Phase 3B2 covariate set.
+The strongest attenuation came from specifications that included mental-health-provider access (Table~\ref{tab:sensitivity}). The HRSA mental-health-provider window is short, leaving only 141 state-year observations for the mental-health and full Phase 3B2 models. In that shorter window, firearm suicide remained positive but was no longer statistically significant (0.116, $p=0.744$ for mental-health access; 0.176, $p=0.633$ for the combined Phase 3B2 specification). These rows should not replace the full-panel model, but they identify an important boundary: the association weakens in a short recent window after adding mental-health-provider access and the full Phase 3B2 covariate set.
 
 These models are best interpreted as sensitivity analyses, not as proof that adding more time-varying covariates necessarily improves causal identification. Some covariates, including overdose mortality, health access, poverty, and mental-health-provider access, may themselves reflect broader state policy environments or shocks related to adoption.
 
@@ -221,20 +241,20 @@ These models are best interpreted as sensitivity analyses, not as proof that add
 \toprule
 Specification & Coef. & $p$ & N \\
 \midrule
-Baseline fixed effects & 1.263 & $<0.001$ & 1300 \\
-External firearm-law covariates & 0.994 & $<0.001$ & 1300 \\
-Health-access covariates & 0.668 & $<0.001$ & 800 \\
-Overdose covariates & 0.516 & 0.044 & 300 \\
-Demographic-poverty covariates & 0.648 & $<0.001$ & 1000 \\
-Mental-health access covariates & 0.159 & 0.625 & 150 \\
-Full Phase 3B2 covariates & 0.197 & 0.546 & 150 \\
+Baseline fixed effects & 1.391 & $<0.001$ & 1222 \\
+External firearm-law covariates & 1.096 & $<0.001$ & 1222 \\
+Health-access covariates & 0.707 & $<0.001$ & 752 \\
+Overdose covariates & 0.492 & 0.060 & 282 \\
+Demographic-poverty covariates & 0.695 & $<0.001$ & 940 \\
+Mental-health access covariates & 0.116 & 0.744 & 141 \\
+Full Phase 3B2 covariates & 0.176 & 0.633 & 141 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection*{Staggered-adoption analyses raised pretrend concerns}
 
-Because adoption is staggered across states, we next examined cohort-window and event-time estimates (Table~\ref{tab:modern}). Cohort-window ATT estimates for firearm suicide were positive across the 2-, 3-, and 5-year windows: 0.591, 0.553, and 0.627 deaths per 100,000. The not-yet-treated dynamic ATT summary also had a positive post-adoption mean for firearm suicide (0.431), while firearm homicide had a negative post-adoption mean (-0.030).
+Because adoption is staggered across states, we next examined cohort-window and event-time estimates (Table~\ref{tab:modern}). Cohort-window ATT estimates for firearm suicide were positive across the 2-, 3-, and 5-year windows: 0.601, 0.577, and 0.641 deaths per 100,000. The not-yet-treated dynamic ATT summary also had a positive post-adoption mean for firearm suicide (0.387), while firearm homicide had a negative post-adoption mean (-0.157).
 
 \begin{table}[H]
 \centering
@@ -244,11 +264,11 @@ Because adoption is staggered across states, we next examined cohort-window and 
 \toprule
 Outcome & ATT w2 & ATT w3 & ATT w5 & Not-yet post & Interpretation \\
 \midrule
-Firearm suicide & 0.591 & 0.553 & 0.627 & 0.431 & Positive, pretrend flag \\
-Non-firearm suicide & 0.263 & 0.232 & 0.199 & 0.050 & Positive diagnostic \\
-Total suicide & 0.854 & 0.785 & 0.827 & 0.481 & Positive, pretrend flag \\
-Firearm homicide & 0.085 & -0.011 & 0.037 & -0.030 & No positive diagnostic \\
-Total firearm deaths & 0.391 & 0.454 & 0.557 & 0.360 & Positive, pretrend flag \\
+Firearm suicide & 0.601 & 0.577 & 0.641 & 0.387 & Positive, pretrend flag \\
+Non-firearm suicide & 0.270 & 0.239 & 0.241 & 0.077 & Positive diagnostic \\
+Total suicide & 0.871 & 0.816 & 0.882 & 0.464 & Positive, pretrend flag \\
+Firearm homicide & -0.004 & -0.107 & -0.106 & -0.157 & No positive diagnostic \\
+Total firearm deaths & 0.382 & 0.435 & 0.493 & 0.200 & Positive, pretrend flag \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -264,15 +284,15 @@ The event-time estimates are more cautionary (Fig.~\ref{fig:event}). Firearm sui
 
 \subsection*{Robustness checks identified trend sensitivity}
 
-The firearm-suicide estimate remained positive under COVID-period exclusion (1.238; $p<0.001$), pre-COVID restriction (1.137; $p<0.001$), population weighting (0.853; $p<0.001$), and external firearm-law covariates (0.994; $p<0.001$). Leave-one-adopter-out estimates ranged from 1.135 to 1.356, and the observed firearm-suicide coefficient exceeded the 95th percentile of the never-treated placebo-timing distribution.
+The firearm-suicide estimate remained positive under COVID-period exclusion (1.356; $p<0.001$), pre-COVID restriction (1.298; $p<0.001$), population weighting (0.919; $p<0.001$), and external firearm-law covariates (1.096; $p<0.001$). Leave-one-adopter-out estimates ranged from 1.265 to 1.481, and the observed firearm-suicide coefficient exceeded the 95th percentile of the never-treated placebo-timing distribution.
 
-State-specific linear trends were the main exception. With state trends, the firearm-suicide estimate attenuated to 0.253 and was not statistically significant at the 0.05 level ($p=0.069$). Total firearm deaths also attenuated strongly (0.117; $p=0.664$). Total suicide remained positive (0.343; $p=0.047$). These rows show that part of the firearm-suicide association is difficult to distinguish from longer state-specific trajectories.
+State-specific linear trends were the main exception. With state trends, the firearm-suicide estimate attenuated to 0.249 and was not statistically significant at the 0.05 level ($p=0.079$). Total firearm deaths also attenuated strongly (0.070; $p=0.806$). Total suicide remained positive (0.372; $p=0.025$). These rows show that part of the firearm-suicide association is difficult to distinguish from longer state-specific trajectories.
 
-Arkansas recoding did not change the broad pattern. When Arkansas was coded as treated in 2021 or 2023, firearm suicide remained positive and significant (1.261 and 1.277), total suicide remained positive and significant (1.595 and 1.601), and firearm homicide remained statistically weak (-0.031 and -0.066). The main outcome contrast is therefore not driven by the Arkansas coding decision.
+Legal edge-case sensitivity did not change the broad pattern. When Arkansas was coded as treated in 2021 or 2023, firearm suicide remained positive and significant (1.361 and 1.379), total suicide remained positive and significant (1.777 and 1.785), and firearm homicide remained statistically weak (-0.205 and -0.250). Reintroducing Mississippi alone produced a firearm-suicide estimate of 1.300, and the combined Mississippi-plus-Arkansas scenarios remained positive and significant. The main outcome contrast is therefore not driven by these edge-case coding decisions.
 
 \subsection*{Heterogeneity patterns were strongest for rurality}
 
-The clearest heterogeneity pattern was rurality (Fig.~\ref{fig:heterogeneity}). Firearm suicide had a positive high-rurality interaction (0.870; $p=0.003$), total suicide also had a positive high-rurality interaction (1.325; $p=0.002$), and total firearm deaths had a positive high-rurality interaction (1.630; $p=0.026$). Non-firearm suicide was more strongly associated with high estimated gun ownership (0.549; $p=0.001$). Firearm homicide heterogeneity estimates were not statistically strong.
+The clearest heterogeneity pattern was rurality (Fig.~\ref{fig:heterogeneity}). Firearm suicide had a positive high-rurality interaction (0.988; $p<0.001$), total suicide also had a positive high-rurality interaction (1.733; $p<0.001$), and non-firearm suicide had positive interactions for high rurality (0.745; $p<0.001$) and high estimated gun ownership (0.586; $p<0.001$). Total firearm-death and firearm-homicide heterogeneity estimates were not statistically strong.
 
 \begin{figure}[H]
 \centering
@@ -289,7 +309,7 @@ The policy-feature models did not identify a stable mechanism. None of the 15 tr
 
 This study evaluates a specific, recent form of concealed-carry deregulation: the removal of the carry-permit requirement. It does not estimate the full history of right-to-carry laws, and it does not test whether public carrying deters crime. In this 50-state panel, the clearest pattern was outcome-specific: permitless carry adoption was more consistently associated with suicide-related mortality than with firearm homicide.
 
-The firearm-suicide estimate was positive in the baseline fixed-effects model, change-score windows, population-weighted models, Arkansas recodings, leave-one-adopter-out checks, and several covariate and staggered-adoption diagnostics. Total suicide and total firearm deaths often moved in the same direction. Firearm homicide did not. This contrast is the central empirical result.
+The firearm-suicide estimate was positive in the baseline fixed-effects model, age-adjusted outcome models, change-score windows, population-weighted models, Arkansas recodings, leave-one-adopter-out checks, and several covariate and staggered-adoption diagnostics. Total suicide and total firearm deaths often moved in the same direction. Firearm homicide did not. This contrast is the central empirical result.
 
 The pattern is not a clean method-substitution result. If permitless carry only shifted suicide method toward firearms, firearm suicide would rise while total suicide remained stable or non-firearm suicide fell. Instead, total suicide increased in the baseline fixed-effects model, and non-firearm suicide was positive in that same specification. The non-firearm and total-suicide results were less stable across sensitivity layers, so firearm suicide remains the most durable signal. Still, the broader suicide pattern argues against describing the finding as simple substitution across methods.
 
@@ -309,9 +329,9 @@ The practical implication is primarily methodological. Permitless-carry studies 
 
 All baseline fixed-effects models used ordinary least squares with state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors. Robustness specifications excluded 2020--2021, restricted the panel to pre-2020 years, applied population weights, added state-specific linear trends, or added external firearm-law covariates. Covariate-layer sensitivity models added firearm-law domains, uninsured rates, overdose mortality, age structure, race and ethnicity shares, poverty rates, and mental-health-provider access as described in the repository output tables. The unweighted estimates target the average state-level association; the population-weighted estimates target the average resident-level association.
 
-Change-score analyses computed, for each adopter state, the difference between the average post-adoption rate and the average pre-adoption rate in 2-, 3-, and 5-year windows. Never-adopter states were assigned comparable window summaries and compared with Welch tests. Staggered-adoption checks included cohort-window ATT estimates, not-yet-treated dynamic ATT estimates, and never-treated-control event-time fixed-effect estimates. These checks were designed as sensitivity analyses because several outcomes showed pre-adoption event-time signals.
+Change-score analyses computed, for each adopter state, the difference between the average post-adoption rate and the average pre-adoption rate in 2-, 3-, and 5-year windows. Never-adopter states were assigned comparable window summaries and compared with Welch tests. Staggered-adoption checks included cohort-window ATT estimates, not-yet-treated dynamic ATT estimates, and never-treated-control event-time fixed-effect estimates. Age-adjusted outcome models used CDC WONDER age-adjusted rates as alternate outcomes and retained the same state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors as the crude-rate baseline model. These checks were designed as sensitivity analyses because several outcomes showed pre-adoption event-time signals.
 
-The outcome order was fixed before drafting the paper. Firearm suicide is the primary outcome. Total suicide, non-firearm suicide, firearm homicide, and total firearm deaths are secondary outcome-family checks. Firearm-law covariates, contextual covariate layers, staggered-adoption estimators, Arkansas recoding, leave-one-out influence, and placebo timing are sensitivity analyses. Rurality, gun ownership, baseline-risk heterogeneity, and policy-feature interactions are exploratory.
+The outcome order was fixed before drafting the paper. Firearm suicide is the primary outcome. Total suicide, non-firearm suicide, firearm homicide, and total firearm deaths are secondary outcome-family checks. Firearm-law covariates, contextual covariate layers, age-adjusted outcome rates, staggered-adoption estimators, Arkansas recoding, leave-one-out influence, and placebo timing are sensitivity analyses. Rurality, gun ownership, baseline-risk heterogeneity, and policy-feature interactions are exploratory.
 
 \section*{Data and Code Availability}
 

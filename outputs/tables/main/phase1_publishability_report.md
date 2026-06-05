@@ -63,35 +63,35 @@ The hierarchy below defines which estimates support the central claim and which 
 
 | outcome_label | coef | p |
 | --- | --- | --- |
-| Firearm Suicide | 1.263 | <0.001 |
-| Non-Firearm Suicide | 0.312 | 0.032 |
-| Total Suicide | 1.576 | <0.001 |
-| Firearm Homicide | -0.072 | 0.846 |
-| Total Firearm Deaths | 1.341 | 0.004 |
+| Firearm Suicide | 1.391 | <0.001 |
+| Non-Firearm Suicide | 0.415 | 0.003 |
+| Total Suicide | 1.805 | <0.001 |
+| Firearm Homicide | -0.234 | 0.489 |
+| Total Firearm Deaths | 1.271 | 0.008 |
 
 ## External Firearm-Law Controls
 
-The external firearm-law control check adds controls for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing. 5 of 5 outcomes retain the same coefficient sign, and 3 retain p < 0.05 after those controls are added.
+The external firearm-law control check adds controls for permit-to-purchase laws, waiting periods, universal background checks, ERPO/red-flag laws, safe-storage laws, stand-your-ground laws, and dealer licensing. 5 of 5 outcomes retain the same coefficient sign, and 4 retain p < 0.05 after those controls are added.
 
 | outcome_label | baseline_coef | baseline_p | controlled_coef | controlled_p | controlled_delta | sign_retained | p05_retained | interpretation_flag |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Firearm Suicide | 1.263 | <0.001 | 0.994 | <0.001 | -0.269 | True | True | survives_firearm_law_controls |
-| Non-Firearm Suicide | 0.312 | 0.032 | 0.229 | 0.103 | -0.083 | True | False | attenuated_by_firearm_law_controls |
-| Total Suicide | 1.576 | <0.001 | 1.223 | <0.001 | -0.352 | True | True | survives_firearm_law_controls |
-| Firearm Homicide | -0.072 | 0.846 | -0.138 | 0.708 | -0.067 | True | False | attenuated_by_firearm_law_controls |
-| Total Firearm Deaths | 1.341 | 0.004 | 0.956 | 0.024 | -0.385 | True | True | survives_firearm_law_controls |
+| Firearm Suicide | 1.391 | <0.001 | 1.096 | <0.001 | -0.294 | True | True | survives_firearm_law_controls |
+| Non-Firearm Suicide | 0.415 | 0.003 | 0.330 | 0.012 | -0.085 | True | True | survives_firearm_law_controls |
+| Total Suicide | 1.805 | <0.001 | 1.426 | <0.001 | -0.379 | True | True | survives_firearm_law_controls |
+| Firearm Homicide | -0.234 | 0.489 | -0.316 | 0.340 | -0.082 | True | False | attenuated_by_firearm_law_controls |
+| Total Firearm Deaths | 1.271 | 0.008 | 0.863 | 0.043 | -0.408 | True | True | survives_firearm_law_controls |
 
 ## Non-Firearm Confounder Controls
 
-The non-firearm confounder check adds Census SAHIE uninsured rates as a health-access proxy and CDC drug-overdose mortality as a substance-use/distress proxy. 3 of 5 outcomes retain p < 0.05 in the 2008-2023 health-access specification, 1 retain p < 0.05 in the 2019-2024 overdose specification, and 1 retain p < 0.05 in the narrower 2019-2023 combined specification.
+The non-firearm confounder check adds Census SAHIE uninsured rates as a health-access proxy and CDC drug-overdose mortality as a substance-use/distress proxy. 2 of 5 outcomes retain p < 0.05 in the 2008-2023 health-access specification, 0 retain p < 0.05 in the 2019-2024 overdose specification, and 1 retain p < 0.05 in the narrower 2019-2023 combined specification.
 
 | outcome_label | firearm_law_coef | firearm_law_p | health_access_coef | health_access_p | health_access_p05_retained | overdose_coef | overdose_p | overdose_p05_retained | health_access_overdose_coef | health_access_overdose_p | health_access_overdose_p05_retained |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Firearm Suicide | 0.994 | <0.001 | 0.668 | <0.001 | True | 0.516 | 0.044 | True | 0.613 | 0.063 | False |
-| Non-Firearm Suicide | 0.229 | 0.103 | 0.138 | 0.422 | False | -0.107 | 0.486 | False | -0.186 | 0.309 | False |
-| Total Suicide | 1.223 | <0.001 | 0.806 | <0.001 | True | 0.409 | 0.171 | False | 0.427 | 0.232 | False |
-| Firearm Homicide | -0.138 | 0.708 | -0.042 | 0.887 | False | -0.118 | 0.528 | False | 0.067 | 0.692 | False |
-| Total Firearm Deaths | 0.956 | 0.024 | 0.631 | 0.038 | True | 0.316 | 0.312 | False | 0.658 | 0.036 | True |
+| Firearm Suicide | 1.096 | <0.001 | 0.707 | <0.001 | True | 0.492 | 0.060 | False | 0.600 | 0.079 | False |
+| Non-Firearm Suicide | 0.330 | 0.012 | 0.236 | 0.175 | False | -0.107 | 0.480 | False | -0.168 | 0.354 | False |
+| Total Suicide | 1.426 | <0.001 | 0.943 | <0.001 | True | 0.384 | 0.204 | False | 0.432 | 0.234 | False |
+| Firearm Homicide | -0.316 | 0.340 | -0.181 | 0.509 | False | -0.104 | 0.580 | False | 0.103 | 0.552 | False |
+| Total Firearm Deaths | 0.863 | 0.043 | 0.503 | 0.095 | False | 0.316 | 0.328 | False | 0.676 | 0.035 | True |
 
 The overdose specifications use shorter samples because CDC's state injury and overdose dataset provides annual `Drug_OD` rates for 2019-2024. The combined health-access and overdose specification is therefore a narrow recent-window sensitivity, not a full-panel replacement.
 
@@ -101,11 +101,11 @@ The Phase 3B2 confounder check adds Census Population Estimates state age and ra
 
 | outcome_label | firearm_law_coef | firearm_law_p | demographic_poverty_coef | demographic_poverty_p | demographic_poverty_p05_retained | mental_health_access_coef | mental_health_access_p | mental_health_access_p05_retained | full_phase3b2_coef | full_phase3b2_p | full_phase3b2_p05_retained |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Firearm Suicide | 0.994 | <0.001 | 0.648 | <0.001 | True | 0.159 | 0.625 | False | 0.197 | 0.546 | False |
-| Non-Firearm Suicide | 0.229 | 0.103 | 0.063 | 0.679 | False | 0.145 | 0.547 | False | 0.109 | 0.663 | False |
-| Total Suicide | 1.223 | <0.001 | 0.711 | 0.004 | True | 0.304 | 0.502 | False | 0.306 | 0.509 | False |
-| Firearm Homicide | -0.138 | 0.708 | -0.229 | 0.367 | False | -0.130 | 0.640 | False | -0.052 | 0.882 | False |
-| Total Firearm Deaths | 0.956 | 0.024 | 0.469 | 0.127 | False | 0.094 | 0.800 | False | 0.240 | 0.575 | False |
+| Firearm Suicide | 1.096 | <0.001 | 0.695 | <0.001 | True | 0.116 | 0.744 | False | 0.176 | 0.633 | False |
+| Non-Firearm Suicide | 0.330 | 0.012 | 0.153 | 0.301 | False | 0.105 | 0.686 | False | 0.077 | 0.769 | False |
+| Total Suicide | 1.426 | <0.001 | 0.848 | <0.001 | True | 0.221 | 0.660 | False | 0.253 | 0.625 | False |
+| Firearm Homicide | -0.316 | 0.340 | -0.347 | 0.182 | False | -0.137 | 0.621 | False | -0.055 | 0.878 | False |
+| Total Firearm Deaths | 0.863 | 0.043 | 0.374 | 0.246 | False | 0.047 | 0.910 | False | 0.211 | 0.672 | False |
 
 The demographic-poverty specification uses Census Population Estimates state demographic shares and Census SAIPE poverty rates. The 2005-2009 age-structure controls use intercensal grouped-age approximations for the 18-34 category. The mental-health and full Phase 3B2 specifications use a short HRSA AHRF state/national workforce window, so they are sensitivity checks rather than replacements for the full-panel primary model.
 
@@ -126,21 +126,21 @@ The table below documents which Phase 3B/3B2 confounder domains are available in
 
 | outcome_label | window | difference | p |
 | --- | --- | --- | --- |
-| Firearm Homicide | 2 | 0.016 | 0.944 |
-| Firearm Homicide | 3 | 0.081 | 0.757 |
-| Firearm Homicide | 5 | 0.112 | 0.686 |
-| Firearm Suicide | 2 | 0.641 | 0.001 |
-| Firearm Suicide | 3 | 0.603 | <0.001 |
-| Firearm Suicide | 5 | 0.674 | <0.001 |
-| Non-Firearm Suicide | 2 | 0.219 | 0.250 |
-| Non-Firearm Suicide | 3 | 0.151 | 0.343 |
-| Non-Firearm Suicide | 5 | 0.033 | 0.847 |
-| Total Firearm Deaths | 2 | 0.561 | 0.117 |
-| Total Firearm Deaths | 3 | 0.645 | 0.088 |
-| Total Firearm Deaths | 5 | 0.779 | 0.042 |
-| Total Suicide | 2 | 0.860 | 0.002 |
-| Total Suicide | 3 | 0.754 | <0.001 |
-| Total Suicide | 5 | 0.707 | 0.004 |
+| Firearm Homicide | 2 | -0.034 | 0.881 |
+| Firearm Homicide | 3 | 0.024 | 0.928 |
+| Firearm Homicide | 5 | 0.035 | 0.899 |
+| Firearm Suicide | 2 | 0.658 | 0.001 |
+| Firearm Suicide | 3 | 0.634 | <0.001 |
+| Firearm Suicide | 5 | 0.699 | <0.001 |
+| Non-Firearm Suicide | 2 | 0.214 | 0.279 |
+| Non-Firearm Suicide | 3 | 0.134 | 0.419 |
+| Non-Firearm Suicide | 5 | 0.047 | 0.792 |
+| Total Firearm Deaths | 2 | 0.537 | 0.146 |
+| Total Firearm Deaths | 3 | 0.617 | 0.113 |
+| Total Firearm Deaths | 5 | 0.718 | 0.064 |
+| Total Suicide | 2 | 0.872 | 0.003 |
+| Total Suicide | 3 | 0.767 | <0.001 |
+| Total Suicide | 5 | 0.746 | 0.004 |
 
 ## Modern Staggered-Adoption Sensitivity
 
@@ -148,11 +148,11 @@ The modern staggered-adoption check reports cohort-window ATT estimates, a not-y
 
 | outcome_label | cohort_att_w2 | cohort_att_w3 | cohort_att_w5 | not_yet_post_mean_att | not_yet_pre_mean_att | not_yet_dynamic_rows | event_post_mean_coef | pretrend_flag_p05 | interpretation_flag |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Firearm Suicide | 0.591 | 0.553 | 0.627 | 0.431 | -0.284 | 10 | 0.617 | True | sensitivity_only_pretrend_signal |
-| Non-Firearm Suicide | 0.263 | 0.232 | 0.199 | 0.050 | -0.118 | 10 | 0.154 | False | positive_post_adoption_sensitivity |
-| Total Suicide | 0.854 | 0.785 | 0.827 | 0.481 | -0.402 | 10 | 0.772 | True | sensitivity_only_pretrend_signal |
-| Firearm Homicide | 0.085 | -0.011 | 0.037 | -0.030 | 0.038 | 10 | -0.142 | False | no_positive_post_adoption_sensitivity |
-| Total Firearm Deaths | 0.391 | 0.454 | 0.557 | 0.360 | -0.268 | 10 | 0.530 | True | sensitivity_only_pretrend_signal |
+| Firearm Suicide | 0.601 | 0.577 | 0.641 | 0.387 | -0.352 | 10 | 0.651 | True | sensitivity_only_pretrend_signal |
+| Non-Firearm Suicide | 0.270 | 0.239 | 0.241 | 0.077 | -0.155 | 10 | 0.209 | False | positive_post_adoption_sensitivity |
+| Total Suicide | 0.871 | 0.816 | 0.882 | 0.464 | -0.507 | 10 | 0.861 | True | sensitivity_only_pretrend_signal |
+| Firearm Homicide | -0.004 | -0.107 | -0.106 | -0.157 | 0.092 | 10 | -0.326 | False | no_positive_post_adoption_sensitivity |
+| Total Firearm Deaths | 0.382 | 0.435 | 0.493 | 0.200 | -0.259 | 10 | 0.381 | True | sensitivity_only_pretrend_signal |
 
 ## Exploratory Policy-Feature Heterogeneity
 
@@ -160,21 +160,21 @@ The policy-feature heterogeneity models are exploratory because permitless-carry
 
 | outcome_label | mechanism_dimension | main_post_coef | interaction_coef | interaction_se | interaction_p | n_mechanism_states | n_other_states | sparse_comparison | comparison_warning | interpretation_scope |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Firearm Suicide | training_removed | 1.172 | 0.220 | 0.312 | 0.481 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Firearm Suicide | training_removed | 1.200 | 0.227 | 0.309 | 0.462 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
 | Firearm Suicide | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
-| Firearm Suicide | misdemeanor_screen_removed | 1.396 | -0.087 | 0.376 | 0.817 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
-| Non-Firearm Suicide | training_removed | 0.454 | -0.100 | 0.306 | 0.745 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Firearm Suicide | misdemeanor_screen_removed | 1.429 | -0.083 | 0.375 | 0.826 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Non-Firearm Suicide | training_removed | 0.493 | -0.093 | 0.304 | 0.759 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
 | Non-Firearm Suicide | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
-| Non-Firearm Suicide | misdemeanor_screen_removed | 0.241 | 0.279 | 0.200 | 0.163 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
-| Total Suicide | training_removed | 1.626 | 0.120 | 0.465 | 0.796 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Non-Firearm Suicide | misdemeanor_screen_removed | 0.282 | 0.288 | 0.198 | 0.146 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Total Suicide | training_removed | 1.693 | 0.134 | 0.457 | 0.769 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
 | Total Suicide | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
-| Total Suicide | misdemeanor_screen_removed | 1.638 | 0.192 | 0.484 | 0.692 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
-| Firearm Homicide | training_removed | 0.353 | -0.706 | 0.394 | 0.073 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Total Suicide | misdemeanor_screen_removed | 1.711 | 0.205 | 0.480 | 0.669 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Firearm Homicide | training_removed | 0.375 | -0.702 | 0.398 | 0.078 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
 | Firearm Homicide | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
-| Firearm Homicide | misdemeanor_screen_removed | -0.599 | 0.670 | 0.494 | 0.175 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
-| Total Firearm Deaths | training_removed | 1.532 | -0.350 | 0.527 | 0.507 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Firearm Homicide | misdemeanor_screen_removed | -0.577 | 0.675 | 0.495 | 0.172 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Total Firearm Deaths | training_removed | 1.560 | -0.343 | 0.528 | 0.516 | 21 | 5 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
 | Total Firearm Deaths | permit_background_check_removed | NA | NA | NA | NA | 26 | 0 | True | no_source_verified_comparison_group | exploratory_sparse_comparison_do_not_interpret_as_mechanism |
-| Total Firearm Deaths | misdemeanor_screen_removed | 1.015 | 0.481 | 0.701 | 0.493 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
+| Total Firearm Deaths | misdemeanor_screen_removed | 1.047 | 0.487 | 0.700 | 0.487 | 12 | 14 | False | adequate_source_verified_comparison_group | exploratory_policy_feature_heterogeneity |
 
 ## Robustness Summary
 
@@ -182,11 +182,11 @@ The state-trend specification attenuates several suicide estimates, so the stron
 
 | outcome_label | baseline_coef | baseline_p | twfe_specs_p05 | leave_one_min_coef | leave_one_max_coef | observed_exceeds_placebo_p95 | interpretation_flag |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Firearm Suicide | 1.263 | <0.001 | 5 | 1.135 | 1.356 | True | stable_positive |
-| Non-Firearm Suicide | 0.312 | 0.032 | 1 | 0.269 | 0.370 | True | stable_positive |
-| Total Suicide | 1.576 | <0.001 | 6 | 1.420 | 1.727 | True | stable_positive |
-| Firearm Homicide | -0.072 | 0.846 | 0 | -0.258 | 0.120 | False | sensitivity_required |
-| Total Firearm Deaths | 1.341 | 0.004 | 4 | 1.129 | 1.592 | True | stable_positive |
+| Firearm Suicide | 1.391 | <0.001 | 5 | 1.265 | 1.481 | True | stable_positive |
+| Non-Firearm Suicide | 0.415 | 0.003 | 5 | 0.371 | 0.472 | True | stable_positive |
+| Total Suicide | 1.805 | <0.001 | 6 | 1.656 | 1.954 | True | stable_positive |
+| Firearm Homicide | -0.234 | 0.489 | 0 | -0.399 | -0.049 | False | sensitivity_required |
+| Total Firearm Deaths | 1.271 | 0.008 | 4 | 1.058 | 1.532 | True | stable_positive |
 
 ## Arkansas Treatment-Year Sensitivity
 
@@ -194,11 +194,11 @@ The Arkansas sensitivity check keeps Arkansas excluded in the primary model and 
 
 | outcome_label | primary_coef | arkansas_2021_coef | arkansas_2021_delta | arkansas_2023_coef | arkansas_2023_delta | sign_retained | p05_retained |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Firearm Suicide | 1.263 | 1.261 | -0.002 | 1.277 | 0.013 | True | True |
-| Non-Firearm Suicide | 0.312 | 0.333 | 0.021 | 0.324 | 0.012 | True | True |
-| Total Suicide | 1.576 | 1.595 | 0.019 | 1.601 | 0.025 | True | True |
-| Firearm Homicide | -0.072 | -0.031 | 0.041 | -0.066 | 0.006 | True | False |
-| Total Firearm Deaths | 1.341 | 1.369 | 0.028 | 1.353 | 0.012 | True | True |
+| Firearm Suicide | 1.391 | 1.361 | -0.030 | 1.379 | -0.012 | True | True |
+| Non-Firearm Suicide | 0.415 | 0.416 | 0.002 | 0.406 | -0.008 | True | True |
+| Total Suicide | 1.805 | 1.777 | -0.028 | 1.785 | -0.020 | True | True |
+| Firearm Homicide | -0.234 | -0.205 | 0.028 | -0.250 | -0.016 | True | False |
+| Total Firearm Deaths | 1.271 | 1.262 | -0.009 | 1.240 | -0.032 | True | True |
 
 ## Interpretation Boundary
 

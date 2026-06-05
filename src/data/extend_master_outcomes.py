@@ -11,6 +11,13 @@ FIREARM_LAW_CONTROLS_FILE = PROCESSED_DIR / "state_year_firearm_law_controls_199
 NONFIREARM_CONFOUNDERS_FILE = PROCESSED_DIR / "state_year_nonfirearm_confounders_2008_2024.csv"
 PHASE3B2_CONFOUNDERS_FILE = PROCESSED_DIR / "state_year_phase3b2_confounders_2005_2024.csv"
 
+AGEADJ_FILES = {
+    "firearm_suicide_ageadj_rate_per_100k": PROCESSED_DIR / "analysis_panel_firearm_suicide_ageadj_1999_2024.csv",
+    "total_suicide_ageadj_rate_per_100k": PROCESSED_DIR / "analysis_panel_total_suicide_ageadj_1999_2024.csv",
+    "total_firearm_ageadj_rate_per_100k": PROCESSED_DIR / "analysis_panel_total_firearm_ageadj_1999_2024.csv",
+    "firearm_homicide_ageadj_rate_per_100k": PROCESSED_DIR / "analysis_panel_firearm_homicide_ageadj_1999_2024.csv",
+}
+
 OUT_FILE = PROCESSED_DIR / "analysis_panel_full_outcomes.csv"
 
 
@@ -38,6 +45,15 @@ def main():
     full = full.merge(nonfirearm_confounders, on=["State", "Year"], how="left")
     full = full.merge(phase3b2_confounders, on=["State", "Year"], how="left")
 
+    for col_name, fpath in AGEADJ_FILES.items():
+        if not fpath.exists():
+            print(f"  WARNING: age-adjusted file missing, skipping: {fpath.name}")
+            continue
+        aa = pd.read_csv(fpath)[["State", "Year", "ageadj_rate_per_100k"]].rename(
+            columns={"ageadj_rate_per_100k": col_name}
+        )
+        full = full.merge(aa, on=["State", "Year"], how="left")
+
     full.to_csv(OUT_FILE, index=False)
 
     print(f"Saved: {OUT_FILE}")
@@ -52,6 +68,10 @@ def main():
         "total_suicide_rate_per_100k",
         "firearm_homicide_rate_per_100k",
         "total_firearm_rate_per_100k",
+        "firearm_suicide_ageadj_rate_per_100k",
+        "total_suicide_ageadj_rate_per_100k",
+        "total_firearm_ageadj_rate_per_100k",
+        "firearm_homicide_ageadj_rate_per_100k",
         "permit_to_purchase",
         "waiting_period",
         "universal_background_check",

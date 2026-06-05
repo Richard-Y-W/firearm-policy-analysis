@@ -8,6 +8,7 @@ try:
         OUTCOMES,
         OUTCOME_LABELS,
         ROOT,
+        apply_clean_primary_sample,
         fit_twfe,
         load_panel,
     )
@@ -16,6 +17,7 @@ except ModuleNotFoundError:
         OUTCOMES,
         OUTCOME_LABELS,
         ROOT,
+        apply_clean_primary_sample,
         fit_twfe,
         load_panel,
     )
@@ -25,6 +27,7 @@ ARKANSAS_SENSITIVITY_YEARS = {
     "arkansas_2021": 2021,
     "arkansas_2023": 2023,
 }
+MISSISSIPPI_SENSITIVITY_SCENARIO = "mississippi_retained_year"
 
 OUT_DIR = ROOT / "outputs" / "tables" / "robustness"
 DETAIL_FILE = OUT_DIR / "arkansas_treatment_sensitivity.csv"
@@ -39,6 +42,16 @@ def assign_arkansas_treatment_year(panel: pd.DataFrame, year: int) -> pd.DataFra
     out.loc[mask, "post_permitless"] = (out.loc[mask, "Year"] >= year).astype(int)
     out.loc[mask, "years_since_permitless"] = out.loc[mask, "Year"] - year
     return out
+
+
+def add_states_from_raw_panel(panel: pd.DataFrame, raw_panel: pd.DataFrame, states: list[str]) -> pd.DataFrame:
+    additions = raw_panel.loc[raw_panel["State"].isin(states)].copy()
+    base = panel.loc[~panel["State"].isin(states)].copy()
+    return (
+        pd.concat([base, additions], ignore_index=True)
+        .sort_values(["State", "Year"])
+        .reset_index(drop=True)
+    )
 
 
 def model_row(outcome: str, specification: str, result, arkansas_year=None) -> dict:
@@ -59,9 +72,25 @@ def model_row(outcome: str, specification: str, result, arkansas_year=None) -> d
 
 
 def run_arkansas_sensitivity(panel: pd.DataFrame) -> pd.DataFrame:
-    scenarios = [("primary_excluded", None, panel)]
+    raw_panel = load_panel(clean_primary=False)
+    clean_panel = apply_clean_primary_sample(raw_panel)
+    primary_panel = apply_clean_primary_sample(panel)
+    scenarios = [("primary_excluded", None, primary_panel)]
+    mississippi_panel = add_states_from_raw_panel(clean_panel, raw_panel, ["Mississippi"])
+    scenarios.append((MISSISSIPPI_SENSITIVITY_SCENARIO, None, mississippi_panel))
     scenarios.extend(
-        (name, year, assign_arkansas_treatment_year(panel, year))
+        (name, year, assign_arkansas_treatment_year(add_states_from_raw_panel(clean_panel, raw_panel, ["Arkansas"]), year))
+        for name, year in ARKANSAS_SENSITIVITY_YEARS.items()
+    )
+    scenarios.extend(
+        (
+            f"{MISSISSIPPI_SENSITIVITY_SCENARIO}_{name}",
+            year,
+            assign_arkansas_treatment_year(
+                add_states_from_raw_panel(clean_panel, raw_panel, ["Arkansas", "Mississippi"]),
+                year,
+            ),
+        )
         for name, year in ARKANSAS_SENSITIVITY_YEARS.items()
     )
 
@@ -134,7 +163,7 @@ def build_sensitivity_summary(results: pd.DataFrame) -> pd.DataFrame:
 
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    panel = load_panel()
+    panel = load_panel(clean_primary=True)
     detail = run_arkansas_sensitivity(panel)
     summary = build_sensitivity_summary(detail)
     detail.to_csv(DETAIL_FILE, index=False)

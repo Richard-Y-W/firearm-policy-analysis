@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "PowerShell(pip install *)",
+      "PowerShell(python -m pip install xlrd --quiet; python -c \"import xlrd; print\\('ok'\\)\")",
+      "PowerShell(python tmp_check.py)",
+      "Bash(cp \"C:/Users/richa/Downloads/Firearm suicide 1999 - 2020.xls\" \"C:/Users/richa/firearm-policy-analysis/data/raw/cdc_wonder/firearm_suicide_1999_2020_ageadj.xls\")",
+      "Bash(cp \"C:/Users/richa/Downloads/Firearm suicide 2018 - 2024.xls\" \"C:/Users/richa/firearm-policy-analysis/data/raw/cdc_wonder/firearm_suicide_2018_2024_ageadj.xls\")",
+      "Bash(cp \"C:/Users/richa/Downloads/Total suicide 1999-2020.xls\" \"C:/Users/richa/firearm-policy-analysis/data/raw/cdc_wonder/total_suicide_1999_2020_ageadj.xls\")",
+      "Bash(cp \"C:/Users/richa/Downloads/Total Suicide 2018-2024.xls\" \"C:/Users/richa/firearm-policy-analysis/data/raw/cdc_wonder/total_suicide_2018_2024_ageadj.xls\")",
+      "Bash(cp \"C:/Users/richa/Downloads/Total firearm deaths 1999-2020.xls\" \"C:/Users/richa/firearm-policy-analysis/data/raw/cdc_wonder/total_firearm_1999_2020_ageadj.xls\")"
+    ]
+  }
+}

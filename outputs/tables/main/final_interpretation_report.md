@@ -16,65 +16,64 @@ Total firearm deaths also show a positive post-adoption association, suggesting 
 
 ## Firearm Suicide
 
-- **TWFE DiD estimate:** 1.263 (SE 0.227, p = 0.0000) *** -> **positive association**.
+- **TWFE DiD estimate:** 1.391 (SE 0.222, p = 0.0000) *** -> **positive association**.
 
 - **Welch pre-post change-score results:**
-  - 2-year window: difference = 0.641, p = 0.0013 ***
-  - 3-year window: difference = 0.603, p = 0.0008 ***
-  - 5-year window: difference = 0.674, p = 0.0000 ***
+  - 2-year window: difference = 0.658, p = 0.0015 ***
+  - 3-year window: difference = 0.634, p = 0.0006 ***
+  - 5-year window: difference = 0.699, p = 0.0000 ***
 
-- **Strongest heterogeneity signal:** high_rurality (interaction = 0.870, p = 0.0025 ***)
+- **Strongest heterogeneity signal:** high_rurality (interaction = 0.988, p = 0.0001 ***)
 
 ## Non-Firearm Suicide
 
-- **TWFE DiD estimate:** 0.312 (SE 0.146, p = 0.0322) ** -> **positive association**.
+- **TWFE DiD estimate:** 0.415 (SE 0.139, p = 0.0029) *** -> **positive association**.
 
 - **Welch pre-post change-score results:**
-  - 2-year window: difference = 0.219, p = 0.2499
-  - 3-year window: difference = 0.151, p = 0.3427
-  - 5-year window: difference = 0.033, p = 0.8472
+  - 2-year window: difference = 0.214, p = 0.2787 
+  - 3-year window: difference = 0.134, p = 0.4192 
+  - 5-year window: difference = 0.047, p = 0.7922 
 
-- **Strongest heterogeneity signal:** high_gun_ownership (interaction = 0.549, p = 0.0012 ***)
+- **Strongest heterogeneity signal:** high_rurality (interaction = 0.745, p = 0.0000 ***)
 
 ## Total Suicide
 
-- **TWFE DiD estimate:** 1.576 (SE 0.316, p = 0.0000) *** -> **positive association**.
+- **TWFE DiD estimate:** 1.805 (SE 0.294, p = 0.0000) *** -> **positive association**.
 
 - **Welch pre-post change-score results:**
-  - 2-year window: difference = 0.860, p = 0.0023 ***
-  - 3-year window: difference = 0.754, p = 0.0007 ***
-  - 5-year window: difference = 0.707, p = 0.0041 ***
+  - 2-year window: difference = 0.872, p = 0.0029 ***
+  - 3-year window: difference = 0.767, p = 0.0009 ***
+  - 5-year window: difference = 0.746, p = 0.0038 ***
 
-- **Strongest heterogeneity signal:** high_rurality (interaction = 1.325, p = 0.0024 ***)
+- **Strongest heterogeneity signal:** high_rurality (interaction = 1.733, p = 0.0000 ***)
 
 ## Firearm Homicide
 
-- **TWFE DiD estimate:** -0.072 (SE 0.368, p = 0.8455)  -> **no clear evidence**.
+- **TWFE DiD estimate:** -0.234 (SE 0.338, p = 0.4889)  -> **no clear evidence**.
 
 - **Welch pre-post change-score results:**
-  - 2-year window: difference = 0.016, p = 0.9442
-  - 3-year window: difference = 0.081, p = 0.7567
-  - 5-year window: difference = 0.112, p = 0.6859
+  - 2-year window: difference = -0.034, p = 0.8812 
+  - 3-year window: difference = 0.024, p = 0.9281 
+  - 5-year window: difference = 0.035, p = 0.8989 
 
-- **Strongest heterogeneity signal:** high_baseline_firearm_suicide (interaction = 0.648, p = 0.2183 )
+- **Strongest heterogeneity signal:** high_baseline_firearm_suicide (interaction = 0.048, p = 0.8945 )
 
 ## Total Firearm Deaths
 
-- **TWFE DiD estimate:** 1.341 (SE 0.471, p = 0.0044) *** -> **positive association**.
+- **TWFE DiD estimate:** 1.271 (SE 0.482, p = 0.0083) *** -> **positive association**.
 
 - **Welch pre-post change-score results:**
-  - 2-year window: difference = 0.561, p = 0.1166
-  - 3-year window: difference = 0.645, p = 0.0878 *
-  - 5-year window: difference = 0.779, p = 0.0424 **
+  - 2-year window: difference = 0.537, p = 0.1456 
+  - 3-year window: difference = 0.617, p = 0.1131 
+  - 5-year window: difference = 0.718, p = 0.0636 *
 
-- **Strongest heterogeneity signal:** high_rurality (interaction = 1.630, p = 0.0256 **)
+- **Strongest heterogeneity signal:** high_rurality (interaction = 1.140, p = 0.1915 )
 
 ## Heterogeneity
 
-- **Firearm Suicide:** strongest heterogeneity appears along `high_rurality` (interaction = 0.870, p = 0.0025 ***).
-- **Non-Firearm Suicide:** strongest heterogeneity appears along `high_gun_ownership` (interaction = 0.549, p = 0.0012 ***).
-- **Total Firearm Deaths:** strongest heterogeneity appears along `high_rurality` (interaction = 1.630, p = 0.0256 **).
-- **Total Suicide:** strongest heterogeneity appears along `high_rurality` (interaction = 1.325, p = 0.0024 ***).
+- **Firearm Suicide:** strongest heterogeneity appears along `high_rurality` (interaction = 0.988, p = 0.0001 ***).
+- **Non-Firearm Suicide:** strongest heterogeneity appears along `high_rurality` (interaction = 0.745, p = 0.0000 ***).
+- **Total Suicide:** strongest heterogeneity appears along `high_rurality` (interaction = 1.733, p = 0.0000 ***).
 
 Substantively, the cleanest recurring pattern is that **rurality matters**: several outcomes show larger post-adoption associations in more rural states.
 
@@ -85,16 +84,16 @@ The descriptive state-level comparisons are more reliable than the logit coeffic
 That means the adoption model should be treated as **exploratory only**, not as a stable causal or predictive model.
 
 - Descriptive adopter vs non-adopter means:
-  - Republican vote share baseline: adopters = 0.579, non-adopters = 0.425
-  - Gun ownership baseline: adopters = 0.479, non-adopters = 0.342
-  - Rurality: adopters = 0.683, non-adopters = 0.461
-  - Baseline firearm suicide: adopters = 8.847, non-adopters = 5.734
+  - Republican vote share baseline: adopters = 0.579, non-adopters = 0.421
+  - Gun ownership baseline: adopters = 0.476, non-adopters = 0.322
+  - Rurality: adopters = 0.679, non-adopters = 0.433
+  - Baseline firearm suicide: adopters = 8.849, non-adopters = 5.435
 
 The political-selection section can therefore be framed as: **policy adoption is politically and structurally patterned**, but the formal adoption model is unstable in this small sample and should be interpreted cautiously.
 
 ## Results Summary
 
-Across the main state-year panel models, permitless carry adoption was associated with a **1.263-point increase** in firearm suicide rates per 100,000 (p = 0.0000), while firearm homicide showed a **-0.072-point estimate** that was not statistically distinguishable from zero (p = 0.8455). Total suicide also increased in the main TWFE specification (coef = 1.576, p = 0.0000). Taken together, these findings suggest that permitless carry adoption is more consistently associated with suicide-related mortality than with firearm homicide in this dataset.
+Across the main state-year panel models, permitless carry adoption was associated with a **1.391-point increase** in firearm suicide rates per 100,000 (p = 0.0000), while firearm homicide showed a **-0.234-point estimate** that was not statistically distinguishable from zero (p = 0.4889). Total suicide also increased in the main TWFE specification (coef = 1.805, p = 0.0000). Taken together, these findings suggest that permitless carry adoption is more consistently associated with suicide-related mortality than with firearm homicide in this dataset.
 
 
 ## Limitations
@@ -105,3 +104,4 @@ Across the main state-year panel models, permitless carry adoption was associate
 - The political-selection logit showed **perfect-separation / convergence problems**, so those coefficients should not be overinterpreted.
 - Some homicide observations are missing due to suppression / incomplete availability, so homicide results are based on a smaller effective sample.
 - State-level analysis cannot identify which individuals changed behavior; avoid ecological fallacy language.
+
