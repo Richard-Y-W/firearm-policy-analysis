@@ -24,10 +24,11 @@
 
 \title{\bfseries Permitless Concealed Carry Adoption and Firearm Mortality in U.S. States, 1999--2024: A Source-Audited Panel Analysis}
 
-\author[1]{Byung Kim}
-\author[2]{Yucheng Wang}
-\affil[1]{United States Air Force Academy, Colorado Springs, CO, USA}
-\affil[2]{University of Wisconsin--Madison, Madison, WI, USA}
+\author[1]{Yucheng Wang}
+\author[2]{Byung Kim}
+\affil[1]{University of Wisconsin--Madison, Madison, WI, USA}
+\affil[2]{United States Air Force Academy, Colorado Springs, CO, USA}
+\affil[]{\textit{Yucheng Wang and Byung Kim contributed equally to this work.}}
 \date{}
 
 \begin{document}
@@ -51,7 +52,7 @@ Legal coding is a second source of uncertainty. Permitless open carry is not the
 
 We address these concerns in two ways. First, we use a source-audited legal treatment file that distinguishes clean within-panel adopters, verified non-adopters, baseline-permitless states, partial cases, and ambiguous reviewed cases. The audit also records whether adoption removed training requirements, carry-permit background checks, or permit-specific misdemeanor screens. Second, we prespecify an interpretive structure: firearm suicide is the primary outcome; total suicide, non-firearm suicide, firearm homicide, and total firearm deaths are secondary outcome-family checks; and mechanism-oriented subgroup analyses are exploratory. State-specific trends, staggered-adoption estimators, Arkansas recoding, leave-one-out estimates, placebo timing, and covariate-layer sensitivity models are used to characterize robustness and limits rather than to create multiple independent headline findings.
 
-The resulting claim is deliberately narrow. Permitless carry adoption was most consistently associated with higher firearm suicide rates. Total suicide also increased in baseline models, so the pattern is not a simple firearm-method-substitution result. Firearm homicide did not show a comparable positive association. The suicide estimates remained positive across many checks, but they attenuated under state-specific linear trends and short-window mental-health-provider specifications, and event-time analyses showed pre-adoption signal. The contribution is therefore not a definitive causal estimate; it is a source-audited state-panel analysis showing where the firearm-suicide association appears, where it persists, and where it weakens.
+The resulting claim is deliberately narrow. This is a source-audited state-panel analysis of where the permitless-carry association appears, where it persists, and where it weakens. The central pattern is a firearm-suicide association, with total suicide often moving in the same direction and firearm homicide showing no comparable positive signal.
 
 \section*{Data and Treatment Coding}
 
@@ -65,7 +66,7 @@ The baseline state-year covariates are unemployment and per-capita income. Sensi
 
 The treatment is statewide permitless concealed carry: eligible adults can carry a concealed handgun in public without first obtaining a carry permit. The annual treatment indicator turns on in the first calendar year the statewide permitless concealed-carry rule is effective. Permitless open carry alone is not treated as permitless concealed carry.
 
-The legal audit contains one row per state. It records 26 source-verified current-adopter rows, 21 verified non-adopter rows, one partial row, one ambiguous reviewed row, and one baseline-permitless row (Table~\ref{tab:audit}). The processed panel contains 27 adoption-year states because the Mississippi coding is retained for consistency in the state-year treatment map; the audit separately marks Mississippi as partial and not clean policy-feature evidence. Arkansas is excluded from the primary clean-adoption map and is tested separately under 2021 and 2023 coding. Vermont is recorded as baseline permitless and is not treated as a within-panel adopter. The full state-by-state treatment table reports the state, adoption year, audit status, primary-map inclusion flag, coding note, and source URL trail (Supplementary Table~S2).
+The legal audit contains one row per state. It records 26 source-verified current-adopter rows, 21 verified non-adopter rows, one partial row, one ambiguous reviewed row, and one baseline-permitless row (Table~\ref{tab:audit}). The processed panel contains 27 adoption-year states because the Mississippi coding is retained for consistency in the state-year treatment map; the audit separately marks Mississippi as partial and not clean policy-feature evidence. Arkansas is excluded from the primary clean-adoption map and is tested separately under 2021 and 2023 coding. Vermont is recorded as baseline permitless and is not treated as a within-panel adopter. The full state-by-state treatment table in Supplementary Note 2 reports the state, adoption year, audit status, primary-map inclusion flag, coding note, and source URL trail.
 
 \begin{table}[H]
 \centering
@@ -94,13 +95,13 @@ The audit also records carry-permit features for the 26 source-verified adopter 
 
 \section*{Empirical Strategy}
 
-The baseline fixed-effects association model is a two-way fixed-effects state-year regression:
+The central specification is a two-way fixed-effects state-year regression:
 
 \[
-Y_{st} = \beta PostPermitless_{st} + \gamma_s + \delta_t + X_{st}\theta + \epsilon_{st},
+Y_{st} = \alpha_s + \lambda_t + \beta D_{st} + X_{st}'\theta + \varepsilon_{st},
 \]
 
-where $Y_{st}$ is an outcome rate in state $s$ and year $t$, $PostPermitless_{st}$ is the post-adoption indicator, $\gamma_s$ and $\delta_t$ are state and year fixed effects, and $X_{st}$ includes unemployment and per-capita income in the baseline model. Standard errors are clustered by state. The coefficient $\beta$ estimates the average post-adoption change associated with permitless carry after absorbing time-invariant state differences and national year shocks. The unweighted model is an average-state estimand; population-weighted models are reported separately because they answer the resident-weighted version of the same question.
+Here $Y_{st}$ is the mortality rate for state $s$ in year $t$, $D_{st}$ equals one in and after the first calendar year statewide permitless concealed carry becomes effective, $\alpha_s$ and $\lambda_t$ are state and year fixed effects, and $X_{st}$ contains unemployment and per-capita income in the baseline model. Standard errors are clustered by state. The coefficient $\beta$ is the adjusted post-adoption association: the average within-state change after adoption, net of national year shocks and the baseline covariates. The unweighted model targets an average-state association; population-weighted models are reported separately because they answer the resident-weighted version of the same question.
 
 This estimand is familiar in firearm-policy panel studies, but staggered adoption complicates interpretation when effects vary across cohorts or time \citep{goodmanBacon2021,deChaisemartin2020,callawaySantanna2021,sunAbraham2021}. We therefore report cohort-window ATT summaries, not-yet-treated dynamic ATT estimates, and never-treated-control event-time fixed-effect estimates. These analyses ask whether the direction of the result is similar under alternative timing comparisons and whether pre-adoption event-time patterns undermine a parallel-trends interpretation \citep{roth2022}.
 
@@ -164,11 +165,13 @@ Table~\ref{tab:diagnostic_spine} places the firearm-suicide estimate beside the 
 
 \input{tables/firearm_suicide_diagnostic_spine.tex}
 
+\subsection*{Firearm-homicide missingness was concentrated in small states}
+
 Firearm homicide did not follow the same pattern. The baseline fixed-effects estimate was -0.072 deaths per 100,000 (SE 0.368; $p=0.846$), with 1,199 state-year observations. The estimate was statistically weak and centered near zero. Missingness remains relevant: 101 of 1,300 possible state-years were missing or suppressed, all in the smallest-population quartile (Table~\ref{tab:homicide_missingness}). This limitation tempers any strong homicide-null claim, but it does not account for the suicide-homicide contrast because total suicide and total firearm deaths show positive associations where firearm homicide does not.
 
 \input{tables/homicide_missingness_audit.tex}
 
-The main result is therefore outcome-specific: permitless carry is most consistently associated with suicide-related mortality, while firearm homicide shows no comparable positive association in the available state-year data.
+Together, the baseline estimates and missingness audit support an outcome-specific interpretation rather than a broad firearm-violence claim.
 
 \subsection*{Change-score windows showed the same outcome contrast}
 
@@ -284,13 +287,13 @@ The policy-feature models did not identify a stable mechanism. None of the 15 tr
 
 \section*{Discussion}
 
-This study evaluates a specific, recent form of concealed-carry deregulation: the removal of the carry-permit requirement. It does not estimate the full history of right-to-carry laws, and it does not test whether public carrying deters crime. In a 50-state panel with source-audited treatment coding, the clearest association was between permitless carry adoption and firearm suicide.
+This study evaluates a specific, recent form of concealed-carry deregulation: the removal of the carry-permit requirement. It does not estimate the full history of right-to-carry laws, and it does not test whether public carrying deters crime. In this 50-state panel, the clearest pattern was outcome-specific: permitless carry adoption was more consistently associated with suicide-related mortality than with firearm homicide.
 
-The suicide result was not confined to a single specification. Firearm suicide increased in the baseline fixed-effects model, in 2-, 3-, and 5-year change-score windows, after external firearm-law covariates, after health-access covariates, after overdose covariates, after demographic-poverty covariates, in leave-one-adopter-out checks, under Arkansas recoding, and in several staggered-adoption summaries. The estimate also remained positive when population-weighted. Total suicide and total firearm deaths often moved in the same direction. Firearm homicide did not. This contrast is the central empirical pattern in the paper: permitless carry adoption is more consistently associated with suicide-related mortality than with homicide in this state-year panel.
+The firearm-suicide estimate was positive in the baseline fixed-effects model, change-score windows, population-weighted models, Arkansas recodings, leave-one-adopter-out checks, and several covariate and staggered-adoption diagnostics. Total suicide and total firearm deaths often moved in the same direction. Firearm homicide did not. This contrast is the central empirical result.
 
 The pattern is not a clean method-substitution result. If permitless carry only shifted suicide method toward firearms, firearm suicide would rise while total suicide remained stable or non-firearm suicide fell. Instead, total suicide increased in the baseline fixed-effects model, and non-firearm suicide was positive in that same specification. The non-firearm and total-suicide results were less stable across sensitivity layers, so firearm suicide remains the most durable signal. Still, the broader suicide pattern argues against describing the finding as simple substitution across methods.
 
-The main limitation is identification. State-specific linear trends attenuated the firearm-suicide estimate, and event-time models showed pre-adoption signals for firearm suicide, total suicide, and total firearm deaths. These patterns mean the estimates should not be presented as proof that permitless carry caused the observed suicide increases. They suggest that adopting states were already on different mortality trajectories, or that policy timing coincided with other changes not fully captured by the covariates. The contribution is to document a consistent association and its limits, not to eliminate all remaining concerns about confounding.
+The main limitation is identification. State-specific linear trends attenuated the firearm-suicide estimate, and event-time models showed pre-adoption signals for firearm suicide, total suicide, and total firearm deaths. These patterns suggest that adopting states were already on different mortality trajectories, or that policy timing coincided with other changes not fully captured by the covariates. The estimates should therefore be read as associational evidence, not proof that permitless carry caused the observed suicide increases.
 
 The legal audit is an important part of the study because treatment coding is itself a source of uncertainty. Arkansas, Mississippi, and Vermont illustrate the problem. A state can be baseline permitless, partially permitless, ambiguously interpreted, or newly clarified by statute. A state can also remove the pre-carry permit application while retaining underlying possession prohibitions. The audit makes those distinctions visible and prevents the treatment variable from appearing more certain than the law allows.
 
@@ -298,9 +301,9 @@ The feature analysis should also be interpreted cautiously. Training removal, ba
 
 These findings fit a broader firearm-policy literature that increasingly treats suicide and homicide as distinct outcomes. State firearm laws associated with lower homicide are not always the same as those associated with lower suicide \citep{siegel2019,sharkey2023}. Recent suicide-specific evidence links handgun permits, waiting periods, and concealed-carry permit requirements to lower firearm suicide rates \citep{siegel2026}. The present analysis extends that logic to the recent permitless-carry wave and finds that the clearest mortality association is again on the suicide side.
 
-Several limitations remain. The panel is state-level and cannot identify individual behavior, carrying frequency, firearm acquisition, storage, mental-health crises, crisis timing, or interpersonal circumstances. Some homicide observations are missing because of suppression or incomplete availability, with missingness concentrated in small-population state-years. The HRSA mental-health-provider specifications use a short recent window and should not be treated as full-panel replacements. The policy-feature fields require deeper statute-level auditing before they can support mechanism claims. Finally, adoption is politically and structurally patterned, so unmeasured state-specific trajectories remain a serious concern even after fixed effects and covariate-layer sensitivity checks.
+Several limitations remain beyond identification. The panel is state-level and cannot identify individual behavior, carrying frequency, firearm acquisition, storage, mental-health crises, crisis timing, or interpersonal circumstances. Some homicide observations are missing because of suppression or incomplete availability, with missingness concentrated in small-population state-years. The HRSA mental-health-provider specifications use a short recent window, and the policy-feature fields require deeper statute-level auditing before they can support mechanism claims.
 
-The practical implication is primarily methodological. Permitless-carry studies should separate primary outcomes from secondary and exploratory checks, audit legal treatment timing, report edge-case coding, report both unweighted and population-weighted estimands, and use staggered-adoption diagnostics without treating them as a complete solution to identification problems. Under that standard, the strongest statement from this analysis is cautious but policy-relevant: states adopting permitless concealed carry experienced larger post-adoption increases in firearm suicide rates, while firearm homicide showed no comparably consistent evidence of change in the available data.
+The practical implication is primarily methodological. Permitless-carry studies should separate primary outcomes from secondary and exploratory checks, audit legal treatment timing, report edge-case coding, report both unweighted and population-weighted estimands, and use staggered-adoption diagnostics without treating them as a complete solution to identification problems. Under that standard, the strongest statement from this analysis is cautious: adopting states experienced larger post-adoption increases in firearm suicide rates, while firearm homicide showed no comparably consistent evidence of change in the available data.
 
 \section*{Additional Methods Details}
 
