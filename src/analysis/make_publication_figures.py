@@ -226,7 +226,7 @@ def panel_label(ax, label):
 
 
 def title_and_note(fig, title, note, y_title=0.95, y_note=0.015):
-    fig.suptitle(title, x=0.01, y=y_title, ha="left", fontsize=10.6, fontweight="bold", color=DARK)
+    _ = (title, y_title)
     fig.text(0.01, y_note, note, ha="left", va="bottom", fontsize=7.2, color="#4B4B4B")
 
 
@@ -329,7 +329,7 @@ def fig_outcome_trends(df):
         y_title=0.995,
         y_note=0.01,
     )
-    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.12, top=0.84, wspace=0.18, hspace=0.38)
+    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.12, top=0.90, wspace=0.18, hspace=0.38)
     savefig(fig, "figure_01_outcome_trends_by_adoption")
 
 
@@ -386,7 +386,7 @@ def fig_twfe_forest(df):
         "Adjusted difference-in-differences estimates",
         "Colored estimates are adjusted TWFE coefficients with +/- 1.96 SE intervals; pale points show unadjusted adopter-state pre/post changes.",
     )
-    fig.subplots_adjust(left=0.22, right=0.985, bottom=0.20, top=0.84)
+    fig.subplots_adjust(left=0.22, right=0.985, bottom=0.20, top=0.94)
     savefig(fig, "figure_02_twfe_coefficient_forest")
 
 
@@ -422,7 +422,7 @@ def fig_change_score_robustness():
         "Change-score comparisons across robustness windows",
         "Positive values indicate larger pre/post increases in adopting states. Asterisks denote Welch-test p<0.05.",
     )
-    fig.subplots_adjust(left=0.24, right=0.985, bottom=0.20, top=0.84)
+    fig.subplots_adjust(left=0.24, right=0.985, bottom=0.20, top=0.94)
     savefig(fig, "figure_03_change_score_robustness")
 
 
@@ -496,7 +496,7 @@ def fig_event_study_grid(df):
         "Event-study estimates around adoption",
         "Dynamic coefficients are plotted relative to the year before permitless carry adoption; background points show the underlying treated-state event-time data.",
     )
-    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.14, top=0.84, wspace=0.28, hspace=0.48)
+    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.14, top=0.90, wspace=0.28, hspace=0.48)
     savefig(fig, "figure_04_event_study_grid")
 
 
@@ -542,7 +542,7 @@ def fig_heterogeneity_forest():
         "Heterogeneity in post-adoption associations",
         "Interaction terms estimate whether associations are larger in states above each baseline median; diamonds mark p<0.05.",
     )
-    fig.subplots_adjust(left=0.20, right=0.985, bottom=0.20, top=0.82, wspace=0.20)
+    fig.subplots_adjust(left=0.20, right=0.985, bottom=0.20, top=0.92, wspace=0.20)
     savefig(fig, "figure_05_heterogeneity_interactions")
 
 
@@ -610,7 +610,7 @@ def fig_political_selection(state_level):
         "Policy adoption is patterned by baseline risk and politics",
         "Point size is proportional to baseline household firearm ownership. State-level baseline measures describe selection, not treatment effects.",
     )
-    fig.subplots_adjust(left=0.12, right=0.985, bottom=0.20, top=0.84)
+    fig.subplots_adjust(left=0.12, right=0.985, bottom=0.20, top=0.94)
     savefig(fig, "figure_06_political_selection_scatter")
 
 

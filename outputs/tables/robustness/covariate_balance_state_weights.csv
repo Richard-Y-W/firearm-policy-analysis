@@ -1,0 +1,48 @@
+State,ever_adopter,covariate_balance_weight,balance_status
+Alabama,1,1.0,adopter_unit_weight
+Alaska,1,1.0,adopter_unit_weight
+Arizona,1,1.0,adopter_unit_weight
+California,0,1.0000007414641188e-06,optimized_control_weight
+Colorado,0,4.9047195480557635,optimized_control_weight
+Connecticut,0,1e-06,optimized_control_weight
+Delaware,0,1e-06,optimized_control_weight
+Florida,1,1.0,adopter_unit_weight
+Georgia,1,1.0,adopter_unit_weight
+Hawaii,0,1.0000012869265094e-06,optimized_control_weight
+Idaho,1,1.0,adopter_unit_weight
+Illinois,0,1.0000001949055161e-06,optimized_control_weight
+Indiana,1,1.0,adopter_unit_weight
+Iowa,1,1.0,adopter_unit_weight
+Kansas,1,1.0,adopter_unit_weight
+Kentucky,1,1.0,adopter_unit_weight
+Louisiana,1,1.0,adopter_unit_weight
+Maine,1,1.0,adopter_unit_weight
+Maryland,0,1e-06,optimized_control_weight
+Massachusetts,0,1.0000001998933635e-06,optimized_control_weight
+Michigan,0,1e-06,optimized_control_weight
+Minnesota,0,2.7104173011347696,optimized_control_weight
+Missouri,1,1.0,adopter_unit_weight
+Montana,1,1.0,adopter_unit_weight
+Nebraska,1,1.0,adopter_unit_weight
+Nevada,0,2.2783007692496904,optimized_control_weight
+New Hampshire,1,1.0,adopter_unit_weight
+New Jersey,0,1.0000001803678575e-06,optimized_control_weight
+New Mexico,0,5.0366211248623625,optimized_control_weight
+New York,0,1.000000843893905e-06,optimized_control_weight
+North Carolina,0,3.2466250307034605,optimized_control_weight
+North Dakota,1,1.0,adopter_unit_weight
+Ohio,1,1.0,adopter_unit_weight
+Oklahoma,1,1.0,adopter_unit_weight
+Oregon,0,1e-06,optimized_control_weight
+Pennsylvania,0,0.005734942389165694,optimized_control_weight
+Rhode Island,0,1.0000011548524242e-06,optimized_control_weight
+South Carolina,1,1.0,adopter_unit_weight
+South Dakota,1,1.0,adopter_unit_weight
+Tennessee,1,1.0,adopter_unit_weight
+Texas,1,1.0,adopter_unit_weight
+Utah,1,1.0,adopter_unit_weight
+Virginia,0,5.598877288056038,optimized_control_weight
+Washington,0,1e-06,optimized_control_weight
+West Virginia,1,1.0,adopter_unit_weight
+Wisconsin,0,2.2186909955458933,optimized_control_weight
+Wyoming,1,1.0,adopter_unit_weight

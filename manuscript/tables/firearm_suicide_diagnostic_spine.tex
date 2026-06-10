@@ -1,6 +1,6 @@
 \begin{table}[H]
 \centering
-\caption{\textbf{Firearm-suicide diagnostic spine.}}
+\caption{\textbf{Firearm-suicide specification and timing summary.}}
 \label{tab:diagnostic_spine}
 \begin{threeparttable}
 \small
@@ -16,14 +16,14 @@ External firearm-law covariates & 1.096 & $<0.001$ & Policy-environment sensitiv
 Leave-one-adopter-out & 1.265--1.481 & -- & No sign changes across adopter exclusions \\
 Never-treated placebo timing & 1.391 $>$ 0.338 & -- & Observed estimate exceeds placebo timing distribution \\
 State-specific linear trends & 0.249 & 0.079 & Central attenuation caveat \\
-Cohort ATT windows & 0.601/0.577/0.641 & -- & 2-, 3-, and 5-year windows \\
-Not-yet-treated dynamic ATT & 0.387 & -- & Positive post-adoption mean \\
+Cohort ATT windows & 0.601/0.577/0.641 & -- & Alternative staggered-adoption estimand \\
+Not-yet-treated dynamic ATT & 0.387 & -- & Alternative timing comparison \\
 Event-time fixed effects & 0.651 & 0.0000001 & Positive post mean; diagnostic $p$ is the minimum pre-adoption $p$ \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
 \small
-\item Estimates are deaths per 100,000 residents. TWFE rows include state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors unless otherwise noted. Modern staggered-adoption rows are reported as diagnostics because event-time checks flag pre-adoption signal; the event-time $p$ column reports the minimum pre-adoption $p$ rather than a post-adoption effect test.
+\item Estimates are deaths per 100,000 residents. TWFE rows include state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors unless otherwise noted. Cohort-window and not-yet-treated ATT rows are alternative timing estimands. The event-time row is a pretrend diagnostic; its $p$ column reports the minimum pre-adoption $p$ rather than a post-adoption effect test.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}

@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\caption{\textbf{Primary firearm-suicide robustness estimates.}}
+\label{tab:main_robustness}
+\begin{threeparttable}
+\small
+\begin{tabular}{@{}p{0.24\linewidth}rrrrp{0.31\linewidth}@{}}
+\toprule
+Specification & Estimate & SE & $p$ & N & Interpretation \\
+\midrule
+Binary TWFE & 1.391 & 0.222 & $<0.001$ & 1222 & Headline annual treatment coding \\
+Fractional-year TWFE & 1.534 & 0.239 & $<0.001$ & 1222 & Effective-year exposure prorated by law date \\
+Stacked DiD & 0.665 & 0.137 & $<0.001$ & 3446 & Cohort stacks with not-yet-treated controls \\
+Covariate-balanced TWFE & 0.889 & 0.304 & 0.003 & 1222 & Non-adopters reweighted toward adopter covariates \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Estimates are deaths per 100,000 residents. All rows estimate the firearm-suicide outcome. TWFE rows include state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors. The stacked DiD row uses 5-year pre/post cohort stacks with not-yet-treated controls.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

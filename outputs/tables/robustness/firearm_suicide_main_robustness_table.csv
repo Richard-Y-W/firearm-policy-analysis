@@ -1,0 +1,5 @@
+specification,estimate,se,p_value,nobs,interpretation
+Binary TWFE,1.390765250571827,0.2218495556319691,3.634752574221214e-10,1222.0,Headline annual treatment coding
+Fractional-year TWFE,1.5344059632248197,0.2387296842229224,1.2982355902554144e-10,1222.0,Effective-year exposure prorated by law date
+Stacked DiD,0.6654212119382519,0.1371599858407611,1.2257833947710514e-06,3446.0,Cohort stacks with not-yet-treated controls
+Covariate-balanced TWFE,0.8887693817446896,0.3043085384449064,0.0034933645100838,1222.0,Non-adopters reweighted toward adopter covariates

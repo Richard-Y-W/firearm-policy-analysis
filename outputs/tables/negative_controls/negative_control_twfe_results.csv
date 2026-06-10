@@ -1,0 +1,4 @@
+outcome,outcome_label,specification,stratification,sex,broad_age_group,coef_post_permitless,se_post_permitless,p_post_permitless,ci_low,ci_high,nobs,n_states,r2
+cancer_rate_per_100k,Cancer mortality,negative_control_twfe,negative_control,,,1.796016972160179,2.3316497883361036,0.44113540133358203,-2.774016612978584,6.366050557298942,1222.0,47,0.9543911829225381
+cardiovascular_rate_per_100k,Cardiovascular mortality,negative_control_twfe,negative_control,,,-0.5907591342986183,5.809923932940269,0.9190098484046777,-11.978210042861546,10.796691774264309,1222.0,47,0.9442577681062939
+motor_vehicle_rate_per_100k,Motor-vehicle mortality,negative_control_twfe,negative_control,,,-1.31941194408582,0.41642947682458686,0.0015328453488819547,-2.13561371866201,-0.5032101695096298,1222.0,47,0.9286357454546246

@@ -29,6 +29,20 @@ try:
         build_summary as build_ageadj_summary,
         run_ageadj_models,
     )
+    from src.analysis.additional_mortality_checks import (
+        main as run_additional_mortality_checks,
+    )
+    from src.analysis.additional_data_availability import (
+        main as run_additional_data_availability_audit,
+    )
+    from src.analysis.covariate_balance import main as run_covariate_balance_sensitivity
+    from src.analysis.fractional_timing import main as run_fractional_timing_sensitivity
+    from src.analysis.modern_did import main as run_modern_did_sensitivity
+    from src.analysis.main_robustness_table import main as build_main_robustness_table
+    from src.analysis.nics_mechanism import main as run_nics_mechanism_proxy
+    from src.analysis.policy_feature_descriptives import (
+        main as run_policy_feature_descriptives,
+    )
 except ModuleNotFoundError:
     from phase1_utils import apply_clean_primary_sample
     from firearm_law_control_sensitivity import (
@@ -47,6 +61,18 @@ except ModuleNotFoundError:
         build_summary as build_ageadj_summary,
         run_ageadj_models,
     )
+    from additional_mortality_checks import (
+        main as run_additional_mortality_checks,
+    )
+    from additional_data_availability import (
+        main as run_additional_data_availability_audit,
+    )
+    from covariate_balance import main as run_covariate_balance_sensitivity
+    from fractional_timing import main as run_fractional_timing_sensitivity
+    from modern_did import main as run_modern_did_sensitivity
+    from main_robustness_table import main as build_main_robustness_table
+    from nics_mechanism import main as run_nics_mechanism_proxy
+    from policy_feature_descriptives import main as run_policy_feature_descriptives
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_FILE = ROOT / "data" / "processed" / "analysis_panel_full_outcomes.csv"
@@ -629,6 +655,20 @@ def main():
     run_nonfirearm_confounder_did(df)
     run_phase3b2_confounder_did(df)
     run_ageadj_did(df)
+    run_fractional_timing_sensitivity()
+    run_modern_did_sensitivity()
+    run_covariate_balance_sensitivity()
+    build_main_robustness_table()
+    try:
+        run_additional_mortality_checks()
+    except FileNotFoundError as exc:
+        print(f"Skipped optional CDC WONDER mortality checks: {exc}")
+    run_policy_feature_descriptives()
+    try:
+        run_nics_mechanism_proxy()
+    except FileNotFoundError as exc:
+        print(f"Skipped optional NICS mechanism proxy: {exc}")
+    run_additional_data_availability_audit()
     save_event_study_outputs(df)
     run_heterogeneity_did(df)
     make_heterogeneity_plots(df)
