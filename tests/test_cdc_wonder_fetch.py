@@ -1,5 +1,6 @@
 from src.data.fetch_cdc_wonder_exports import (
     apply_payload_overrides,
+    build_export_specs,
     parse_wonder_form,
 )
 
@@ -55,3 +56,36 @@ def test_apply_payload_overrides_replaces_repeated_keys_and_removes_keys():
         ("B_1", "new"),
         ("V_D76.V4", "GR113-019"),
     ]
+
+
+def test_build_export_specs_includes_extra_negative_control_placebos():
+    specs = {spec.filename: spec for spec in build_export_specs()}
+
+    falls = specs["negative_control_falls_1999_2020.xls"]
+    nontransport = specs[
+        "negative_control_non_transport_injury_excluding_falls_poisoning_1999_2020.xls"
+    ]
+    poisoning = specs["negative_control_accidental_poisoning_1999_2020.xls"]
+
+    assert falls.cause_values == ("GR113-118",)
+    assert falls.cause_highlight == "Falls (W00-W19)"
+    assert nontransport.cause_values == (
+        "GR113-119",
+        "GR113-120",
+        "GR113-121",
+        "GR113-123",
+    )
+    assert "GR113-118" not in nontransport.cause_values
+    assert "GR113-122" not in nontransport.cause_values
+    assert nontransport.cause_highlight == "Nontransport accidents excluding falls and accidental poisoning (excludes W00-W19 and X40-X49)"
+    assert poisoning.cause_values == ("GR113-122",)
+    assert poisoning.cause_highlight == "Accidental poisoning and exposure to noxious substances (X40-X49)"
+    assert "negative_control_falls_2018_2024_single_race.xls" in specs
+    assert (
+        "negative_control_non_transport_injury_excluding_falls_poisoning_2018_2024_single_race.xls"
+        in specs
+    )
+    assert (
+        "negative_control_accidental_poisoning_2018_2024_single_race.xls"
+        in specs
+    )

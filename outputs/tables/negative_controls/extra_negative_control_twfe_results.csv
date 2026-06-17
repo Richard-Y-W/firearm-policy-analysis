@@ -1,0 +1,4 @@
+outcome,outcome_label,specification,coef_post_permitless,se_post_permitless,p_post_permitless,ci_low,ci_high,nobs,r2
+falls_rate_per_100k,Fall mortality,extra_negative_control_twfe,1.1775505442909378,0.912679964491566,0.19697709810389707,-0.6113021861125314,2.966403274694407,1222.0,0.8651453251260013
+non_transport_injury_excluding_falls_poisoning_rate_per_100k,Other non-transport injury excluding falls/poisoning,extra_negative_control_twfe,-0.21762514458487892,0.284740015205528,0.44469193583676,-0.7757155743877138,0.34046528521795594,1222.0,0.7988802061760487
+accidental_poisoning_rate_per_100k,Accidental poisoning mortality,extra_negative_control_twfe,-1.4844378400521099,1.9425029469715978,0.4447550945356458,-5.291743616116442,2.3228679360122215,1215.0,0.8281540456449864

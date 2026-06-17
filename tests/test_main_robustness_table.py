@@ -48,13 +48,29 @@ def test_build_firearm_suicide_robustness_rows_combines_four_estimators():
             "nobs": [1222],
         }
     )
+    firearm_specific = pd.DataFrame(
+        {
+            "outcome": ["firearm_minus_nonfirearm_suicide_rate_per_100k"],
+            "coef_post_permitless": [0.98],
+            "se_post_permitless": [0.24],
+            "p_post_permitless": [0.0001],
+            "nobs": [1222],
+        }
+    )
 
-    rows = build_firearm_suicide_robustness_rows(twfe, fractional, stacked, balanced)
+    rows = build_firearm_suicide_robustness_rows(
+        twfe,
+        fractional,
+        stacked,
+        balanced,
+        firearm_specific,
+    )
 
     assert rows["specification"].tolist() == [
         "Binary TWFE",
         "Fractional-year TWFE",
         "Stacked DiD",
         "Covariate-balanced TWFE",
+        "Firearm minus non-firearm suicide TWFE",
     ]
-    assert rows["estimate"].tolist() == [1.39, 1.53, 0.67, 0.89]
+    assert rows["estimate"].tolist() == [1.39, 1.53, 0.67, 0.89, 0.98]

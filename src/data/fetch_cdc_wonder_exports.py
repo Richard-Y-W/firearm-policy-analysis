@@ -89,6 +89,24 @@ def build_export_specs() -> list[WonderExportSpec]:
             ("GR113-114",),
             "Motor vehicle accidents",
         ),
+        (
+            "negative_control_falls",
+            "cause113",
+            ("GR113-118",),
+            "Falls (W00-W19)",
+        ),
+        (
+            "negative_control_non_transport_injury_excluding_falls_poisoning",
+            "cause113",
+            ("GR113-119", "GR113-120", "GR113-121", "GR113-123"),
+            "Nontransport accidents excluding falls and accidental poisoning (excludes W00-W19 and X40-X49)",
+        ),
+        (
+            "negative_control_accidental_poisoning",
+            "cause113",
+            ("GR113-122",),
+            "Accidental poisoning and exposure to noxious substances (X40-X49)",
+        ),
     ]
     for database_key, year_label in [
         ("1999_2020", "1999_2020"),

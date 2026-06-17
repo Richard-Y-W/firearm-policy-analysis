@@ -43,7 +43,7 @@ The primary processed panel is `data/processed/analysis_panel_full_outcomes.csv`
 
 The analysis combines several complementary specifications:
 
-1. Two-way fixed-effects state-year regressions with state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors.
+1. Two-way fixed-effects state-year regressions with state and year fixed effects, unemployment, per-capita income, state-clustered standard errors, and wild-cluster bootstrap p-values for the baseline rows.
 2. Population-weighted fixed-effects models.
 3. Pre-COVID and COVID-excluded samples.
 4. External firearm-law covariate sensitivity models.
@@ -73,6 +73,7 @@ Main tables and reports:
 - `outputs/tables/modern_did/modern_did_summary.csv`
 - `outputs/tables/robustness/robustness_summary.csv`
 - `outputs/tables/robustness/arkansas_treatment_sensitivity_summary.csv`
+- `outputs/tables/robustness/wild_cluster_bootstrap_results.csv`
 - `outputs/tables/main/final_interpretation_report.md`
 
 ## Repository Structure
@@ -103,41 +104,46 @@ tests/                         Unit and regression tests for core code paths
 Install dependencies:
 
 ```bash
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 Build the processed panel:
 
 ```bash
-python -m src.data.process_firearm_law_controls
-python -m src.data.process_nonfirearm_confounders
-python -m src.data.build_master_analysis_panel
-python -m src.data.extend_master_outcomes
+python3 -m src.data.process_firearm_law_controls
+python3 -m src.data.process_nonfirearm_confounders
+python3 -m src.data.build_master_analysis_panel
+python3 -m src.data.extend_master_outcomes
 ```
 
 Run the main analysis:
 
 ```bash
-python -m src.analysis.run_all_analysis
+python3 -m src.analysis.run_all_analysis
 ```
 
 Run the robustness and diagnostic scripts:
 
 ```bash
-python -m src.analysis.policy_audit
-python -m src.analysis.firearm_law_control_sensitivity
-python -m src.analysis.nonfirearm_confounder_sensitivity
-python -m src.analysis.modern_did
-python -m src.analysis.robustness_checks
-python -m src.analysis.arkansas_sensitivity
-python -m src.analysis.phase1_publishability_report
+python3 -m src.analysis.policy_audit
+python3 -m src.analysis.firearm_law_control_sensitivity
+python3 -m src.analysis.nonfirearm_confounder_sensitivity
+python3 -m src.analysis.modern_did
+python3 -m src.analysis.robustness_checks
+python3 -m src.analysis.arkansas_sensitivity
+python3 -m src.analysis.firearm_specific_suicide
+python3 -m src.analysis.nics_mechanism
+python3 -m src.analysis.political_common_support
+python3 -m src.analysis.wild_cluster_bootstrap
+python3 -m src.analysis.extra_negative_controls
+python3 -m src.analysis.phase1_publishability_report
 ```
 
 Generate publication figures and the interpretation report:
 
 ```bash
-python -m src.analysis.make_publication_figures
-python -m src.analysis.interpret_results
+python3 -m src.analysis.make_publication_figures
+python3 -m src.analysis.interpret_results
 ```
 
 Compile the manuscript from `manuscript/`:
@@ -150,7 +156,7 @@ latexmk -pdf supplementary.tex
 Run tests:
 
 ```bash
-python -m pytest
+python3 -m pytest
 ```
 
 ## Limitations
@@ -161,6 +167,7 @@ python -m pytest
 - Event-time diagnostics show pre-adoption signal, so the estimates should not be presented as definitive causal effects.
 - Firearm-homicide rates have missing or suppressed state-years concentrated in small-population states.
 - Some contextual covariates are available only in shorter recent windows.
+- Extra fall, other non-transport injury excluding falls/poisoning, and accidental-poisoning exports are included in `data/raw/cdc_wonder/` and can be regenerated with `python3 -m src.data.fetch_cdc_wonder_exports`.
 - Arkansas, Vermont, and Mississippi require special legal-coding treatment and are documented separately in the audit.
 
 ## Project Information

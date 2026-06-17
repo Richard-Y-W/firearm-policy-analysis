@@ -26,7 +26,7 @@
 
 \section*{Supplementary Note 1. Evidence hierarchy}
 
-The main manuscript interprets results through a hierarchy rather than treating every model row as an independent headline finding. Firearm suicide is the primary outcome. Total suicide, non-firearm suicide, firearm homicide, and total firearm deaths are secondary outcome-family checks. Cancer, cardiovascular, and motor-vehicle mortality are negative-control diagnostics. Firearm-law covariates, contextual covariate layers, age-adjusted outcome rates, fractional-year treatment timing, covariate-balanced TWFE, Arkansas recoding, leave-one-out influence, and placebo timing are sensitivity checks. Cohort-window ATT, not-yet-treated ATT, and stacked DiD rows are alternative staggered-adoption estimands; event-time rows are timing diagnostics because they test pre-adoption signal. Rurality, gun ownership, baseline-risk heterogeneity, sex/age stratification, policy-feature interactions, and NICS mechanism proxies are exploratory or supplemental.
+The main manuscript interprets results through a hierarchy rather than treating every model row as an independent headline finding. Firearm suicide is the primary outcome. Total suicide, non-firearm suicide, firearm homicide, and total firearm deaths are secondary outcome-family checks. Cancer, cardiovascular, motor-vehicle, fall, other non-transport injury excluding falls and accidental poisoning, and accidental-poisoning mortality are negative-control or despair-environment diagnostics. Firearm-law covariates, contextual covariate layers, age-adjusted outcome rates, fractional-year treatment timing, covariate-balanced TWFE, Arkansas recoding, leave-one-out influence, and placebo timing are sensitivity checks. Cohort-window ATT, not-yet-treated ATT, and stacked DiD rows are alternative staggered-adoption estimands; event-time rows are timing diagnostics because they test pre-adoption signal. Rurality, gun ownership, baseline-risk heterogeneity, sex/age stratification, policy-feature interactions, and NICS mechanism proxies are exploratory or supplemental.
 
 \begin{center}
 \begin{tabular}{p{0.20\linewidth}p{0.31\linewidth}p{0.34\linewidth}}
@@ -114,13 +114,17 @@ The summary places the baseline fixed-effects estimate beside population weighti
 
 \input{tables/firearm_suicide_diagnostic_spine.tex}
 
-The focused robustness table below reports the four estimates used in the main-text robustness paragraph: binary TWFE, fractional-year TWFE, stacked DiD, and covariate-balanced TWFE.
+The focused robustness table below reports the estimates used in the main-text robustness paragraph: binary TWFE, fractional-year TWFE, stacked DiD, covariate-balanced TWFE, and firearm suicide minus non-firearm suicide.
 
 \input{tables/firearm_suicide_main_robustness_table.tex}
 
+A null-imposed Rademacher wild-cluster bootstrap with 999 replications over 47 state clusters yielded $p=0.001$ for the baseline firearm-suicide row. The same bootstrap gave $p=0.016$ for total firearm deaths and $p=0.509$ for firearm homicide. These values address small-cluster inference for the baseline TWFE rows; they do not address the separate pretrend, trend-specification, or common-support limitations.
+
+Total firearm deaths are retained as a secondary outcome-family check rather than a headline finding. The baseline total-firearm estimate was positive (1.271; $p=0.008$), but it attenuated to 0.070 under state-specific trends ($p=0.806$) and 0.141 under covariate balancing ($p=0.851$).
+
 \section*{Supplementary Note 5. Age-adjusted outcome-rate sensitivity}
 
-Crude mortality rates are the primary outcome scale because they measure realized state-year mortality burden. Age-adjusted rates are reported as a demographic-composition sensitivity check using CDC WONDER age-adjusted rates standardized to the 2000 U.S. standard population. The age-adjusted estimates preserve the crude-rate pattern: firearm suicide, total suicide, and total firearm deaths remain positive, while firearm homicide remains statistically weak and centered below zero.
+Crude mortality rates are the primary outcome scale because they measure realized state-year mortality burden. Age-adjusted rates are reported as a demographic-composition sensitivity check using CDC WONDER age-adjusted rates standardized to the 2000 U.S. standard population. The age-adjusted estimates preserve the crude-rate pattern: firearm suicide, total suicide, and total firearm deaths remain positive, while firearm homicide remains statistically weak and centered below zero. The total-firearm row is not interpreted as a stable headline result because later trend and covariate-balancing checks attenuate it.
 
 \begin{center}
 \begin{tabular}{lrrrr}
@@ -305,22 +309,28 @@ Policy-feature heterogeneity did not identify a stable mechanism. None of the 15
 
 \section*{Supplementary Note 11. NICS mechanism proxy and additional CDC WONDER checks}
 
-The NICS mechanism proxy uses the official FBI Year by State/Type table where local text extraction produced reliable state-year rows. The processed panel covers 50 states from 1999 through 2021. The direct handgun-check proxy increased after permitless-carry adoption (476.952 checks per 100,000; SE 185.444; $p=0.010$). The broader handgun-or-permit proxy was not statistically distinguishable from zero (-1797.590; SE 1874.740; $p=0.338$). These rows are supplemental because NICS checks are not firearm sales and because the locally parsed official file did not produce clean 2022--2024 state-year rows.
+The NICS mechanism proxy uses the official FBI Year by State/Type table where local text extraction produced reliable state-year rows. The processed panel covers 50 states from 1999 through 2021. The direct handgun-check proxy increased after permitless-carry adoption, but the permit and combined handgun-or-permit rows do not show a net increase. These rows are supplemental because NICS checks are not firearm sales and because the locally parsed official file did not produce clean 2022--2024 state-year rows.
 
 \begin{center}
-\begin{tabular}{lrrr}
+\begin{tabular}{llrrr}
 \toprule
-NICS proxy & Coef. & SE & $p$ \\
+NICS proxy & Sample & Coef. & SE & $p$ \\
 \midrule
-Handgun checks per 100,000 & 476.952 & 185.444 & 0.010 \\
-Handgun or permit checks per 100,000 & -1797.590 & 1874.740 & 0.338 \\
+Handgun checks per 100,000 & 1999--2021 & 476.952 & 185.444 & 0.010 \\
+Permit checks per 100,000 & 1999--2021 & -2274.542 & 1846.033 & 0.218 \\
+Permit plus recheck checks per 100,000 & 1999--2021 & -643.925 & 1240.223 & 0.604 \\
+Handgun or permit checks per 100,000 & 1999--2021 & -1797.590 & 1874.740 & 0.338 \\
+Handgun checks per 100,000 & Excluding 2020--2021 & 379.432 & 175.813 & 0.031 \\
+Handgun or permit checks per 100,000 & Excluding 2020--2021 & -976.463 & 1183.758 & 0.409 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The negative-control mortality checks do not show a generalized positive mortality shift. Cancer mortality was positive but statistically weak, cardiovascular mortality was near zero, and motor-vehicle mortality moved in the opposite direction. This does not make adopter and non-adopter states exchangeable, but it weakens the interpretation that the firearm-suicide estimate is merely broad mortality drift.
+The negative-control mortality checks do not show a uniform positive mortality shift. Cancer mortality was positive but statistically weak, cardiovascular mortality was near zero, and motor-vehicle mortality moved in the opposite direction. The added injury and poisoning checks were mixed: fall mortality was positive but statistically weak, other non-transport injury excluding falls and accidental poisoning was small and negative, and accidental-poisoning mortality was negative and imprecise. The other non-transport row excludes both falls and accidental poisoning so the injury rows are not mechanically overlapping; the accidental-poisoning row directly tests the overdose/despair pathway. This does not make adopter and non-adopter states exchangeable, but it weakens the interpretation that the firearm-suicide estimate is merely a uniform rise across all mortality outcomes.
 
 \input{tables/negative_control_mortality_table.tex}
+
+\input{tables/extra_negative_control_mortality_table.tex}
 
 Sex/age stratification shows that the firearm-suicide association is concentrated among males. Female firearm-suicide estimates were small and statistically weak, while male estimates were positive overall and across broad adult age groups. These rows are state-level stratified outcomes, not individual-level mechanism evidence. The analysis uses complete broad-age cells after CDC WONDER suppression, so observation counts differ across strata.
 

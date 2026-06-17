@@ -40,6 +40,9 @@ def test_run_nics_mechanism_models_estimates_handgun_proxy():
             "State": ["A", "A", "B", "B", "C", "C", "D", "D"],
             "Year": [2019, 2020] * 4,
             "handgun_checks_per_100k": [100, 150, 100, 130, 80, 82, 70, 71],
+            "permit_checks_per_100k": [20, 5, 30, 10, 10, 10, 5, 5],
+            "permit_recheck_checks_per_100k": [3, 1, 4, 1, 0, 0, 0, 0],
+            "permit_and_recheck_checks_per_100k": [23, 6, 34, 11, 10, 10, 5, 5],
             "handgun_or_permit_checks_per_100k": [120, 170, 130, 160, 90, 92, 75, 76],
         }
     )
@@ -48,6 +51,11 @@ def test_run_nics_mechanism_models_estimates_handgun_proxy():
 
     assert set(out["nics_outcome"]) == {
         "handgun_checks_per_100k",
+        "permit_checks_per_100k",
+        "permit_recheck_checks_per_100k",
+        "permit_and_recheck_checks_per_100k",
         "handgun_or_permit_checks_per_100k",
     }
-    assert out["nobs"].min() == 8
+    assert set(out["sample"]) == {"full_1999_2021", "exclude_2020_2021"}
+    assert out.loc[out["sample"].eq("full_1999_2021"), "nobs"].min() == 8
+    assert out.loc[out["sample"].eq("exclude_2020_2021"), "nobs"].min() == 4

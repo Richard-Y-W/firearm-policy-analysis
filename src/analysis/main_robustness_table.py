@@ -16,14 +16,20 @@ TWFE_FILE = ROOT / "outputs" / "tables" / "did" / "twfe_did_main_results.csv"
 FRACTIONAL_FILE = OUT_DIR / "fractional_timing_results.csv"
 STACKED_FILE = ROOT / "outputs" / "tables" / "modern_did" / "stacked_did_results.csv"
 BALANCED_FILE = OUT_DIR / "covariate_balanced_twfe_results.csv"
+FIREARM_SPECIFIC_FILE = OUT_DIR / "firearm_specific_suicide_results.csv"
 
 FIREARM_SUICIDE = "firearm_suicide_rate_per_100k"
+FIREARM_SPECIFIC_SUICIDE = "firearm_minus_nonfirearm_suicide_rate_per_100k"
 
 
 def _one_row(table: pd.DataFrame) -> pd.Series:
-    rows = table.loc[table["outcome"].eq(FIREARM_SUICIDE)]
+    return _row_for_outcome(table, FIREARM_SUICIDE)
+
+
+def _row_for_outcome(table: pd.DataFrame, outcome: str) -> pd.Series:
+    rows = table.loc[table["outcome"].eq(outcome)]
     if rows.empty:
-        raise ValueError(f"Missing firearm-suicide row for {FIREARM_SUICIDE}")
+        raise ValueError(f"Missing row for {outcome}")
     return rows.iloc[0]
 
 
@@ -39,11 +45,13 @@ def build_firearm_suicide_robustness_rows(
     fractional: pd.DataFrame,
     stacked: pd.DataFrame,
     balanced: pd.DataFrame,
+    firearm_specific: pd.DataFrame,
 ) -> pd.DataFrame:
     twfe_row = _one_row(twfe)
     fractional_row = _one_row(fractional)
     stacked_row = _one_row(stacked)
     balanced_row = _one_row(balanced)
+    firearm_specific_row = _row_for_outcome(firearm_specific, FIREARM_SPECIFIC_SUICIDE)
     return pd.DataFrame(
         [
             {
@@ -77,6 +85,14 @@ def build_firearm_suicide_robustness_rows(
                 "p_value": balanced_row["p_post_permitless"],
                 "nobs": balanced_row["nobs"],
                 "interpretation": "Non-adopters reweighted toward adopter covariates",
+            },
+            {
+                "specification": "Firearm minus non-firearm suicide TWFE",
+                "estimate": firearm_specific_row["coef_post_permitless"],
+                "se": firearm_specific_row["se_post_permitless"],
+                "p_value": firearm_specific_row["p_post_permitless"],
+                "nobs": firearm_specific_row["nobs"],
+                "interpretation": "Firearm-specific association net of non-firearm suicide movement",
             },
         ]
     )
@@ -114,7 +130,7 @@ Specification & Estimate & SE & $p$ & N & Interpretation \\
 \end{{tabular}}
 \begin{{tablenotes}}
 \small
-\item Estimates are deaths per 100,000 residents. All rows estimate the firearm-suicide outcome. TWFE rows include state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors. The stacked DiD row uses 5-year pre/post cohort stacks with not-yet-treated controls.
+\item Estimates are deaths per 100,000 residents. The first four rows estimate firearm suicide. The final TWFE row estimates firearm suicide minus non-firearm suicide, so it is a firearm-specific check rather than a total-suicide effect. TWFE rows include state and year fixed effects, unemployment, per-capita income, and state-clustered standard errors. The stacked DiD row uses 5-year pre/post cohort stacks with not-yet-treated controls.
 \end{{tablenotes}}
 \end{{threeparttable}}
 \end{{table}}
@@ -129,6 +145,7 @@ def main():
         pd.read_csv(FRACTIONAL_FILE),
         pd.read_csv(STACKED_FILE),
         pd.read_csv(BALANCED_FILE),
+        pd.read_csv(FIREARM_SPECIFIC_FILE),
     )
     rows.to_csv(CSV_FILE, index=False)
     TEX_FILE.write_text(build_latex_table(rows), encoding="utf-8")

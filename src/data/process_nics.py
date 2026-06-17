@@ -146,9 +146,17 @@ def parse_nics_text(text: str) -> pd.DataFrame:
 def build_state_year_nics_panel(raw: pd.DataFrame, mortality_panel: pd.DataFrame) -> pd.DataFrame:
     use = raw.loc[raw["Year"].between(1999, 2021) & raw["State"].isin(VALID_STATES)].copy()
     use["handgun_or_permit_checks"] = use["handgun_checks"] + use["permit_checks"]
+    use["permit_and_recheck_checks"] = use["permit_checks"] + use["permit_recheck_checks"]
     pop = mortality_panel[["State", "Year", "population"]].drop_duplicates(["State", "Year"])
     out = use.merge(pop, on=["State", "Year"], how="left")
     out["handgun_checks_per_100k"] = out["handgun_checks"] / out["population"] * 100000
+    out["permit_checks_per_100k"] = out["permit_checks"] / out["population"] * 100000
+    out["permit_recheck_checks_per_100k"] = (
+        out["permit_recheck_checks"] / out["population"] * 100000
+    )
+    out["permit_and_recheck_checks_per_100k"] = (
+        out["permit_and_recheck_checks"] / out["population"] * 100000
+    )
     out["handgun_or_permit_checks_per_100k"] = (
         out["handgun_or_permit_checks"] / out["population"] * 100000
     )

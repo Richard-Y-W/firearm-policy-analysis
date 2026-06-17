@@ -39,7 +39,13 @@ try:
     from src.analysis.fractional_timing import main as run_fractional_timing_sensitivity
     from src.analysis.modern_did import main as run_modern_did_sensitivity
     from src.analysis.main_robustness_table import main as build_main_robustness_table
+    from src.analysis.firearm_specific_suicide import (
+        main as run_firearm_specific_suicide,
+    )
     from src.analysis.nics_mechanism import main as run_nics_mechanism_proxy
+    from src.analysis.political_common_support import main as run_political_common_support
+    from src.analysis.extra_negative_controls import main as run_extra_negative_controls
+    from src.analysis.wild_cluster_bootstrap import main as run_wild_cluster_bootstrap
     from src.analysis.policy_feature_descriptives import (
         main as run_policy_feature_descriptives,
     )
@@ -71,7 +77,13 @@ except ModuleNotFoundError:
     from fractional_timing import main as run_fractional_timing_sensitivity
     from modern_did import main as run_modern_did_sensitivity
     from main_robustness_table import main as build_main_robustness_table
+    from firearm_specific_suicide import (
+        main as run_firearm_specific_suicide,
+    )
     from nics_mechanism import main as run_nics_mechanism_proxy
+    from political_common_support import main as run_political_common_support
+    from extra_negative_controls import main as run_extra_negative_controls
+    from wild_cluster_bootstrap import main as run_wild_cluster_bootstrap
     from policy_feature_descriptives import main as run_policy_feature_descriptives
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -658,11 +670,17 @@ def main():
     run_fractional_timing_sensitivity()
     run_modern_did_sensitivity()
     run_covariate_balance_sensitivity()
+    run_wild_cluster_bootstrap()
+    run_firearm_specific_suicide()
     build_main_robustness_table()
     try:
         run_additional_mortality_checks()
     except FileNotFoundError as exc:
         print(f"Skipped optional CDC WONDER mortality checks: {exc}")
+    try:
+        run_extra_negative_controls()
+    except FileNotFoundError as exc:
+        print(f"Skipped optional extra negative-control checks: {exc}")
     run_policy_feature_descriptives()
     try:
         run_nics_mechanism_proxy()
@@ -673,6 +691,7 @@ def main():
     run_heterogeneity_did(df)
     make_heterogeneity_plots(df)
     run_political_selection(df)
+    run_political_common_support()
     build_conclusion_table()
 
     print("\nAll analyses complete.")

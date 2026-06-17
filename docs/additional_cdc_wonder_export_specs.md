@@ -31,8 +31,12 @@ Required filenames and ICD-10 codes:
 | Cancer mortality | `negative_control_cancer_1999_2020.xls` | `negative_control_cancer_2018_2024_single_race.xls` | `C00-C97` |
 | Cardiovascular mortality | `negative_control_cardiovascular_1999_2020.xls` | `negative_control_cardiovascular_2018_2024_single_race.xls` | `I00-I99` |
 | Motor-vehicle mortality | `negative_control_motor_vehicle_1999_2020.xls` | `negative_control_motor_vehicle_2018_2024_single_race.xls` | CDC 113-cause group: motor vehicle accidents (`GR113-114`) |
+| Fall mortality | `negative_control_falls_1999_2020.xls` | `negative_control_falls_2018_2024_single_race.xls` | CDC 113-cause group: falls (`GR113-118`) |
+| Other non-transport injury mortality excluding falls and accidental poisoning | `negative_control_non_transport_injury_excluding_falls_poisoning_1999_2020.xls` | `negative_control_non_transport_injury_excluding_falls_poisoning_2018_2024_single_race.xls` | CDC 113-cause groups for accidental firearm discharge (`GR113-119`), drowning/submersion (`GR113-120`), smoke/fire/flames (`GR113-121`), and other nontransport accidents (`GR113-123`); excludes falls (`GR113-118`; W00-W19) and accidental poisoning (`GR113-122`; X40-X49) |
+| Accidental poisoning mortality | `negative_control_accidental_poisoning_1999_2020.xls` | `negative_control_accidental_poisoning_2018_2024_single_race.xls` | CDC 113-cause group: accidental poisoning and exposure to noxious substances (`GR113-122`; X40-X49) |
 
 The motor-vehicle definition follows the CDC 113-cause motor-vehicle group rather than all transport codes. It is a negative-control mortality family, not a traffic-safety endpoint.
+The fall, other non-transport injury, and accidental-poisoning exports are optional additional checks used by `python3 -m src.analysis.extra_negative_controls`; that script stops with a missing-file message until these files are exported. The other non-transport check intentionally excludes both falls and accidental poisoning rather than using parent group `GR113-117`, because `GR113-117` includes both categories and would mechanically overlap the fall row while partly duplicating overdose-related mortality.
 
 ## Firearm-Suicide Sex/Age Stratification
 
