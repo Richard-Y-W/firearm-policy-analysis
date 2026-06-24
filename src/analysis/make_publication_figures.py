@@ -321,7 +321,9 @@ def fig_outcome_trends(df):
         Line2D([0], [0], color=BLUE, linewidth=2.9, label="Adopting states"),
         Line2D([0], [0], color=ORANGE, linewidth=2.5, linestyle=(0, (3, 2)), label="Never-adopting states"),
     ]
-    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.56, 0.955), ncol=2, frameon=False)
+    # Keep the shared legend above the subplot titles.  At the prior vertical
+    # position it overprinted the title of panel B in the two-column layout.
+    fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.56, 1.015), ncol=2, frameon=False)
     title_and_note(
         fig,
         "Outcome trends by permitless carry adoption status",
@@ -329,7 +331,7 @@ def fig_outcome_trends(df):
         y_title=0.995,
         y_note=0.01,
     )
-    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.12, top=0.90, wspace=0.18, hspace=0.38)
+    fig.subplots_adjust(left=0.075, right=0.985, bottom=0.12, top=0.86, wspace=0.18, hspace=0.38)
     savefig(fig, "figure_01_outcome_trends_by_adoption")
 
 
