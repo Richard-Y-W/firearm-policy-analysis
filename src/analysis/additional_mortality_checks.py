@@ -34,9 +34,15 @@ NEGATIVE_OUT_DIR = ROOT / "outputs" / "tables" / "negative_controls"
 HETEROGENEITY_OUT_DIR = ROOT / "outputs" / "tables" / "heterogeneity"
 NEGATIVE_RESULTS_FILE = NEGATIVE_OUT_DIR / "negative_control_twfe_results.csv"
 SEX_AGE_RESULTS_FILE = HETEROGENEITY_OUT_DIR / "firearm_suicide_sex_age_twfe_results.csv"
+SEX_AGE_SUPPRESSION_AUDIT_FILE = (
+    HETEROGENEITY_OUT_DIR / "firearm_suicide_sex_age_suppression_audit.csv"
+)
 MANUSCRIPT_TABLE_DIR = ROOT / "manuscript" / "tables"
 NEGATIVE_CONTROL_LATEX = MANUSCRIPT_TABLE_DIR / "negative_control_mortality_table.tex"
 SEX_AGE_LATEX = MANUSCRIPT_TABLE_DIR / "firearm_suicide_sex_age_summary_table.tex"
+SEX_AGE_SUPPRESSION_LATEX = (
+    MANUSCRIPT_TABLE_DIR / "firearm_suicide_sex_age_suppression_audit_table.tex"
+)
 
 NEGATIVE_CONTROL_EXPORTS = {
     "cancer": {
@@ -300,6 +306,66 @@ def run_sex_age_models(panel: pd.DataFrame, strata: pd.DataFrame) -> pd.DataFram
     return pd.DataFrame(rows)
 
 
+def build_sex_age_suppression_audit(
+    panel: pd.DataFrame,
+    strata: pd.DataFrame,
+) -> pd.DataFrame:
+    clean_cells = panel[["State", "Year"]].drop_duplicates().copy()
+    clean_cells["_clean_cell"] = 1
+    expected_clean_state_years = len(clean_cells)
+
+    rows = []
+    for (sex, broad_age_group), group in strata.groupby(["Sex", "broad_age_group"]):
+        state_years = group[["State", "Year"]].drop_duplicates()
+        complete = group[group["complete_broad_age_group"].astype(bool)].copy()
+        complete_state_years = complete[["State", "Year"]].drop_duplicates()
+        clean_complete = complete_state_years.merge(
+            clean_cells,
+            on=["State", "Year"],
+            how="inner",
+        )
+        modeled_clean_state_years = len(clean_complete)
+        observed_state_years = len(state_years)
+        complete_count = len(complete_state_years)
+        rows.append(
+            {
+                "sex": sex,
+                "broad_age_group": broad_age_group,
+                "expected_component_age_groups": int(
+                    group["expected_component_age_groups"].max()
+                ),
+                "observed_state_years": observed_state_years,
+                "complete_state_years": complete_count,
+                "expected_clean_state_years": expected_clean_state_years,
+                "modeled_clean_state_years": modeled_clean_state_years,
+                "complete_share_of_observed": (
+                    complete_count / observed_state_years
+                    if observed_state_years
+                    else np.nan
+                ),
+                "modeled_share_of_clean_expected": (
+                    modeled_clean_state_years / expected_clean_state_years
+                    if expected_clean_state_years
+                    else np.nan
+                ),
+            }
+        )
+
+    order = {
+        "Female": 0,
+        "Male": 1,
+    }
+    age_order = {age: idx for idx, age in enumerate(BROAD_AGE_GROUP_COMPONENTS)}
+    audit = pd.DataFrame(rows)
+    audit["_sex_order"] = audit["sex"].map(order).fillna(99)
+    audit["_age_order"] = audit["broad_age_group"].map(age_order).fillna(99)
+    return (
+        audit.sort_values(["_sex_order", "_age_order", "sex", "broad_age_group"])
+        .drop(columns=["_sex_order", "_age_order"])
+        .reset_index(drop=True)
+    )
+
+
 def _format_p_value(p_value) -> str:
     if pd.isna(p_value):
         return ""
@@ -385,6 +451,37 @@ def build_sex_age_latex(results: pd.DataFrame) -> str:
     return "\n".join(lines)
 
 
+def build_sex_age_suppression_latex(audit: pd.DataFrame) -> str:
+    lines = [
+        "\\begin{table}[H]",
+        "\\centering",
+        "\\caption{\\textbf{CDC WONDER sex/age suppression audit.}}",
+        "\\label{tab:sex_age_suppression}",
+        "\\begin{tabular}{lrrrr}",
+        "\\toprule",
+        "Stratum & Modeled clean cells & Expected clean cells & Share & Complete WONDER cells \\\\",
+        "\\midrule",
+    ]
+    for _, row in audit.iterrows():
+        share = row["modeled_share_of_clean_expected"] * 100
+        lines.append(
+            f"{row['sex']}, age {row['broad_age_group']} & "
+            f"{int(row['modeled_clean_state_years'])} & "
+            f"{int(row['expected_clean_state_years'])} & "
+            f"{share:.1f}\\% & "
+            f"{int(row['complete_state_years'])} \\\\"
+        )
+    lines.extend(
+        [
+            "\\bottomrule",
+            "\\end{tabular}",
+            "\\end{table}",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def main():
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     NEGATIVE_OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -404,6 +501,11 @@ def main():
     sex_age_results = run_sex_age_models(panel, sex_age)
     sex_age_results.to_csv(SEX_AGE_RESULTS_FILE, index=False)
     SEX_AGE_LATEX.write_text(build_sex_age_latex(sex_age_results))
+    sex_age_suppression = build_sex_age_suppression_audit(panel, sex_age)
+    sex_age_suppression.to_csv(SEX_AGE_SUPPRESSION_AUDIT_FILE, index=False)
+    SEX_AGE_SUPPRESSION_LATEX.write_text(
+        build_sex_age_suppression_latex(sex_age_suppression)
+    )
 
     print(f"Wrote: {NEGATIVE_CONTROL_PANEL.relative_to(Path.cwd())}")
     print(f"Wrote: {NEGATIVE_RESULTS_FILE.relative_to(Path.cwd())}")
@@ -411,6 +513,8 @@ def main():
     print(f"Wrote: {SEX_AGE_PANEL.relative_to(Path.cwd())}")
     print(f"Wrote: {SEX_AGE_RESULTS_FILE.relative_to(Path.cwd())}")
     print(f"Wrote: {SEX_AGE_LATEX.relative_to(Path.cwd())}")
+    print(f"Wrote: {SEX_AGE_SUPPRESSION_AUDIT_FILE.relative_to(Path.cwd())}")
+    print(f"Wrote: {SEX_AGE_SUPPRESSION_LATEX.relative_to(Path.cwd())}")
 
 
 if __name__ == "__main__":

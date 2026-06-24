@@ -16,6 +16,13 @@ review_source.txt
 page-*.png
 supp_page-*.png
 
+# Non-final exploratory CDC WONDER injury exports kept local only.
+# The committed injury checks exclude falls and accidental poisoning explicitly.
+data/raw/cdc_wonder/negative_control_non_transport_injury_1999_2020.xls
+data/raw/cdc_wonder/negative_control_non_transport_injury_2018_2024_single_race.xls
+data/raw/cdc_wonder/negative_control_non_transport_injury_excluding_poisoning_1999_2020.xls
+data/raw/cdc_wonder/negative_control_non_transport_injury_excluding_poisoning_2018_2024_single_race.xls
+
 # LaTeX build artifacts
 *.aux
 *.bbl

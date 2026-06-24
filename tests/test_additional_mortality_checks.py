@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 
 from src.analysis.additional_mortality_checks import (
+    build_sex_age_suppression_audit,
+    build_sex_age_suppression_latex,
     collapse_firearm_suicide_sex_age,
     run_negative_control_models,
     run_sex_age_models,
@@ -102,3 +104,78 @@ def test_run_sex_age_models_includes_sex_age_and_collapsed_strata():
     assert {"sex", "age", "sex_age"}.issubset(set(out["stratification"]))
     assert set(out["sex"].dropna()) == {"Male", "Female"}
     assert {"25-44", "45-64"}.issubset(set(out["broad_age_group"].dropna()))
+
+
+def test_build_sex_age_suppression_audit_counts_complete_clean_cells():
+    panel = _panel()
+    strata = []
+    for _, row in panel.iterrows():
+        strata.append(
+            {
+                "State": row["State"],
+                "Year": row["Year"],
+                "Sex": "Male",
+                "broad_age_group": "25-44",
+                "component_age_groups_observed": 2,
+                "expected_component_age_groups": 2,
+                "complete_broad_age_group": True,
+            }
+        )
+    strata.append(
+        {
+            "State": "A",
+            "Year": 2019,
+            "Sex": "Female",
+            "broad_age_group": "65+",
+            "component_age_groups_observed": 2,
+            "expected_component_age_groups": 3,
+            "complete_broad_age_group": False,
+        }
+    )
+    strata.append(
+        {
+            "State": "A",
+            "Year": 2020,
+            "Sex": "Female",
+            "broad_age_group": "65+",
+            "component_age_groups_observed": 3,
+            "expected_component_age_groups": 3,
+            "complete_broad_age_group": True,
+        }
+    )
+
+    audit = build_sex_age_suppression_audit(panel, pd.DataFrame(strata))
+    male = audit[
+        audit["sex"].eq("Male") & audit["broad_age_group"].eq("25-44")
+    ].iloc[0]
+    female_older = audit[
+        audit["sex"].eq("Female") & audit["broad_age_group"].eq("65+")
+    ].iloc[0]
+
+    assert male["expected_clean_state_years"] == len(panel)
+    assert male["observed_state_years"] == len(panel)
+    assert male["modeled_clean_state_years"] == len(panel)
+    assert male["modeled_share_of_clean_expected"] == 1.0
+    assert female_older["observed_state_years"] == 2
+    assert female_older["complete_state_years"] == 1
+    assert female_older["modeled_clean_state_years"] == 1
+    assert np.isclose(female_older["modeled_share_of_clean_expected"], 1 / len(panel))
+
+
+def test_build_sex_age_suppression_latex_labels_availability_table():
+    audit = pd.DataFrame(
+        {
+            "sex": ["Female"],
+            "broad_age_group": ["65+"],
+            "modeled_clean_state_years": [151],
+            "expected_clean_state_years": [1222],
+            "modeled_share_of_clean_expected": [151 / 1222],
+            "complete_state_years": [187],
+        }
+    )
+
+    latex = build_sex_age_suppression_latex(audit)
+
+    assert "\\label{tab:sex_age_suppression}" in latex
+    assert "Female, age 65+" in latex
+    assert "12.4\\%" in latex
