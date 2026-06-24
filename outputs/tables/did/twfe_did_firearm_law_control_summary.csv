@@ -1,6 +1,6 @@
 outcome,outcome_label,baseline_coef,baseline_p,controlled_coef,controlled_p,controlled_delta,sign_retained,p05_retained,interpretation_flag
-firearm_suicide_rate_per_100k,Firearm Suicide,1.390765250743391,3.6347409538281834e-10,1.0963348552368752,2.0307598863871024e-09,-0.29443039550651573,True,True,survives_firearm_law_controls
-nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,0.41472416954943697,0.002880495183618377,0.32989918044318495,0.011920809328762485,-0.08482498910625202,True,True,survives_firearm_law_controls
-total_suicide_rate_per_100k,Total Suicide,1.8054894202928284,7.700844572047763e-10,1.4262340356800611,8.122782188725639e-08,-0.3792553846127673,True,True,survives_firearm_law_controls
-firearm_homicide_rate_per_100k,Firearm Homicide,-0.23361254188952718,0.4889639445919025,-0.3159831525160852,0.3395177561210496,-0.08237061062655804,True,False,attenuated_by_firearm_law_controls
-total_firearm_rate_per_100k,Total Firearm Deaths,1.2714840603254625,0.008341571698382151,0.8630666819092355,0.04281920659402184,-0.40841737841622694,True,True,survives_firearm_law_controls
+firearm_suicide_rate_per_100k,Firearm Suicide,1.3907652496853868,3.6348061681165496e-10,1.0963348570479323,2.030774431755648e-09,-0.2944303926374545,True,True,survives_firearm_law_controls
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,0.414724168513268,0.0028804857543662872,0.3298991825136937,0.011920802987232271,-0.08482498599957428,True,True,survives_firearm_law_controls
+total_suicide_rate_per_100k,Total Suicide,1.8054894181986552,7.700883945253548e-10,1.426234039561626,8.12280973393078e-08,-0.3792553786370292,True,True,survives_firearm_law_controls
+firearm_homicide_rate_per_100k,Firearm Homicide,-0.2336125411890566,0.48896394593587644,-0.3159831525549573,0.3395177560483444,-0.08237061136590068,True,False,attenuated_by_firearm_law_controls
+total_firearm_rate_per_100k,Total Firearm Deaths,1.2714840588233816,0.008341594140532382,0.8630666841284029,0.04281918920930653,-0.40841737469497863,True,True,survives_firearm_law_controls

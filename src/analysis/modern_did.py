@@ -3,9 +3,11 @@ from typing import Optional
 
 import numpy as np
 import pandas as pd
+import statsmodels.formula.api as smf
 
 try:
     from src.analysis.phase1_utils import (
+        BASELINE_CONTROL_COLUMNS,
         OUTCOMES,
         OUTCOME_LABELS,
         ROOT,
@@ -16,6 +18,7 @@ try:
     )
 except ModuleNotFoundError:
     from phase1_utils import (
+        BASELINE_CONTROL_COLUMNS,
         OUTCOMES,
         OUTCOME_LABELS,
         ROOT,
@@ -31,6 +34,7 @@ COHORT_ATT_FILE = OUT_DIR / "cohort_att_by_outcome.csv"
 EVENT_TIME_FILE = OUT_DIR / "event_time_never_control_estimates.csv"
 COHORT_TIME_ATT_FILE = OUT_DIR / "cohort_time_att_not_yet_controls.csv"
 DYNAMIC_ATT_FILE = OUT_DIR / "dynamic_att_not_yet_controls.csv"
+STACKED_DID_FILE = OUT_DIR / "stacked_did_results.csv"
 SUMMARY_FILE = OUT_DIR / "modern_did_summary.csv"
 
 
@@ -238,6 +242,142 @@ def estimate_event_time_never_control(panel: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows).sort_values(["outcome", "event_time"])
 
 
+def build_stacked_did_panel(
+    panel: pd.DataFrame,
+    *,
+    pre_window: int = 5,
+    post_window: int = 5,
+) -> pd.DataFrame:
+    rows = []
+    cohorts = sorted(panel["permitless_year"].dropna().astype(int).unique())
+    min_year = int(panel["Year"].min())
+    max_year = int(panel["Year"].max())
+
+    for cohort in cohorts:
+        start_year = max(min_year, cohort - pre_window)
+        end_year = min(max_year, cohort + post_window)
+        treated_states = sorted(
+            panel.loc[panel["permitless_year"].eq(cohort), "State"]
+            .drop_duplicates()
+            .tolist()
+        )
+        control_states = sorted(
+            panel.loc[
+                (~panel["State"].isin(treated_states))
+                & (
+                    panel["permitless_year"].isna()
+                    | (panel["permitless_year"] > end_year)
+                ),
+                "State",
+            ]
+            .drop_duplicates()
+            .tolist()
+        )
+        if not treated_states or not control_states:
+            continue
+
+        stack = panel.loc[
+            panel["State"].isin(treated_states + control_states)
+            & panel["Year"].between(start_year, end_year)
+        ].copy()
+        if stack.empty:
+            continue
+        stack["stack_cohort"] = cohort
+        stack["stack_state"] = stack["stack_cohort"].astype(str) + "_" + stack["State"].astype(str)
+        stack["stack_year"] = stack["stack_cohort"].astype(str) + "_" + stack["Year"].astype(str)
+        stack["stack_treated_state"] = stack["State"].isin(treated_states).astype(int)
+        stack["stack_post"] = (stack["Year"] >= cohort).astype(int)
+        stack["stacked_treatment"] = stack["stack_treated_state"] * stack["stack_post"]
+        rows.append(stack)
+
+    if not rows:
+        return pd.DataFrame()
+    return pd.concat(rows, ignore_index=True).sort_values(
+        ["stack_cohort", "State", "Year"]
+    ).reset_index(drop=True)
+
+
+def estimate_stacked_did(
+    panel: pd.DataFrame,
+    outcome: str,
+    *,
+    pre_window: int = 5,
+    post_window: int = 5,
+    controls=BASELINE_CONTROL_COLUMNS,
+) -> dict:
+    stacked = build_stacked_did_panel(
+        panel,
+        pre_window=pre_window,
+        post_window=post_window,
+    )
+    if stacked.empty:
+        return {
+            "outcome": outcome,
+            "outcome_label": OUTCOME_LABELS.get(outcome, outcome),
+            "specification": "stacked_did",
+            "pre_window": pre_window,
+            "post_window": post_window,
+            "coef_stacked_treatment": np.nan,
+            "se_stacked_treatment": np.nan,
+            "p_stacked_treatment": np.nan,
+            "nobs": 0,
+            "r2": np.nan,
+            "n_stacks": 0,
+            "n_treated_states": 0,
+            "n_control_states": 0,
+            "interpretation_scope": "stacked_did_no_valid_stacks",
+        }
+
+    use_cols = [
+        outcome,
+        "State",
+        "stack_state",
+        "stack_year",
+        "stack_cohort",
+        "stack_treated_state",
+        "stacked_treatment",
+    ] + list(controls)
+    data = stacked[use_cols].dropna().copy()
+    formula = (
+        f"{outcome} ~ stacked_treatment"
+        + (" + " + " + ".join(controls) if controls else "")
+        + " + C(stack_state) + C(stack_year)"
+    )
+    model = smf.ols(formula, data=data).fit(
+        cov_type="cluster",
+        cov_kwds={"groups": data["State"]},
+    )
+    coef = model.params.get("stacked_treatment", np.nan)
+    se = model.bse.get("stacked_treatment", np.nan)
+    return {
+        "outcome": outcome,
+        "outcome_label": OUTCOME_LABELS.get(outcome, outcome),
+        "specification": "stacked_did",
+        "pre_window": pre_window,
+        "post_window": post_window,
+        "coef_stacked_treatment": coef,
+        "se_stacked_treatment": se,
+        "p_stacked_treatment": model.pvalues.get("stacked_treatment", np.nan),
+        "ci_low": coef - 1.96 * se if pd.notna(coef) and pd.notna(se) else np.nan,
+        "ci_high": coef + 1.96 * se if pd.notna(coef) and pd.notna(se) else np.nan,
+        "nobs": model.nobs,
+        "r2": model.rsquared,
+        "n_stacks": int(data["stack_cohort"].nunique()),
+        "n_treated_states": int(
+            data.loc[data["stack_treated_state"].eq(1), "State"].nunique()
+        ),
+        "n_control_states": int(
+            data.loc[data["stack_treated_state"].eq(0), "State"].nunique()
+        ),
+        "interpretation_scope": "stacked_did_cohort_window_sensitivity",
+    }
+
+
+def estimate_all_stacked_did(panel: pd.DataFrame) -> pd.DataFrame:
+    rows = [estimate_stacked_did(panel, outcome) for outcome in OUTCOMES]
+    return pd.DataFrame(rows)
+
+
 def summarize_modern_did(
     cohort_att: pd.DataFrame,
     event_time: pd.DataFrame,
@@ -296,18 +436,21 @@ def main():
     event_time = estimate_event_time_never_control(panel)
     cohort_time_att = build_all_cohort_time_att(panel)
     dynamic_att = aggregate_dynamic_att(cohort_time_att)
+    stacked_did = estimate_all_stacked_did(panel)
     summary = summarize_modern_did(cohort_att, event_time, dynamic_att)
 
     cohort_att.to_csv(COHORT_ATT_FILE, index=False)
     event_time.to_csv(EVENT_TIME_FILE, index=False)
     cohort_time_att.to_csv(COHORT_TIME_ATT_FILE, index=False)
     dynamic_att.to_csv(DYNAMIC_ATT_FILE, index=False)
+    stacked_did.to_csv(STACKED_DID_FILE, index=False)
     summary.to_csv(SUMMARY_FILE, index=False)
 
     print(f"Wrote: {COHORT_ATT_FILE.relative_to(Path.cwd())}")
     print(f"Wrote: {EVENT_TIME_FILE.relative_to(Path.cwd())}")
     print(f"Wrote: {COHORT_TIME_ATT_FILE.relative_to(Path.cwd())}")
     print(f"Wrote: {DYNAMIC_ATT_FILE.relative_to(Path.cwd())}")
+    print(f"Wrote: {STACKED_DID_FILE.relative_to(Path.cwd())}")
     print(f"Wrote: {SUMMARY_FILE.relative_to(Path.cwd())}")
 
 

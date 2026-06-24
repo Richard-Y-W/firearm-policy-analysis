@@ -1,0 +1,6 @@
+outcome,outcome_label,coef_post_permitless,se_post_permitless,p_post_permitless,wild_cluster_p_post_permitless,observed_t_post_permitless,nobs,n_clusters,n_bootstrap,requested_bootstrap,bootstrap_weight,bootstrap_null,seed
+firearm_suicide_rate_per_100k,Firearm Suicide,1.3907652505718273,0.22184955563196918,3.6347525742212145e-10,0.001,6.268956665746027,1222.0,47,999,999,rademacher,restricted,20260617
+nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,0.41472416906872084,0.13915928616465184,0.0028804899324080292,0.009,2.980211960688153,1222.0,47,999,999,rademacher,restricted,20260617
+total_suicide_rate_per_100k,Total Suicide,1.8054894196405484,0.2935290202905237,7.700846529452069e-10,0.001,6.150974162123884,1222.0,47,999,999,rademacher,restricted,20260617
+firearm_homicide_rate_per_100k,Firearm Homicide,-0.2336207535340732,0.33761106216667536,0.48894867851526447,0.509,-0.6919819274723198,1142.0,47,999,999,rademacher,restricted,20260617
+total_firearm_rate_per_100k,Total Firearm Deaths,1.2714840604288609,0.4820021783517603,0.008341581187859336,0.016,2.6379218135004874,1222.0,47,999,999,rademacher,restricted,20260617

@@ -1,13 +1,13 @@
 outcome,outcome_label,event_time,weighted_att,n_cohorts,n_treated_states,min_control_states
 firearm_homicide_rate_per_100k,Firearm Homicide,-5,-0.07594198406058991,9,21,21
 firearm_homicide_rate_per_100k,Firearm Homicide,-4,0.2350111556324143,10,23,21
-firearm_homicide_rate_per_100k,Firearm Homicide,-3,0.022366599627568845,10,23,21
+firearm_homicide_rate_per_100k,Firearm Homicide,-3,0.022366599627568855,10,23,21
 firearm_homicide_rate_per_100k,Firearm Homicide,-2,0.184571937505542,10,24,21
-firearm_homicide_rate_per_100k,Firearm Homicide,0,-0.12723641773651184,10,23,21
-firearm_homicide_rate_per_100k,Firearm Homicide,1,0.03296009202093919,9,21,21
-firearm_homicide_rate_per_100k,Firearm Homicide,2,-0.05093107259426534,8,19,21
+firearm_homicide_rate_per_100k,Firearm Homicide,0,-0.12723641773651181,10,23,21
+firearm_homicide_rate_per_100k,Firearm Homicide,1,0.03296009202093918,9,21,21
+firearm_homicide_rate_per_100k,Firearm Homicide,2,-0.050931072594265374,8,19,21
 firearm_homicide_rate_per_100k,Firearm Homicide,3,0.12317345203634605,7,15,21
-firearm_homicide_rate_per_100k,Firearm Homicide,4,-0.5175789160865919,6,11,23
+firearm_homicide_rate_per_100k,Firearm Homicide,4,-0.517578916086592,6,11,23
 firearm_homicide_rate_per_100k,Firearm Homicide,5,-0.4003872675443541,6,11,21
 firearm_suicide_rate_per_100k,Firearm Suicide,-5,-0.506712404613872,10,25,21
 firearm_suicide_rate_per_100k,Firearm Suicide,-4,-0.4071284129125056,11,26,21
@@ -30,10 +30,10 @@ nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,3,-0.1457161929460768,8,18,
 nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,4,0.3066780019803758,7,13,23
 nonfirearm_suicide_rate_per_100k,Non-Firearm Suicide,5,0.048530472387280144,7,13,21
 total_firearm_rate_per_100k,Total Firearm Deaths,-5,-0.5310829268573886,10,25,21
-total_firearm_rate_per_100k,Total Firearm Deaths,-4,-0.19917375567183093,11,26,21
+total_firearm_rate_per_100k,Total Firearm Deaths,-4,-0.199173755671831,11,26,21
 total_firearm_rate_per_100k,Total Firearm Deaths,-3,-0.006626513737832475,11,26,21
 total_firearm_rate_per_100k,Total Firearm Deaths,-2,-0.2982486628538999,11,26,21
-total_firearm_rate_per_100k,Total Firearm Deaths,0,0.00894761054565858,11,26,21
+total_firearm_rate_per_100k,Total Firearm Deaths,0,0.008947610545658992,11,26,21
 total_firearm_rate_per_100k,Total Firearm Deaths,1,0.4005800560655384,10,24,21
 total_firearm_rate_per_100k,Total Firearm Deaths,2,0.5100792216499661,9,21,21
 total_firearm_rate_per_100k,Total Firearm Deaths,3,-0.15164490517250045,8,18,21

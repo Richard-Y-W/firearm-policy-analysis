@@ -1,0 +1,2 @@
+outcome,outcome_label,specification,coef_post_permitless,se_post_permitless,p_post_permitless,ci_low,ci_high,nobs,r2,interpretation
+firearm_minus_nonfirearm_suicide_rate_per_100k,Firearm suicide minus non-firearm suicide,despair_netted_firearm_suicide_twfe,0.9760410811721184,0.22584467594690344,1.548063043768232e-05,0.5333855163161877,1.418696646028049,1222.0,0.9069047998527335,TWFE estimate for firearm suicide minus non-firearm suicide; included as a firearm-specific check against generalized suicide/despair movement.

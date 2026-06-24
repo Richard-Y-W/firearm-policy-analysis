@@ -1,0 +1,5 @@
+variable,variable_label,baseline_definition,n_adopters,n_nonadopters,nonadopter_min,nonadopter_max,adopter_min,adopter_max,n_adopters_below_nonadopter_min,n_adopters_above_nonadopter_max,n_adopters_outside_nonadopter_range,share_adopters_outside_nonadopter_range
+rep_vote_share_baseline,Republican two-party vote share,2012 two-party Republican presidential vote share when available; otherwise the latest available presidential vote-share value,26,21,0.2829615149892558,0.51034034903005,0.4214007860642288,0.7462618889514748,0,21,21,0.8076923076923077
+gun_ownership_baseline,Household firearm ownership,earliest available state firearm-ownership estimate in the clean primary panel,26,21,0.075,0.515,0.33,0.583,0,8,8,0.3076923076923077
+rurality,Share nonmetro counties,2013 USDA county rurality summary,26,21,0.0,0.7878787878787878,0.3432835820895522,0.9130434782608696,0,7,7,0.2692307692307692
+baseline_firearm_suicide,Baseline firearm suicide,mean pre-adoption firearm-suicide rate for adopters and mean rate through 2014 for non-adopters,26,21,1.7581510412055097,10.8710170124092,6.074072529909111,14.275578512597876,0,3,3,0.11538461538461539
